@@ -8,7 +8,7 @@ const Genre = new keystone.List('Genre', {
 
 Genre.add({
   name: { type: String, required: true, },
-  description: { type: types.Textarea, required: false, },
+  description: { type: types.Markdown, required: false, },
   //image: { type: types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
 });
 

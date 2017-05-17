@@ -31,4 +31,7 @@ const routes = {
 exports = module.exports = (app) => {
   app.get('/', routes.views.index);
   app.get('/directors', routes.views.list_directors);
+  app.get('/themes', routes.views.list_themes);
+  app.get('/genres', routes.views.list_genres);
+  app.get('/movies', routes.views.list_movies);
 };
