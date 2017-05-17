@@ -34,4 +34,5 @@ exports = module.exports = (app) => {
   app.get('/themes', routes.views.list_themes);
   app.get('/genres', routes.views.list_genres);
   app.get('/movies', routes.views.list_movies);
+  app.get('/themes/:name', routes.views.theme_profile);
 };
