@@ -1,0 +1,25 @@
+{
+  "name": "yimovi",
+  "version": "1.0.0",
+  "description": "Chinese Medical Humanities Film",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InFact-coop/YiMovi.git"
+  },
+  "author": "Emily Bertwistle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InFact-coop/YiMovi/issues"
+  },
+  "homepage": "https://github.com/InFact-coop/YiMovi#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "keystone": "^4.0.0-beta.5",
+    "pug": "^2.0.0-rc.1",
+    "underscore": "^1.8.3"
+  }
+}

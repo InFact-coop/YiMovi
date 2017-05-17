@@ -1,0 +1,24 @@
+include ../mixins/flash-messages
+ 
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width")
+        
+        title= title || 'Chinese Medical Humanities Film - YiMovi'
+        link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+        
+        block css
+        block head
+    body
+                            
+        block intro
+            
+        +flash-messages(messages)
+            
+        block content
+        
+        #footer Powered by <a href='http://keystonejs.com', target='_blank'>KeystoneJS</a>.
+        
+    block js
