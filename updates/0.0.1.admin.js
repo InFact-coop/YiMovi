@@ -7,10 +7,10 @@ const User = keystone.list('User');
 exports = module.exports = (done) => {
 
   new User.model({
-    name: { first: 'Admin', last: 'User' },
+    name: { first: 'Admin', last: 'User', },
     email: process.env.ADMIN_EMAIL,
     password: process.env.ADMIN_PASSWORD,
-    canAccessKeystone: true
+    canAccessKeystone: true,
   }).save(done);
 
 };

@@ -32,7 +32,7 @@ exports.flashMessages = (req, res, next) => {
     info: req.flash('info'),
     success: req.flash('success'),
     warning: req.flash('warning'),
-    error: req.flash('error')
+    error: req.flash('error'),
   };
 
   res.locals.messages = _.any(flashMessages, (msgs) => msgs.length)
