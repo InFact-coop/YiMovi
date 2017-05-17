@@ -3,4 +3,5 @@ extends ../layouts/base
 block content
     ul
       each genre in genres
-        li=genre.name
+        li: a(href=`/genres/${genre.key}`)
+          =genre.name

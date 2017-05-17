@@ -3,4 +3,5 @@ extends ../layouts/base
 block content
     ul
       each director in directors
-        li=director.name
+        li: a(href=`/directors/${director.key}`)
+          =director.name

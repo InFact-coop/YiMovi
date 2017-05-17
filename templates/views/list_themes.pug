@@ -3,4 +3,5 @@ extends ../layouts/base
 block content
     ul
       each theme in themes
-        li=theme.name
+        li: a(href=`/themes/${theme.key}`)
+          =theme.name
