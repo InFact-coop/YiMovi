@@ -35,4 +35,6 @@ exports = module.exports = (app) => {
   app.get('/genres', routes.views.list_genres);
   app.get('/movies', routes.views.list_movies);
   app.get('/themes/:name', routes.views.theme_profile);
+  app.get('/genres/:name', routes.views.genre_profile);
+  app.get('/directors/:name', routes.views.director_profile);
 };
