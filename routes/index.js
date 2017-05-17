@@ -30,4 +30,5 @@ const routes = {
 // Bind Routes
 exports = module.exports = (app) => {
   app.get('/', routes.views.index);
+  app.get('/directors', routes.views.list_directors);
 };
