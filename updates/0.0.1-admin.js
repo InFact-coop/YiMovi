@@ -12,5 +12,4 @@ exports = module.exports = (done) => {
     password: process.env.ADMIN_PASSWORD,
     canAccessKeystone: true,
   }).save(done);
-
 };
