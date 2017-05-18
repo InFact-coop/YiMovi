@@ -9,6 +9,7 @@ keystone.pre('render', middleware.flashMessages);
 
 // Handle 404 errors
 keystone.set('404', (req, res) => {
+  res.locals.title = '404 error | YiMovi';
   res.status(404).render('errors/404');
 });
 
