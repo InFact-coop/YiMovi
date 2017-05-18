@@ -1,7 +1,8 @@
 extends ../layouts/base
+include ../mixins/links
 
 block content
     ul
       each theme in themes
-        li: a(href=`/themes/${theme.key}`)
-          =theme.name
+        li
+          +linkTheme(theme)

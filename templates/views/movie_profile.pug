@@ -1,8 +1,12 @@
 extends ../layouts/base
+include ../mixins/links
 
 block content
     h1=movie.name
     h2=director.name
-    p=themes.map(({ name, }) => name).join(', ')
-    p=genres.map(({ name, }) => name).join(', ')
-      
+    p
+      for theme in themes
+        +linkTheme(theme)
+    p
+      for genre in genres
+        +linkGenre(genre) 

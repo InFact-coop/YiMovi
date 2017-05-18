@@ -1,8 +1,9 @@
 extends ../layouts/base
+include ../mixins/links
 
 block content
     h1=theme.name
     ul
       each movie in movies
-        li: a(href=`/movies/${movie.key}`)
-          =movie.name
+        li
+          +linkMovie(movie)
