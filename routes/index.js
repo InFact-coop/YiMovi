@@ -24,7 +24,7 @@ keystone.set('500', (err, req, res) => {
 
 // Load Routes
 const routes = {
-  views: importRoutes('./views')
+  views: importRoutes('./views'),
 };
 
 // Bind Routes
