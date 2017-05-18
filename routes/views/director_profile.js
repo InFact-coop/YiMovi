@@ -8,6 +8,7 @@ exports = module.exports = (req, res) => {
 
   view.on('init', next => {
     const locals = res.locals;
+    locals.title = '';
     locals.director = {};
     locals.movies = [];
 
@@ -16,6 +17,7 @@ exports = module.exports = (req, res) => {
       if (err) return next(err);
 
       locals.director = director;
+      locals.title = `${director.name} ${director.name_chn || ''} | YiMovi director profile`;
 
       getMoviesBy('director', director, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);

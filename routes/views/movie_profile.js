@@ -26,6 +26,7 @@ exports = module.exports = (req, res) => {
         locals.director = details.director;
         locals.themes = details.themes;
         locals.genres = details.genres;
+        locals.title = `${movie.name} ${movie.name_chn || ''} | YiMovi movie profile`;
         next();
       });
     });

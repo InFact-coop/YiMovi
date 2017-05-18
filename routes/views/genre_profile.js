@@ -10,12 +10,14 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.genre = {};
     locals.movies = [];
+    locals.title = '';
 
     Genre.model.findOne({ key: req.params.name, }).exec((err, genre) => {
 
       if (err) return next(err);
 
       locals.genre = genre;
+      locals.title = `${genre.name} films | YiMovi`;
 
       getMoviesBy('genre', genre, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);

@@ -9,6 +9,7 @@ exports = module.exports = (req, res) => {
   view.on('init', next => {
     const locals = res.locals;
     locals.theme = {};
+    locals.title = '';
 
     Theme.model.findOne({ key: req.params.name, }).exec((err, theme) => {
 
@@ -21,6 +22,7 @@ exports = module.exports = (req, res) => {
         if (movieErr) return next(movieErr);
 
         locals.theme.movies = movies;
+        locals.title = `Films about ${theme.name} | YiMovi`;
 
         next();
 
