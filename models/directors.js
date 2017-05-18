@@ -1,5 +1,5 @@
 const keystone = require('keystone');
-const types = keystone.Field.Types;
+const Types = keystone.Field.Types;
 
 const Director = new keystone.List('Director', {
   autokey: { from: 'name', path: 'key', unique: true, },
@@ -8,7 +8,7 @@ const Director = new keystone.List('Director', {
 
 Director.add({
   name: { type: String, required: true, },
-  description: { type: types.Textarea, required: false, },
+  description: { type: Types.Textarea, required: false, },
   //image: { type: types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
 });
 
