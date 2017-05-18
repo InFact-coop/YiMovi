@@ -1,10 +1,11 @@
+/* dependencies */
 const async = require('async');
 const keystone = require('keystone');
 
+/* models */
 const Director = keystone.list('Director');
 const Theme = keystone.list('Theme');
 const Genre = keystone.list('Genre');
-
 
 let movieDetails;
 
@@ -14,7 +15,6 @@ const getDirector = (cb) => {
     if (err) return cb(err);
     return cb(null, director);
   });
-
 };
 
 const getThemes = (cb) => {

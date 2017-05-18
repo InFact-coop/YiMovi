@@ -1,5 +1,5 @@
 const keystone = require('keystone');
-const types = keystone.Field.Types;
+const Types = keystone.Field.Types;
 
 const Film = new keystone.List('Film', {
   autokey: { from: 'name', path: 'key', unique: true, },
@@ -9,18 +9,18 @@ const Film = new keystone.List('Film', {
 Film.add({
   name: { type: String, required: true, },
   name_chn: { type: String, label: 'Chinese title', },
-  director: { type: types.Relationship, ref: 'Director', },
+  director: { type: Types.Relationship, ref: 'Director', },
   year: { type: Number, },
   duration: { type: Number, label: 'duration (mins)', },
-  summary: { type: types.Markdown, },
-  themes: { type: types.Relationship, ref: 'Theme', many: true, },
-  genre: { type: types.Relationship, ref: 'Genre', many: true, },
+  summary: { type: Types.Markdown, },
+  themes: { type: Types.Relationship, ref: 'Theme', many: true, },
+  genre: { type: Types.Relationship, ref: 'Genre', many: true, },
   //image,
-  synopsis: { type: types.Markdown, },
-  cinematography: { type: types.Markdown, },
-  pointsForDiscussion: { type: types.Markdown, label: 'Points for discussion', },
-  externalLinks: { type: types.Markdown, label: 'External links', },
-  furtherReading: { type: types.Markdown, label: 'Further reading', },
+  synopsis: { type: Types.Markdown, },
+  cinematography: { type: Types.Markdown, },
+  pointsForDiscussion: { type: Types.Markdown, label: 'Points for discussion', },
+  externalLinks: { type: Types.Markdown, label: 'External links', },
+  furtherReading: { type: Types.Markdown, label: 'Further reading', },
 });
 
 Film.track = true;

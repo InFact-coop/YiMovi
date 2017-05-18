@@ -1,5 +1,5 @@
 const keystone = require('keystone');
-const types = keystone.Field.Types;
+const Types = keystone.Field.Types;
 
 const Genre = new keystone.List('Genre', {
   autokey: { from: 'name', path: 'key', unique: true, },
@@ -8,7 +8,7 @@ const Genre = new keystone.List('Genre', {
 
 Genre.add({
   name: { type: String, required: true, },
-  description: { type: types.Markdown, required: false, },
+  description: { type: Types.Textarea, required: false, },
   //image: { type: types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
 });
 
