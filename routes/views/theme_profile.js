@@ -1,6 +1,6 @@
 const keystone = require('keystone');
 const Theme = keystone.list('Theme');
-const Movie = keystone.list('Film');
+const Movie = keystone.list('Movie');
 
 exports = module.exports = (req, res) => {
 
