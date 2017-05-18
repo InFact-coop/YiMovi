@@ -2,4 +2,7 @@ extends ../layouts/base
 
 block content
     h1=movie.name
-    h2=movie.director.name
+    h2=director.name
+    p=themes.map(({ name, }) => name).join(', ')
+    p=genres.map(({ name, }) => name).join(', ')
+      

@@ -1,6 +1,7 @@
 const keystone = require('keystone');
 const Movie = keystone.list('Film');
-const Director = keystone.list('Director');
+
+const getMovieDetails = require('./../helpers/getMovieDetails.js');
 
 exports = module.exports = (req, res) => {
 
@@ -9,6 +10,9 @@ exports = module.exports = (req, res) => {
   view.on('init', next => {
     const locals = res.locals;
     locals.movie = {};
+    locals.director = {};
+    locals.genre = [];
+    locals.themes = [];
 
     Movie.model.findOne({ key: req.params.name, }).exec((err, movie) => {
 
@@ -16,14 +20,13 @@ exports = module.exports = (req, res) => {
 
       locals.movie = movie;
 
-      Director.model.findOne({ _id: movie.director, }).exec((DirectorErr, director) => {
+      getMovieDetails(movie, (detailsErr, details) => {
 
-        if (DirectorErr) return next(DirectorErr);
-
-        locals.movie.director = director;
-
+        if (detailsErr) return next(detailsErr);
+        locals.director = details.director;
+        locals.themes = details.themes;
+        locals.genres = details.genres;
         next();
-
       });
     });
   });
