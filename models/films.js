@@ -8,6 +8,7 @@ const Film = new keystone.List('Film', {
 
 Film.add({
   name: { type: String, required: true, },
+  name_chn: { type: String, label: 'Chinese title', },
   director: { type: types.Relationship, ref: 'Director', },
   year: { type: Number, },
   duration: { type: Number, label: 'duration (mins)', },
