@@ -1,6 +1,6 @@
 const keystone = require('keystone');
 const Genre = keystone.list('Genre');
-const Movie = keystone.list('Film');
+const getMoviesBy = require('./../helpers/getMoviesBy.js');
 
 exports = module.exports = (req, res) => {
 
@@ -9,6 +9,7 @@ exports = module.exports = (req, res) => {
   view.on('init', next => {
     const locals = res.locals;
     locals.genre = {};
+    locals.movies = [];
 
     Genre.model.findOne({ key: req.params.name, }).exec((err, genre) => {
 
@@ -16,15 +17,12 @@ exports = module.exports = (req, res) => {
 
       locals.genre = genre;
 
-      Movie.model.find({ genre: { _id: genre.id, }, }).exec((movieErr, movies) => {
-
-        if (movieErr) return next(movieErr);
-
-        locals.genre.movies = movies;
-
+      getMoviesBy('genre', genre, (moviesErr, movies) => {
+        if (moviesErr) return next(moviesErr);
+        locals.movies = locals.movies.concat(movies);
         next();
-
       });
+
     });
   });
 
