@@ -1,6 +1,8 @@
 const keystone = require('keystone');
+
 const Theme = keystone.list('Theme');
-const Movie = keystone.list('Movie');
+
+const getMoviesBy = require('./../helpers/getMoviesBy.js');
 
 exports = module.exports = (req, res) => {
 
@@ -10,22 +12,19 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.theme = {};
     locals.title = '';
+    locals.movies = [];
 
     Theme.model.findOne({ key: req.params.name, }).exec((err, theme) => {
 
       if (err) return next(err);
 
       locals.theme = theme;
+      locals.title = `Movies about ${theme.name} | YiMovi`;
 
-      Movie.model.find(({ themes: { _id: theme.id, }, })).exec((movieErr, movies) => {
-
-        if (movieErr) return next(movieErr);
-
-        locals.theme.movies = movies;
-        locals.title = `Films about ${theme.name} | YiMovi`;
-
+      getMoviesBy('themes', theme, (moviesErr, movies) => {
+        if (moviesErr) return next(moviesErr);
+        locals.movies = locals.movies.concat(movies || []);
         next();
-
       });
     });
   });

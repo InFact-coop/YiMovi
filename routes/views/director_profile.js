@@ -21,7 +21,7 @@ exports = module.exports = (req, res) => {
 
       getMoviesBy('director', director, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);
-        locals.movies = locals.movies.concat(movies);
+        locals.movies = locals.movies.concat(movies || []);
         next();
       });
     });
