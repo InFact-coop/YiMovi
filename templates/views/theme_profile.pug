@@ -1,4 +1,9 @@
 extends ../layouts/base
 
 block content
+    - var movies = theme.movies;
     h1=theme.name
+    ul
+      each movie in movies
+        li: a(href=`/movies/${movie.key}`)
+          =movie.name

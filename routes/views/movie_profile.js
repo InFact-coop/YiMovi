@@ -1,5 +1,6 @@
 const keystone = require('keystone');
 const Movie = keystone.list('Film');
+const Director = keystone.list('Director');
 
 exports = module.exports = (req, res) => {
 
@@ -14,7 +15,16 @@ exports = module.exports = (req, res) => {
       if (err) return next(err);
 
       locals.movie = movie;
-      next();
+
+      Director.model.findOne({ _id: movie.director, }).exec((DirectorErr, director) => {
+
+        if (DirectorErr) return next(DirectorErr);
+
+        locals.movie.director = director;
+
+        next();
+
+      });
     });
   });
 

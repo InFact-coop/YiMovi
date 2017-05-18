@@ -1,5 +1,6 @@
 const keystone = require('keystone');
 const Genre = keystone.list('Genre');
+const Movie = keystone.list('Film');
 
 exports = module.exports = (req, res) => {
 
@@ -14,7 +15,16 @@ exports = module.exports = (req, res) => {
       if (err) return next(err);
 
       locals.genre = genre;
-      next();
+
+      Movie.model.find({ genre: { _id: genre.id, }, }).exec((movieErr, movies) => {
+
+        if (movieErr) return next(movieErr);
+
+        locals.genre.movies = movies;
+
+        next();
+
+      });
     });
   });
 
