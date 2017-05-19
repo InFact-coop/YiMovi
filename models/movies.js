@@ -15,7 +15,7 @@ Movie.add({
   summary: { type: Types.Markdown, },
   themes: { type: Types.Relationship, ref: 'Theme', many: true, },
   genre: { type: Types.Relationship, ref: 'Genre', many: true, },
-  //image,
+  image: { type: Types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
   synopsis: { type: Types.Markdown, },
   cinematography: { type: Types.Markdown, },
   pointsForDiscussion: { type: Types.Markdown, label: 'Points for discussion', },
