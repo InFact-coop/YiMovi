@@ -5,7 +5,11 @@
   "main": "web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node web.js"
+    "start": "node web.js",
+    "build_tachyons": "cd tachyons && npm i && npm run build && cd .. && node copy_tachyons.js",
+    "deploy_tachyons": "git checkout -B deploy && git merge master && npm run commit_tachyons && git push heroku deploy:master -f",
+    "deploy": "git checkout -B deploy && git merge master && git push heroku deploy:master -f",
+    "commit_tachyons": "npm run build_tachyons && git add -f public/tachyons.min.css && git commit -m \"deploy\""
   },
   "repository": {
     "type": "git",

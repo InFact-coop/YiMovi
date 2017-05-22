@@ -7,10 +7,11 @@ html
         
         title= title || 'Chinese Medical Humanities Film - YiMovi'
         link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
-                  
-        block css
+        link(rel="stylesheet", href="/tachyons.min.css")
+        
         block head
-    body
+    
+    body.avenir
                             
         block intro
         include ../partials/header.pug
