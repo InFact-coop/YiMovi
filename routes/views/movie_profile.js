@@ -1,35 +1,36 @@
 const keystone = require('keystone');
 const Movie = keystone.list('Movie');
 
-const getMovieDetails = require('./../helpers/getMovieDetails.js');
-
 exports = module.exports = (req, res) => {
 
   const view = new keystone.View(req, res);
 
   view.on('init', next => {
+
     const locals = res.locals;
+
     locals.movie = {};
     locals.director = {};
-    locals.genre = [];
+    locals.genres = [];
     locals.themes = [];
 
-    Movie.model.findOne({ key: req.params.name, }).exec((err, movie) => {
+    Movie.model.findOne({ key: req.params.name, })
+      .populate('director')
+      .populate('themes')
+      .populate('genre')
+      .exec((err, movie) => {
 
-      if (err) return next(err);
+        if (err) return next(err);
 
-      locals.movie = movie;
+        locals.movie = movie;
+        locals.director = movie.director;
+        locals.themes = movie.themes;
+        locals.genres = movie.genre;
 
-      getMovieDetails(movie, (detailsErr, details) => {
-
-        if (detailsErr) return next(detailsErr);
-        locals.director = details.director;
-        locals.themes = details.themes;
-        locals.genres = details.genres;
         locals.title = `${movie.name} ${movie.name_chn || ''} | YiMovi movie profile`;
+
         next();
       });
-    });
   });
 
   view.render('movie_profile');
