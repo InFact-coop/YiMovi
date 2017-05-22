@@ -23,9 +23,12 @@
   "devDependencies": {
     "copy-files": "^0.1.0",
     "immutable-css-cli": "^1.1.1",
+    "install": "^0.10.1",
     "normalize.css": "^7.0.0",
-    "tachyons-modules": "^1.1.10",
+    "npm": "^4.6.1",
     "tachyons-cli": "^1.0.11",
+    "tachyons-flexbox": "^2.0.5",
+    "tachyons-modules": "^1.1.10",
     "watch": "^1.0.2"
   },
   "contributors": [

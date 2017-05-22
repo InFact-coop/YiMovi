@@ -1074,6 +1074,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
 .relative { position: relative; }
 .absolute { position: absolute; }
 .fixed { position: fixed; }
+.sticky { position: -webkit-sticky; position: sticky; }
 /*
 
     OPACITY
@@ -1959,6 +1960,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
   adjust these values to suit your needs.
 
 */
+.z--1 { z-index: -1; }
 .z-0 { z-index: 0; }
 .z-1 { z-index: 1; }
 .z-2 { z-index: 2; }
@@ -2297,6 +2299,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .relative-ns { position: relative; }
  .absolute-ns { position: absolute; }
  .fixed-ns { position: fixed; }
+ .sticky-ns { position: -webkit-sticky; position: sticky; }
  .rotate-45-ns { -webkit-transform: rotate( 45deg ); transform: rotate( 45deg ); }
  .rotate-90-ns { -webkit-transform: rotate( 90deg ); transform: rotate( 90deg ); }
  .rotate-135-ns { -webkit-transform: rotate( 135deg ); transform: rotate( 135deg ); }
@@ -2712,6 +2715,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .relative-m { position: relative; }
  .absolute-m { position: absolute; }
  .fixed-m { position: fixed; }
+ .sticky-m { position: -webkit-sticky; position: sticky; }
  .rotate-45-m { -webkit-transform: rotate( 45deg ); transform: rotate( 45deg ); }
  .rotate-90-m { -webkit-transform: rotate( 90deg ); transform: rotate( 90deg ); }
  .rotate-135-m { -webkit-transform: rotate( 135deg ); transform: rotate( 135deg ); }
@@ -3127,6 +3131,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .relative-l { position: relative; }
  .absolute-l { position: absolute; }
  .fixed-l { position: fixed; }
+ .sticky-l { position: -webkit-sticky; position: sticky; }
  .rotate-45-l { -webkit-transform: rotate( 45deg ); transform: rotate( 45deg ); }
  .rotate-90-l { -webkit-transform: rotate( 90deg ); transform: rotate( 90deg ); }
  .rotate-135-l { -webkit-transform: rotate( 135deg ); transform: rotate( 135deg ); }
