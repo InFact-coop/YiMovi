@@ -1,13 +1,14 @@
 const keystone = require('keystone');
 const Types = keystone.Field.Types;
 
-const Film = new keystone.List('Film', {
+const Movie = new keystone.List('Movie', {
   autokey: { from: 'name', path: 'key', unique: true, },
-  label: 'Films',
+  label: 'Movies',
 });
 
-Film.add({
+Movie.add({
   name: { type: String, required: true, },
+  name_chn: { type: String, label: 'Chinese title', },
   director: { type: Types.Relationship, ref: 'Director', },
   year: { type: Number, },
   duration: { type: Number, label: 'duration (mins)', },
@@ -22,5 +23,5 @@ Film.add({
   furtherReading: { type: Types.Markdown, label: 'Further reading', },
 });
 
-Film.track = true;
-Film.register();
+Movie.track = true;
+Movie.register();

@@ -1,0 +1,12 @@
+mixin link(text, obj)
+    a(href=`/${text}/${obj.key}`)
+      =obj.name
+      
+mixin linkMovie(movie)
+    +link('movies', movie)
+    
+mixin linkTheme(theme)
+    +link('themes', theme)
+    
+mixin linkGenre(genre)
+    +link('genres', genre)

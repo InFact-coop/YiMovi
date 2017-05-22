@@ -1,0 +1,9 @@
+extends ../layouts/base
+include ../mixins/links
+
+block content
+    ul
+      each movie in movies
+        li
+          +linkMovie(movie)
+        
