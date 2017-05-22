@@ -20,10 +20,10 @@ block content
     
     section#summary
       +listCollection("theme", themes)
-      +listCollection("genre", genres)    
-      p!=movie.summary.html
+      +listCollection("genre", genres)
+      +sectionParagraph(movie.summary.html)    
       
-    section#video
+    section#video.pv3
       +sectionHeading("Video")
       #video-container.h5.bg-gray
       

@@ -5,6 +5,14 @@ mixin sectionHeading(text)
 mixin subHeading(text)
     h3.f5.ma0.ttu
       =text
+      
+mixin sectionParagraph(body)
+    - var stripped = body.replace(/<[^>]*>/g, "").slice(0, 200).trim() + '...'
+    div.sectionParagraph
+      p.ma0=stripped
+      p.ma0.dn!=body.replace(/<p>/, '').replace("</p>", "")
+      a.underline.light-red.showMore.pointer
+        ="Show more"
 
 mixin link(text, obj)
     a(href=`/${text}/${obj.key}`)
