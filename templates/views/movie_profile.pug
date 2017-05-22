@@ -38,10 +38,20 @@ block content
         +sectionParagraph(movie.summary.html)    
       
     //- video section
-    if movie.video
+    if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
       section#video.pv3.flex.flex-column
+        - var videoLink = movie.video
+        - var videoId = movie.video.split('/').pop();
+        - var baseUrl = "https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&quality=hd&captions=n&chapterId=0"
+        - var iframeUrl = baseUrl + "&videoId=" + videoId
         +sectionHeading("Video")
-        #video-container.h5.bg-gray.w-100.mw7.self-center
-      
-     
+        div.relative.pb-video.pt2.h0
+          iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=iframeUrl frameborder="0" scrolling="no")
+            
+    //- synopsis
+    section#synopsis
+      if movie.synopsis.html.length
+        +sectionHeading("Synopsis")
+        +sectionParagraph(movie.synopsis.html)
+           
                 

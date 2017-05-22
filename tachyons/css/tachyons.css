@@ -1622,6 +1622,8 @@ code, .code { font-family: Consolas, monaco, monospace; }
 .mh5 { margin-left: 4rem; margin-right: 4rem; }
 .mh6 { margin-left: 8rem; margin-right: 8rem; }
 .mh7 { margin-left: 16rem; margin-right: 16rem; }
+/* custom */
+.pb-video { padding-bottom: 56%; }
 /*
    NEGATIVE MARGINS
 
