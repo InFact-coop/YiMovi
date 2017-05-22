@@ -29,6 +29,7 @@
 
 
 /* Modules */
+@import './_animate';
 @import './_box-sizing';
 @import './_aspect-ratios';
 @import './_images';

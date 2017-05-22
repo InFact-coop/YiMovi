@@ -237,6 +237,7 @@ template { display: none; }
  */
 [hidden] { display: none; }
 /* Modules */
+.trans-h { transition: height 2s; }
 /*
  
   BOX SIZING
