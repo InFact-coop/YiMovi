@@ -1,9 +1,8 @@
 mixin sectionHeading(text)
-    h2.f4.f3-ns.fw6.lh-title.ma0.ttu.light-red
-      =text
+    h2.f4.f3-ns.fw6.lh-title.ma2.ttu.light-red=text
 
 mixin subHeading(text)
-    h3.f5.ma0.ttu
+    h3.f5.ma2.ttu
       =text
       
 mixin sectionParagraph(body)
@@ -36,7 +35,7 @@ mixin listCollection(type, list)
       +subHeading("Genres")
     else 
       +subHeading("Themes")
-    ul.list.pl0.flex.flex-wrap
+    ul.list.pa0.flex.flex-wrap.ma0
       for item in list
         if type === 'genre'
           +pill(item.name, `genres/${item.key}`)

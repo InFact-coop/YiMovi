@@ -81,6 +81,8 @@
   .min-vh-100-ns { min-height: 100vh; }
   .h-auto-ns { height: auto; }
   .h-inherit-ns { height: inherit; }
+  /* custom */
+  .h6-ns { height: 24rem; }
 }
 
 @media (--breakpoint-medium) {

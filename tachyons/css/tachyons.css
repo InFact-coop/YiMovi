@@ -2295,7 +2295,8 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .vh-100-ns { height: 100vh; }
  .min-vh-100-ns { min-height: 100vh; }
  .h-auto-ns { height: auto; }
- .h-inherit-ns { height: inherit; }
+ .h-inherit-ns { height: inherit; }/* custom */
+ .h6-ns { height: 24rem; }
  .tracked-ns { letter-spacing: .1em; }
  .tracked-tight-ns { letter-spacing: -.05em; }
  .tracked-mega-ns { letter-spacing: .25em; }
