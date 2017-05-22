@@ -2,11 +2,20 @@ extends ../layouts/base
 include ../mixins/links
 
 block content
-    h1=movie.name
-    h2=director.name
-    p
-      for theme in themes
-        +linkTheme(theme)
-    p
-      for genre in genres
-        +linkGenre(genre) 
+
+  - var titleDetails = [ movie.name_chn, movie.year, `${movie.duration}mins`, ]
+  - var filteredDetilas = titleDetails.filter(detail => detail);
+  
+  #title-container.bg-light-red.h4.h5-ns.pa3
+    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns=movie.name
+    h2.light-silver.f4.f2-ns.fw5.lh-title.ma0=`(${filteredDetilas.join(', ')})`
+    h2.light-silver.f4.f2-ns.fw5.lh-title.ma0=`By ${director.name}`
+    
+  img(src=movie.image)
+      
+  p
+    for theme in themes
+      +linkTheme(theme)
+  p
+    for genre in genres
+      +linkGenre(genre) 
