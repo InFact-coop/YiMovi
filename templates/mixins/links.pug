@@ -1,6 +1,18 @@
+mixin sectionHeading(text)
+    h2.f4.f3-ns.fw6.lh-title.ma0.ttu.light-red
+      =text
+
+mixin subHeading(text)
+    h3.f5.ma0.ttu
+      =text
+
 mixin link(text, obj)
     a(href=`/${text}/${obj.key}`)
       =obj.name
+      
+mixin pill(text, link)
+    li.bg-gray.pa2.br-pill.dim.ma1: a.no-underline.white(href=`/${link}`)
+      =text      
       
 mixin linkMovie(movie)
     +link('movies', movie)
@@ -10,3 +22,16 @@ mixin linkTheme(theme)
     
 mixin linkGenre(genre)
     +link('genres', genre)
+    
+mixin listCollection(type, list)
+    if type === 'genre'
+      +subHeading("Genres")
+    else 
+      +subHeading("Themes")
+    ul.list.pl0.flex.flex-wrap
+      for item in list
+        if type === 'genre'
+          +pill(item.name, `genres/${item.key}`)
+        else
+          +pill(item.name, `themes/${item.key}`)
+        
