@@ -22,6 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "copy-files": "^0.1.0",
+    "css-max-height-scale": "^1.0.6",
     "immutable-css-cli": "^1.1.1",
     "install": "^0.10.1",
     "normalize.css": "^7.0.0",

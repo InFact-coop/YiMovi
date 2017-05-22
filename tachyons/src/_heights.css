@@ -122,3 +122,6 @@
   .h-auto-l { height: auto; }
   .h-inherit-l { height: inherit; }
 }
+
+/* custom heights for image container */
+.h6 { height: 24rem; }

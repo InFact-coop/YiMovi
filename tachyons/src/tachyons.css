@@ -27,6 +27,8 @@
 /* External Library Includes */
 @import './_normalize';
 
+@import "./../node_modules/css-max-height-scale/css/css-max-height-scale.css";
+
 
 /* Modules */
 @import './_animate';
