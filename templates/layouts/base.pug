@@ -1,5 +1,4 @@
-include ../mixins/flash-messages
- 
+include ../mixins/flash-messages 
 doctype html
 html
     head
@@ -8,12 +7,14 @@ html
         
         title= title || 'Chinese Medical Humanities Film - YiMovi'
         link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+        link(rel="stylesheet", href="tachyons.min.css")
         
         block css
         block head
     body
                             
         block intro
+        include ../partials/header.pug
             
         +flash-messages(messages)
         
