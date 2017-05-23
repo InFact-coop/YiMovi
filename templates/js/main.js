@@ -5,7 +5,7 @@
       return el.className = el.className.replace(' dn', '');
     }
 
-    el.className = el.className + ' dn'.trim();
+    (el.className = el.className + ' dn').trim();
   }
 
   function toggleShowMore(el) {
