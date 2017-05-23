@@ -9,7 +9,7 @@ const Theme = new keystone.List('Theme', {
 Theme.add({
   name: { type: String, required: true, },
   description: { type: Types.Textarea, required: false, },
-  //image: { type: types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
+  image: { type: Types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
 });
 
 Theme.track = true;

@@ -2,11 +2,46 @@ extends ../layouts/base
 include ../mixins/links
 
 block content
-    h1=movie.name
-    h2=director.name
-    p
-      for theme in themes
-        +linkTheme(theme)
-    p
-      for genre in genres
-        +linkGenre(genre) 
+
+  - const titleDetails = [ movie.name_chn, movie.year, movie.duration, ]
+  - const filteredDetails = titleDetails.filter(detail => detail);
+  - const detailsFormatted = `${filteredDetails.join(', ')}${movie.duration ? 'mins' : ''}`
+  - const directorFormatted = director.name ? `By ${director.name}` : ''
+  - const detailsWithDirector = [ detailsFormatted, directorFormatted, ].filter(detail => detail).join(' | ')
+  
+  #title-container.bg-light-red.h4.pa3.shadow-5.z-1
+    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns=movie.name
+    
+    unless !detailsWithDirector.length
+      h2.light-silver.f4.f3-ns.fw5.lh-title.ma0=detailsWithDirector   
+  
+  if movie.image.secure_url
+    #image-container.flex.flex-column.justify-center.h5.h6-ns
+      img.z--1.self-center(src=movie.image.secure_url alt=movie.name title=movie.name height=movie.image.height width=movie.image.width)
+      
+  #menu.pa3.bg-light-red.h3.shadow-5.z-1.sticky.top-0
+    p.ttu.ma0.f4.f3-ns.fw6="Summary"
+    
+  #content.pa3.pa4-ns.mw7
+        
+    //- summary section
+    section#summary
+      
+      if themes.length
+        +listCollection("theme", themes)
+        
+      if genres.length
+        +listCollection("genre", genres)
+        
+      if movie.summary.html.length
+        +subHeading("intro")
+        +sectionParagraph(movie.summary.html)    
+      
+    //- video section
+    if movie.video
+      section#video.pv3.flex.flex-column
+        +sectionHeading("Video")
+        #video-container.h5.bg-gray.w-100.mw7.self-center
+      
+     
+                

@@ -1,4 +1,4 @@
-/*! TACHYONS v4.6.1 | http://tachyons.io */
+/*! TACHYONS v4.7.3 | http://tachyons.io */
 
 /*
  *
@@ -27,8 +27,11 @@
 /* External Library Includes */
 @import './_normalize';
 
+@import "./../node_modules/css-max-height-scale/css/css-max-height-scale.css";
+
 
 /* Modules */
+@import './_animate';
 @import './_box-sizing';
 @import './_aspect-ratios';
 @import './_images';
