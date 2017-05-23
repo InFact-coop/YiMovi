@@ -8,8 +8,8 @@ mixin subHeading(text)
 mixin sectionParagraph(body)
     - var stripped = body.replace(/<[^>]*>/g, "").slice(0, 200).trim() + '...'
     div.sectionParagraph
-      p.ma0=stripped
-      p.ma0.dn!=body.replace(/<p>/, '').replace("</p>", "")
+      p.ma0.initial-text=stripped
+      p.ma0.dn.hidden-text!=body.replace(/<p>/, '').replace("</p>", "")
       a.underline.light-red.showMore.pointer
         ="Show more"
 

@@ -1,5 +1,10 @@
 (function() {
 
+  function includesClass(el, className) {
+    if (!el.className) return false;
+    return el.className.split(' ').indexOf(className) > -1;
+  }
+
   function toggleDisplay(el) {
     if (el.className.split(' ').indexOf('dn') > -1) {
       return el.className = el.className.replace(' dn', '');
@@ -15,10 +20,22 @@
     el.textContent = 'Show more';
   }
 
+  function filterByClassName(arr, className) {
+    return arr.find(function(node) {
+      return includesClass(node, className);
+    });
+  }
+
   function readMore(event) {
     var parent = event.target.parentNode;
-    var initialParagraph = parent.childNodes[1];
-    var hiddenParagraph = parent.childNodes[3];
+    var childArray = [];
+    parent.childNodes.forEach(function(node) {
+      childArray.push(node);
+    });
+
+    var initialParagraph = filterByClassName(childArray, 'initial-text');
+    var hiddenParagraph = filterByClassName(childArray, 'hidden-text');
+
     toggleDisplay(initialParagraph);
     toggleDisplay(hiddenParagraph);
     toggleShowMore(event.target);
