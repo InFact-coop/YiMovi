@@ -42,6 +42,18 @@ block content
       section#video.pv3.flex.flex-column
         +sectionHeading("Video")
         #video-container.h5.bg-gray.w-100.mw7.self-center
+          
+    //- gallery section
+    if movie.gallery
+      section#gallery.pv3.flex.flex-column
+        +sectionHeading("Image gallery")
+        div.slider-holder.w-90.h4.bg-yellow.center.mt0.overflow-hidden
+          span#slider-image-1
+          span#slider-image-2
+          .image-holder.bg-red.h4.relative.cb.trans-slide
+            img.slider-image.fl.ma0.pa0.relative(src=movie.gallery[0].secure_url)
+            img.slider-image.fl.ma0.pa0.relative(src=movie.gallery[1].secure_url)
+          .button-holder
+            a.slider-change(href="#slider-image-1")
+            a.slider-change(href="#slider-image-2")
       
-     
-                
