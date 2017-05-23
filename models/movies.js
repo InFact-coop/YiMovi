@@ -18,6 +18,7 @@ Movie.add({
   image: { type: Types.CloudinaryImage, publicID: 'slug', autoCleanup: true, label: 'Main image', },
   gallery: { type: Types.CloudinaryImages, label: 'Image gallery', },
   video: { type: String, label: 'Video link', },
+  videoLinks: { type: Types.Markdown, label: 'More video links', },
   synopsis: { type: Types.Markdown, },
   cinematography: { type: Types.Markdown, },
   pointsForDiscussion: { type: Types.Markdown, label: 'Points for discussion', },

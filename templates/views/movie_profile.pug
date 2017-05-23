@@ -45,8 +45,12 @@ block content
         - var baseUrl = "https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&quality=hd&captions=n&chapterId=0"
         - var iframeUrl = baseUrl + "&videoId=" + videoId
         +sectionHeading("Video")
-        div.relative.pb-video.pt2.h0
+        div.relative.pb-video.pt2.h0.ma2
           iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=iframeUrl frameborder="0" scrolling="no")
+        if movie.videoLinks.html
+          +subHeading("More video links")
+          #video-links.pa2
+            !=movie.videoLinks.html
             
     //- synopsis
     section#synopsis
