@@ -166,6 +166,9 @@
   padding-right: var(--spacing-extra-extra-extra-large);
 }
 
+/* custom */
+.ma05 { margin: 0.125rem; }
+
 .ma0  {  margin: var(--spacing-none); }
 .ma1 {  margin: var(--spacing-extra-small); }
 .ma2  {  margin: var(--spacing-small); }
@@ -949,4 +952,3 @@
     margin-right: var(--spacing-extra-extra-extra-large);
   }
 }
-

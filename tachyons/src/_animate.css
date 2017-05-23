@@ -1,5 +1,3 @@
-.trans-h {
-  transition: height 2s;
-}
+.trans-h { transition: height 2s; }
 
-.trans-slide { transition: left 2s; }
+.trans-slide { transition: left 1s; }

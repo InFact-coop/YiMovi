@@ -1,6 +1,10 @@
 extends ../layouts/base
 include ../mixins/links
 
+block css
+  style
+    include ../css/custom.css
+
 block content
 
   - const titleDetails = [ movie.name_chn, movie.year, movie.duration, ]
@@ -47,13 +51,18 @@ block content
     if movie.gallery
       section#gallery.pv3.flex.flex-column
         +sectionHeading("Image gallery")
-        div.slider-holder.w-90.h4.bg-yellow.center.mt0.overflow-hidden
-          span#slider-image-1
-          span#slider-image-2
-          .image-holder.bg-red.h4.relative.cb.trans-slide
-            img.slider-image.fl.ma0.pa0.relative(src=movie.gallery[0].secure_url)
-            img.slider-image.fl.ma0.pa0.relative(src=movie.gallery[1].secure_url)
-          .button-holder
-            a.slider-change(href="#slider-image-1")
-            a.slider-change(href="#slider-image-2")
+        div.slider-holder.w-90.h4.h6-ns.bg-yellow.center.mt0.overflow-hidden.tc
+          - let index = 1
+          each img in movie.gallery  
+            span(id=`slider-image-${index}`)
+            - index++
+          .image-holder.bg-gray.h4.h6-ns.relative.cb.trans-slide(style=`width:${100 * movie.gallery.length}%`)
+            each img in movie.gallery
+              .slider-image.fl.ma0.pa0.relative.h-100(style=`width:${100 / movie.gallery.length}%`)
+                img.h-100.w-100(src=img.secure_url style=`max-width:${img.width}px max-height:${img.height}px`)
+          .button-holder.relative.top--1
+            - let linkIndex = 1
+            each img in movie.gallery
+              a.slider-change.h05.w05.bg-white.br-100.ma05.dib(href=`#slider-image-${linkIndex}`)
+              - linkIndex++
       
