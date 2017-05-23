@@ -6,7 +6,7 @@
   }
 
   function toggleDisplay(el) {
-    if (el.className.split(' ').indexOf('dn') > -1) {
+    if (includesClass(el, 'dn')) {
       return el.className = el.className.replace(' dn', '');
     }
 
@@ -21,9 +21,9 @@
   }
 
   function filterByClassName(arr, className) {
-    return arr.find(function(node) {
+    return arr.filter(function(node) {
       return includesClass(node, className);
-    });
+    })[0];
   }
 
   function readMore(event) {

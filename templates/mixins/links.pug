@@ -6,7 +6,7 @@ mixin subHeading(text)
       =text
       
 mixin sectionParagraph(body)
-    - var stripped = body.replace(/<[^>]*>/g, "").slice(0, 200).trim() + '...'
+    - const stripped = body.replace(/<[^>]*>/g, "").slice(0, 200).trim() + '...'
     div.sectionParagraph
       p.ma0.initial-text=stripped
       p.ma0.dn.hidden-text!=body.replace(/<p>/, '').replace("</p>", "")
