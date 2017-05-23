@@ -8,3 +8,8 @@
 #slider-image-8:target ~ .image-holder { left: -700%; }
 #slider-image-9:target ~ .image-holder { left: -800%; }
 #slider-image-10:target ~ .image-holder { left: -900%; }
+
+#video-links p {
+  margin: 0;
+  font-size: 0.875rem;
+}
