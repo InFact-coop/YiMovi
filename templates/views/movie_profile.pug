@@ -1,6 +1,10 @@
 extends ../layouts/base
 include ../mixins/links
 
+block css
+  style
+    include ../css/custom.css
+
 block content
 
   - const titleDetails = [ movie.name_chn, movie.year, movie.duration, ]
@@ -42,6 +46,23 @@ block content
       section#video.pv3.flex.flex-column
         +sectionHeading("Video")
         #video-container.h5.bg-gray.w-100.mw7.self-center
+          
+    //- gallery section
+    if movie.gallery
+      section#gallery.pv3.flex.flex-column
+        +sectionHeading("Image gallery")
+        div.slider-holder.w-90.h4.h6-ns.bg-yellow.center.mt0.overflow-hidden.tc
+          - let index = 1
+          each img in movie.gallery  
+            span(id=`slider-image-${index}`)
+            - index++
+          .image-holder.bg-gray.h4.h6-ns.relative.cb.trans-slide(style=`width:${100 * movie.gallery.length}%`)
+            each img in movie.gallery
+              .slider-image.fl.ma0.pa0.relative.h-100(style=`width:${100 / movie.gallery.length}%`)
+                img.h-100.w-100(src=img.secure_url style=`max-width:${img.width}px max-height:${img.height}px`)
+          .button-holder.relative.top--1
+            - let linkIndex = 1
+            each img in movie.gallery
+              a.slider-change.h05.w05.bg-white.br-100.ma05.dib(href=`#slider-image-${linkIndex}`)
+              - linkIndex++
       
-     
-                
