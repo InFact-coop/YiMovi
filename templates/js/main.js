@@ -5,7 +5,7 @@
       return el.className = el.className.replace(' dn', '');
     }
 
-    el.className = el.className + ' dn';
+    el.className = el.className + ' dn'.trim();
   }
 
   function toggleShowMore(el) {
@@ -25,8 +25,8 @@
   }
 
   var links = document.querySelectorAll('.showMore');
+
   links.forEach(function(link) {
     link.addEventListener('click', readMore);
   });
-
 })();
