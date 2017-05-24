@@ -45,4 +45,11 @@ mixin listCollection(type, list)
           +pill(item.name, `genres/${item.key}`)
         else
           +pill(item.name, `themes/${item.key}`)
+          
+mixin section(movie, section, title)
+    if movie[section].html.length
+      hr.ma3
+      section(id=`${section}`)
+        +sectionHeading(title || section)
+        +sectionParagraph(movie[section].html)
         
