@@ -11,9 +11,15 @@ block content
   - const notesSection = sections.some(s => movie[s].html && movie[s].html.length)
   
   //- title and main details
-  - const movieTitle = movie.name + (movie.name_chn.length ? ` | ${movie.name_chn}` : '')
+  - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
   
   #title-container.bg-light-red.pa2.pa3-ns.shadow-5.z-1
+    p#breadcrumbs.white
+      a.white.mr2(href="/") home
+      |  |  
+      a.white.mh2(href="/movies") all movies   
+      |  | 
+      span.fw6.mh2=movieTitle
     h1.ttu.f3.f2-ns.fw7.lh-title.ma0.mb1.mb3-ns
       span=movie.name
       if (movie.name_chn)
