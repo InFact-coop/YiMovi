@@ -13,31 +13,32 @@ block content
   //- title and main details
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
   
-  #title-container.bg-light-red.pa2.pa3-ns.shadow-5.z-1
-    p#breadcrumbs.white
+  #title-container.bg-dark-blue.pa1.pl2.pa2-ns.pl3-ns.shadow-5.z-1
+      
+    p#breadcrumbs.white.f7.lh-copy
       a.white.mr2(href="/") home
       |  |  
       a.white.mh2(href="/movies") all movies   
       |  | 
       span.fw6.mh2=movieTitle
-    h1.ttu.f3.f2-ns.fw7.lh-title.ma0.mb1.mb3-ns
-      span=movie.name
-      if (movie.name_chn)
-        span.ml3.light-silver=movie.name_chn
+      
+    h2.light-gray.f5.f4-ns.fw5.lh-title
+      if movie.year
+        span.mr2=movie.year
+      if movie.duration
+        span.mh2=movie.duration + ' mins'
+      if movie.director && (movie.year || movie.duration)
+        span.mh2 |
+      if movie.director
+        span.mh2=`Director ${director.name}`
+      if movie.director.name_chn
+        span.ma0.sans-serif=`${director.name_chn}`
     
-    if movie.year
-      h2.light-silver.f5.f4-ns.fw5.lh-title.ma0=`Year: ${movie.year}`
-      
-    if movie.duration 
-      h2.light-silver.f5.f4-ns.fw5.lh-title.ma0=`Duration: ${movie.duration}mins`
-      
-    if director.name
-      h2.light-silver.f5.f4-ns.fw5.lh-title.ma0
-        | Director: 
-        span=director.name
-        span.light-gray.ml2=director.name_chn
-        
-  #menu.pa2.pa3-ns.bg-light-red.shadow-5.z-1.sticky.top-0
+    if (movie.name_chn)
+      h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name_chn
+    h1.light-gray.ttu.f2.f1-ns.fw7.lh-title.ma0=movie.name
+
+  #menu.pa2.pa3-ns.bg-dark-blue.shadow-5.z-1.sticky.top-0.light-gray.o-90
     - let menuPoints = [ "summary", ]
     - if (movie.video) menuPoints.push("video")
     - if (movie.gallery.length) menuPoints.push("images")
@@ -49,7 +50,7 @@ block content
       li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
       each point in menuPoints
         li.ttu.mr4.f6.f5-ns.fw6.pv2.pv0-ns
-          a(href=`#anchor-${point.split(' ')[0]}`).menuPoint.black.no-underline.bw2.pointer=point
+          a(href=`#anchor-${point.split(' ')[0]}`).menuPoint.light-gray.no-underline.bw2.pointer=point
   
   a#anchor-summary(tabindex="-1")  
         
@@ -60,17 +61,17 @@ block content
   #content.pa3.pa4-ns.mw7
         
     //- summary section
-    section#summary
+    section#summary.flex.justify-start
       
       if themes.length
-        +listCollection("theme", themes)
+        #themes.ml2
+          +listCollection("theme", themes)
         
       if genres.length
-        +listCollection("genre", genres)
-        
-      if movie.summary.html.length
-        +subHeading("intro")
-        +sectionParagraph(movie.summary.html) 
+        #genres.ml5
+          +listCollection("genre", genres)
+          
+    +section(movie, "summary", "intro")
       
     //- video section
     if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
@@ -86,7 +87,7 @@ block content
           iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=iframeUrl frameborder="0" scrolling="no")
         if movie.videoLinks.html
           +subHeading("More video links")
-          #video-links.pa2.f6.f5-ns
+          #video-links.ph2.f6.f5-ns
             !=movie.videoLinks.html
     
     //- gallery section
