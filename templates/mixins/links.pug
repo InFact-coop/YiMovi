@@ -6,10 +6,14 @@ mixin subHeading(text)
       =text
       
 mixin sectionParagraph(body)
-    - const stripped = body.replace(/<[^>]*>/g, "").slice(0, 200).trim() + '...'
-    div.sectionParagraph
-      p.ma2.f6.f5-ns.initial-text=stripped
-      p.ma2.f6.f5-ns.dn.hidden-text!=body.replace(/<p>/, '').replace("</p>", "")
+    - const length = 200
+    - const stripped = body.replace(/<[^>]*>/g, "")
+    - const shortened = stripped.slice(0, length).trim() 
+    - const withEllipsis = shortened + (stripped.length <= length ? '' : '...')
+    .sectionParagraph
+      .initial-text
+        p.ma2.f6.f5-ns.initial-text=withEllipsis
+      .hidden-text.ma2.f6.f5-ns.dn!=body
       a.f6.f5-ns.underline.light-red.showMore.pointer.ma2
         ="Show more"
 
