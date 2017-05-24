@@ -40,7 +40,7 @@ block content
       p.ma0.f5.fw7.ttu=movie.name
       img.h1.mr3(src="/arrow_drop_down_black.svg")
     ul#drop-down.list.flex-ns.flex-column.flex-row-ns.pa0.pv2.justify-start.ma0.dn
-      li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name
+      li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
       each point in menuPoints
         li.ttu.mr4.f6.f5-ns.fw6.pv2.pv0-ns
           a(href=`#anchor-${point.split(' ')[0]}`).menuPoint.black.no-underline.bw2.pointer=point
