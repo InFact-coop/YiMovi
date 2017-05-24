@@ -8,9 +8,9 @@ mixin subHeading(text)
 mixin sectionParagraph(body)
     - const stripped = body.replace(/<[^>]*>/g, "").slice(0, 200).trim() + '...'
     div.sectionParagraph
-      p.ma0.initial-text=stripped
-      p.ma0.dn.hidden-text!=body.replace(/<p>/, '').replace("</p>", "")
-      a.underline.light-red.showMore.pointer
+      p.ma2.f6.f5-ns.initial-text=stripped
+      p.ma2.f6.f5-ns.dn.hidden-text!=body.replace(/<p>/, '').replace("</p>", "")
+      a.f6.f5-ns.underline.light-red.showMore.pointer.ma2
         ="Show more"
 
 mixin link(text, obj)
@@ -18,7 +18,7 @@ mixin link(text, obj)
       =obj.name
       
 mixin pill(text, link)
-    li.bg-gray.pa2.br-pill.dim.ma1: a.no-underline.white(href=`/${link}`)
+    li.bg-gray.pa2.br-pill.dim.ma1: a.no-underline.white.f6.f5-ns(href=`/${link}`)
       =text      
       
 mixin linkMovie(movie)
