@@ -1,6 +1,10 @@
 extends ../layouts/base
 include ../mixins/links
 
+block css
+  style
+    include ../css/custom.css
+
 block content
   
   //- title and main details
@@ -47,10 +51,41 @@ block content
         +sectionParagraph(movie.summary.html)    
       
     //- video section
-    if movie.video
+    if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
       section#video.pv3.flex.flex-column
+        - const videoLink = movie.video
+        - const videoId = movie.video.split('/').pop();
+        - const baseUrl = "https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&quality=hd&captions=n&chapterId=0"
+        - const iframeUrl = baseUrl + "&videoId=" + videoId
         +sectionHeading("Video")
-        #video-container.h5.bg-gray.w-100.mw7.self-center
-      
-     
-                
+        div.relative.pb-video.pt2.h0
+          iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=iframeUrl frameborder="0" scrolling="no")
+        if movie.videoLinks.html
+          +subHeading("More video links")
+          #video-links.pa2
+            !=movie.videoLinks.html
+          
+    //- gallery section
+    if movie.gallery
+      section#gallery.pv3.flex.flex-column
+        +sectionHeading("Image gallery")
+        div.slider-holder.w-90.h4.h6-ns.bg-yellow.center.mt0.overflow-hidden.tc
+          - let index = 1
+          each img in movie.gallery  
+            span(id=`slider-image-${index}`)
+            - index++
+          .image-holder.bg-gray.h4.h6-ns.relative.cb.trans-slide(style=`width:${100 * movie.gallery.length}%`)
+            each img in movie.gallery
+              .slider-image.fl.ma0.pa0.relative.h-100(style=`width:${100 / movie.gallery.length}%`)
+                img.h-100.w-100(src=img.secure_url style=`max-width:${img.width}px max-height:${img.height}px`)
+          .button-holder.relative.top--1
+            - let linkIndex = 1
+            each img in movie.gallery
+              a.slider-change.h05.w05.bg-white.br-100.ma05.dib(href=`#slider-image-${linkIndex}`)
+              - linkIndex++
+
+    //- synopsis
+    section#synopsis
+      if movie.synopsis.html.length
+        +sectionHeading("Synopsis")
+        +sectionParagraph(movie.synopsis.html)
