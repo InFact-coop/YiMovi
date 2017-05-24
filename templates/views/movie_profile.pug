@@ -1,5 +1,5 @@
 extends ../layouts/base
-include ../mixins/links
+include ../mixins/snippets
 
 block css
   style
@@ -29,8 +29,11 @@ block content
         span.light-gray.ml2=director.name_chn
         
   #menu.pa3.bg-light-red.shadow-5.z-1.sticky.top-0
-    p.ttu.ma0.f6.f5-ns.fw6="Summary"
-  
+    - const menuPoints = [ "summary", "video", "images", "screening notes", ]
+    ul.list.flex.flex-row.pa0.justify-start.ma0
+      each point in menuPoints
+        li.menuPoint.ttu.mr4.f6.f5-ns.fw6.pointer.bw2=point
+          
   if movie.image.secure_url
     #image-container.flex.flex-column.justify-center.h5.h6-ns.bg-light-gray.z--1
       img.self-center(src=movie.image.secure_url alt=movie.name title=movie.name height=movie.image.height width=movie.image.width)
@@ -48,26 +51,28 @@ block content
         
       if movie.summary.html.length
         +subHeading("intro")
-        +sectionParagraph(movie.summary.html)    
+        +sectionParagraph(movie.summary.html) 
       
     //- video section
     if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
-      section#video.pv3.flex.flex-column
+      hr.ma3
+      section#video.flex.flex-column
         - const videoLink = movie.video
         - const videoId = movie.video.split('/').pop();
         - const baseUrl = "https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&quality=hd&captions=n&chapterId=0"
         - const iframeUrl = baseUrl + "&videoId=" + videoId
         +sectionHeading("Video")
-        div.relative.pb-video.pt2.h0
+        div.relative.pb-video.h0
           iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=iframeUrl frameborder="0" scrolling="no")
         if movie.videoLinks.html
           +subHeading("More video links")
-          #video-links.pa2
+          #video-links.pa2.f6.f5-ns
             !=movie.videoLinks.html
-          
+    
     //- gallery section
-    if movie.gallery
-      section#gallery.pv3.flex.flex-column
+    if movie.gallery.length
+      hr.ma3    
+      section#gallery.pv1.flex.flex-column
         +sectionHeading("Image gallery")
         div.slider-holder.w-90.h4.h6-ns.bg-yellow.center.mt0.overflow-hidden.tc
           - let index = 1
@@ -83,9 +88,20 @@ block content
             each img in movie.gallery
               a.slider-change.h05.w05.bg-white.br-100.ma05.dib(href=`#slider-image-${linkIndex}`)
               - linkIndex++
-
+    
+    // - context section
+    +section(movie, 'context')
+    
     //- synopsis
-    section#synopsis
-      if movie.synopsis.html.length
-        +sectionHeading("Synopsis")
-        +sectionParagraph(movie.synopsis.html)
+    +section(movie, 'synopsis')
+        
+    //- cinematography
+    +section(movie, 'cinematography')
+        
+    //- points for discussion
+    +section(movie, 'pointsForDiscussion', 'points for discussion')
+        
+    //- external links
+    +section(movie, 'externalLinks', 'external links')
+
+        
