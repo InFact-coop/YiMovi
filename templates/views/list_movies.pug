@@ -1,9 +1,18 @@
 extends ../layouts/base
+include ../mixins/movie-listing
 include ../mixins/snippets
 
 block content
-    ul
-      each movie in movies
-        li
-          +linkMovie(movie)
+  #title-container.bg-dark-green.pa3.shadow-5.z-1.light-gray
+    p#breadcrumbs.white.f7.lh-copy
+      a.white.mr2(href="/") home
+      |  |  
+      span.fw6.mh2 all movies
+    
+    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns Films
+    h2.ttu.f4.f3-ns.fw6.lh-title.ma0 By title
+  ul.list.pl0.ma0
+    each movie in movies
+      li
+       +movieListing(movie)
         
