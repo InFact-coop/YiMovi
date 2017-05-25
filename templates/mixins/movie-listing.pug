@@ -9,7 +9,7 @@ mixin mainDetails(movie, director)
       p.light-gray.f7.f4-ns.fw5.lh-title.ma0
         span=`Director ${director.name} `
         if movie.director.name_chn
-          span.ma0.sans-serif=`${director.name_chn}`
+          span.ma0.sans-serif=director.name_chn
       
 mixin titleEn(title)
   - const truncated = title.slice(0, 25) + (title.length > 25 ? '...' : '')
