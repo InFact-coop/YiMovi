@@ -35,6 +35,6 @@ mixin detailsContainer(movie)
 mixin movieListing(movie)
   - const url = `/movies/${movie.key}`
   a.no-underline(href=url title=movie.name)
-    .movieListing.bg-blue.white.bt.b--light-silver.bw2.h4.h5-ns.flex.hover-bg-blue
+    .movieListing.bg-blue.white.bt.b--light-silver.bw2.h4.h5-ns.flex.hover-bg-dark-blue
       +imgContainer(movie)
       +detailsContainer(movie)
