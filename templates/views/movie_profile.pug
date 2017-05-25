@@ -9,7 +9,7 @@ block css
 block content
   
   - const sections = [ "context", "synopsis", "cinematography", "pointsForDiscussion", "externalLinks", ]
-  - const notesSection = sections.some(s => movie[s].html && movie[s].html.length)
+  - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
   
   //- title and main details
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
@@ -43,7 +43,7 @@ block content
     - let menuPoints = [ "summary", ]
     - if (movie.video) menuPoints.push("video")
     - if (movie.gallery.length) menuPoints.push("images")
-    - if (notesSection) menuPoints.push("screening notes")
+    - if (hasNotesSection) menuPoints.push("screening notes")
     #menu-mobile.flex.flex-row.justify-between.pointer.dn-ns
       p.ma0.f5.fw7.ttu=movie.name
       img.h1.mr3(src="/arrow_drop_down_black.svg")
@@ -112,7 +112,7 @@ block content
             each _, linkIndex in imgArray
               +galleryLink(linkIndex)
 
-    if notesSection
+    if hasNotesSection
       a#anchor-screening(tabindex="-1")
         
     // - context section

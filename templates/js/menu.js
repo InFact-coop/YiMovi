@@ -1,6 +1,6 @@
 (function() {
 
-  function toggleDropDown() {
+  function toggleDropDownVisibility() {
     var dropDown = document.querySelector('#drop-down');
     var dropDownClasses = dropDown.className.split(' ');
     if (dropDownClasses.indexOf('dn') < 0) {
@@ -14,7 +14,7 @@
   }
 
   function menuPointClick(e) {
-    toggleDropDown();
+    toggleDropDownVisibility();
     var point = e.target;
     menuPoints.forEach(function(menuPoint) {
       if (menuPoint.textContent === point.textContent) {
@@ -33,6 +33,6 @@
   var mobileMenu = document.querySelector('#menu-mobile');
 
   if (mobileMenu) {
-    mobileMenu.addEventListener('click', toggleDropDown);
+    mobileMenu.addEventListener('click', toggleDropDownVisibility);
   }
 })();
