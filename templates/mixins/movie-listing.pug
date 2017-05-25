@@ -19,6 +19,7 @@ mixin titleEn(title)
 mixin movieListing(movie)
     .movieListing.bg-green.white.bt.b--light-silver.bw2.h4.flex
       .listingImg.w4.w5-ns.h5-ns.bg-dark-green(style="flex: 1 0 0")
+        img.h-100(src=movie.image.secure_url)
       .listingDetails.h-100.pl1.flex.flex-column.justify-around(style="flex: 1 0 0")
         +mainDetails(movie, movie.director)
         .listingTitles
