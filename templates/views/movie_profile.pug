@@ -16,12 +16,7 @@ block content
   
   #title-container.bg-dark-blue.pa1.pl2.pa2-ns.pl3-ns.shadow-5.z-1
       
-    p#breadcrumbs.white.f7.lh-copy
-      a.white.mr2(href="/") home
-      |  |  
-      a.white.mh2(href="/movies") all movies   
-      |  | 
-      span.fw6.mh2=movieTitle
+    +breadcrumbs("movies", movie.name)
       
     h2.light-gray.f5.f4-ns.fw5.lh-title
       if movie.year
