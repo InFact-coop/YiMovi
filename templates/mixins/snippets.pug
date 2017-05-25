@@ -1,8 +1,8 @@
 mixin sectionHeading(text)
-    h2.f4.f3-ns.fw6.lh-title.ma2.ttu.light-red=text
+    h2.f4.f3-ns.fw6.lh-title.ma2.ttu.dark-blue=text
 
 mixin subHeading(text)
-    h3.f5.ma2.ttu
+    h3.f5.ma2.ttu.light-silver
       =text
       
 mixin sectionParagraph(body)
@@ -14,15 +14,15 @@ mixin sectionParagraph(body)
       .initial-text
         p.ma2.f6.f5-ns.initial-text=withEllipsis
       .hidden-text.ma2.f6.f5-ns.dn!=body
-      a.f6.f5-ns.underline.light-red.showMore.pointer.ma2
+      a.f6.f5-ns.underline.dark-blue.showMore.pointer.ma2.dim
         ="Show more"
 
 mixin link(text, obj)
     a(href=`/${text}/${obj.key}`)
       =obj.name
       
-mixin pill(text, link)
-    li.bg-gray.pa2.br-pill.dim.ma1: a.no-underline.white.f6.f5-ns(href=`/${link}`)
+mixin profileLink(text, link)
+    li.pa1.dim.ma1: a.light-silver.f6.f5-ns.w-auto(href=`/${link}`)
       =text      
       
 mixin linkMovie(movie)
@@ -39,10 +39,17 @@ mixin listCollection(type, list)
       +subHeading("Genres")
     else 
       +subHeading("Themes")
-    ul.list.pa0.flex.flex-wrap.ma0
+    ul.list.pa0.ma0
       for item in list
         if type === 'genre'
-          +pill(item.name, `genres/${item.key}`)
+          +profileLink(item.name, `genres/${item.key}`)
         else
-          +pill(item.name, `themes/${item.key}`)
+          +profileLink(item.name, `themes/${item.key}`)
+          
+mixin section(movie, section, title)
+    if movie[section].html && movie[section].html.length
+      hr.ma3
+      section(id=`${section}`)
+        +sectionHeading(title || section)
+        +sectionParagraph(movie[section].html)
         
