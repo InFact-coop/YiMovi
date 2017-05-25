@@ -128,7 +128,11 @@ block content
     +section(movie, 'pointsForDiscussion', 'points for discussion')
         
     //- external links
-    +section(movie, 'externalLinks', 'external links')
+    if movie.externalLinks.html.length
+      hr.ma3
+      +sectionHeading("External links")
+      #external-links.ph2.f6.f5-ns
+        !=movie.externalLinks.html
     
 block scripts
   script
