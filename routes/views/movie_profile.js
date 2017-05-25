@@ -20,7 +20,11 @@ exports = module.exports = (req, res) => {
       .populate('genre')
       .exec((err, movie) => {
 
-        if (err) return next(err);
+        if (err || !movie) {
+          res.locals.title = '404 error | YiMovi';
+          res.status(404).render('errors/404');
+          return;
+        }
 
         locals.movie = movie;
         locals.director = movie.director;
