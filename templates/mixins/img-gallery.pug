@@ -1,0 +1,11 @@
+mixin sliderHolder(index)
+  span(id=`slider-image-${index + 1}`)
+
+mixin galleryImage(img, length)
+  - const imgStyle=`max-width:${img.width}px max-height:${img.height}px`
+  .slider-image.fl.h-100.ma0.pa0.relative(style=`width:${100 / length}%`)
+    img.h-100.w-100(src=img.secure_url style=imgStyle)
+
+mixin galleryLink(index)
+  - const href = `#slider-image-${index + 1}`
+  a.slider-change.h05.w05.ma05.bg-white.br-100.dib(href=href)
