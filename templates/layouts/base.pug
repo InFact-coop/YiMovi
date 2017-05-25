@@ -1,6 +1,6 @@
 include ../mixins/flash-messages 
 doctype html
-html
+html.h-100
     head
         meta(charset="utf-8")
         meta(name="viewport", content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width")
@@ -9,19 +9,22 @@ html
         link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
         link(rel="stylesheet", href="/tachyons.min.css")
         
+        block css
+        
         block head
     
-    body.avenir
-                            
-        block intro
-        include ../partials/header.pug
-            
-        +flash-messages(messages)          
-            
-        block content
+    body.avenir.min-h-100.flex.flex-column
         
-        #footer Powered by <a href='http://keystonejs.com', target='_blank'>KeystoneJS</a>.
-        script
-          include ../js/main.js
+        #main-content.flex-auto                        
+          block intro
+          include ../partials/header.pug
+            
+          +flash-messages(messages) 
+
+          block content
+          
+        include ../partials/footer.pug
+        
+        block scripts
         
         

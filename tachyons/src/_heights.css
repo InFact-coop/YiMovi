@@ -33,6 +33,9 @@
 
 /* Height Scale */
 
+/* custom */
+.h05 { height: 0.5rem; }
+
 .h1 { height: 1rem; }
 .h2 { height: 2rem; }
 .h3 { height: 4rem; }
@@ -127,3 +130,8 @@
 
 /* custom heights for image container */
 .h6 { height: 24rem; }
+.max-h-5 { max-height: 16rem; }
+
+@media (--breakpoint-not-small) {
+  .max-h-6-ns { max-height: 24rem; }
+}

@@ -1,47 +1,140 @@
 extends ../layouts/base
-include ../mixins/links
+include ../mixins/snippets
+include ../mixins/img-gallery.pug
+
+block css
+  style
+    include ../css/custom.css
 
 block content
-
-  - const titleDetails = [ movie.name_chn, movie.year, movie.duration, ]
-  - const filteredDetails = titleDetails.filter(detail => detail);
-  - const detailsFormatted = `${filteredDetails.join(', ')}${movie.duration ? 'mins' : ''}`
-  - const directorFormatted = director.name ? `By ${director.name}` : ''
-  - const detailsWithDirector = [ detailsFormatted, directorFormatted, ].filter(detail => detail).join(' | ')
   
-  #title-container.bg-light-red.h4.pa3.shadow-5.z-1
-    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns=movie.name
-    
-    unless !detailsWithDirector.length
-      h2.light-silver.f4.f3-ns.fw5.lh-title.ma0=detailsWithDirector   
+  - const sections = [ "context", "synopsis", "cinematography", "pointsForDiscussion", "externalLinks", ]
+  - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
   
-  if movie.image.secure_url
-    #image-container.flex.flex-column.justify-center.h5.h6-ns
-      img.z--1.self-center(src=movie.image.secure_url alt=movie.name title=movie.name height=movie.image.height width=movie.image.width)
+  //- title and main details
+  - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
+  
+  #title-container.bg-dark-blue.pa1.pl2.pa2-ns.pl3-ns.shadow-5.z-1
       
-  #menu.pa3.bg-light-red.h3.shadow-5.z-1.sticky.top-0
-    p.ttu.ma0.f4.f3-ns.fw6="Summary"
+    p#breadcrumbs.white.f7.lh-copy
+      a.white.mr2(href="/") home
+      |  |  
+      a.white.mh2(href="/movies") all movies   
+      |  | 
+      span.fw6.mh2=movieTitle
+      
+    h2.light-gray.f5.f4-ns.fw5.lh-title
+      if movie.year
+        span.mr2=movie.year
+      if movie.duration
+        span.mh2=movie.duration + ' mins'
+      if movie.director && (movie.year || movie.duration)
+        span.mh2 |
+      if movie.director
+        span.mh2=`Director ${director.name}`
+      if movie.director.name_chn
+        span.ma0.sans-serif=`${director.name_chn}`
+    
+    if (movie.name_chn)
+      h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name_chn
+    h1.light-gray.ttu.f2.f1-ns.fw7.lh-title.ma0=movie.name
+
+  #menu.pa2.pa3-ns.bg-dark-blue.shadow-5.z-1.sticky.top-0.light-gray.o-90
+    - let menuPoints = [ "summary", ]
+    - if (movie.video) menuPoints.push("video")
+    - if (movie.gallery.length) menuPoints.push("images")
+    - if (hasNotesSection) menuPoints.push("screening notes")
+    #menu-mobile.flex.flex-row.justify-between.pointer.dn-ns
+      p.ma0.f5.fw7.ttu=movie.name
+      img.h1.mr3(src="/arrow_drop_down_black.svg")
+    ul#drop-down.list.flex-ns.flex-column.flex-row-ns.pa0.pv2.justify-start.ma0.dn
+      li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
+      each point in menuPoints
+        li.ttu.mr4.f6.f5-ns.fw6.pv2.pv0-ns
+          a(href=`#anchor-${point.split(' ')[0]}`).menuPoint.light-gray.no-underline.bw2.pointer=point
+  
+  a#anchor-summary(tabindex="-1")  
+        
+  if movie.image.secure_url
+    #image-container.flex.flex-column.justify-center.h5.h6-ns.bg-light-gray.z--1
+      img.self-center.max-h-5.max-h-6-ns(src=movie.image.secure_url alt=movie.name title=movie.name height=movie.image.height width=movie.image.width)
     
   #content.pa3.pa4-ns.mw7
         
     //- summary section
-    section#summary
+    section#summary.flex.justify-start
       
       if themes.length
-        +listCollection("theme", themes)
+        #themes.ml2
+          +listCollection("theme", themes)
         
       if genres.length
-        +listCollection("genre", genres)
-        
-      if movie.summary.html.length
-        +subHeading("intro")
-        +sectionParagraph(movie.summary.html)    
+        #genres.ml5
+          +listCollection("genre", genres)
+          
+    +section(movie, "summary", "intro")
       
     //- video section
-    if movie.video
-      section#video.pv3.flex.flex-column
+    if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
+      a#anchor-video(tabindex="-1")
+      hr.ma3
+      section#video.flex.flex-column
+        - const videoLink = movie.video
+        - const videoId = movie.video.split('/').pop();
+        - const baseUrl = "https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&quality=hd&captions=n&chapterId=0"
+        - const iframeUrl = baseUrl + "&videoId=" + videoId
         +sectionHeading("Video")
-        #video-container.h5.bg-gray.w-100.mw7.self-center
+        div.relative.pb-video.h0
+          iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=iframeUrl frameborder="0" scrolling="no")
+        if movie.videoLinks.html
+          +subHeading("More video links")
+          #video-links.ph2.f6.f5-ns
+            !=movie.videoLinks.html
+    
+    //- gallery section
+    if movie.gallery.length
+      hr.ma3
+      a#anchor-images(tabindex="-1")    
+      section#gallery.pv1.flex.flex-column
+      - const imgArray = movie.gallery
+      - const imgHolderStyle = `width:${100 * imgArray.length}%`
       
-     
-                
+      section#gallery.pv3.flex.flex-column
+        +sectionHeading("Image gallery")
+        // - image slider
+        div.slider-holder.w-90.h4.h6-ns.center.mt0.overflow-hidden.tc
+          each _, spanIndex in imgArray  
+            +sliderHolder(spanIndex)
+          .image-holder.bg-gray.h4.h6-ns.relative.cb.trans-slide(style=imgHolderStyle)
+            each img in imgArray
+              +galleryImage(img, imgArray.length)
+          .button-holder.relative.top--1
+            each _, linkIndex in imgArray
+              +galleryLink(linkIndex)
+
+    if hasNotesSection
+      a#anchor-screening(tabindex="-1")
+        
+    // - context section
+    +section(movie, 'context')
+    
+    //- synopsis
+    +section(movie, 'synopsis')
+        
+    //- cinematography
+    +section(movie, 'cinematography')
+        
+    //- points for discussion
+    +section(movie, 'pointsForDiscussion', 'points for discussion')
+        
+    //- external links
+    if movie.externalLinks.html.length
+      hr.ma3
+      +sectionHeading("External links")
+      #external-links.ph2.f6.f5-ns
+        !=movie.externalLinks.html
+    
+block scripts
+  script
+    include ../js/main.js
+    include ../js/menu.js
