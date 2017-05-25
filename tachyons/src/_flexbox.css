@@ -220,3 +220,14 @@
   .order-8-l { order: 8; }
   .order-last-l { order: 99999; }
 }
+
+/* custom */
+.flex-1-0-0 { flex: 1 0 0; }
+.flex-2-0-0 { flex: 2 0 0; }
+.flex-3-0-0 { flex: 3 0 0; }
+
+@media (--breakpoint-not-small) {
+  .flex-1-0-0-ns { flex: 1 0 0; }
+  .flex-2-0-0-ns { flex: 2 0 0; }
+  .flex-3-0-0-ns { flex: 3 0 0; }
+}
