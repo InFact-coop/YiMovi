@@ -1,7 +1,27 @@
+mixin mainDetails(movie, director)
+  .mainDetails
+    p.light-gray.f7.f4-ns.fw5.lh-title.ma0.mt1
+      if movie.year
+        span.mr1=movie.year
+      if movie.duration
+        span.mh1=movie.duration + ' mins'
+    if movie.director.name
+      p.light-gray.f7.f4-ns.fw5.lh-title.ma0
+        span=`Director ${director.name} `
+        if movie.director.name_chn
+          span.ma0.sans-serif=`${director.name_chn}`
+      
+mixin titleEn(title)
+  - const truncated = title.slice(0, 25) + (title.length > 25 ? '...' : '')
+  h2.ttu.ma0.f5.f2-ns.lh-title
+    =truncated
+
 mixin movieListing(movie)
-    .movieListing.bg-green.white.bt.b--light-silver.bw2.flex
-      .listingImg.w5.bg-dark-green.h5
-      .listingDetails.h-100
-        if movie.name_chn
-          h2.ttu.ma0.lh-copy=movie.name_chn
-        h2.ttu.ma0.lh-title=movie.name
+    .movieListing.bg-green.white.bt.b--light-silver.bw2.h4.flex
+      .listingImg.w4.w5-ns.h5-ns.bg-dark-green(style="flex: 1 0 0")
+      .listingDetails.h-100.pl1.flex.flex-column.justify-around(style="flex: 1 0 0")
+        +mainDetails(movie, movie.director)
+        .listingTitles
+          if movie.name_chn
+            h2.ttu.ma0.f5.f1-ns.lh-copy.sans-serif=movie.name_chn
+          +titleEn(movie.name)
