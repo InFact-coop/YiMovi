@@ -21,7 +21,7 @@ mixin titleChn(movie)
     h2.ttu.ma0.f5.f2-ns.pb2-ns.lh-copy.sans-serif=movie.name_chn
     
 mixin imgContainer(movie)
-  .listingImg.bg-dark-blue.flex-1-0-0
+  .listingImg.bg-dark-gray.flex-1-0-0
     if movie.image.secure_url
       img.h-100.w-100.mw6(src=movie.image.secure_url)
       
@@ -31,10 +31,20 @@ mixin detailsContainer(movie)
     .listingTitles.overflow-hidden
       +titleChn(movie)
       +titleEn(movie.name)
+      
+mixin movieListingContainer(movie, page)
+  case page
+    when "themes"
+      .movieListing.bt.bw2.h4.h5-ns.flex.pointer.b--light-silver.white.bg-light-purple.hover-bg-purple
+        block
+    default
+      .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white.bg-blue.hover-bg-dark-blue
+        block
 
-mixin movieListing(movie)
+mixin movieListing(movie, page)
   - const url = `/movies/${movie.key}`
   a.no-underline(href=url title=movie.name)
-    .movieListing.bg-blue.white.bt.b--light-silver.bw2.h4.h5-ns.flex.hover-bg-dark-blue
+    +movieListingContainer(movie, page)
       +imgContainer(movie)
       +detailsContainer(movie)
+      

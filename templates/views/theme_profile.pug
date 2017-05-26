@@ -1,9 +1,26 @@
 extends ../layouts/base
 include ../mixins/snippets
+include ../mixins/movie-listing
 
 block content
-    h1=theme.name
-    ul
-      each movie in movies
-        li
-          +linkMovie(movie)
+  #title-container.bg-purple.pa3.shadow-5.z-1.light-gray
+    
+    +breadcrumbs("themes", theme.name)
+    
+    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns=theme.name
+    
+    .description.w-70-ns
+      +sectionParagraph(theme.description, true)
+    
+    hr.ma3
+    
+    h2.ttu.f4.f3-ns.fw6.lh-title.ma0=`movies about ${theme.name}`
+    
+  ul.list.pl0.ma0
+    each movie in movies
+      li
+        +movieListing(movie, "themes")
+      
+  block scripts
+    script
+      include ../js/main.js
