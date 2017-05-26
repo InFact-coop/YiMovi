@@ -18,7 +18,7 @@ mixin sectionParagraph(body)
         ="Show more"
 
 mixin link(text, obj)
-    a(href=`/${text}/${obj.key}`)
+    a(href=`/${text}/${obj.key}`).white.f3.no-underline
       =obj.name
       
 mixin profileLink(text, link)

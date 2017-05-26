@@ -2,10 +2,14 @@ extends ../layouts/base
 include ../mixins/snippets
 
 mixin themeBox(theme)
-  .theme-box.h5.bg-light-purple.ba.bw2.b--gray.white.flex.flex-row
-    .img-container.w-50.bg-purple
-    .title-container.w-50
-      p=theme.name
+  - const url = `/themes/${theme.key}`
+  a.no-underline(href=url title=`Movies about ${theme.name}`)
+    div.theme-box.h4.h5-ns.bg-light-purple.ba.bw2.b--gray.white.flex.flex-row.pointer.hover-bg-purple
+      .img-container.w-50.bg-purple
+        if theme.image && theme.image.secure_url
+          img(src=theme.image.secure_url alt=theme.name)
+      .title-container.w-50
+        p.mt5.mt6-ns.ml2.ml3-ns.f4.f3-ns.fw6.ttu=theme.name
 
 block content
   
@@ -17,7 +21,7 @@ block content
       | browse themes
   
   .themes-list.w-100
-    ul.list.pl0.ma0.flex.flex-row.flex-wrap.w-100.bl.br.bw2.b--gray
+    ul.list.pl0.ma0.flex.flex-row.flex-wrap.w-100.ba.bw2.b--gray
       each theme in themes
         li.w-100.w-50-l
           +themeBox(theme)
