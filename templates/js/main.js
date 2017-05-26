@@ -42,7 +42,6 @@
   }
 
   var links = document.querySelectorAll('.showMore');
-
   links.forEach(function(link) {
     link.addEventListener('click', readMore);
   });

@@ -14,7 +14,7 @@ mixin sectionParagraph(body, isDarkTheme)
       .initial-text
         p.ma2.f6.f5-ns.initial-text=withEllipsis
       .hidden-text.ma2.f6.f5-ns.dn!=body
-      a.f6.f5-ns.underline.showMore.pointer.ma2.dim.dark-blue(style = isDarkTheme ? `color: white` : '')
+      a.f6.f5-ns.underline.showMore.pointer.ma2.dim.dark-blue(style = isDarkTheme ? `color: white` : '' id="show-more-link")
         ="Show more"
 
 mixin link(text, obj)
@@ -62,9 +62,9 @@ mixin breadcrumbs(type, page)
     if page  
       a.white.mh2(href=url)=linkText
     else
-      span.fw6.mh2=linkText 
+      span.fw6.mh2.ttu=linkText 
     if page 
       |  | 
-      span.fw6.mh2=page
+      span.fw6.mh2.ttu=page
   
         

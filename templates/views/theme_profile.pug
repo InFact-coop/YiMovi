@@ -9,8 +9,9 @@ block content
     
     h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns=theme.name
     
-    .description.w-70-ns
-      +sectionParagraph(theme.description, true)
+    if theme.description.html
+      .description.w-70-ns
+        +sectionParagraph(theme.description.html, true)
     
     hr.ma3
     
@@ -20,7 +21,8 @@ block content
     each movie in movies
       li
         +movieListing(movie, "themes")
-      
-  block scripts
-    script
-      include ../js/main.js
+        
+
+block scripts
+  script
+    include ../js/main.js
