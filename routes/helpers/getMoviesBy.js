@@ -3,6 +3,6 @@ const Movie = keystone.list('Movie');
 
 module.exports = (field, { id, }, cb) => {
 
-  Movie.model.find({ [field]: { _id: id, }, }).exec(cb);
+  Movie.model.find({ [field]: { _id: id, }, }).populate('director').exec(cb);
 
 };
