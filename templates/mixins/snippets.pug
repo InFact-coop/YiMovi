@@ -53,3 +53,18 @@ mixin section(movie, section, title)
         +sectionHeading(title || section)
         +sectionParagraph(movie[section].html)
         
+mixin breadcrumbs(type, page)
+  - const url = `/${type}`
+  - const linkText = `all ${type}`
+  p#breadcrumbs.white.f7.lh-copy
+    a.white.mr2(href="/") home
+    |  |
+    if page  
+      a.white.mh2(href=url)=linkText
+    else
+      span.fw6.mh2=linkText 
+    if page 
+      |  | 
+      span.fw6.mh2=page
+  
+        
