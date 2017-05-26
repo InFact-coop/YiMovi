@@ -5,7 +5,7 @@ mixin mainDetails(movie, director)
         span.mr1=movie.year
       if movie.duration
         span.mh1=movie.duration + ' mins'
-    if movie.director.name
+    if movie.director && movie.director.name
       p.light-gray.f7.f4-ns.fw5.lh-title.ma0
         span=`Director ${director.name} `
         if movie.director.name_chn
