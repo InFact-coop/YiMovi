@@ -46,14 +46,13 @@ block content
       li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
       each point in menuPoints
         li.ttu.mr4.f6.f5-ns.fw6.pv2.pv0-ns
-          a(href=`#anchor-${point.split(' ')[0]}`).menuPoint.light-gray.no-underline.bw2.pointer=point
+          a(href=`#anchor-${point.split(' ')[0]}` class="hover-white").menuPoint.light-gray.no-underline.bw2.pointer=point
   
   a#anchor-summary(tabindex="-1")  
         
   if movie.image.secure_url
     #image-container.flex.flex-column.justify-center.h4.h6-ns.bg-near-white.z--1
       span.h-100.contain.no-repeat.dib.w-100.self-center.mw7(style=`background-image:url("${movie.image.secure_url}"); background-repeat: no-repeat; background-position: center`)
-      //- img.self-center.max-h-5.max-h-6-ns(src=movie.image.secure_url alt=movie.name title=movie.name height=movie.image.height width=movie.image.width)
     
   #content.pa3.pa4-ns.mw7
         
