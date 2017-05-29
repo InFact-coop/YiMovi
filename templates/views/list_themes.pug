@@ -1,8 +1,27 @@
 extends ../layouts/base
 include ../mixins/snippets
 
+mixin themeBox(theme)
+  - const url = `/themes/${theme.key}`
+  a.no-underline(href=url title=`Movies about ${theme.name}`)
+    div.theme-box.h4.h5-ns.bg-light-purple.ba.bw2.b--light-silver.white.flex.flex-row.pointer.hover-bg-purple
+      .img-container.w-50.bg-purple.h-100
+        if theme.image && theme.image.secure_url
+          span.cover.dib.w-100.h-100(style=`background-image:url("${theme.image.secure_url}")`)
+      .title-container.w-50
+        p.mt5.mt6-ns.ml2.ml3-ns.f4.f3-ns.fw6.ttu=theme.name
+
 block content
-    ul
+  
+  #title-container.bg-purple.pa3.shadow-5.z-1.light-gray
+    
+    +breadcrumbs("themes")
+    
+    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns
+      | browse themes
+  
+  .themes-list.w-100
+    ul.list.pl0.ma0.flex.flex-row.flex-wrap.w-100.ba.bw2.b--light-silver.bg-light-silver
       each theme in themes
-        li
-          +linkTheme(theme)
+        li.w-100.w-50-l
+          +themeBox(theme)

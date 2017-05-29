@@ -8,7 +8,7 @@ const Theme = new keystone.List('Theme', {
 
 Theme.add({
   name: { type: String, required: true, },
-  description: { type: Types.Textarea, required: false, },
+  description: { type: Types.Markdown, required: false, },
   image: { type: Types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
 });
 

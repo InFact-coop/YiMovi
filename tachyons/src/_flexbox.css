@@ -221,7 +221,7 @@
   .order-last-l { order: 99999; }
 }
 
-/* custom */
+/* custom flex */
 .flex-1-0-0 { flex: 1 0 0; }
 .flex-2-0-0 { flex: 2 0 0; }
 .flex-3-0-0 { flex: 3 0 0; }
@@ -230,4 +230,16 @@
   .flex-1-0-0-ns { flex: 1 0 0; }
   .flex-2-0-0-ns { flex: 2 0 0; }
   .flex-3-0-0-ns { flex: 3 0 0; }
+}
+
+@media (--breakpoint-medium) {
+  .flex-1-0-0-m { flex: 1 0 0; }
+  .flex-2-0-0-m { flex: 2 0 0; }
+  .flex-3-0-0-m { flex: 3 0 0; }
+}
+
+@media (--breakpoint-large) {
+  .flex-1-0-0-l { flex: 1 0 0; }
+  .flex-2-0-0-l { flex: 2 0 0; }
+  .flex-3-0-0-l { flex: 3 0 0; }
 }
