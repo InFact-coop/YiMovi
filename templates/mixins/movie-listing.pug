@@ -5,7 +5,7 @@ mixin mainDetails(movie, director)
         span.mr1=movie.year
       if movie.duration
         span.mh1=movie.duration + ' mins'
-    if movie.director.name
+    if movie.director && movie.director.name
       p.light-gray.f7.f4-ns.fw5.lh-title.ma0
         span=`Director ${director.name} `
         if movie.director.name_chn
@@ -21,19 +21,30 @@ mixin titleChn(movie)
     h2.ttu.ma0.f5.f2-ns.pb2-ns.lh-copy.sans-serif=movie.name_chn
     
 mixin imgContainer(movie)
-  .listingImg.bg-dark-green.flex-1-0-0
-    img.h-100(src=movie.image.secure_url)
+  .listingImg.bg-dark-gray.flex-1-0-0
+    if movie.image.secure_url
+      img.h-100.w-100.mw6(src=movie.image.secure_url)
       
 mixin detailsContainer(movie)
-  .listingDetails.ph1.ph3-ns.flex.flex-column.flex-1-0-0.flex-3-0-0-ns.justify-around
+  .listingDetails.ph1.ph3-ns.flex.flex-column.flex-1-0-0.flex-1-0-0-ns.flex-1-0-0-m.flex-2-0-0-l.justify-around
     +mainDetails(movie, movie.director)
     .listingTitles.overflow-hidden
       +titleChn(movie)
       +titleEn(movie.name)
+      
+mixin movieListingContainer(movie, page)
+  case page
+    when "themes"
+      .movieListing.bt.bw2.h4.h5-ns.flex.pointer.b--light-silver.white.bg-light-purple.hover-bg-purple
+        block
+    default
+      .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white.bg-blue.hover-bg-dark-blue
+        block
 
-mixin movieListing(movie)
+mixin movieListing(movie, page)
   - const url = `/movies/${movie.key}`
   a.no-underline(href=url title=movie.name)
-    .movieListing.bg-green.white.bt.b--light-silver.bw2.h4.h5-ns.flex
+    +movieListingContainer(movie, page)
       +imgContainer(movie)
       +detailsContainer(movie)
+      

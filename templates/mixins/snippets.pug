@@ -5,7 +5,7 @@ mixin subHeading(text)
     h3.f5.ma2.ttu.light-silver
       =text
       
-mixin sectionParagraph(body)
+mixin sectionParagraph(body, isDarkTheme)
     - const length = 200
     - const stripped = body.replace(/<[^>]*>/g, "")
     - const shortened = stripped.slice(0, length).trim() 
@@ -14,7 +14,7 @@ mixin sectionParagraph(body)
       .initial-text
         p.ma2.f6.f5-ns.initial-text=withEllipsis
       .hidden-text.ma2.f6.f5-ns.dn!=body
-      a.f6.f5-ns.underline.dark-blue.showMore.pointer.ma2.dim
+      a.f6.f5-ns.underline.showMore.pointer.ma2.dim.dark-blue(style = isDarkTheme ? `color: white` : '' id="show-more-link")
         ="Show more"
 
 mixin link(text, obj)
@@ -52,4 +52,19 @@ mixin section(movie, section, title)
       section(id=`${section}`)
         +sectionHeading(title || section)
         +sectionParagraph(movie[section].html)
+        
+mixin breadcrumbs(type, page)
+  - const url = `/${type}`
+  - const linkText = `all ${type}`
+  p#breadcrumbs.white.f7.lh-copy
+    a.white.mr2(href="/") home
+    |  |
+    if page  
+      a.white.mh2(href=url)=linkText
+    else
+      span.fw6.mh2.ttu=linkText 
+    if page 
+      |  | 
+      span.fw6.mh2.ttu=page
+  
         

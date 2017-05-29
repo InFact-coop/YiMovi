@@ -9,7 +9,7 @@ const Director = new keystone.List('Director', {
 Director.add({
   name: { type: String, required: true, },
   name_chn: { type: String, label: 'Chinese name', },
-  description: { type: Types.Textarea, required: false, },
+  description: { type: Types.Markdown, required: false, },
   image: { type: Types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
 });
 
