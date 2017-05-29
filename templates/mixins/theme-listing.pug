@@ -1,7 +1,7 @@
 mixin themeBox(theme)
   - const url = `/themes/${theme.key}`
   a.no-underline(href=url title=`Movies about ${theme.name}`)
-    div.theme-box.h4.h5-ns.bg-light-purple.ba.bw2.b--light-silver.white.flex.flex-row.pointer.hover-bg-purple
+    div.theme-box.h4.h5-ns.bg-light-purple.ba.bw1.b--light-silver.white.flex.flex-row.pointer.hover-bg-purple
       .img-container.w-50.bg-purple.h-100
         if theme.image && theme.image.secure_url
           span.cover.dib.w-100.h-100(style=`background-image:url("${theme.image.secure_url}")`)
