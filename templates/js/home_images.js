@@ -8,16 +8,16 @@
       .getElementsByTagName('span');
 
     [].forEach.call(imageNodes, function(imageNode, imageIndex) {
-        imageNode.style.opacity = imageIndex === currentImageIndex ? 1 : 0;
-      })
-  }
+      imageNode.style.opacity = imageIndex === currentImageIndex ? 1 : 0;
+    });
+  };
 
   var changeImage = function() {
-    currentImageIndex = (currentImageIndex + 1) % NUM_IMAGES
-    setImageClasses()
-  }
+    currentImageIndex = (currentImageIndex + 1) % NUM_IMAGES;
+    setImageClasses();
+  };
 
-  setInterval(changeImage, 5 * 1000)
+  setInterval(changeImage, 5 * 1000);
 
-  changeImage()
-})()
+  changeImage();
+})();
