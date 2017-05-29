@@ -1,12 +1,12 @@
 mixin mainDetails(movie, director)
   .mainDetails
-    p.light-gray.f7.f4-ns.fw5.lh-title.ma0.mt1
+    p.light-silver.f7.f4-ns.fw5.lh-title.ma0.mt1
       if movie.year
         span.mr1=movie.year
       if movie.duration
         span.mh1=movie.duration + ' mins'
     if movie.director && movie.director.name
-      p.light-gray.f7.f4-ns.fw5.lh-title.ma0
+      p.light-silver.f7.f4-ns.fw5.lh-title.ma0
         span=`Director ${director.name} `
         if movie.director.name_chn
           span.ma0.sans-serif=director.name_chn
@@ -21,7 +21,7 @@ mixin titleChn(movie)
     h2.ttu.ma0.f5.f2-ns.pb2-ns.lh-copy.sans-serif=movie.name_chn
     
 mixin imgContainer(movie)
-  .listingImg.bg-dark-gray.flex-1-0-0
+  .listingImg.bg-dark-blue.flex-1-0-0
     if movie.image.secure_url
       +bgImage(movie.image.secure_url)
               
