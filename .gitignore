@@ -4,3 +4,4 @@ node_modules
 public/tachyons.min.css
 tachyons/css/tachyons*
 mongo_config.json
+npm-debug.log
