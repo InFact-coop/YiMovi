@@ -7,9 +7,11 @@
   --light-purple: #813195;
   --yellow: #d79028;
   --green: #488d41;
+  --dark-red: #751425;
+  --red: #942c4b;
 }
 
-.svg-fill--blue {        fill: var(--blue); }
-.svg-fill--light-purple {        fill: var(--light-purple); }
+.svg-fill--blue {          fill: var(--blue); }
+.svg-fill--light-purple {  fill: var(--light-purple); }
 .svg-fill--yellow {        fill: var(--yellow); }
-.svg-fill--green {        fill: var(--green); }
+.svg-fill--green {         fill: var(--green); }
