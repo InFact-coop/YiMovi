@@ -6,35 +6,52 @@ include ../mixins/theme-listing
 mixin aboutUsPara
   p.ph4.lh-copy
     block
-      
+
 mixin teamName
   p.ph4.lh-copy.ma0
     block
 
+
+
+mixin splashImage(imageNumber)
+  - const imageUrl = `background-image:url(/images/homepage/img${imageNumber}.jpg)`
+  span.transition-opacity.vh-75.w-100.cover.dib.absolute(style=imageUrl)
+
+
+
 block content
-    #titleContainer.pa4.bg-dark-red.light-gray
-      h1.f1.fw7.ttu.lh-title.ma0
-        | Chinese film and the cross-cultural medical humanities
-        
-    #imgContainer.vh-75.bg-black
-      span.h-100.w-100.cover.dib(style=`background-image:url(/images/homepage/img1.jpg) `)
-        
-    #bylineContainer.ph4.pv3.bg-red.light-gray.f2.fw7
-      p What can the Sinophone world offer to the Medical Humanities?
-      p What can the Medical and Health Humanities offer to China?
-      
-    if themes && themes.length
-      #themesSection
-        #themesTitle.ttu.bg-purple.ph4.pv3.light-gray.f2
-          h2.ma0 top themes
-      
-        #themesListings
-          include ../partials/themes_list
-      
-        a.no-underline(href="/themes" title="Browse all themes")  
-          #browseThemesBox.ttu.bg-purple.ph4.pv3.light-gray.f3.hover-bg-light-purple.pointer
-            h2.ma0 Browse all themes >>
-      
-      a.no-underline(href="/movies" title="Browse all movies")    
-        #browseThemesBox.ttu.bg-dark-blue.ph4.pv3.light-gray.f3.hover-bg-blue.pointer
-          h2.ma0 Browse all movies >>  
+  #titleContainer.pa4.bg-dark-red.light-gray
+    h1.f1.fw7.ttu.lh-title.ma0
+      | Chinese film and the cross-cultural medical humanities
+
+  #homeImageContainer.bg-black
+    +splashImage(1)
+    +splashImage(2)
+    +splashImage(3)
+    +splashImage(4)
+    +splashImage(5)
+
+  div.vh-75
+
+  #bylineContainer.ph4.pv3.bg-red.light-gray.f2.fw7
+    p What can the Sinophone world offer to the Medical Humanities?
+    p What can the Medical and Health Humanities offer to China?
+
+  if themes && themes.length
+    #themesSection
+      #themesTitle.ttu.bg-purple.ph4.pv3.light-gray.f2.relative
+        h2.ma0 top themes
+
+      #themesListings
+        include ../partials/themes_list
+
+      a.no-underline(href="/themes" title="Browse all themes")
+        #browseThemesBox.ttu.bg-purple.ph4.pv3.light-gray.f3.hover-bg-light-purple.pointer
+          h2.ma0 Browse all themes >>
+
+    a.no-underline(href="/movies" title="Browse all movies")
+      #browseThemesBox.ttu.bg-dark-blue.ph4.pv3.light-gray.f3.hover-bg-blue.pointer
+        h2.ma0 Browse all movies >>
+
+  script
+    include ../js/home_images.js
