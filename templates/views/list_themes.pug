@@ -20,8 +20,4 @@ block content
     h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns
       | browse themes
   
-  .themes-list.w-100
-    ul.list.pl0.ma0.flex.flex-row.flex-wrap.w-100.ba.bw2.b--light-silver.bg-light-silver
-      each theme in themes
-        li.w-100.w-50-l
-          +themeBox(theme)
+  include ../partials/themes_list
