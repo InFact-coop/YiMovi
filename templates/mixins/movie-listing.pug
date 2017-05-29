@@ -23,8 +23,8 @@ mixin titleChn(movie)
 mixin imgContainer(movie)
   .listingImg.bg-dark-gray.flex-1-0-0
     if movie.image.secure_url
-      img.h-100.w-100.mw6(src=movie.image.secure_url)
-      
+      +bgImage(movie.image.secure_url)
+              
 mixin detailsContainer(movie)
   .listingDetails.ph1.ph3-ns.flex.flex-column.flex-1-0-0.flex-1-0-0-ns.flex-1-0-0-m.flex-2-0-0-l.justify-around
     +mainDetails(movie, movie.director)

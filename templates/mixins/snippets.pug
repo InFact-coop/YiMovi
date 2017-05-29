@@ -66,5 +66,8 @@ mixin breadcrumbs(type, page)
     if page 
       |  | 
       span.fw6.mh2.ttu=page
+      
+mixin bgImage(url)
+  span.cover.dib.w-100.h-100(style=`background-image:url("${url}")`)      
   
         
