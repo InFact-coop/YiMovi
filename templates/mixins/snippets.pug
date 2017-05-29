@@ -2,7 +2,7 @@ mixin sectionHeading(text)
     h2.f4.f3-ns.fw6.lh-title.ma2.ttu.dark-blue=text
 
 mixin subHeading(text)
-    h3.f5.ma2.ttu.light-silver
+    h3.f5.mt3.ttu.light-silver
       =text
       
 mixin sectionParagraph(body, isDarkTheme)
@@ -18,11 +18,11 @@ mixin sectionParagraph(body, isDarkTheme)
         ="Show more"
 
 mixin link(text, obj)
-    a(href=`/${text}/${obj.key}`)
+    a(href=`/${text}/${obj.key}`).white.f3.no-underline
       =obj.name
       
 mixin profileLink(text, link)
-    li.pa1.dim.ma1: a.light-silver.f6.f5-ns.w-auto(href=`/${link}`)
+    li.pa1.dim: a.light-silver.f6.f5-ns.w-auto(href=`/${link}`)
       =text      
       
 mixin linkMovie(movie)

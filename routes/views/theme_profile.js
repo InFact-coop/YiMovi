@@ -16,7 +16,13 @@ exports = module.exports = (req, res) => {
 
     Theme.model.findOne({ key: req.params.name, }).exec((err, theme) => {
 
-      if (err) return next(err);
+      if (err || !theme) {
+        {
+          res.locals.title = '404 error | YiMovi';
+          res.status(404).render('errors/404');
+          return;
+        }
+      }
 
       locals.theme = theme;
       locals.title = `Movies about ${theme.name} | YiMovi`;
