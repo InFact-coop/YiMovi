@@ -16,7 +16,7 @@
   function menuPointClick(e) {
     toggleDropDownVisibility();
     var point = e.target;
-    menuPoints.forEach(function(menuPoint) {
+    [].forEach.call(menuPoints, function(menuPoint) {
       if (menuPoint.textContent === point.textContent) {
         return point.className = point.className + ' bb';
       }
@@ -26,7 +26,7 @@
 
   var menuPoints = document.querySelectorAll('.menuPoint');
 
-  menuPoints.forEach(function(point) {
+  [].forEach.call(menuPoints, function(point) {
     point.addEventListener('click', menuPointClick);
   });
 

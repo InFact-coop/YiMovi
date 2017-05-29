@@ -18,12 +18,12 @@
   var url = window.location.pathname;
   var view = url.split('/')[1];
   var logoParts = document.querySelectorAll('.st0');
-  logoParts.forEach(function(part) {
+
+  [].forEach.call(logoParts, function(part) {
 
     if (!part.classList) return;
 
     part.classList.remove('st0');
     part.classList.add(getColor(view));
   });
-
 })();

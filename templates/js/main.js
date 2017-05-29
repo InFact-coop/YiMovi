@@ -28,10 +28,7 @@
 
   function readMore(event) {
     var parent = event.target.parentNode;
-    var childArray = [];
-    parent.childNodes.forEach(function(node) {
-      childArray.push(node);
-    });
+    var childArray = [].slice.call(parent.childNodes, 0);
 
     var initialParagraph = filterByClassName(childArray, 'initial-text');
     var hiddenParagraph = filterByClassName(childArray, 'hidden-text');
@@ -42,7 +39,8 @@
   }
 
   var links = document.querySelectorAll('.showMore');
-  links.forEach(function(link) {
+
+  [].forEach.call(links, function(link) {
     link.addEventListener('click', readMore);
   });
 })();
