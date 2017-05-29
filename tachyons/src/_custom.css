@@ -1,14 +1,16 @@
 :root {
-  --gray: #414141;
+  --gray: #424242;
   --light-gray: #a0a0a0;
-  --dark-blue: #247578;
-  --blue: #007b80;
+  --dark-blue: #007b80;
+  --blue: #00969b;
   --purple: #622d73;
   --light-purple: #813195;
+  --dark-yellow: #8f5f1a;
   --yellow: #d79028;
+  --dark-green: #397034;
   --green: #488d41;
   --dark-red: #751425;
-  --red: #942c4b;
+  --red: #ae1e37;
 }
 
 .svg-fill--blue {          fill: var(--blue); }
