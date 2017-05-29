@@ -5,4 +5,11 @@
   --blue: #007b80;
   --purple: #622d73;
   --light-purple: #813195;
+  --yellow: #d79028;
+  --green: #488d41;
 }
+
+.svg-fill--blue {        fill: var(--blue); }
+.svg-fill--light-purple {        fill: var(--light-purple); }
+.svg-fill--yellow {        fill: var(--yellow); }
+.svg-fill--green {        fill: var(--green); }
