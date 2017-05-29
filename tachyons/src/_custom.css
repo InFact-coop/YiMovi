@@ -17,3 +17,7 @@
 .svg-fill--light-purple {  fill: var(--light-purple); }
 .svg-fill--yellow {        fill: var(--yellow); }
 .svg-fill--green {         fill: var(--green); }
+
+.transition-opacity {
+  transition: opacity .15s ease-in
+}
