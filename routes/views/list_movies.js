@@ -8,7 +8,7 @@ exports = module.exports = (req, res) => {
   view.on('init', next => {
     const locals = res.locals;
     locals.movies = [];
-    locals.title = 'Browse by title | YiMovi';
+    locals.title = 'Browse movies by title | YiMovi';
 
     Movie.model.find().populate('director').exec((err, movies) => {
 
