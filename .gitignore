@@ -3,5 +3,5 @@ node_modules
 .DS_Store
 public/tachyons.min.css
 tachyons/css/tachyons*
-mongo_config.json
+mongo_config*
 heroku_*
