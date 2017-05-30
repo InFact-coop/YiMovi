@@ -18,6 +18,4 @@
 .svg-fill--yellow {        fill: var(--yellow); }
 .svg-fill--green {         fill: var(--green); }
 
-.transition-opacity {
-  transition: opacity .15s ease-in
-}
+.transition-opacity { transition: opacity 1s ease-in }
