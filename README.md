@@ -1,4 +1,4 @@
-Building a CMS-based website with a catalogue of films from the Chinese medical humanties field, build for UCL University.
+Building a CMS-based website with a catalogue of films from the Chinese medical humanties field, built for UCL University.
 
 To build this project locally:
 Requirements: Node, MongoDB
