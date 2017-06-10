@@ -75,12 +75,12 @@ block content
       hr.ma3
       section#video.flex.flex-column
         - const videoLink = movie.video
-        - const videoId = movie.video.split('/').pop();
-        - const baseUrl = "https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&quality=hd&captions=n&chapterId=0"
-        - const iframeUrl = baseUrl + "&videoId=" + videoId
+        //- - const videoId = movie.video.split('/').pop();
+        //- - const baseUrl = "https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&quality=hd&captions=n&chapterId=0"
+        //- - const iframeUrl = baseUrl + "&videoId=" + videoId
         +sectionHeading("Video")
         div.relative.pb-video.h0
-          iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=iframeUrl frameborder="0" scrolling="no")
+          iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=videoLink frameborder="0" scrolling="no")
         if movie.videoLinks.html
           +subHeading("More video links")
           #video-links.ph2.f6.f5-ns
