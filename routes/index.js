@@ -1,8 +1,11 @@
 const keystone = require('keystone');
+const i18n = require('i18n');
+
 const middleware = require('./middleware');
 const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
+keystone.pre('routes', i18n.init);
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
