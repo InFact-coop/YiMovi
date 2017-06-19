@@ -40,6 +40,10 @@ exports = module.exports = (app) => {
   viewRouter.use((req, res, next) => {
     const baseUrl = req.res.req.baseUrl;
     const locale = baseUrl.split('/')[1];
+    const availableLocales = [ 'en', 'de', ];
+    if (availableLocales.indexOf(locale) < 0) {
+      return res.redirect('/en' + baseUrl);
+    }
     i18n.setLocale(res, locale);
     next();
   });
@@ -54,7 +58,10 @@ exports = module.exports = (app) => {
   viewRouter.get('/directors/:name', routes.views.director_profile);
   viewRouter.get('/movies/:name', routes.views.movie_profile);
 
-
   app.use('/:lang', viewRouter);
+
+  app.use('/', (req, res) => {
+    res.redirect('/en');
+  });
 
 };
