@@ -38,11 +38,11 @@ exports = module.exports = (app) => {
   const viewRouter = require('express').Router();
 
   viewRouter.use((req, res, next) => {
-    const baseUrl = req.res.req.baseUrl;
-    const locale = baseUrl.split('/')[1];
+    const url = req.res.req.originalUrl;
+    const locale = url.split('/')[1];
     const availableLocales = [ 'en', 'de', ];
     if (availableLocales.indexOf(locale) < 0) {
-      return res.redirect('/en' + baseUrl);
+      return res.redirect('/en' + url);
     }
     i18n.setLocale(res, locale);
     next();
