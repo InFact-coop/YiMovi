@@ -25,10 +25,12 @@ block content
         span.mh2=movie.duration + ' mins'
       if movie.director && (movie.year || movie.duration)
         span.mh2 |
-      if movie.director
+      if movie.director && locale === 'en'
         span.mh2=`Director ${director.name}`
-      if movie.director.name_chn
-        span.ma0.sans-serif=`${director.name_chn}`
+      else 
+        span.mh2=`Director ${director.name_chn}`
+      //- if movie.director.name_chn
+      //-   span.ma0.sans-serif=`${director.name_chn}`
     
     if (movie.name_chn)
       h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name_chn
