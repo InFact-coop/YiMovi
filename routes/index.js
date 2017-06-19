@@ -5,6 +5,7 @@ const middleware = require('./middleware');
 const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
+
 keystone.pre('routes', i18n.init);
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
@@ -33,13 +34,27 @@ const routes = {
 
 // Bind Routes
 exports = module.exports = (app) => {
-  app.get('/', routes.views.index);
-  app.get('/directors', routes.views.list_directors);
-  app.get('/themes', routes.views.list_themes);
-  app.get('/genres', routes.views.list_genres);
-  app.get('/movies', routes.views.list_movies);
-  app.get('/themes/:name', routes.views.theme_profile);
-  app.get('/genres/:name', routes.views.genre_profile);
-  app.get('/directors/:name', routes.views.director_profile);
-  app.get('/movies/:name', routes.views.movie_profile);
+
+  const viewRouter = require('express').Router();
+
+  viewRouter.use((req, res, next) => {
+    const baseUrl = req.res.req.baseUrl;
+    const locale = baseUrl.split('/')[1];
+    i18n.setLocale(res, locale);
+    next();
+  });
+
+  viewRouter.get('/', routes.views.index);
+  viewRouter.get('/directors', routes.views.list_directors);
+  viewRouter.get('/themes', routes.views.list_themes);
+  viewRouter.get('/genres', routes.views.list_genres);
+  viewRouter.get('/movies', routes.views.list_movies);
+  viewRouter.get('/themes/:name', routes.views.theme_profile);
+  viewRouter.get('/genres/:name', routes.views.genre_profile);
+  viewRouter.get('/directors/:name', routes.views.director_profile);
+  viewRouter.get('/movies/:name', routes.views.movie_profile);
+
+
+  app.use('/:lang', viewRouter);
+
 };
