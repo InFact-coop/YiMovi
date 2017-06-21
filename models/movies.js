@@ -24,6 +24,7 @@ Movie.add({
   cinematography: { type: Types.Markdown, },
   pointsForDiscussion: { type: Types.Markdown, label: 'Points for discussion', },
   externalLinks: { type: Types.Markdown, label: 'External links', },
+  bibliography: { type: Types.Markdown, label: 'Teaching and Learning', },
 });
 
 Movie.track = true;
