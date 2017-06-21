@@ -14,7 +14,7 @@ block content
   //- title and main details
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
   
-  #title-container.bg-dark-blue.pa1.pl2.pa2-ns.pl3-ns.shadow-5.z-1
+  #title-container.bg-blue.pa1.pl2.pa2-ns.pl3-ns.shadow-5.z-1
       
     +breadcrumbs("movies", movie.name)
       
@@ -34,7 +34,7 @@ block content
       h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name_chn
     h1.light-gray.ttu.f2.f1-ns.fw7.lh-title.ma0=movie.name
 
-  #menu.pa2.pa3-ns.bg-dark-blue.shadow-5.z-1.sticky.top-0.light-gray.o-90
+  #menu.pa2.pa3-ns.bg-blue.shadow-5.z-1.sticky.top-0.light-gray.o-90
     - let menuPoints = [ "summary", ]
     - if (movie.video) menuPoints.push("video")
     - if (movie.gallery.length) menuPoints.push("images")

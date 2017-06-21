@@ -1,5 +1,5 @@
 mixin sectionHeading(text)
-    h2.f4.f3-ns.fw6.lh-title.ma2.ttu.dark-blue=text
+    h2.f4.f3-ns.fw6.lh-title.ma2.ttu.blue=text
 
 mixin subHeading(text)
     h3.f5.mt3.ttu.light-silver
@@ -14,7 +14,7 @@ mixin sectionParagraph(body, isDarkTheme)
       .initial-text
         p.ma2.f6.f5-ns.initial-text=withEllipsis
       .hidden-text.ma2.f6.f5-ns.dn!=body
-      a.f6.f5-ns.underline.showMore.pointer.ma2.dim.dark-blue(style = isDarkTheme ? `color: white` : '' id="show-more-link")
+      a.f6.f5-ns.underline.showMore.pointer.ma2.dim.blue(style = isDarkTheme ? `color: white` : '' id="show-more-link")
         ="Show more"
 
 mixin link(text, obj)
