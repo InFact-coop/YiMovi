@@ -8,7 +8,7 @@ include ../mixins/listings
 
 mixin directorBox(director)
   - const title = `Movies about ${director.name}`
-  - const img = null
+  - const img = director.image && director.image.secure_url ? director.image.secure_url : null
   +listing("director", director.name, title, color, img)
 
 block content
