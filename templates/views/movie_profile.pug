@@ -110,7 +110,7 @@ block content
     if hasNotesSection
       a#anchor-screening(tabindex="-1")
         
-    // - context section
+    //- context section
     +section(movie, 'context')
     
     //- synopsis
@@ -128,6 +128,9 @@ block content
       +sectionHeading("External links")
       #external-links.ph2.f6.f5-ns
         !=movie.externalLinks.html
+        
+    //- teaching & learning
+    +section(movie, 'bibliography', 'teaching and learning')
     
 block scripts
   script
