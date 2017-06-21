@@ -7,12 +7,10 @@ mixin subHeading(text)
       
 mixin sectionParagraph(body, isDarkTheme)
     - const length = 200
-    - const stripped = body.replace(/<[^>]*>/g, "")
-    - const shortened = stripped.slice(0, length).trim() 
-    - const withEllipsis = shortened + (stripped.length <= length ? '' : '...')
+    - const cropped = utils.cropHTMLString(body, length, '...')
     .sectionParagraph
       .initial-text
-        p.ma2.f6.f5-ns.initial-text=withEllipsis
+        p.ma2.f6.f5-ns.initial-text=cropped
       .hidden-text.ma2.f6.f5-ns.dn!=body
       a.f6.f5-ns.underline.showMore.pointer.ma2.dim.dark-blue(style = isDarkTheme ? `color: white` : '' id="show-more-link")
         ="Show more"
