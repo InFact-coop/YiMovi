@@ -1,16 +1,6 @@
 extends ../layouts/base
 include ../mixins/snippets
 
-mixin themeBox(theme)
-  - const url = `/themes/${theme.key}`
-  a.no-underline(href=url title=`Movies about ${theme.name}`)
-    div.theme-box.h4.h5-ns.bg-light-purple.ba.bw1.b--light-gray.white.flex.flex-row.pointer.hover-bg-purple
-      .img-container.w-50.bg-purple.h-100
-        if theme.image && theme.image.secure_url
-          +bgImage(theme.image.secure_url)
-      .title-container.w-50
-        p.mt5.mt6-ns.ml2.ml3-ns.f4.f3-ns.fw6.ttu=theme.name
-
 block content
   
   #title-container.bg-purple.pa3.shadow-5.z-1.light-gray
