@@ -1,5 +1,5 @@
 mixin listing(type, name, title, color, img)
-  - name = name.replace(/\s/g, "-")
+  - name = name.replace(/\s/g, "-").toLowerCase()
   - const url = `/${type}/${name}`
   li.w-100.w-50-l
     a.no-underline(href=url title=title)
