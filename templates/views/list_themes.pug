@@ -1,13 +1,23 @@
 extends ../layouts/base
 include ../mixins/snippets
+include ../mixins/listings
+
+//- VARS FROM VIEW 
+  themes - array of theme objects
+  color - string
+
+mixin themeBox(theme)
+  - const title = `Movies about ${theme.name}`
+  - const img = theme.image && theme.image.secure_url ? theme.image.secure_url : null
+  +listing("theme", theme.name, title, color, img)
 
 block content
   
-  #title-container.bg-purple.pa3.shadow-5.z-1.light-gray
-    
+  +titleContainer(color)
     +breadcrumbs("themes")
-    
     h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns
       | browse themes
   
-  include ../partials/themes_list
+  +list()
+    each theme in themes
+        +themeBox(theme)

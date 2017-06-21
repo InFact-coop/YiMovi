@@ -68,6 +68,10 @@ mixin breadcrumbs(type, page)
       span.fw6.mh2.ttu=page
       
 mixin bgImage(url)
-  span.cover.dib.w-100.h-100(style=`background-image:url("${url}")`)      
+  span.cover.dib.w-100.h-100(style=`background-image:url("${url}")`)    
+  
+mixin titleContainer(color)
+  #title-container.pa3.shadow-5.z-1.light-gray(class=`bg-${color}`)
+    block
   
         

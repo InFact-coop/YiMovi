@@ -1,8 +1,23 @@
 extends ../layouts/base
 include ../mixins/snippets
+include ../mixins/listings
+
+//- VARS FROM VIEW 
+  directors - array of director objects
+  color - string
+
+mixin directorBox(director)
+  - const title = `Movies about ${director.name}`
+  - const img = null
+  +listing("director", director.name, title, color, img)
 
 block content
-    ul
-      each director in directors
-        li
-          +link('directors', director)
+  
+  +titleContainer(color)
+    +breadcrumbs("directors")
+    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns
+      | browse directors
+  
+  +list()
+    each director in directors
+      +directorBox(director)
