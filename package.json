@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node web.js",
-    "build_tachyons": "cd tachyons && npm i && npm run build && cd .. && node lib/copy_tachyons.js",
+    "startmon": "nodemon web.js",
+    "startmon.watch": "nodemon web.js && npm run watch_tachyons",
+    "watch_tachyons": "postcss --watch --config ./postcss.config.js",
+    "build_tachyons": "postcss --config ./postcss.config.js",
     "deploy_tachyons": "git checkout -B deploy && git merge master && npm run commit_tachyons && git push heroku deploy:master -f",
     "deploy_production": "git checkout -B deploy && git merge master && npm run commit_tachyons && git push production deploy:master -f",
     "deploy": "git checkout -B deploy && git merge master && git push heroku deploy:master -f",
@@ -27,9 +30,17 @@
     "keystone": "^4.0.0-beta.5",
     "keystone-utils": "^0.4.0",
     "pug": "^2.0.0-rc.1",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "tachyons-custom": "^4.5.4"
   },
   "devDependencies": {
-    "eslint": "^3.19.0"
+    "autoprefixer": "^6.7.3",
+    "eslint": "^3.19.0",
+    "nodemon": "^1.11.0",
+    "postcss-clean": "^1.0.2",
+    "postcss-cli": "^2.6.0",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-custom-properties": "^5.0.2",
+    "postcss-import": "^9.1.0"
   }
 }
