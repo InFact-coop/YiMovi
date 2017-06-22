@@ -7,10 +7,16 @@ block content
     
     +breadcrumbs("directors", director.name)
     
-    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns=director.name
+    if (director.name_chn)
+      h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=director.name_chn
+    h1.light-gray.ttu.f2.f1-ns.fw7.lh-title.ma0=director.name
+    
+    if director.image && director.image.secure_url
+      #image-container.w-100.w-70-ns.w-50-l.h5
+        span.h-100.cover.no-repeat.dib.w-100.self-center(style=`background-image:url("${director.image.secure_url}")`)
     
     if director.description && director.description.html
-      .description.w-70-ns
+      .description.w-100.w-70-ns.w-50-l
         +sectionParagraph(director.description.html, true)
     
     hr.ma3

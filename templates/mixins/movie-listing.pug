@@ -6,7 +6,7 @@ mixin mainDetails(movie, director)
       if movie.duration
         span.mh1=movie.duration + ' mins'
     if movie.director && movie.director.name
-      p.light-silver.f7.f4-ns.fw5.lh-title.ma0
+      p.light-silver.fw5.lh-title.ma0
         span=`Director ${director.name} `
         if movie.director.name_chn
           span.ma0.sans-serif=director.name_chn
@@ -33,7 +33,7 @@ mixin detailsContainer(movie)
       +titleEn(movie.name)
       
 mixin movieListingContainer(movie, page)
-  .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white(class=`bg-${color || "blue"} hover-bg-light-${color || "blue"}`)
+  .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white(class=`bg-light-${color || "blue"} hover-bg-${color || "blue"}`)
     block
 
 mixin movieListing(movie, page)
