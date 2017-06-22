@@ -1,9 +1,28 @@
 extends ../layouts/base
 include ../mixins/snippets
+include ../mixins/movie-listing
 
 block content
-    h1=genre.name
-    ul
-      each movie in movies
-        li
-          +linkMovie(movie)
+  #title-container.bg-yellow.pa3.shadow-5.z-1.light-gray
+    
+    +breadcrumbs("genres", genre.name)
+    
+    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns=genre.name
+    
+    if genre.description && genre.description.html
+      .description.w-70-ns
+        +sectionParagraph(genre.description.html, true)
+    
+    hr.ma3
+    
+    h2.ttu.f4.f3-ns.fw6.lh-title.ma0=`movies about ${genre.name}`
+    
+  ul.list.pl0.ma0
+    each movie in movies
+      li
+        +movieListing(movie, "genres")
+        
+
+block scripts
+  script
+    include ../js/main.js

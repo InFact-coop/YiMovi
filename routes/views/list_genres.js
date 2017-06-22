@@ -9,6 +9,7 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.genres = [];
     locals.title = 'Browse by genre | YiMovi';
+    locals.color = 'yellow';
 
     Genre.model.find().exec((err, genres) => {
 

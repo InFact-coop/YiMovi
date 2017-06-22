@@ -21,7 +21,7 @@ mixin titleChn(movie)
     h2.ttu.ma0.f5.f2-ns.pb2-ns.lh-copy.sans-serif=movie.name_chn
     
 mixin imgContainer(movie)
-  .listingImg.bg-light-blue.flex-1-0-0
+  .listingImg.flex-1-0-0(class=`bg-${color}`)
     if movie.image.secure_url
       +bgImage(movie.image.secure_url)
               
