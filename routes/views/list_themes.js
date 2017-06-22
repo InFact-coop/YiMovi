@@ -9,6 +9,7 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.themes = [];
     locals.title = 'Browse movies by theme | YiMovi';
+    locals.color = 'purple';
 
     Theme.model.find().exec((err, themes) => {
 
