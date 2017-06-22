@@ -1,8 +1,6 @@
 const keystone = require('keystone');
 const Movie = keystone.list('Movie');
 
-require('env2')('.env');
-
 exports = module.exports = (req, res) => {
 
   const view = new keystone.View(req, res);
