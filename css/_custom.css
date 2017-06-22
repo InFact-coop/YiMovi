@@ -11,10 +11,6 @@
   .h-6-ns { height: 24rem; }
 }
 
-
-
-
-
 /* Max Heights */
 .mxhi1 { max-height: 1rem; }
 .mxhi2 { max-height: 2rem; }
@@ -144,10 +140,11 @@
 
 
 
-
-
 /* SVG Fills */
 .svg-fill--blue { fill: var(--light-blue); }
 .svg-fill--light-purple { fill: var(--light-purple); }
 .svg-fill--yellow { fill: var(--light-yellow); }
 .svg-fill--green { fill: var(--light-green); }
+
+/* font-sizes */
+.f7 { font-size: 0.75rem; }
