@@ -86,12 +86,6 @@
 .w05 { width: 0.5rem; }
 
 
-/* Positions */
-
-.t-0 {top: 0;}
-.l-0 {left: 0;}
-.b-0 {bottom: 0;}
-.r-0 {right: 0;}
 
 /*** Flex ***/
 .flex-1-0-0 { flex: 1 0 0; }
