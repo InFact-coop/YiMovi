@@ -18,8 +18,6 @@
     .dn-ns { display: none !important; }
 }
 
-
-
 /* Max Heights */
 .mxhi1 { max-height: 1rem; }
 .mxhi2 { max-height: 2rem; }
@@ -154,17 +152,23 @@
 
 
 
-
-
 /* SVG Fills */
 .svg-fill--blue { fill: var(--blue); }
 .svg-fill--light-blue { fill: var(--light-blue); }
 
 .svg-fill--purple { fill: var(--purple); }
 .svg-fill--light-purple { fill: var(--light-purple); }
+<<<<<<< HEAD
 
 .svg-fill--yellow { fill: var(--yellow); }
 .svg-fill--light-yellow { fill: var(--light-yellow); }
 
 .svg-fill--yellow { fill: var(--green); }
 .svg-fill--light-green { fill: var(--light-green); }
+=======
+.svg-fill--yellow { fill: var(--light-yellow); }
+.svg-fill--green { fill: var(--light-green); }
+
+/* font-sizes */
+.f7 { font-size: 0.75rem; }
+>>>>>>> 4aee199a3d334087ba4b90c1be82411c5a0b48ea

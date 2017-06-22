@@ -6,7 +6,7 @@ mixin mainDetails(movie, director)
       if movie.duration
         span.mh1=movie.duration + ' mins'
     if movie.director && movie.director.name
-      p.light-silver.f7.f4-ns.fw5.lh-title.ma0
+      p.light-silver.fw5.lh-title.ma0
         span=`Director ${director.name} `
         if movie.director.name_chn
           span.ma0.sans-serif=director.name_chn
@@ -21,7 +21,7 @@ mixin titleChn(movie)
     h2.ttu.ma0.f5.f2-ns.pb2-ns.lh-copy.sans-serif=movie.name_chn
     
 mixin imgContainer(movie)
-  .listingImg.bg-light-blue.flex-1-0-0
+  .listingImg.flex-1-0-0(class=`bg-${color}`)
     if movie.image.secure_url
       +bgImage(movie.image.secure_url)
               
@@ -33,13 +33,8 @@ mixin detailsContainer(movie)
       +titleEn(movie.name)
       
 mixin movieListingContainer(movie, page)
-  case page
-    when "themes"
-      .movieListing.bt.bw2.h4.h5-ns.flex.pointer.b--light-silver.white.bg-light-purple.hover-bg-purple
-        block
-    default
-      .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white.bg-light-blue.hover-bg-light-blue
-        block
+  .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white(class=`bg-light-${color || "blue"} hover-bg-${color || "blue"}`)
+    block
 
 mixin movieListing(movie, page)
   - const url = `/movies/${movie.key}`
