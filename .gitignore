@@ -5,3 +5,4 @@ public/tachyons.min.css
 tachyons/css/tachyons*
 mongo_config*
 heroku_*
+selenium-debug.log
