@@ -8,7 +8,7 @@
 }
 
 @media (--breakpoint-not-small) {
-  .h-6-ns { height: 24rem; }
+  .h6-ns { height: 24rem; }
 }
 
 
@@ -83,7 +83,12 @@
 .w05 { width: 0.5rem; }
 
 
+/* Positions */
 
+.t-0 {top: 0;}
+.l-0 {left: 0;}
+.b-0 {bottom: 0;}
+.r-0 {right: 0;}
 
 /*** Flex ***/
 .flex-1-0-0 { flex: 1 0 0; }
@@ -147,7 +152,14 @@
 
 
 /* SVG Fills */
-.svg-fill--blue { fill: var(--light-blue); }
+.svg-fill--blue { fill: var(--blue); }
+.svg-fill--light-blue { fill: var(--light-blue); }
+
+.svg-fill--purple { fill: var(--purple); }
 .svg-fill--light-purple { fill: var(--light-purple); }
+
+.svg-fill--yellow { fill: var(--yellow); }
 .svg-fill--yellow { fill: var(--light-yellow); }
+
+.svg-fill--yellow { fill: var(--green); }
 .svg-fill--green { fill: var(--light-green); }
