@@ -13,6 +13,11 @@
 
 
 
+/* Display */
+@media (--breakpoint-not-small) {
+    .dn-ns { display: none !important; }
+}
+
 
 
 /* Max Heights */
