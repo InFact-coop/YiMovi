@@ -1,36 +1,17 @@
-10:05:19.647 INFO - Selenium build info: version: '3.3.0', revision: 'b526bd5'
-10:05:19.648 INFO - Launching a standalone Selenium Server
-2017-06-22 10:05:19.667:INFO::main: Logging initialized @336ms to org.seleniumhq.jetty9.util.log.StdErrLog
-10:05:19.729 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
+11:10:27.075 INFO - Selenium build info: version: '3.3.0', revision: 'b526bd5'
+11:10:27.076 INFO - Launching a standalone Selenium Server
+2017-06-22 11:10:27.099:INFO::main: Logging initialized @344ms to org.seleniumhq.jetty9.util.log.StdErrLog
+11:10:27.165 INFO - Driver provider org.openqa.selenium.ie.InternetExplorerDriver registration is skipped:
  registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match the current platform MAC
-10:05:19.730 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
+11:10:27.165 INFO - Driver provider org.openqa.selenium.edge.EdgeDriver registration is skipped:
  registration capabilities Capabilities [{browserName=MicrosoftEdge, version=, platform=WINDOWS}] does not match the current platform MAC
-10:05:19.730 INFO - Driver class not found: com.opera.core.systems.OperaDriver
-10:05:19.730 INFO - Driver provider com.opera.core.systems.OperaDriver registration is skipped:
+11:10:27.165 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+11:10:27.165 INFO - Driver provider com.opera.core.systems.OperaDriver registration is skipped:
 Unable to create new instances on this machine.
-10:05:19.730 INFO - Driver class not found: com.opera.core.systems.OperaDriver
-10:05:19.730 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
-2017-06-22 10:05:19.778:INFO:osjs.Server:main: jetty-9.2.20.v20161216
-2017-06-22 10:05:19.804:INFO:osjsh.ContextHandler:main: Started o.s.j.s.ServletContextHandler@77cd7a0{/,null,AVAILABLE}
-2017-06-22 10:05:19.827:INFO:osjs.AbstractConnector:main: Started ServerConnector@1ed4004b{HTTP/1.1,[http/1.1]}{0.0.0.0:4444}
-2017-06-22 10:05:19.827:INFO:osjs.Server:main: Started @496ms
-10:05:19.827 INFO - Selenium Server is up and running
-10:05:20.154 INFO - SessionCleaner initialized with insideBrowserTimeout 0 and clientGoneTimeout 1800000 polling every 180000
-10:05:20.181 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Home, browserName=chrome, javascriptEnabled=true, platform=ANY}]])
-10:05:20.193 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Home, browserName=chrome, javascriptEnabled=true, platform=ANY}]
-Starting ChromeDriver 2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262) on port 34498
-Only local connections are allowed.
-10:05:21.140 INFO - Detected dialect: OSS
-10:05:21.155 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Home, browserName=chrome, javascriptEnabled=true, platform=ANY}]]
-10:05:21.170 INFO - Executing: [get: https://saucelabs.com/test/guinea-pig])
-10:05:22.738 INFO - Done: [get: https://saucelabs.com/test/guinea-pig]
-10:05:22.744 INFO - Executing: [find elements: By.cssSelector: body])
-10:05:22.774 INFO - Done: [find elements: By.cssSelector: body]
-10:05:22.778 INFO - Executing: [is displayed: 0 [[ChromeDriver: chrome on MAC (8887b17d782d32b5ee071176f94ddac5)] -> css selector: body]])
-10:05:22.795 INFO - Done: [is displayed: 0 [[ChromeDriver: chrome on MAC (8887b17d782d32b5ee071176f94ddac5)] -> css selector: body]]
-10:05:22.799 INFO - Executing: [get title])
-10:05:22.804 INFO - Done: [get title]
-10:05:22.810 INFO - Executing: [take screenshot])
-10:05:23.310 INFO - Done: [take screenshot]
-10:05:23.331 INFO - Executing: [delete session: 31389f94-1ba4-4686-9417-fd98e0f25b0f])
-10:05:23.399 INFO - Done: [delete session: 31389f94-1ba4-4686-9417-fd98e0f25b0f]
+11:10:27.166 INFO - Driver class not found: com.opera.core.systems.OperaDriver
+11:10:27.166 INFO - Driver provider com.opera.core.systems.OperaDriver is not registered
+2017-06-22 11:10:27.220:INFO:osjs.Server:main: jetty-9.2.20.v20161216
+2017-06-22 11:10:27.254:INFO:osjsh.ContextHandler:main: Started o.s.j.s.ServletContextHandler@77cd7a0{/,null,AVAILABLE}
+2017-06-22 11:10:27.286:INFO:osjs.AbstractConnector:main: Started ServerConnector@1ed4004b{HTTP/1.1,[http/1.1]}{0.0.0.0:4444}
+2017-06-22 11:10:27.287:INFO:osjs.Server:main: Started @533ms
+11:10:27.287 INFO - Selenium Server is up and running

@@ -5,7 +5,7 @@
   "main": "web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test.e2e": "node_modules/.bin/nightwatch",
+    "test.e2e": "node web.js; node_modules/.bin/nightwatch",
     "start": "node web.js",
     "build_tachyons": "cd tachyons && npm i && npm run build && cd .. && node lib/copy_tachyons.js",
     "deploy_tachyons": "git checkout -B deploy && git merge master && npm run commit_tachyons && git push heroku deploy:master -f",
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "eslint": "^3.19.0",
+    "keystone-nightwatch-e2e": "^0.2.14",
     "nightwatch": "^0.9.16",
     "saucelabs": "^1.4.0",
     "selenium-download": "^2.0.10"

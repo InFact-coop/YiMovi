@@ -33,6 +33,12 @@ const config = {
         'browserName': 'chrome',
       },
     },
+    'unittests' : {
+      'selenium' : {
+        'start_process' : false,
+        'start_session' : false,
+      },
+    },
     'chrome': {
       'desiredCapabilities': {
         'browserName': 'chrome',
@@ -81,4 +87,5 @@ function imgpath (browser) {
 
 module.exports = config;
 module.exports.imgpath = imgpath;
+module.exports.url = process.env.URL; // Ensure  this is available in your .env file
 module.exports.SCREENSHOT_PATH = SCREENSHOT_PATH;

@@ -1,12 +1,19 @@
 var config = require('../../nightwatch.conf.js');
+var server;
 
-module.exports = { // adapted from: https://git.io/vodU0
-  'Guinea Pig Assert Title': function(browser) {
+module.exports = {
+  before: function (browser, done) {
+    server = require('../../web')(done); // done
+  },
+  after: function () {
+    server.close();
+  },
+  'Home': function(browser) {
     browser
-      .url('https://saucelabs.com/test/guinea-pig')
+      .url(config.URL + '/')
       .waitForElementVisible('body')
-      .assert.title('I am a page title - Sauce Labs')
-      .saveScreenshot(config.imgpath(browser) + 'guinea-pig.png')
+      // .assert.title('Should Fail')
+      .saveScreenshot(config.imgpath(browser) + 'home.png')
       .end();
   },
 };
