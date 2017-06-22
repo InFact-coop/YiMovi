@@ -33,13 +33,8 @@ mixin detailsContainer(movie)
       +titleEn(movie.name)
       
 mixin movieListingContainer(movie, page)
-  case page
-    when "themes"
-      .movieListing.bt.bw2.h4.h5-ns.flex.pointer.b--light-silver.white.bg-light-purple.hover-bg-purple
-        block
-    default
-      .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white.bg-light-blue.hover-bg-light-blue
-        block
+  .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white(class=`bg-${color || "blue"} hover-bg-light-${color || "blue"}`)
+    block
 
 mixin movieListing(movie, page)
   - const url = `/movies/${movie.key}`
