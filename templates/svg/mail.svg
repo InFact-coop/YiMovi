@@ -1,0 +1,5 @@
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" x="0px" y="0px" enable-background="new 0 0 16 16" xml:space="preserve">
+  <rect id="Bg" fill="none" width="16" height="16"/>
+  <rect id="Bound" x="0.5" y="0.562" fill="none" stroke="#424242" stroke-miterlimit="10" width="15" height="15.062"/>
+  <polyline id="Lip" fill="none" stroke="#424242" stroke-miterlimit="10" points="0.5,0.562 8,8.094 15.5,0.562 "/>
+</svg>

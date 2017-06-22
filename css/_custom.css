@@ -159,7 +159,7 @@
 .svg-fill--light-purple { fill: var(--light-purple); }
 
 .svg-fill--yellow { fill: var(--yellow); }
-.svg-fill--yellow { fill: var(--light-yellow); }
+.svg-fill--light-yellow { fill: var(--light-yellow); }
 
 .svg-fill--yellow { fill: var(--green); }
-.svg-fill--green { fill: var(--light-green); }
+.svg-fill--light-green { fill: var(--light-green); }
