@@ -13,6 +13,7 @@ exports = module.exports = (req, res) => {
     locals.theme = {};
     locals.title = '';
     locals.movies = [];
+    locals.utils = require('keystone-utils');
 
     Theme.model.findOne({ key: req.params.name, }).exec((err, theme) => {
 

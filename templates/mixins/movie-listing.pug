@@ -21,7 +21,7 @@ mixin titleChn(movie)
     h2.ttu.ma0.f5.f2-ns.pb2-ns.lh-copy.sans-serif=movie.name_chn
     
 mixin imgContainer(movie)
-  .listingImg.bg-dark-blue.flex-1-0-0
+  .listingImg.bg-light-blue.flex-1-0-0
     if movie.image.secure_url
       +bgImage(movie.image.secure_url)
               
@@ -38,7 +38,7 @@ mixin movieListingContainer(movie, page)
       .movieListing.bt.bw2.h4.h5-ns.flex.pointer.b--light-silver.white.bg-light-purple.hover-bg-purple
         block
     default
-      .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white.bg-blue.hover-bg-dark-blue
+      .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white.bg-light-blue.hover-bg-light-blue
         block
 
 mixin movieListing(movie, page)

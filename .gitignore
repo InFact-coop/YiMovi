@@ -6,3 +6,4 @@ tachyons/css/tachyons*
 mongo_config*
 heroku_*
 selenium-debug.log
+npm-debug.log
