@@ -2,38 +2,29 @@ const keystone = require('keystone');
 
 require('dotenv').config();
 
-var server = function(done) {
-  keystone.init({
+keystone.init({
 
-    'name': 'YiMovi',
-    'brand': 'YiMovi',
+  'name': 'YiMovi',
+  'brand': 'YiMovi',
 
-    'favicon': 'public/favicon.ico',
-    'static': 'public',
+  'favicon': 'public/favicon.ico',
+  'static': 'public',
 
-    'views': 'templates/views',
-    'view engine': 'pug',
+  'views': 'templates/views',
+  'view engine': 'pug',
 
-    'auto update': true,
-    'mongo': process.env.MONGODB_URI,
+  'auto update': true,
+  'mongo': process.env.MONGODB_URI,
 
-    'session': true,
-    'auth': true,
-    'user model': 'User',
-    'cookie secret': process.env.COOKIE_SECRET,
+  'session': true,
+  'auth': true,
+  'user model': 'User',
+  'cookie secret': process.env.COOKIE_SECRET,
 
-  });
+});
 
-  require('./models');
+require('./models');
 
-  keystone.set('routes', require('./routes'));
+keystone.set('routes', require('./routes'));
 
-  keystone.start(() => {
-    done();
-  });
-};
-
-server();
-
-
-module.exports = server;
+keystone.start();
