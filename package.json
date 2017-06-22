@@ -5,12 +5,14 @@
   "main": "web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test.e2e": "node_modules/.bin/nightwatch",
     "start": "node web.js",
     "build_tachyons": "cd tachyons && npm i && npm run build && cd .. && node lib/copy_tachyons.js",
     "deploy_tachyons": "git checkout -B deploy && git merge master && npm run commit_tachyons && git push heroku deploy:master -f",
     "deploy_production": "git checkout -B deploy && git merge master && npm run commit_tachyons && git push production deploy:master -f",
     "deploy": "git checkout -B deploy && git merge master && git push heroku deploy:master -f",
-    "commit_tachyons": "npm run build_tachyons && git add -f public/tachyons.min.css && git commit -m \"deploy\""
+    "commit_tachyons": "npm run build_tachyons && git add -f public/tachyons.min.css && git commit -m \"deploy\"",
+    "postinstall": "node nightwatch.conf.js"
   },
   "repository": {
     "type": "git",
@@ -24,11 +26,15 @@
   "homepage": "https://github.com/InFact-coop/YiMovi#readme",
   "dependencies": {
     "dotenv": "^4.0.0",
+    "env2": "^2.2.0",
     "keystone": "^4.0.0-beta.5",
     "pug": "^2.0.0-rc.1",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "eslint": "^3.19.0"
+    "eslint": "^3.19.0",
+    "nightwatch": "^0.9.16",
+    "saucelabs": "^1.4.0",
+    "selenium-download": "^2.0.10"
   }
 }
