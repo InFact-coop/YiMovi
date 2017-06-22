@@ -11,6 +11,8 @@ exports = module.exports = (req, res) => {
     locals.genre = {};
     locals.movies = [];
     locals.title = '';
+    locals.color = 'yellow';
+    locals.utils = require('keystone-utils');
 
     Genre.model.findOne({ key: req.params.name, }).exec((err, genre) => {
 
