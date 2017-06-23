@@ -8,7 +8,6 @@ const config = {
   'src_folders': [
     'test/e2e',// Where you are storing your Nightwatch e2e tests
   ],
-  'globals_path': './test/nightwatch_setup.js',
   'output_folder': './reports', // reports (test outcome) output by Nightwatch
   'selenium': { // downloaded by selenium-download module (see readme)
     'start_process': true, // tells nightwatch to start/stop the selenium process
