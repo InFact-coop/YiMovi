@@ -15,7 +15,7 @@ html.h-100
     
     body.avenir.vh-100.flex.flex-column
         
-        #main-content.flex-auto.bg-gray.relative                       
+        #main-content.flex-auto.relative                      
           block intro
           include ../partials/header.pug
             
@@ -23,7 +23,8 @@ html.h-100
 
           block content
           
-          include ../partials/footer.pug
+          unless hide_footer 
+            include ../partials/footer.pug
         
         script
           include ../js/logo.js
