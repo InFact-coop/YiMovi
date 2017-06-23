@@ -13,7 +13,6 @@ exports = module.exports = (req, res) => {
     locals.director = {};
     locals.genres = [];
     locals.themes = [];
-    locals.utils = require('keystone-utils');
 
     Movie.model.findOne({ key: req.params.name, })
       .populate('director')
