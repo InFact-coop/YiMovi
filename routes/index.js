@@ -5,6 +5,10 @@ const importRoutes = keystone.importer(__dirname);
 // Common Middleware
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
+keystone.pre('routes', (_, res, next) => {
+  res.locals.utils = require('keystone-utils');
+  next();
+});
 keystone.pre('render', middleware.flashMessages);
 
 // Handle 404 errors

@@ -4,6 +4,7 @@ const Types = keystone.Field.Types;
 const Director = new keystone.List('Director', {
   autokey: { from: 'name', path: 'key', unique: true, },
   label: 'Directors',
+  sortable: true,
 });
 
 Director.add({

@@ -14,7 +14,6 @@ exports = module.exports = (req, res) => {
     locals.title = '';
     locals.movies = [];
     locals.color = 'purple';
-    locals.utils = require('keystone-utils');
 
     Theme.model.findOne({ key: req.params.name, }).exec((err, theme) => {
 

@@ -15,7 +15,7 @@
 
 /* Display */
 @media (--breakpoint-not-small) {
-    .dn-ns { display: none !important; }
+    .dn-ns { display: none; }
 }
 
 /* Max Heights */
@@ -92,7 +92,8 @@
 .pb-video { padding-bottom: 56%; }
 
 
-
+/* Height */
+.h05 { height: 0.5rem; }
 
 /* Width */
 .w05 { width: 0.5rem; }
