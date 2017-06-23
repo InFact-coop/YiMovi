@@ -39,4 +39,5 @@ exports = module.exports = (app) => {
   app.get('/genres/:name', routes.views.genre_profile);
   app.get('/directors/:name', routes.views.director_profile);
   app.get('/movies/:name', routes.views.movie_profile);
+  app.get('/contact', routes.views.contact);
 };

@@ -1,0 +1,9 @@
+extends ../layouts/base
+
+block content
+  #contact.bg-gray.w-100.absolute.v-center.tc
+    form(method='POST', action='http://formspree.io/heyminick@live.com').dib
+      input(type='text', name='name', placeholder='You name').db
+      input(type='email', name='email', placeholder='Your email').db
+      textarea(name='message', placeholder='Your message').db
+      button(type='submit').db Send
