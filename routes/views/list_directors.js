@@ -9,7 +9,6 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.directors = [];
     locals.title = 'Browse by director | YiMovi';
-    locals.color = 'green';
 
     Director.model.find().sort('sortOrder').exec((err, directors) => {
 

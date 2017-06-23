@@ -8,8 +8,13 @@ exports.initLocals = (req, res, next) => {
 
   const locals = res.locals;
   locals.user = req.user;
+  const colors = require('./setup/colors.js');
+  const route = req.url.split('/')[1];
+  locals.color = Object.keys(colors).indexOf(route) > -1
+    ? colors[route]
+    : colors.default;
 
-    // Add your own local variables here
+  // Add your own local variables here
   next();
 };
 
