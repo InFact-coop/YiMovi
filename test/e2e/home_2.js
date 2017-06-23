@@ -1,5 +1,4 @@
 var config = require('../../nightwatch.conf.js');
-const { start, stop } = require('../../server.js')
 
 module.exports = {
   'Home': function(browser) {

@@ -1,6 +1,6 @@
-const { start, stop } = require('../server.js')
+const { start, stop, } = require('../server.js');
 
 module.exports = {
   before: (done) => start(done),
-  after: stop
+  after: stop,
 };
