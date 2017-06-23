@@ -1,9 +1,16 @@
 extends ../layouts/base
 
 block content
-  #contact.bg-gray.w-100.absolute.v-center.tc
-    form(method='POST', action='http://formspree.io/heyminick@live.com').dib
-      input(type='text', name='name', placeholder='You name').db
-      input(type='email', name='email', placeholder='Your email').db
-      textarea(name='message', placeholder='Your message').db
-      button(type='submit').db Send
+  #contact.w-100.absolute.tc
+    h2.tc.light-gray Contact us
+    #form(method='POST', action='http://formspree.io/heyminick@live.com').dib.w-100.mxwi6
+      input(type='text', name='name', placeholder='You name').dib.w-100.bn.bb.bg-light-gray.br2.ma1.f5.pa2
+      br
+      input(type='email', name='email', placeholder='Your email').dib.w-100.bg-light-gray.bn.br2.ma1.f5.pa2
+      br
+      textarea(name='message', placeholder='Your message').dib.w-100.bg-light-gray.bn.br2.ma1.f5.pa2.h4
+      br
+      #actions.flex.flex-row.justify-center.items-center
+        a(href='/').dib.pointer.f5.no-underline.lh-solid.fw4.bg-light-red.light-gray.pa3.br1.ma2 Cancel
+        button(type='submit').dib.pointer.f5.no-underline.lh-solid.fw3.bn.bg-green.light-gray.pa3.br1.ma2 Send
+        
