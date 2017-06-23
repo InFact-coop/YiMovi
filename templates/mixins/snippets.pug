@@ -7,7 +7,7 @@ mixin subHeading(text)
       
 mixin sectionParagraph(body, isDarkTheme)
     - const length = 200
-    - const cropped = utils.cropHTMLString(body, length, '...')
+    - const cropped = utils.decodeHTMLEntities(utils.cropHTMLString(body, length, '...'))
     .sectionParagraph
       .initial-text
         p.f6.f5-ns.initial-text=cropped

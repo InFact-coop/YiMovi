@@ -12,7 +12,6 @@ exports = module.exports = (req, res) => {
     locals.director = {};
     locals.movies = [];
     locals.color = 'green';
-    locals.utils = require('keystone-utils');
 
     Director.model.findOne({ key: req.params.name, }).exec((err, director) => {
 
