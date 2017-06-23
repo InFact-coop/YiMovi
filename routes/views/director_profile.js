@@ -11,6 +11,7 @@ exports = module.exports = (req, res) => {
     locals.title = '';
     locals.director = {};
     locals.movies = [];
+    locals.color = 'green';
 
     Director.model.findOne({ key: req.params.name, }).exec((err, director) => {
 

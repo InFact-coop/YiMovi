@@ -4,6 +4,7 @@ const Types = keystone.Field.Types;
 const Movie = new keystone.List('Movie', {
   autokey: { from: 'name', path: 'key', unique: true, },
   label: 'Movies',
+  sortable: true,
 });
 
 Movie.add({

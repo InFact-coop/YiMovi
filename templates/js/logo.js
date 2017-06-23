@@ -3,13 +3,13 @@
   function getColor(view) {
     switch(view) {
     case 'movies':
-      return 'svg-fill--blue';
+      return 'svg-fill--light-blue';
     case 'themes':
       return 'svg-fill--light-purple';
     case 'directors':
-      return 'svg-fill--green';
+      return 'svg-fill--light-green';
     case 'genres':
-      return 'svg-fill--yellow';
+      return 'svg-fill--light-yellow';
     default:
       return 'st0';
     }

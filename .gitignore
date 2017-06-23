@@ -2,7 +2,7 @@
 node_modules
 .DS_Store
 public/tachyons.min.css
-tachyons/css/tachyons*
+tachyons/*
 mongo_config*
 heroku_*
 selenium-debug.log

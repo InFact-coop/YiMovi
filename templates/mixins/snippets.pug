@@ -1,5 +1,5 @@
 mixin sectionHeading(text)
-    h2.f4.f3-ns.fw6.lh-title.ma2.ttu.blue=text
+    h2.f4.f3-ns.fw6.lh-title.ttu.blue=text
 
 mixin subHeading(text)
     h3.f5.mt3.ttu.light-silver
@@ -7,12 +7,12 @@ mixin subHeading(text)
       
 mixin sectionParagraph(body, isDarkTheme)
     - const length = 200
-    - const cropped = utils.cropHTMLString(body, length, '...')
+    - const cropped = utils.decodeHTMLEntities(utils.cropHTMLString(body, length, '...'))
     .sectionParagraph
       .initial-text
-        p.ma2.f6.f5-ns.initial-text=cropped
-      .hidden-text.ma2.f6.f5-ns.dn!=body
-      a.f6.f5-ns.underline.showMore.pointer.ma2.dim.blue(style = isDarkTheme ? `color: white` : '' id="show-more-link")
+        p.f6.f5-ns.initial-text=cropped
+      .hidden-text.f6.f5-ns.dn!=body
+      a.f6.f5-ns.underline.showMore.pointer.dim.blue(style = isDarkTheme ? `color: white` : '' id="show-more-link")
         ="Show more"
 
 mixin link(text, obj)
@@ -46,7 +46,7 @@ mixin listCollection(type, list)
           
 mixin section(movie, section, title)
     if movie[section].html && movie[section].html.length
-      hr.ma3
+      hr.mt3.mb3
       section(id=`${section}`)
         +sectionHeading(title || section)
         +sectionParagraph(movie[section].html)

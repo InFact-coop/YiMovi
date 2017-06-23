@@ -11,7 +11,7 @@ exports = module.exports = (req, res) => {
     locals.title = 'Browse movies by theme | YiMovi';
     locals.color = 'purple';
 
-    Theme.model.find().exec((err, themes) => {
+    Theme.model.find().sort('sortOrder').exec((err, themes) => {
 
       if (err) return next(err);
 

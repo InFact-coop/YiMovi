@@ -1,9 +1,34 @@
 extends ../layouts/base
 include ../mixins/snippets
+include ../mixins/movie-listing
 
 block content
-    h1=director.name
-    ul
-      each movie in movies
-        li
-          +linkMovie(movie)
+  #title-container.bg-green.pa3.shadow-5.z-1.light-gray
+    
+    +breadcrumbs("directors", director.name)
+    
+    if (director.name_chn)
+      h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=director.name_chn
+    h1.light-gray.ttu.f2.f1-ns.fw7.lh-title.ma0=director.name
+    
+    if director.image && director.image.secure_url
+      #image-container.w-100.w-70-ns.w-50-l.h5
+        span.h-100.cover.no-repeat.dib.w-100.self-center(style=`background-image:url("${director.image.secure_url}")`)
+    
+    if director.description && director.description.html
+      .description.w-100.w-70-ns.w-50-l
+        +sectionParagraph(director.description.html, true)
+    
+    hr.ma3
+    
+    h2.ttu.f4.f3-ns.fw6.lh-title.ma0=`movies by ${director.name}`
+    
+  ul.list.pl0.ma0
+    each movie in movies
+      li
+        +movieListing(movie, "directors")
+        
+
+block scripts
+  script
+    include ../js/main.js
