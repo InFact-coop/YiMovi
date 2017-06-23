@@ -8,7 +8,14 @@
 }
 
 @media (--breakpoint-not-small) {
-  .h-6-ns { height: 24rem; }
+  .h6-ns { height: 24rem; }
+}
+
+
+
+/* Display */
+@media (--breakpoint-not-small) {
+    .dn-ns { display: none !important; }
 }
 
 /* Max Heights */
@@ -92,7 +99,6 @@
 
 
 
-
 /*** Flex ***/
 .flex-1-0-0 { flex: 1 0 0; }
 .flex-2-0-0 { flex: 2 0 0; }
@@ -159,8 +165,18 @@
 
 
 /* SVG Fills */
-.svg-fill--blue { fill: var(--light-blue); }
+.svg-fill--blue { fill: var(--blue); }
+.svg-fill--light-blue { fill: var(--light-blue); }
+
+.svg-fill--purple { fill: var(--purple); }
 .svg-fill--light-purple { fill: var(--light-purple); }
+
+.svg-fill--yellow { fill: var(--yellow); }
+.svg-fill--light-yellow { fill: var(--light-yellow); }
+
+.svg-fill--yellow { fill: var(--green); }
+.svg-fill--light-green { fill: var(--light-green); }
+
 .svg-fill--yellow { fill: var(--light-yellow); }
 .svg-fill--green { fill: var(--light-green); }
 
