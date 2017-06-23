@@ -7,3 +7,6 @@ mongo_config*
 heroku_*
 selenium-debug.log
 npm-debug.log
+
+# nightwatch output
+/reports

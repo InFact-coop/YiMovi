@@ -1,6 +1,6 @@
 require('env2')('.env'); // optionally store your Evironment Variables in .env
 const PKG = require('./package.json'); // so we can get the version of the project
-const SCREENSHOT_PATH = './node_modules/nightwatch/screenshots/' + PKG.version + '/';
+const SCREENSHOT_PATH = './reports/screenshots/' + PKG.version + '/';
 const BINPATH = './node_modules/nightwatch/bin/';
 
 // we use a nightwatch.conf.js file so we can include comments and helper functions
@@ -8,7 +8,8 @@ const config = {
   'src_folders': [
     'test/e2e',// Where you are storing your Nightwatch e2e tests
   ],
-  'output_folder': './node_modules/nightwatch/reports', // reports (test outcome) output by Nightwatch
+  'globals_path': './test/nightwatch_setup.js',
+  'output_folder': './reports', // reports (test outcome) output by Nightwatch
   'selenium': { // downloaded by selenium-download module (see readme)
     'start_process': true, // tells nightwatch to start/stop the selenium process
     'server_path': BINPATH + 'selenium.jar', // downloaded by selenium-download module (see below)
