@@ -14,6 +14,7 @@ exports = module.exports = (req, res) => {
     locals.genres = [];
     locals.themes = [];
     locals.utils = require('keystone-utils');
+    locals.live_url = `${process.env.LIVE_HOST || 'http://localhost'}${req.url}`;
 
     Movie.model.findOne({ key: req.params.name, })
       .populate('director')
