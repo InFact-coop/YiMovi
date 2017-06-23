@@ -11,7 +11,7 @@ exports = module.exports = (req, res) => {
     locals.title = 'Browse by director | YiMovi';
     locals.color = 'green';
 
-    Director.model.find().exec((err, directors) => {
+    Director.model.find().sort('sortOrder').exec((err, directors) => {
 
       if (err) return next(err);
 

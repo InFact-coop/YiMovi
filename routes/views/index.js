@@ -9,13 +9,11 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.themes = [];
 
-    Theme.model.find().exec((err, themes) => {
+    Theme.model.find().limit(8).sort('sortOrder').exec((err, themes) => {
 
       if (err) return next(err);
 
-      const sliced = themes.slice(0, 4);
-
-      locals.themes = sliced;
+      locals.themes = themes;
       next();
     });
   });

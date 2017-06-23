@@ -4,6 +4,7 @@ const Types = keystone.Field.Types;
 const Theme = new keystone.List('Theme', {
   autokey: { from: 'name', path: 'key', unique: true, },
   label: 'Themes',
+  sortable: true, 
 });
 
 Theme.add({

@@ -4,6 +4,7 @@ const Types = keystone.Field.Types;
 const Genre = new keystone.List('Genre', {
   autokey: { from: 'name', path: 'key', unique: true, },
   label: 'Genres',
+  sortable: true,
 });
 
 Genre.add({
