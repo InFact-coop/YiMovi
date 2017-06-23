@@ -18,11 +18,11 @@ block content
       
       #form.dib.w-100.pr2
         form(method='POST', action=`http://formspree.io/${email}`)
-          input(type='text', name='name', placeholder='You name').dib.w-100.bn.bb.bg-light-silver.br2.ma1.f5.pa2.white
+          input(type='text', name='name', placeholder='Your name' title='Your name').dib.w-100.bn.bb.bg-light-silver.br2.ma1.f5.pa2.white
           br
-          input(type='email', name='_replyto', placeholder='Your email').dib.w-100.bg-light-silver.bn.br2.ma1.f5.pa2.white
+          input(type='email', name='_replyto', placeholder='Your email' title='Your email').dib.w-100.bg-light-silver.bn.br2.ma1.f5.pa2.white
           br
-          textarea(name='message', placeholder='Your message').dib.w-100.bg-light-silver.bn.br2.ma1.f5.pa2.h4.white
+          textarea(name='message', placeholder='Your message' title='Your message').dib.w-100.bg-light-silver.bn.br2.ma1.f5.pa2.h4.white
           br
           input(type="hidden" name="_next" value=`/?mailsent=true`)
           #actions.flex.flex-row.justify-center.items-center
