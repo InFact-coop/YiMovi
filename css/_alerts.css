@@ -1,0 +1,12 @@
+/* For flash message styling */
+
+/* General */
+.alert {
+  padding: 2rem;
+}
+
+/* Success */
+.alert-success {
+  color: white;
+  background-color: var(--light-green);
+}

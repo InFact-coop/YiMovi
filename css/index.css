@@ -52,4 +52,4 @@
 @import './_variables';
 @import './_custom';
 @import './_slider';
-/*@import 'css-max-height-scale';*/
+@import './_alerts';
