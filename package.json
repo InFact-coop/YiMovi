@@ -5,6 +5,7 @@
   "main": "web.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test.e2e": "npm run start & nightwatch",
     "start": "node web.js",
     "startmon": "nodemon web.js",
     "startmon.watch": "nodemon web.js & npm run watch_tachyons",
@@ -27,6 +28,7 @@
   "homepage": "https://github.com/InFact-coop/YiMovi#readme",
   "dependencies": {
     "dotenv": "^4.0.0",
+    "env2": "^2.2.0",
     "keystone": "^4.0.0-beta.5",
     "keystone-utils": "^0.4.0",
     "pug": "^2.0.0-rc.1",
@@ -41,6 +43,10 @@
   },
   "devDependencies": {
     "eslint": "^3.19.0",
-    "nodemon": "^1.11.0"
+    "keystone-nightwatch-e2e": "^0.2.14",
+    "nightwatch": "^0.9.16",
+    "nodemon": "^1.11.0",
+    "saucelabs": "^1.4.0",
+    "selenium-download": "^2.0.10"
   }
 }
