@@ -13,8 +13,6 @@ exports = module.exports = (req, res) => {
 
       if (err) return next(err);
 
-      // const sliced = themes.slice(0, 4);
-
       locals.themes = themes;
       next();
     });

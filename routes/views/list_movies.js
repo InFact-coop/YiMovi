@@ -10,7 +10,7 @@ exports = module.exports = (req, res) => {
     locals.movies = [];
     locals.title = 'Browse movies by title | YiMovi';
 
-    Movie.model.find().populate('director').exec((err, movies) => {
+    Movie.model.find().sort('sortOrder').populate('director').exec((err, movies) => {
 
       if (err) return next(err);
 
