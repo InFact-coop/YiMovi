@@ -1,6 +1,7 @@
 extends ../layouts/base
 include ../mixins/snippets
 include ../mixins/img-gallery.pug
+include ../mixins/social.pug
 
 
 block css
@@ -52,16 +53,17 @@ block content
   a#anchor-summary(tabindex="-1")  
         
   if movie.image.secure_url
-    #image-container.flex.flex-column.justify-center.h4.h6-ns.bg-near-white.z--1
-      span.h-100.contain.no-repeat.dib.w-100.self-center.mw7(style=`background-image:url("${movie.image.secure_url}"); background-repeat: no-repeat; background-position: center`)
+    #image-container.flex.flex-column.justify-center.h4.h6-ns.bg-near-white.relative.z--1
+      span.h-100.contain.no-repeat.dib.relative.w-100.self-center.mw7(style=`background-image:url("${movie.image.secure_url}"); background-repeat: no-repeat; background-position: center`)
     
-  #content.pa3.pa4-ns.mw7
+  #content.pa3.pa5-ns.mw7
+    +socialIcons(live_url)
         
     //- summary section
     section#summary.flex.justify-start
       
       if themes.length
-        #themes.ml2
+        #themes
           +listCollection("theme", themes)
         
       if genres.length
@@ -73,19 +75,20 @@ block content
     //- video section
     if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
       a#anchor-video(tabindex="-1")
-      hr.ma3
+      hr.mt3.mb3
       section#video.flex.flex-column
         +sectionHeading("Video")
-        div.relative.pb-video.h0
+
+        div.relative.pb-video.h0.bg-black
           iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=movie.video frameborder="0" scrolling="no")
         if movie.videoLinks.html
           +subHeading("More video links")
-          #video-links.ph2.f6.f5-ns
+          #video-links.f6.f5-ns
             !=movie.videoLinks.html
     
     //- gallery section
     if movie.gallery.length
-      hr.ma3
+      hr.mh0.mv3
       a#anchor-images(tabindex="-1")    
       section#gallery.pv1.flex.flex-column
       - const imgArray = movie.gallery
@@ -94,7 +97,7 @@ block content
       section#gallery.pv3.flex.flex-column
         +sectionHeading("Image gallery")
         // - image slider
-        div.slider-holder.w-90.h4.h6-ns.center.mt0.overflow-hidden.tc
+        div.slider-holder.w-100.h4.h6-ns.center.mt0.overflow-hidden.tc
           each _, spanIndex in imgArray  
             +sliderHolder(spanIndex)
           .image-holder.bg-gray.h4.h6-ns.relative.cb.trans-slide(style=imgHolderStyle)
@@ -121,9 +124,9 @@ block content
         
     //- external links
     if movie.externalLinks.html.length
-      hr.ma3
+      hr.mh0.mv3
       +sectionHeading("External links")
-      #external-links.ph2.f6.f5-ns
+      #external-links.f6.f5-ns
         !=movie.externalLinks.html
         
     //- teaching & learning

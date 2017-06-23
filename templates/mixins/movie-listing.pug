@@ -23,7 +23,7 @@ mixin titleChn(movie)
 mixin imgContainer(movie)
   .listingImg.flex-1-0-0(class=`bg-${color}`)
     if movie.image.secure_url
-      +bgImage(movie.image.secure_url)
+      +bgImage(movie._.image.limit(400,500))
               
 mixin detailsContainer(movie)
   .listingDetails.ph1.ph3-ns.flex.flex-column.flex-1-0-0.flex-1-0-0-ns.flex-1-0-0-m.flex-2-0-0-l.justify-around

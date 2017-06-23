@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node web.js",
     "startmon": "nodemon web.js",
-    "startmon.watch": "nodemon web.js && npm run watch_tachyons",
+    "startmon.watch": "nodemon web.js & npm run watch_tachyons",
     "watch_tachyons": "postcss --watch --config ./postcss.config.js",
     "build_tachyons": "postcss --config ./postcss.config.js",
     "deploy_tachyons": "git checkout -B deploy && git merge master && npm run commit_tachyons && git push heroku deploy:master -f",
