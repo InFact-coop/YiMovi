@@ -9,11 +9,11 @@ include ../mixins/listings
 mixin themeBox(theme)
   - const title = `Movies about ${theme.name}`
   - const img = theme.image && theme.image.secure_url ? theme.image.secure_url : null
-  +listing("themes", theme.name, title, color, img)
+  +listing("themes", theme.name, title, primaryColor, img)
 
 block content
   
-  +titleContainer(color)
+  +titleContainer(primaryColor)
     +breadcrumbs("themes")
     h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns
       | browse themes

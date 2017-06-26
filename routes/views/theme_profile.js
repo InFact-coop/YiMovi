@@ -13,7 +13,6 @@ exports = module.exports = (req, res) => {
     locals.theme = {};
     locals.title = '';
     locals.movies = [];
-    locals.color = 'purple';
 
     Theme.model.findOne({ key: req.params.name, }).exec((err, theme) => {
 

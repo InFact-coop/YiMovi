@@ -7,7 +7,7 @@ mixin splashImage(imageNumber)
   span.transition-opacity.vh-75.w-100.cover.bg-center.dib.absolute(style=imageUrl)
           
 block content
-  #titleContainer.pa4.bg-red.light-gray
+  #titleContainer.pa4.light-gray(class=`bg-${primaryColor}`)
     h1.f2.f1-ns.fw7.ttu.lh-title.ma0
       | Chinese film and the cross-cultural medical humanities
       
@@ -20,7 +20,7 @@ block content
         
     div.vh-75
           
-  #bylineContainer.ph4.pv2.pv4-ns.bg-red.light-gray.f3.f2-ns.fw7.lh-title
+  #bylineContainer.ph4.pv2.pv4-ns.light-gray.f3.f2-ns.fw7.lh-title(class=`bg-${primaryColor}`)
     p What can the Sinophone world offer to the Medical Humanities?
     p What can the Medical and Health Humanities offer to China?
             

@@ -9,11 +9,11 @@ include ../mixins/listings
 mixin genreBox(genre)
   - const title = `${genre.name} movies`
   - const img = genre.image && genre.image.secure_url ? genre.image.secure_url : null
-  +listing("genres", genre.name, title, color, img)
+  +listing("genres", genre.name, title, primaryColor, img)
 
 block content
   
-  +titleContainer(color)
+  +titleContainer(primaryColor)
     +breadcrumbs("genres")
     h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns
       | browse genres
