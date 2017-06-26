@@ -16,8 +16,32 @@ exports = module.exports = (req, res) => {
 
       if (err) return next(err);
 
-      locals.director = director;
+      // find out which fields in this model are translatable fields
+      // don't want to hardcode this, as I would like to export this function and use it across all routes
+      // also translatable key names have pattern name___LOCALE << yes, 3 underscores!!
+      const translatableFields = Object.keys(director._doc)
+        .filter(key => key.includes('___'))
+        .map(filteredKey => filteredKey.split('___')[0]);
+
+
+      // get only relevant fields
+      const directorLocalized = locals.locale === 'en'
+        ? director._doc
+        : Object.keys(director._doc)
+          .filter(key => {
+            const [ type, locale, ] = key.split('___');
+            console.log({ type, locale, });
+            return translatableFields.indexOf(type) < 0 || locale === locals.locale;
+          })
+          // change key name so that '___LOCALE' part is discarded
+          .reduce((a, b) =>
+            Object.assign({}, a, { [b.replace(/\_\_.+$/, '')] : director[b], }), {});
+
+      // pass only relevant (localized) data down to route
+      locals.director = directorLocalized;
       locals.title = `${director.name} ${director.name_chn || ''} | YiMovi director profile`;
+
+      console.log({ directorLocalized, });
 
       getMoviesBy('director', director, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);

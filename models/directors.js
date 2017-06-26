@@ -11,6 +11,7 @@ Director.add({
   name: { type: String, required: true, },
   name_chn: { type: String, label: 'Chinese name', },
   description: { type: Types.Markdown, required: false, },
+  description___chn: { type: Types.Markdown, required: false, label: 'description CHN', collapse: true, },
   image: { type: Types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
 });
 
