@@ -1,8 +1,10 @@
 const keystone = require('keystone');
 const middleware = require('./middleware');
+const i18n = require('i18n');
 const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
+keystone.pre('routes', i18n.init);
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', (_, res, next) => {
@@ -35,6 +37,19 @@ const routes = {
 
 // Bind Routes
 exports = module.exports = (app) => {
+
+  app.use((req, res, next) => {
+    const url = req.res.req.originalUrl;
+    const locale = url.split('/')[1];
+    const availableLocales = [ 'en', 'chn', ];
+    if (availableLocales.indexOf(locale) < 0) {
+      return res.redirect('/en' + url);
+    }
+    i18n.setLocale(res, locale);
+    next();
+  });
+
+
   app.get('/', routes.views.index);
   app.get('/directors', routes.views.list_directors);
   app.get('/themes', routes.views.list_themes);
