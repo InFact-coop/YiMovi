@@ -23,5 +23,8 @@
 		"strapline-1": "strapline 1",
 		"strapline-2": "strapline 2",
 		"logo_link-title": "logo link title"
+	},
+	"director_profile": {
+		"title": "director_profile.title"
 	}
 }
