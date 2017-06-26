@@ -1,9 +1,9 @@
 nav.bg-gray.shadow-3.h2.h3-ns.items-center.flex.flex-row.justify-between
   a(href="/" title="Home").no-underline
     #strapline.h-100.self-start.ttu.f7.f5-ns.fw6.light-gray.pa3-ns.pa1.pointer
-      p.ma0 Chinese Film &
-      p.ma0 Medical Humanities
+      p.ma0 #{__('header.strapline-1')}
+      p.ma0 #{__('header.strapline-2')}
   #logo.h-100.self-end
-    a.h-100.w-100.fr(href="/" title="YiMovi home")
+    a.h-100.w-100.fr(href="/" title="#{__('header.logo_link-title')}")
       .logo.h-100
         include ../partials/logo.svg

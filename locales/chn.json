@@ -1,0 +1,27 @@
+{
+	"app": {
+		"title": "title"
+	},
+	"about": {
+		"title": "title",
+		"part1": "part1",
+		"part2": "part2",
+		"part3": "part3",
+		"team-title": "team title"
+	},
+	"index": {
+		"header": "header",
+		"byline1": "byline1",
+		"byline2": "byline2",
+		"top-themes_title": "top themes title",
+		"link_themes": "link themes",
+		"link_movies": "link movies",
+		"link_directors": "link directors",
+		"link_genres": "link genres"
+	},
+	"header": {
+		"strapline-1": "strapline 1",
+		"strapline-2": "strapline 2",
+		"logo_link-title": "logo link title"
+	}
+}
