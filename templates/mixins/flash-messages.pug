@@ -2,16 +2,16 @@ mixin flash-messages(messages)
     if messages
         #flash-messages.container
             each message in messages.info
-                +flash-message(message, 'info')
+                +flash-message(message, 'info', 'light-gray')
             each message in messages.success
-                +flash-message(message, 'success')
+                +flash-message(message, 'success', 'light-green')
             each message in messages.warning
-                +flash-message(message, 'warning')
+                +flash-message(message, 'warning', 'light-red')
             each message in messages.error
-                +flash-message(message, 'danger')
+                +flash-message(message, 'danger', 'red')
 
-mixin flash-message(message, type)
-    div(class='alert alert-' + type)
+mixin flash-message(message, type, bg_class)
+    div(class=`alert alert-${type} bg-${bg_class} white pa4`)
         if utils.isObject(message)
             if message.title
                 h4= message.title

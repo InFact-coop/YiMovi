@@ -7,6 +7,7 @@ keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', (_, res, next) => {
   res.locals.utils = require('keystone-utils');
+  res.locals.host = process.env.HOST || 'http://0.0.0.0:3000';
   next();
 });
 keystone.pre('render', middleware.flashMessages);
@@ -43,4 +44,5 @@ exports = module.exports = (app) => {
   app.get('/genres/:name', routes.views.genre_profile);
   app.get('/directors/:name', routes.views.director_profile);
   app.get('/movies/:name', routes.views.movie_profile);
+  app.get('/contact', routes.views.contact);
 };

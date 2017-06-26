@@ -4,10 +4,6 @@ include ../mixins/img-gallery.pug
 include ../mixins/social.pug
 
 
-block css
-  style
-    include ../css/custom.css
-
 block content
   
   - const sections = [ "context", "synopsis", "cinematography", "pointsForDiscussion", "externalLinks", ]
@@ -57,7 +53,7 @@ block content
       span.h-100.contain.no-repeat.dib.relative.w-100.self-center.mw7(style=`background-image:url("${movie.image.secure_url}"); background-repeat: no-repeat; background-position: center`)
     
   #content.pa3.pa5-ns.mw7
-    +socialIcons(live_url)
+    +socialIcons(full_url)
         
     //- summary section
     section#summary.flex.justify-start
