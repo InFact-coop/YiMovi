@@ -8,7 +8,6 @@ exports = module.exports = (req, res) => {
   view.on('init', next => {
     const locals = res.locals;
     locals.themes = [];
-    locals.title = 'Browse movies by theme | YiMovi';
 
     Theme.model.find().sort('sortOrder').exec((err, themes) => {
 

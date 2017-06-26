@@ -8,7 +8,6 @@ exports = module.exports = (req, res) => {
   view.on('init', next => {
     const locals = res.locals;
     locals.directors = [];
-    locals.title = 'Browse by director | YiMovi';
 
     Director.model.find().sort('sortOrder').exec((err, directors) => {
 

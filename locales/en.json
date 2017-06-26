@@ -1,6 +1,9 @@
 {
 	"app": {
-		"title": "Chinese Medical Humanities Film - YiMovi"
+		"title": "Chinese Medical Humanities Film - YiMovi",
+		"flash_messages": {
+			"mail_sent": "Thank you for contacting us. We'll be in touch soon"
+		}
 	},
 	"about": {
 		"title": "about us",
@@ -41,6 +44,9 @@
 		"title": "Movies about"
 	},
 	"list_themes": {
+		"title": "Movies about"
+	},
+	"theme_profile": {
 		"title": "Movies about"
 	},
 	"movie_profile": {
