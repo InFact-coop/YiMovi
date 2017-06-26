@@ -16,7 +16,7 @@
   }
 
   var url = window.location.pathname;
-  var view = url.split('/')[1];
+  var view = url.split('/')[2];
   var logoParts = document.querySelectorAll('.st0');
 
   [].forEach.call(logoParts, function(part) {

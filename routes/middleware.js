@@ -9,7 +9,7 @@ exports.initLocals = (req, res, next) => {
   const locals = res.locals;
   locals.user = req.user;
   const viewColors = require('./setup/view-colors.js');
-  const view = req.url.split('/')[1];
+  const view = req.url.split('/')[2];
   locals.primaryColor = (viewColors[view] || viewColors.default);
 
   // Add your own local variables here
