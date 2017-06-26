@@ -21,9 +21,6 @@ exports.initLocals = (req, res, next) => {
   By requiring json data from locales directory
 */
 exports.initStatic = (req, res, next) => {
-  const _static = require(`../locales/${res.locale}.json`);
-  console.log(_static);
-
   res.locals.static = require(`../locales/${res.locale}.json`);
   next();
 };
