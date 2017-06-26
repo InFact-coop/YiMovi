@@ -7,6 +7,7 @@ const importRoutes = keystone.importer(__dirname);
 keystone.pre('routes', i18n.init);
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
+keystone.pre('routes', middleware.initStatic);
 keystone.pre('routes', (_, res, next) => {
   res.locals.utils = require('keystone-utils');
   res.locals.site_url = process.env.SITE_URL || 'http://0.0.0.0:3000';
@@ -41,8 +42,6 @@ exports = module.exports = (app) => {
   const viewRouter = require('express').Router();
 
   viewRouter.use((req, res, next) => {
-    console.log(req.res.req.originalUrl);
-
     const url = req.res.req.originalUrl;
     const locale = url.split('/')[1];
     if ([ 'en', 'chn', ].includes(locale) != true) {
@@ -55,6 +54,7 @@ exports = module.exports = (app) => {
 
   viewRouter.get('/', routes.views.index);
   viewRouter.get('/directors', routes.views.list_directors);
+  viewRouter.get('/contact', routes.views.contact);
   viewRouter.get('/themes', routes.views.list_themes);
   viewRouter.get('/genres', routes.views.list_genres);
   viewRouter.get('/movies', routes.views.list_movies);

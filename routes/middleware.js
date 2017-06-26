@@ -17,6 +17,18 @@ exports.initLocals = (req, res, next) => {
 };
 
 /**
+  Initialises static text as view data,
+  By requiring json data from locales directory
+*/
+exports.initStatic = (req, res, next) => {
+  const _static = require(`../locales/${res.locale}.json`);
+  console.log(_static);
+
+  res.locals.static = require(`../locales/${res.locale}.json`);
+  next();
+};
+
+/**
     Inits the error handler functions into `res`
 */
 exports.initErrorHandlers = (req, res, next) => {

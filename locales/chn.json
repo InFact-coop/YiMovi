@@ -26,5 +26,11 @@
 	},
 	"director_profile": {
 		"title": "director_profile.title"
+	},
+	"contact": {
+		"title": "contact.title",
+		"address_title": "contact.address_title",
+		"address_body": "contact.address_body",
+		"online_title": "contact.online_title"
 	}
 }

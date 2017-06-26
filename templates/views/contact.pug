@@ -3,17 +3,17 @@ extends ../layouts/base
 block content
   #contact.w-100.absolute.tc.bg-gray.z-1.h-100
     .mw6.dib.tc.w-100.pb4
-      h1.f3.tc.light-gray Contact us
+      h1.f3.tc.light-gray #{static.contact.title}
       
       #address 
-      h2.f4.red Address
-      .silver Gower Str, Bloomsbury, London, WC1E 6BT
+      h2.f4.red #{static.contact.address_title}
+      .silver #{static.contact.address_body}
       
-      h1.f3.tc.light-gray Online
+      h1.f3.tc.light-gray #{static.contact.online_title}
       
       #form.dib.w-100.pr2
         form(method='POST', action=`http://formspree.io/${email}`)
-          input(type='text', name='name', placeholder='Your name' title='Your name').dib.w-100.bn.bb.bg-light-silver.br2.ma1.f5.pa2.white
+          input(type='text', name='name', placeholder=`${static.contact.placeholder_name}` title='Your name').dib.w-100.bn.bb.bg-light-silver.br2.ma1.f5.pa2.white
           br
           input(type='email', name='_replyto', placeholder='Your email' title='Your email').dib.w-100.bg-light-silver.bn.br2.ma1.f5.pa2.white
           br
