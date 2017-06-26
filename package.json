@@ -11,11 +11,10 @@
     "startmon.watch": "nodemon web.js & npm run watch_tachyons",
     "watch_tachyons": "postcss --watch --config ./postcss.config.js",
     "build_tachyons": "postcss --config ./postcss.config.js",
-    "deploy_tachyons": "git checkout -B deploy && git merge master && npm run commit_tachyons && git push heroku deploy:master -f",
-    "deploy_production": "git checkout -B deploy && git merge master && npm run commit_tachyons && git push production deploy:master -f",
-    "deploy": "git checkout -B deploy && git merge master && git push heroku deploy:master -f",
-    "commit_tachyons": "npm run build_tachyons && git add -f public/tachyons.min.css && git commit -m \"deploy\"",
-    "postinstall": "node nightwatch.conf.js"
+    "pre-deploy": "git checkout master && git pull origin master && npm run test.e2e",
+    "deploy-staging": "npm run pre-deploy && git checkout -B staging && git push origin staging -f",
+    "deploy-production": "npm run pre-deploy && git checkout -B production && git push origin production -f",
+    "postinstall": "npm run build_tachyons"
   },
   "repository": {
     "type": "git",
@@ -33,22 +32,21 @@
     "keystone": "^4.0.0-beta.5",
     "keystone-utils": "^0.4.0",
     "pug": "^2.0.0-rc.1",
+    "lodash": "^4.17.4",
     "underscore": "^1.8.3",
-    "tachyons-custom": "^4.5.4"
-  },
-  "devDependencies": {
-    "eslint": "^3.19.0",
-    "keystone-nightwatch-e2e": "^0.2.14",
-    "nightwatch": "^0.9.16",
-    "saucelabs": "^1.4.0",
-    "selenium-download": "^2.0.10",
+    "tachyons-custom": "^4.5.4",
     "autoprefixer": "^6.7.3",
-    "eslint": "^3.19.0",
-    "nodemon": "^1.11.0",
+    "postcss": "^6.0.3",
     "postcss-clean": "^1.0.2",
     "postcss-cli": "^2.6.0",
     "postcss-custom-media": "^5.0.1",
     "postcss-custom-properties": "^5.0.2",
     "postcss-import": "^9.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "nightwatch": "^0.9.16",
+    "nodemon": "^1.11.0",
+    "selenium-download": "^2.0.10"
   }
 }
