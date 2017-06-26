@@ -68,20 +68,6 @@
 }
 
 
-/* Max Width */
-.mxwi1 { max-width: 1rem; }
-.mxwi2 { max-width: 2rem; }
-.mxwi3 { max-width: 4rem; }
-.mxwi4 { max-width: 8rem; }
-.mxwi5 { max-width: 16rem; }
-.mxwi6 { max-width: 32rem; }
-.mxwi7 { max-width: 48rem; }
-.mxwi8 { max-width: 64rem; }
-.mxwi9 { max-width: 96rem; }
-.mxwi10 { max-width: 128rem; }
-
-
-
 /* Margin */
 .ma05 { margin: 0.125rem; }
 
