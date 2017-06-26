@@ -9,11 +9,11 @@ include ../mixins/listings
 mixin directorBox(director)
   - const title = `Movies about ${director.name}`
   - const img = director.image && director.image.secure_url ? director.image.secure_url : null
-  +listing("directors", director.name, title, color, img)
+  +listing("directors", director.name, title, primaryColor, img)
 
 block content
   
-  +titleContainer(color)
+  +titleContainer(primaryColor)
     +breadcrumbs("directors")
     h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns
       | browse directors
