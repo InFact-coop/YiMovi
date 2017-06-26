@@ -43,10 +43,8 @@
   },
   "devDependencies": {
     "eslint": "^3.19.0",
-    "keystone-nightwatch-e2e": "^0.2.14",
     "nightwatch": "^0.9.16",
     "nodemon": "^1.11.0",
-    "saucelabs": "^1.4.0",
     "selenium-download": "^2.0.10"
   }
 }
