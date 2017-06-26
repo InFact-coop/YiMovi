@@ -34,6 +34,9 @@
 	"genre_profile": {
 		"title": "Movies about"
 	},
+	"list_directors": {
+		"title": "Movies about"
+	},
 	"contact": {
 		"title": "Contact us",
 		"address_title": "Address",

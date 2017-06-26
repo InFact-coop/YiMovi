@@ -7,7 +7,7 @@ include ../mixins/listings
   color - string
 
 mixin directorBox(director)
-  - const title = `Movies about ${director.name}`
+  - const title = `${__.list_directors.title} ${director.name}`
   - const img = director.image && director.image.secure_url ? director.image.secure_url : null
   +listing("directors", director.name, title, primaryColor, img)
 
