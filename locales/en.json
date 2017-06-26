@@ -1,0 +1,26 @@
+{
+  "app": {
+    "title_default": "Chinese Medical Humanities Film - YiMovi"
+  },
+  "index": {
+    "header": "Chinese film and the cross-cultural medical humanities",
+    "byline1": "What can the Sinophone world offer to the Medical Humanities?",
+    "byline2": "What can the Medical and Health Humanities offer to China?",
+    "top-themes_title": "top themes",
+    "top-themes_link-title": "Movies about",
+    "link_themes": "Browse all themes",
+    "link_movies": "Browse all movies",
+    "link_directors": "Browse all directors",
+    "link_genres": "Browse all genres",
+    "about-us_title": "about us",
+    "about-us_part1": "For five years the team have been working with film in both teaching and research.",
+    "about-us_part2": "We have used traditional Euro-American medical humanities approaches to teaching with Chinese film, examining the doctor-patient relationships, the role of qualities like empathy and compassion (or their absence) in improving health care, patient experiences of serious and chronic illness, and medical ethics. Working mainly with Chinese students has brought up critical points of cultural difference, and highlighted the unique challenges that the Chinese speaking worlds face. It also brings a critical focus to what have beenconsidered universal rights in healthcare, in death and dying, and medical ethics in general.",
+    "about-us_part3": "The study of medicine in China through film can also offer new insights forthe Medical and Health Humanities, through a more intimate engagement with alternative health systems, but also conceptions of state, community and individual. How the body has been used as a site of personal cultivation, social conformity or political contestation is all made visible in film.",
+    "about-us_team-title": "the team",
+  },
+  "header": {
+    "strapline-1": "Chinese Film &",
+    "strapline-2": "Medical Humanities",
+    "logo_link-title": "YiMovi home"
+  }
+}
