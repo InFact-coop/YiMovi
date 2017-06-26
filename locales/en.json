@@ -29,13 +29,41 @@
 		"link_genres": "Browse all genres"
 	},
 	"director_profile": {
-		"title": "Movies By"
+		"title": "Movies by"
 	},
 	"genre_profile": {
 		"title": "Movies about"
 	},
 	"list_directors": {
+		"title": "Movies by"
+	},
+	"list_genres": {
 		"title": "Movies about"
+	},
+	"list_themes": {
+		"title": "Movies about"
+	},
+	"movie_profile": {
+		"sections": [
+			"context",
+			"synopsis",
+			"cinematography",
+			"pointsForDiscussion",
+			"externalLinks"
+		],
+		"director": "director",
+		"video": "video",
+		"images": "images",
+		"screening_notes": "screening notes",
+		"intro": "intro",
+		"more_video_links": "more video links",
+		"image_gallery": "image gallery",
+		"context": "context",
+		"synposis": "synopsis",
+		"cinematography": "cinematography",
+		"points_for_discussion": "points for discussion",
+		"external_links": "external links",
+		"teaching_and_learning": "teaching and learning"
 	},
 	"contact": {
 		"title": "Contact us",

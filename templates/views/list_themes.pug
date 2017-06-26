@@ -7,7 +7,7 @@ include ../mixins/listings
   color - string
 
 mixin themeBox(theme)
-  - const title = `Movies about ${theme.name}`
+  - const title = `${__.list_themes.title} ${theme.name}`
   - const img = theme.image && theme.image.secure_url ? theme.image.secure_url : null
   +listing("themes", theme.name, title, primaryColor, img)
 

@@ -7,7 +7,7 @@ include ../mixins/listings
   color - string
 
 mixin genreBox(genre)
-  - const title = `${genre.name} movies`
+  - const title = `${__.list_genres.title} ${genre.name}`
   - const img = genre.image && genre.image.secure_url ? genre.image.secure_url : null
   +listing("genres", genre.name, title, primaryColor, img)
 
