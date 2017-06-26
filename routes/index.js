@@ -42,7 +42,7 @@ exports = module.exports = (app) => {
 
   viewRouter.use((req, res, next) => {
     console.log(req.res.req.originalUrl);
-    
+
     const url = req.res.req.originalUrl;
     const locale = url.split('/')[1];
     if ([ 'en', 'chn', ].includes(locale) != true) {
@@ -68,28 +68,4 @@ exports = module.exports = (app) => {
   app.use('/', (req, res) => {
     res.redirect('/en');
   });
-
-
-  // app.use((req, res, next) => {
-  //   const url = req.res.req.originalUrl;
-  //   const locale = url.split('/')[1];
-  //   const availableLocales = [ 'en', 'chn', ];
-  //   if (availableLocales.indexOf(locale) < 0) {
-  //     return res.redirect('/en' + url);
-  //   }
-  //   i18n.setLocale(res, locale);
-  //   next();
-  // });
-  //
-  //
-  // app.get('/', routes.views.index);
-  // app.get('/directors', routes.views.list_directors);
-  // app.get('/themes', routes.views.list_themes);
-  // app.get('/genres', routes.views.list_genres);
-  // app.get('/movies', routes.views.list_movies);
-  // app.get('/themes/:name', routes.views.theme_profile);
-  // app.get('/genres/:name', routes.views.genre_profile);
-  // app.get('/directors/:name', routes.views.director_profile);
-  // app.get('/movies/:name', routes.views.movie_profile);
-  // app.get('/contact', routes.views.contact);
 };
