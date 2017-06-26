@@ -9,20 +9,24 @@
 		"part3": "The study of medicine in China through film can also offer new insights forthe Medical and Health Humanities, through a more intimate engagement with alternative health systems, but also conceptions of state, community and individual. How the body has been used as a site of personal cultivation, social conformity or political contestation is all made visible in film.",
 		"team_title": "the team"
 	},
+	"header": {
+		"strapline_1": "Chinese Film &",
+		"strapline_2": "Medical Humanities",
+		"logo_link_title": "YiMovi home"
+	},
+	"footer": {
+		"link_contact": "Contact"
+	},
 	"index": {
 		"header": "Chinese film and the cross-cultural medical humanities",
 		"byline1": "What can the Sinophone world offer to the Medical Humanities?",
 		"byline2": "What can the Medical and Health Humanities offer to China?",
-		"top-themes_title": "top themes",
+		"top_themes_title": "top themes",
+		"theme_link_title": "Movies about",
 		"link_themes": "Browse all themes",
 		"link_movies": "Browse all movies",
 		"link_directors": "Browse all directors",
 		"link_genres": "Browse all genres"
-	},
-	"header": {
-		"strapline-1": "Chinese Film &",
-		"strapline-2": "Medical Humanities",
-		"logo_link-title": "YiMovi home"
 	},
 	"director_profile": {
 		"title": "Movies By"

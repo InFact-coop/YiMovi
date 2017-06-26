@@ -9,7 +9,7 @@ mixin splashImage(imageNumber)
 block content
   #titleContainer.pa4.light-gray(class=`bg-${primaryColor}`)
     h1.f2.f1-ns.fw7.ttu.lh-title.ma0
-      | #{__('index.header')}
+      | #{__.index.header}
       
   #homeImageContainer.bg-black
     +splashImage(1)
@@ -21,35 +21,35 @@ block content
     div.vh-75
           
   #bylineContainer.ph4.pv2.pv4-ns.light-gray.f3.f2-ns.fw7.lh-title(class=`bg-${primaryColor}`)
-    p #{__('index.byline1')}
-    p #{__('index.byline2')}
+    p #{__.index.byline1}
+    p #{__.index.byline2}
             
   if themes && themes.length
     #themesSection
       #themesTitle.ttu.bg-purple.ph4.pv3.light-gray
-        h2.ma0.f4.f2-ns #{__('index.top-themes_title')}
+        h2.ma0.f4.f2-ns #{__.index.top_themes_title}
                   
       +list()
         each theme in themes
-          - const title = "Movies about " + theme.name
+          - const title =  + `${__.index.theme_link_title} ${theme.name}`
           - const img = theme.image && theme.image.secure_url ? theme.image.secure_url : null
           +listing("themes", theme.name, title, "purple", img)
                     
       a.no-underline(href="/themes" title="Browse all themes")  
         #browseThemesBox.ttu.bg-purple.ph4.pv3.light-gray.hover-bg-light-purple.pointer
-          h2.ma0.f4.f2-ns #{__('index.link_themes')} >>
+          h2.ma0.f4.f2-ns #{__.index.link_themes} >>
   
       a.no-underline(href="/movies" title="Browse all movies")                
         #browseMoviesBox.ttu.bg-blue.ph4.pv3.light-gray.hover-bg-light-blue.pointer
-          h2.ma0.f4.f2-ns #{__('index.link_movies')} >>
+          h2.ma0.f4.f2-ns #{__.index.link_movies} >>
           
       a.no-underline(href="/directors" title="Browse all directors")                
         #browseDirectorsBox.ttu.bg-green.ph4.pv3.light-gray.hover-bg-light-green.pointer
-          h2.ma0.f4.f2-ns #{__('index.link_directors')} >>  
+          h2.ma0.f4.f2-ns #{__.index.link_directors} >>  
           
       a.no-underline(href="/genres" title="Browse all genres")                
         #browseGenresBox.ttu.bg-yellow.ph4.pv3.light-gray.hover-bg-light-yellow.pointer
-          h2.ma0.f4.f2-ns #{__('index.link_genres')} >>  
+          h2.ma0.f4.f2-ns #{__.index.link_genres} >>  
                         
   include ../partials/about
                         

@@ -17,11 +17,11 @@ exports.initLocals = (req, res, next) => {
 };
 
 /**
-  Initialises static text as view data,
-  By requiring json data from locales directory
+  Converts (correct) locale JSON object to regular js object
+  then assigned to __ key of locals object
 */
 exports.initStatic = (req, res, next) => {
-  res.locals.static = require(`../locales/${res.locale}.json`);
+  res.locals.__ = require(`../locales/${res.locale}.json`);
   next();
 };
 
