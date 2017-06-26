@@ -13,7 +13,7 @@ exports = module.exports = (req, res) => {
     locals.director = {};
     locals.genres = [];
     locals.themes = [];
-    locals.live_url = locals.live_host + req.url;
+    locals.full_url = locals.host + req.url;
 
     Movie.model.findOne({ key: req.params.name, })
       .populate('director')
