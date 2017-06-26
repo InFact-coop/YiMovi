@@ -26,8 +26,11 @@ keystone.init({
 require('./models');
 
 i18n.configure({
-  locales: [ 'en', 'de', ],
+  locales:[ 'en', 'chn', ],
   directory: __dirname + '/locales',
+  autoReload: true,
+  syncFiles: true,
+  objectNotation: true,
 });
 
 keystone.set('routes', require('./routes'));

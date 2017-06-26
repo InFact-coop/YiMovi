@@ -1,5 +1,45 @@
 {
-  "app" : {
-    "name" : "YIMOVI CHINESE"
-  }
+	"app": {
+		"name": "YIMOVI CHINESE"
+	},
+	"strapline-1": "strapline-1",
+	"strapline-2": "strapline-2",
+	"header": {
+		"strapline-1": "header.strapline-1",
+		"strapline-2": "header.strapline-2"
+	},
+	"byline1": "byline1",
+	"byline2": "byline2",
+	"top-themes_title": "top-themes_title",
+	"link_themes": "link_themes",
+	"link_movies": "link_movies",
+	"link_directors": "link_directors",
+	"link_genres": "link_genres",
+	"about-us_title": "about-us_title",
+	"about-part1": "about-part1",
+	"about-us_part2": "about-us_part2",
+	"about-us_part3": "about-us_part3",
+	"about-us_team-title": "about-us_team-title",
+	"index": {
+		"header": "index.header",
+		"byline1": "index.byline1",
+		"byline2": "index.byline2",
+		"top-themes_title": "index.top-themes_title",
+		"link_themes": "index.link_themes",
+		"link_movies": "index.link_movies",
+		"link_directors": "index.link_directors",
+		"link_genres": "index.link_genres",
+		"about-us_title": "index.about-us_title",
+		"about-part1": "index.about-part1",
+		"about-us_part2": "index.about-us_part2",
+		"about-us_part3": "index.about-us_part3",
+		"about-us_team-title": "index.about-us_team-title"
+	},
+	"about": {
+		"title": "about.title",
+		"part1": "about.part1",
+		"part2": "about.part2",
+		"part3": "about.part3",
+		"team-title": "about.team-title"
+	}
 }
