@@ -1,3 +1,5 @@
+const { defaultLocale, } = require('../setup/locales.js');
+
 const localize =  (locale, dbResultsObj) => {
 
   // keynames in DB that contain translatable content follow pattern 'name___locale'
@@ -18,7 +20,7 @@ const localizeResults = (locale, dbResults) => {
 
   // if currentLocale === defaultLocale, do nothing
   // english is default
-  if (locale === 'en') return dbResults;
+  if (locale === defaultLocale) return dbResults;
 
   if (dbResults instanceof Array) {
     return dbResults.map(dbResult => localize(locale, dbResult));
