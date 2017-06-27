@@ -15,5 +15,8 @@ test('test localizeresults function', (t) => {
   const testObj = { key: 'value', name___en: 'nameEn', };
   t.deepEqual(localizeResults('en', testObj), testObj, 'same object returned when locale is EN');
   t.ok(localizeResults('fr', [ testObj, ]) instanceof Array, 'array returned if input is array');
+
+  const testObj2 = { key: 'value', name: 'name', name___de: 'nameDe', name___fr: 'nameFr', other___de: 'otherDe', };
+  t.deepEqual(localizeResults('fr', testObj2), { key: 'value', name: 'nameFr', }, 'irrelevant fields discarded');
   t.end();
 });
