@@ -1,8 +1,10 @@
 const keystone = require('keystone');
 const middleware = require('./middleware');
+const i18n = require('i18n');
 const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
+keystone.pre('routes', i18n.init);
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', (_, res, next) => {
@@ -35,14 +37,43 @@ const routes = {
 
 // Bind Routes
 exports = module.exports = (app) => {
-  app.get('/', routes.views.index);
-  app.get('/directors', routes.views.list_directors);
-  app.get('/themes', routes.views.list_themes);
-  app.get('/genres', routes.views.list_genres);
-  app.get('/movies', routes.views.list_movies);
-  app.get('/themes/:name', routes.views.theme_profile);
-  app.get('/genres/:name', routes.views.genre_profile);
-  app.get('/directors/:name', routes.views.director_profile);
-  app.get('/movies/:name', routes.views.movie_profile);
-  app.get('/contact', routes.views.contact);
+
+  // Use express's router as middleware
+  // Base routes are accessible with /{locale}/ prepended
+  const viewRouter = require('express').Router();
+
+  viewRouter.use((req, res, next) => {
+    // Extract locale (e.g.) 'en' or 'chn' from full url
+    const locale = req.originalUrl.split('/')[1];
+    if ([ 'en', 'chn', ].includes(locale) != true) {
+      // Redirect to /en (home) if path doesn't begin with /en/ or /chn/
+      return res.redirect('/en');
+    } else {
+      // Add locale key to locals object
+      res.locals.locale = locale;
+      // Import matching JSON file as JS object and set to __ key
+      res.locals.__ = require(`../locales/${locale}.json`);
+      next();
+    }
+  });
+
+  // Standard routes
+  viewRouter.get('/', routes.views.index);
+  viewRouter.get('/directors', routes.views.list_directors);
+  viewRouter.get('/contact', routes.views.contact);
+  viewRouter.get('/themes', routes.views.list_themes);
+  viewRouter.get('/genres', routes.views.list_genres);
+  viewRouter.get('/movies', routes.views.list_movies);
+  viewRouter.get('/themes/:name', routes.views.theme_profile);
+  viewRouter.get('/genres/:name', routes.views.genre_profile);
+  viewRouter.get('/directors/:name', routes.views.director_profile);
+  viewRouter.get('/movies/:name', routes.views.movie_profile);
+
+  // Use viewRouter as sub router aginst /en/ or /chn/ prepended paths
+  app.use('/:lang', viewRouter);
+
+  // On page load, direct to /en
+  app.use('/', (req, res) => {
+    res.redirect('/en');
+  });
 };
