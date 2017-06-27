@@ -9,7 +9,7 @@ keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', (_, res, next) => {
   res.locals.utils = require('keystone-utils');
-  res.locals.host = process.env.HOST || 'http://0.0.0.0:3000';
+  res.locals.site_url = process.env.SITE_URL || 'http://0.0.0.0:3000';
   next();
 });
 keystone.pre('render', middleware.flashMessages);

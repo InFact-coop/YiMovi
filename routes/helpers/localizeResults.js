@@ -11,7 +11,7 @@ module.exports = (locale, dbResults) => {
   // gets array of translatable values from DB results
   const translatableFields = Object.keys(dbResults._doc)
     .filter(key => translatableKeyReg.test(key))
-    .map(filteredKey => filteredKey.split(separator)[0]);
+    .map(filteredKey => filteredKey.replace(translatableKeyReg, ''));
 
   // create new results object with relevant data only
   return Object.keys(dbResults._doc)
