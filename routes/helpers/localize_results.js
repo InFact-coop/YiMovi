@@ -34,6 +34,4 @@ const localizeResults = (locale, dbResults) => {
 
 };
 
-module.exports = process.env === 'production'
-  ? localizeResults
-  : { localizeResults, localize, };
+module.exports = { localize, localizeResults, };
