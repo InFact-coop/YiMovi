@@ -66,13 +66,17 @@ block content
     //- summary section
     section#summary.flex.justify-start
       
-      if themes.length
+      if themes
         #themes
-          +listCollection("theme", themes)
+          ul.list.pa0.ma0
+          for item in themes
+            +profileLink(item.name, `${type}/${item.key}`)
         
-      if genres.length
-        #genres.ml5
-          +listCollection("genre", genres)
+      if genres
+        #genres.ml5 
+          ul.list.pa0.ma0
+          for item in genres
+            +profileLink(item.name, `${type}/${item.key}`)
           
     +section(movie, "summary", `${__.movie_profile.intro}`)
       
