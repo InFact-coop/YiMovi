@@ -9,13 +9,22 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.themes = [];
 
-    Theme.model.find().sort('sortOrder').exec((err, themes) => {
+    const nameField = 'name' + (locals.locale === 'en' ? '' : `___${locals.locale}`);
 
-      if (err) return next(err);
+    Theme.model.find()
+      .select('-description -description___chn')
+      .where(nameField).ne(null) // only if translation of theme name available
+      .sort('sortOrder')
+      .lean()
+      .exec((err, themes) => {
 
-      locals.themes = themes;
-      next();
-    });
+        if (err) return next(err);
+
+        locals.themes = require('../helpers/localize_results.js')
+          .localizeResults(locals.locale, themes);
+
+        next();
+      });
   });
 
   view.render('list_themes');

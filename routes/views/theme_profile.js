@@ -24,7 +24,8 @@ exports = module.exports = (req, res) => {
         }
       }
 
-      locals.theme = theme;
+      locals.theme = require('../helpers/localize_results.js')
+        .localizeResults(locals.locale, theme);
 
       getMoviesBy('themes', theme, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);

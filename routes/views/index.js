@@ -15,7 +15,7 @@ exports = module.exports = (req, res) => {
     }
 
     Theme.model.find()
-      .where('name___chn').ne(null)
+      .where('name' + locals.locale === 'en' ? '' : `___${locals.locale}`).ne(null)
       .limit(8).sort('sortOrder').exec((err, themes) => {
 
         if (err) return next(err);

@@ -12,21 +12,23 @@ exports = module.exports = (req, res) => {
     locals.director = {};
     locals.movies = [];
 
-    Director.model.findOne({ key: req.params.name, }).exec((err, director) => {
+    Director.model
+      .findOne({ key: req.params.name, })
+      .exec((err, director) => {
 
-      if (err) return next(err);
+        if (err) return next(err);
 
-      locals.director = require('../helpers/localize_results.js')
+        locals.director = require('../helpers/localize_results.js')
         .localizeResults(locals.locale, director);
-        
-      locals.title = `${director.name} ${director.name_chn || ''} | YiMovi director profile`;
 
-      getMoviesBy('director', director, (moviesErr, movies) => {
-        if (moviesErr) return next(moviesErr);
-        locals.movies = locals.movies.concat(movies || []);
-        next();
+        locals.title = `${director.name} ${director.name_chn || ''} | YiMovi director profile`;
+
+        getMoviesBy('director', director, (moviesErr, movies) => {
+          if (moviesErr) return next(moviesErr);
+          locals.movies = locals.movies.concat(movies || []);
+          next();
+        });
       });
-    });
   });
 
   view.render('director_profile');
