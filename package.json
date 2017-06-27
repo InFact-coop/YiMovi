@@ -27,21 +27,22 @@
   },
   "homepage": "https://github.com/InFact-coop/YiMovi#readme",
   "dependencies": {
+    "autoprefixer": "^6.7.7",
     "dotenv": "^4.0.0",
     "env2": "^2.2.0",
+    "i18n": "^0.8.3",
     "keystone": "^4.0.0-beta.5",
     "keystone-utils": "^0.4.0",
-    "pug": "^2.0.0-rc.1",
     "lodash": "^4.17.4",
-    "underscore": "^1.8.3",
-    "tachyons-custom": "^4.5.4",
-    "autoprefixer": "^6.7.3",
     "postcss": "^6.0.3",
     "postcss-clean": "^1.0.2",
     "postcss-cli": "^2.6.0",
     "postcss-custom-media": "^5.0.1",
     "postcss-custom-properties": "^5.0.2",
-    "postcss-import": "^9.1.0"
+    "postcss-import": "^9.1.0",
+    "pug": "^2.0.0-rc.1",
+    "tachyons-custom": "^4.5.4",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
