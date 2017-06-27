@@ -3,12 +3,12 @@
 - const new_locale_url = _url.replace(`/${locale}`, `/${locale_flipped}`)
 
 nav.bg-gray.shadow-3.h3.items-center.flex.flex-row.justify-between.w-auto
-  a(href=`/${locale}` title=`${__.header.logo_link_title}`).no-underline
+  a(href=`/` title=`${__.header.logo_link_title}`).no-underline
     #strapline.h-100.self-start.ttu.f7.f5-ns.fw6.light-gray.pa3-ns.pa1.pointer
       p.ma0 #{__.header.strapline_1}
       p.ma0 #{__.header.strapline_2}
   #actions.h-100.self-end.inline-flex.flex-row.items-center
     a(href=`${new_locale_url}` title=`${__.header.switch_statement}`).f7.no-underline.white.pointer.ph1 #{__.header.switch_statement.toUpperCase()}
-    a(href=`/${locale}` title=`${__.header.logo_link_title}`).h-100
+    a(href=`/` title=`${__.header.logo_link_title}`).h-100
       .logo.h-100.w-100
         include ../partials/logo.svg
