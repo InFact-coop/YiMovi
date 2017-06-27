@@ -8,6 +8,7 @@ heroku_*
 selenium-debug.log
 npm-debug.log
 translation_csv/*
+package-lock.json
 
 # nightwatch output
 /reports

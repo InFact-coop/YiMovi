@@ -1,4 +1,5 @@
 const keystone = require('keystone');
+const i18n = require('i18n');
 
 require('dotenv').config();
 
@@ -23,6 +24,15 @@ keystone.init({
 });
 
 require('./models');
+
+i18n.configure({
+  locales:[ 'en', 'chn', ],
+  directory: __dirname + '/locales',
+  autoReload: true,
+  cookie: 'locale',
+  syncFiles: true,
+  objectNotation: true,
+});
 
 keystone.set('routes', require('./routes'));
 
