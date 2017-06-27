@@ -1,9 +1,15 @@
+//- Prepare new URL for locale switch link & formatted language choice
+- const locale_flipped           = locale == 'en' ? 'chn' : 'en'
+- const locale_flipped_formatted = locale_flipped == 'en' ? 'ENGLISH' : 'CHINESE'
+- const new_locale_url           = _url.replace(`/${locale}`, `/${locale_flipped}`)
+
 nav.bg-gray.shadow-3.h2.h3-ns.items-center.flex.flex-row.justify-between
-  a(href="/" title="Home").no-underline
+  a(href=`/${locale}` title="Home").no-underline
     #strapline.h-100.self-start.ttu.f7.f5-ns.fw6.light-gray.pa3-ns.pa1.pointer
       p.ma0 #{__.header.strapline_1}
       p.ma0 #{__.header.strapline_2}
-  #logo.h-100.self-end
-    a.h-100.w-100.fr(href="/" title="#{__.header.logo_link_title}")
+  #actions.h-100.self-end.inline-flex.flex-row.items-center
+    a(href=`${new_locale_url}` title="Switch to English").no-underline.white.pointer.ph1 SWITCH TO #{locale_flipped_formatted}
+    a.h-100.w-100.fr(href=`/${locale}` title="YiMovi home")
       .logo.h-100
         include ../partials/logo.svg
