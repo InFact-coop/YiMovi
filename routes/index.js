@@ -88,6 +88,6 @@ exports = module.exports = (app) => {
 
   // On page load, direct to /en
   app.use('/', (req, res) => {
-    res.redirect('/en');
+    res.redirect(`/${res.locale || 'en'}`);
   });
 };
