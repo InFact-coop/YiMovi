@@ -48,7 +48,7 @@ exports = module.exports = (app) => {
     const locale = req.originalUrl.split('/')[1];
 
     // If /en/ or /chn/ not included in url
-    if ([ 'en', 'chn', ].includes(locale) != true) {
+    if ([ 'en', 'chn', ].includes(locale) !== true) {
 
       // Use locale from cookie (if exists), then redirect
       // This ensures links throughout application do not need to
@@ -60,7 +60,7 @@ exports = module.exports = (app) => {
       res.locals.locale = locale;
 
       // Add locale to cookie
-      res.cookie('locale', locale, { maxAge: 900000, httpOnly: false, });
+      res.cookie('locale', locale, { maxAge: 900000, httpOnly: process.env.NODE_ENV === 'production', });
 
       // Import matching JSON file as JS object and set to __ key
       res.locals.__ = require(`../locales/${locale}.json`);

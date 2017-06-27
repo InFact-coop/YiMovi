@@ -1,7 +1,7 @@
 //- Prepare new URL for locale switch link & formatted language choice
-- const locale_flipped           = locale == 'en' ? 'chn' : 'en'
-- const locale_flipped_formatted = locale_flipped == 'en' ? 'ENGLISH' : 'CHINESE'
-- const new_locale_url           = _url.replace(`/${locale}`, `/${locale_flipped}`)
+- const locale_flipped = locale === 'en' ? 'chn' : 'en'
+- const locale_flipped_formatted = locale_flipped === 'en' ? 'ENGLISH' : 'CHINESE'
+- const new_locale_url = _url.replace(`/${locale}`, `/${locale_flipped}`)
 
 nav.bg-gray.shadow-3.h2.h3-ns.items-center.flex.flex-row.justify-between
   a(href=`/${locale}` title="Home").no-underline
