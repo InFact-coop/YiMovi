@@ -30,6 +30,6 @@ module.exports = (locale, dbResults) => {
   }
 
   // if not array, pass in _doc object
-  return localize(dbResults._doc);
+  return localize(locale, dbResults._doc);
 
 };
