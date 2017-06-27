@@ -13,6 +13,24 @@
 
 
 
+/* Font Sizing */
+
+/* F7 */
+.f7 { font-size: .75rem; }
+
+/* Allow media overides for f7 */
+@media (--breakpoint-not-small) {
+  .f1-ns { font-size: 3rem; }
+  .f2-ns { font-size: 2.25rem; }
+  .f3-ns { font-size: 1.5rem; }
+  .f4-ns { font-size: 1.25rem; }
+  .f5-ns { font-size: 1rem; }
+  .f6-ns { font-size: .875rem; }
+  .f7-ns { font-size: .75rem; }
+}
+
+
+
 /* Display */
 @media (--breakpoint-not-small) {
     .dn-ns { display: none; }
@@ -161,6 +179,3 @@
 .svg-fill--light-yellow { fill: var(--light-yellow); }
 
 .svg-fill--light-green { fill: var(--light-green); }
-
-/* font-sizes */
-.f7 { font-size: 0.75rem; }
