@@ -66,13 +66,6 @@
 		"title": "漢漢漢"
 	},
 	"movie_profile": {
-		"sections": [
-			"漢",
-			"漢",
-			"漢",
-			"漢",
-			"漢"
-		],
 		"director": "漢漢漢",
 		"video": "漢漢漢",
 		"images": "漢漢漢",
@@ -81,6 +74,7 @@
 		"more_video_links": "漢漢漢",
 		"image_gallery": "漢漢漢",
 		"context": "漢漢漢",
+		"summary": "漢漢漢",
 		"synposis": "漢漢漢",
 		"cinematography": "漢漢漢",
 		"points_for_discussion": "漢漢漢",

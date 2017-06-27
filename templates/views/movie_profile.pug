@@ -6,7 +6,15 @@ include ../mixins/social.pug
 
 block content
   
-  - const sections = __.movie_profile.sections
+  //- Helper
+  - const firstKey = (obj) => Object.keys(obj)[0]
+  
+  //- Additional sections possible
+  - const sections = [ "context", "synopsis", "cinematography", "pointsForDiscussion", "externalLinks" ]
+  
+  //- Query checks
+  - const hasVideo = movie.video
+  - const hasImages = movie.gallery.length
   - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
   
   //- title and main details
@@ -33,18 +41,18 @@ block content
     h1.light-gray.ttu.f2.f1-ns.fw7.lh-title.ma0=movie.name
 
   #menu.pa2.pa3-ns.shadow-5.z-1.sticky.top-0.light-gray.o-90(class=`bg-${primaryColor}`)
-    - let menuPoints = [ "summary", ]
-    - if (movie.video) menuPoints.push(__.movie_profile.video)
-    - if (movie.gallery.length) menuPoints.push(__.movie_profile.images)
-    - if (hasNotesSection) menuPoints.push(__.movie_profile.screening_notes)
     #menu-mobile.flex.flex-row.justify-between.pointer.dn-ns
       p.ma0.f5.fw7.ttu=movie.name
       img.h1.mr3(src="/arrow_drop_down_black.svg")
     ul#drop-down.list.flex-ns.flex-column.flex-row-ns.pa0.pv2.justify-start.ma0.dn
       li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
-      each point in menuPoints
-        li.ttu.mr4.f6.f5-ns.fw6.pv2.pv0-ns
-          a(href=`#anchor-${point.split(' ')[0]}` class="hover-white").menuPoint.light-gray.no-underline.bw2.pointer=point
+        +profileMenuItem("video",  __.movie_profile.video)
+      if hasVideo
+        +profileMenuItem("video",  __.movie_profile.video)
+      if hasImages
+        +profileMenuItem("images",  __.movie_profile.images)
+      if hasNotesSection
+        +profileMenuItem("screening",  __.movie_profile.screening_notes)
   
   a#anchor-summary(tabindex="-1")  
         

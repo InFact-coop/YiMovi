@@ -66,13 +66,6 @@
 		"title": "Movies about"
 	},
 	"movie_profile": {
-		"sections": [
-			"context",
-			"synopsis",
-			"cinematography",
-			"pointsForDiscussion",
-			"externalLinks"
-		],
 		"director": "director",
 		"video": "video",
 		"images": "images",
@@ -81,6 +74,7 @@
 		"more_video_links": "more video links",
 		"image_gallery": "image gallery",
 		"context": "context",
+		"summary": "summary",
 		"synposis": "synopsis",
 		"cinematography": "cinematography",
 		"points_for_discussion": "points for discussion",
