@@ -69,6 +69,8 @@
 		"director": "director",
 		"video": "video",
 		"images": "images",
+		"themes": "themes",
+		"genres": "genres",
 		"screening_notes": "screening notes",
 		"intro": "intro",
 		"more_video_links": "more video links",

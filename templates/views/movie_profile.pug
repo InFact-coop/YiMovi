@@ -68,15 +68,17 @@ block content
       
       if themes
         #themes
+          +subHeading(`${__.movie_profile.themes}`)
           ul.list.pa0.ma0
-          for item in themes
-            +profileLink(item.name, `${type}/${item.key}`)
+            for item in themes
+              +profileLink(item.name, `${__.movie_profile.themes}/${item.key}`)
         
       if genres
         #genres.ml5 
+          +subHeading(`${__.movie_profile.genres}`)
           ul.list.pa0.ma0
-          for item in genres
-            +profileLink(item.name, `${type}/${item.key}`)
+            for item in genres
+              +profileLink(item.name, `${__.movie_profile.themes}/${item.key}`)
           
     +section(movie, "summary", `${__.movie_profile.intro}`)
       
