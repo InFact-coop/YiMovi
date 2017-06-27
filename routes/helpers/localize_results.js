@@ -19,7 +19,7 @@ const localize =  (locale, dbResultsObj) => {
       Object.assign({}, a, { [b.replace(translatableKeyReg, '')] : dbResultsObj[b], }), {});
 };
 
-module.exports = (locale, dbResults) => {
+const localizeResults = (locale, dbResults) => {
 
   // if currentLocale === defaultLocale, do nothing
   // english is default
@@ -33,3 +33,7 @@ module.exports = (locale, dbResults) => {
   return localize(locale, dbResults._doc);
 
 };
+
+module.exports = process.env === 'production'
+  ? localizeResults
+  : { localizeResults, localize, };
