@@ -7,7 +7,7 @@ include ../mixins/listings
   color - string
 
 mixin themeBox(theme)
-  - const title = `${__.list_themes.title} ${theme.name}`
+  - const title = `${__.list_themes.link_title} ${theme.name}`
   - const img = theme.image && theme.image.secure_url ? theme.image.secure_url : null
   +listing("themes", theme.name, title, primaryColor, img)
 
@@ -16,7 +16,7 @@ block content
   +titleContainer(primaryColor)
     +breadcrumbs("themes")
     h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns
-      | browse themes
+      | #{__.list_themes.title}
   
   +list()
     each theme in themes

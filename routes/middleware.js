@@ -17,15 +17,6 @@ exports.initLocals = (req, res, next) => {
 };
 
 /**
-  Converts (correct) locale JSON object to regular js object
-  then assigned to __ key of locals object
-*/
-exports.initStatic = (req, res, next) => {
-  res.locals.__ = require(`../locales/${res.locale}.json`);
-  next();
-};
-
-/**
     Inits the error handler functions into `res`
 */
 exports.initErrorHandlers = (req, res, next) => {

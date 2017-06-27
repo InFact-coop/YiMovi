@@ -31,22 +31,29 @@
 		"link_directors": "Browse all directors",
 		"link_genres": "Browse all genres"
 	},
+	"list_directors": {
+		"title": "Browse Directors",
+		"link_title": "Movies by"
+	},
+	"list_genres": {
+		"title": "Browse Genres",
+		"link_title": "Movies about"
+	},
+	"list_movies": {
+		"title": "Films",
+		"sub_title": "By title"
+	},
+	"list_themes": {
+		"title": "Browse Themes",
+		"link_title": "Movies about"
+	},
+	"theme_profile": {
+		"title": "Movies about"
+	},
 	"director_profile": {
 		"title": "Movies by"
 	},
 	"genre_profile": {
-		"title": "Movies about"
-	},
-	"list_directors": {
-		"title": "Movies by"
-	},
-	"list_genres": {
-		"title": "Movies about"
-	},
-	"list_themes": {
-		"title": "Movies about"
-	},
-	"theme_profile": {
 		"title": "Movies about"
 	},
 	"movie_profile": {

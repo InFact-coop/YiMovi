@@ -7,7 +7,6 @@ const importRoutes = keystone.importer(__dirname);
 keystone.pre('routes', i18n.init);
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
-keystone.pre('routes', middleware.initStatic);
 keystone.pre('routes', (_, res, next) => {
   res.locals.utils = require('keystone-utils');
   res.locals.site_url = process.env.SITE_URL || 'http://0.0.0.0:3000';
@@ -42,12 +41,16 @@ exports = module.exports = (app) => {
   const viewRouter = require('express').Router();
 
   viewRouter.use((req, res, next) => {
+    // console.log(req);
     const url = req.res.req.originalUrl;
     const locale = url.split('/')[1];
     if ([ 'en', 'chn', ].includes(locale) != true) {
       return res.redirect('/en' + url);
     } else {
-      i18n.setLocale(res, locale);
+      // Add locale key to locals object
+      res.locals.locale = locale;
+      // Import matching JSON file as JS object and set to __ key
+      res.locals.__ = require(`../locales/${locale}.json`);
       next();
     }
   });

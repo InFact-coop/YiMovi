@@ -1,36 +1,92 @@
 {
 	"app": {
-		"title": "title"
+		"title": "漢漢漢",
+		"flash_messages": {
+			"mail_sent": "漢漢漢"
+		}
 	},
 	"about": {
-		"title": "title",
-		"part1": "part1",
-		"part2": "part2",
-		"part3": "part3",
-		"team-title": "team title"
-	},
-	"index": {
-		"header": "header",
-		"byline1": "byline1",
-		"byline2": "byline2",
-		"top-themes_title": "top themes title",
-		"link_themes": "link themes",
-		"link_movies": "link movies",
-		"link_directors": "link directors",
-		"link_genres": "link genres"
+		"title": "漢漢漢",
+		"part1": "漢漢漢",
+		"part2": "漢漢漢",
+		"part3": "漢漢漢",
+		"team_title": "漢漢漢"
 	},
 	"header": {
-		"strapline-1": "strapline 1",
-		"strapline-2": "strapline 2",
-		"logo_link-title": "logo link title"
+		"strapline_1": "漢漢漢",
+		"strapline_2": "漢漢漢",
+		"logo_link_title": "漢漢漢"
 	},
-	"director_profile": {
-		"title": "director_profile.title"
+	"footer": {
+		"link_contact": "漢漢漢"
+	},
+	"index": {
+		"header": "漢漢漢",
+		"byline1": "漢漢漢",
+		"byline2": "漢漢漢",
+		"top_themes_title": "漢漢漢",
+		"theme_link_title": "漢漢漢",
+		"link_themes": "漢漢漢",
+		"link_movies": "漢漢漢",
+		"link_directors": "漢漢漢",
+		"link_genres": "漢漢漢"
+	},
+	"list_directors": {
+    "title": "漢漢漢",
+		"link_title": "漢漢漢"
+	},
+	"list_genres": {
+    "title": "###",
+		"link_title": "漢漢漢"
+	},
+  "list_movies": {
+    "title": "漢漢漢",
+		"sub_title": "漢漢漢"
+	},
+  "list_themes": {
+    "title": "漢漢漢",
+		"link_title": "漢漢漢"
+	},
+  "theme_profile": {
+		"title": "漢"
+	},
+  "director_profile": {
+		"title": "漢漢漢"
+	},
+	"genre_profile": {
+		"title": "漢漢漢"
+	},
+	"movie_profile": {
+		"sections": [
+			"漢",
+			"漢",
+			"漢",
+			"漢",
+			"漢"
+		],
+		"director": "漢漢漢",
+		"video": "漢漢漢",
+		"images": "漢漢漢",
+		"screening_notes": "漢漢漢",
+		"intro": "漢漢漢",
+		"more_video_links": "漢漢漢",
+		"image_gallery": "漢漢漢",
+		"context": "漢漢漢",
+		"synposis": "漢漢漢",
+		"cinematography": "漢漢漢",
+		"points_for_discussion": "漢漢漢",
+		"external_links": "漢漢漢",
+		"teaching_and_learning": "漢漢漢"
 	},
 	"contact": {
-		"title": "contact.title",
-		"address_title": "contact.address_title",
-		"address_body": "contact.address_body",
-		"online_title": "contact.online_title"
+		"title": "漢漢漢",
+		"address_title": "漢漢漢",
+		"address_body": "漢漢漢",
+		"online_title": "漢漢漢",
+		"placeholder_name": "漢漢漢",
+		"placeholder_email": "漢漢漢",
+		"placeholder_message": "漢漢漢",
+		"action_cancel": "漢漢漢",
+		"action_send": "漢漢漢"
 	}
 }
