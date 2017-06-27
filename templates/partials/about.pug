@@ -1,31 +1,22 @@
-mixin aboutUsPara
+mixin para
   p.ph4.lh-copy
-    block
-      
-      
-mixin teamName
-  p.ph4.lh-copy.ma0
     block
 
 #aboutUsSection.f5.f4-ns.pb4
   #aboutUsTitle.ttu.bg-red.ph4.pv3.light-gray
     h2.ma0.f4.f2-ns #{__.about.title}
 
-  +aboutUsPara
+  +para
     | #{__.about.part1}
     
-  +aboutUsPara
+  +para
     | #{__.about.part2}
     
-  +aboutUsPara
+  +para
     | #{__.about.part3}
     
   h3.ma0.ph4.red
     | #{__.about.team_title}
-  +teamName Chris Berry
-  +teamName Michael Clark
-  +teamName GUO Liping
-  +teamName Patrizia Liberati
-  +teamName LAI Lili
-  +teamName Daniel Vuillermin
-  +teamName Vivienne LO
+  
+  each member in __.about.team_members
+    +para #{member}

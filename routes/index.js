@@ -43,7 +43,7 @@ exports = module.exports = (app) => {
   const viewRouter = require('express').Router();
 
   viewRouter.use((req, res, next) => {
-    // Extract locale
+    // Extract locale (e.g.) 'en' or 'chn' from full url
     const locale = req.originalUrl.split('/')[1];
     if ([ 'en', 'chn', ].includes(locale) != true) {
       // Redirect to /en (home) if path doesn't begin with /en/ or /chn/
