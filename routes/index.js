@@ -38,14 +38,16 @@ const routes = {
 // Bind Routes
 exports = module.exports = (app) => {
 
+  // Use express's router as middleware
+  // Base routes are accessible with /{locale}/ prepended
   const viewRouter = require('express').Router();
 
   viewRouter.use((req, res, next) => {
-    // console.log(req);
-    const url = req.res.req.originalUrl;
-    const locale = url.split('/')[1];
+    // Extract locale
+    const locale = req.originalUrl.split('/')[1];
     if ([ 'en', 'chn', ].includes(locale) != true) {
-      return res.redirect('/en' + url);
+      // Redirect to /en (home) if path doesn't begin with /en/ or /chn/
+      return res.redirect('/en');
     } else {
       // Add locale key to locals object
       res.locals.locale = locale;
@@ -55,6 +57,7 @@ exports = module.exports = (app) => {
     }
   });
 
+  // Standard routes
   viewRouter.get('/', routes.views.index);
   viewRouter.get('/directors', routes.views.list_directors);
   viewRouter.get('/contact', routes.views.contact);
@@ -66,8 +69,10 @@ exports = module.exports = (app) => {
   viewRouter.get('/directors/:name', routes.views.director_profile);
   viewRouter.get('/movies/:name', routes.views.movie_profile);
 
+  // Use viewRouter as sub router aginst /en/ or /chn/ prepended paths
   app.use('/:lang', viewRouter);
 
+  // On page load, direct to /en
   app.use('/', (req, res) => {
     res.redirect('/en');
   });
