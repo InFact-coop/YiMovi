@@ -9,12 +9,12 @@ module.exports = (locale, dbResults) => {
   const translatableKeyReg = /\_{3}.+$/;
 
   // gets array of translatable values from DB results
-  const translatableFields = Object.keys(dbResults._doc)
+  const translatableFields = Object.keys(dbResults)
     .filter(key => translatableKeyReg.test(key))
     .map(filteredKey => filteredKey.replace(translatableKeyReg, ''));
 
   // create new results object with relevant data only
-  return Object.keys(dbResults._doc)
+  return Object.keys(dbResults)
     .filter(key => {
       const [ type, loc, ] = key.split(separator);
       return translatableFields.indexOf(type) < 0 || loc === locale;
