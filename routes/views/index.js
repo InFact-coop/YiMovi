@@ -14,13 +14,17 @@ exports = module.exports = (req, res) => {
       req.flash('success', res.locals.__.app.flash_messages.mail_sent);
     }
 
-    Theme.model.find().limit(8).sort('sortOrder').exec((err, themes) => {
+    Theme.model.find()
+      .where('name___chn').ne(null)
+      .limit(8).sort('sortOrder').exec((err, themes) => {
 
-      if (err) return next(err);
+        if (err) return next(err);
 
-      locals.themes = themes;
-      next();
-    });
+        locals.themes = require('../helpers/localize_results.js')
+        .localizeResults(locals.locale, themes);
+
+        next();
+      });
   });
 
   view.render('index');

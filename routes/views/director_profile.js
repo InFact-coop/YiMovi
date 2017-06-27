@@ -16,7 +16,10 @@ exports = module.exports = (req, res) => {
 
       if (err) return next(err);
 
-      locals.director = director;
+      locals.director = require('../helpers/localize_results.js')
+        .localizeResults(locals.locale, director);
+        
+      locals.title = `${director.name} ${director.name_chn || ''} | YiMovi director profile`;
 
       getMoviesBy('director', director, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);

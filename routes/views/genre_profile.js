@@ -16,7 +16,9 @@ exports = module.exports = (req, res) => {
 
       if (err) return next(err);
 
-      locals.genre = genre;
+      locals.genre = require('../helpers/localize_results.js')
+        .localizeResults(locals.locale, genre);
+
       locals.title = `${genre.name} films | YiMovi`;
 
       getMoviesBy('genre', genre, (moviesErr, movies) => {
