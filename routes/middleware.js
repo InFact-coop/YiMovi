@@ -11,6 +11,8 @@ exports.initLocals = (req, res, next) => {
   const viewColors = require('./setup/view-colors.js');
   const view = req.url.split('/')[1];
   locals.primaryColor = (viewColors[view] || viewColors.default);
+  // Assert that views have access to full url
+  // (not including host/port)
   locals._url = req.originalUrl;
 
   // Add your own local variables here
