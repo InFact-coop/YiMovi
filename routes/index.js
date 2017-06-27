@@ -1,5 +1,6 @@
 const keystone = require('keystone');
 const middleware = require('./middleware');
+const cookieParser = require('cookie-parser');
 const i18n = require('i18n');
 const importRoutes = keystone.importer(__dirname);
 
@@ -45,12 +46,22 @@ exports = module.exports = (app) => {
   viewRouter.use((req, res, next) => {
     // Extract locale (e.g.) 'en' or 'chn' from full url
     const locale = req.originalUrl.split('/')[1];
+
+    // If /en/ or /chn/ not included in url
     if ([ 'en', 'chn', ].includes(locale) != true) {
-      // Redirect to /en (path) if path doesn't begin with /en/ or /chn/
-      return res.redirect(`/en${req.originalUrl}`);
+
+      // Use locale from cookie (if exists), then redirect
+      // This ensures links throughout application do not need to
+      // manually be prefixed with 'en' / 'chn'.
+      // Defaults to redirect with 'en' if cookie not found
+      return res.redirect(`/${res.locale || 'en'}${req.originalUrl}`);
     } else {
       // Add locale key to locals object
       res.locals.locale = locale;
+
+      // Add locale to cookie
+      res.cookie('locale', locale, { maxAge: 900000, httpOnly: false, });
+
       // Import matching JSON file as JS object and set to __ key
       res.locals.__ = require(`../locales/${locale}.json`);
       next();
@@ -71,6 +82,9 @@ exports = module.exports = (app) => {
 
   // Use viewRouter as sub router aginst /en/ or /chn/ prepended paths
   app.use('/:lang', viewRouter);
+
+  // Add cookie support
+  app.use(cookieParser());
 
   // On page load, direct to /en
   app.use('/', (req, res) => {
