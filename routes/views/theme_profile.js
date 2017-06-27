@@ -25,7 +25,6 @@ exports = module.exports = (req, res) => {
       }
 
       locals.theme = theme;
-      locals.title = `Movies about ${theme.name} | YiMovi`;
 
       getMoviesBy('themes', theme, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);

@@ -32,14 +32,14 @@ mixin detailsContainer(movie)
       +titleChn(movie)
       +titleEn(movie.name)
       
-mixin movieListingContainer(movie, page)
+mixin movieListingContainer(movie)
   .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white(class=`bg-light-${primaryColor} hover-bg-${primaryColor}`)
     block
 
 mixin movieListing(movie, page)
   - const url = `/movies/${movie.key}`
   a.no-underline(href=url title=movie.name)
-    +movieListingContainer(movie, page)
+    +movieListingContainer(movie)
       +imgContainer(movie)
       +detailsContainer(movie)
       

@@ -1,0 +1,22 @@
+mixin para
+  p.ph4.lh-copy
+    block
+
+#aboutUsSection.f5.f4-ns.pb4
+  #aboutUsTitle.ttu.bg-red.ph4.pv3.light-gray
+    h2.ma0.f4.f2-ns #{__.about.title}
+
+  +para
+    | #{__.about.part1}
+    
+  +para
+    | #{__.about.part2}
+    
+  +para
+    | #{__.about.part3}
+    
+  h3.ma0.ph4.red
+    | #{__.about.team_title}
+  
+  each member in __.about.team_members
+    +para #{member}

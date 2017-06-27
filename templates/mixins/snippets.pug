@@ -50,6 +50,10 @@ mixin section(movie, section, title)
       section(id=`${section}`)
         +sectionHeading(title || section)
         +sectionParagraph(movie[section].html)
+
+mixin profileMenuItem(key, value)
+  li.ttu.mr4.f6.f5-ns.fw6.pv2.pv0-ns
+    a(href=`#anchor-${key}` class="hover-white").menuPoint.light-gray.no-underline.bw2.pointer=value
         
 mixin breadcrumbs(type, page)
   - const url = `/${type}`
