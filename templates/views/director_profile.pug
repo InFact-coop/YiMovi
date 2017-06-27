@@ -13,7 +13,7 @@ block content
     
     if director.image && director.image.secure_url
       #image-container.w-100.w-70-ns.w-50-l.h5
-        span.h-100.cover.no-repeat.dib.w-100.self-center(style=`background-image:url("${director.image.secure_url}")`)
+        span.h-100.cover.no-repeat.dib.w-100.self-center(style=`background-image:url("${director._.image.limit(500,625)}")`)
     
     if director.description && director.description.html
       .description.w-100.w-70-ns.w-50-l
