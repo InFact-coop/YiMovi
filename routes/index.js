@@ -46,8 +46,8 @@ exports = module.exports = (app) => {
     // Extract locale (e.g.) 'en' or 'chn' from full url
     const locale = req.originalUrl.split('/')[1];
     if ([ 'en', 'chn', ].includes(locale) != true) {
-      // Redirect to /en (home) if path doesn't begin with /en/ or /chn/
-      return res.redirect('/en');
+      // Redirect to /en (path) if path doesn't begin with /en/ or /chn/
+      return res.redirect(`/en${req.originalUrl}`);
     } else {
       // Add locale key to locals object
       res.locals.locale = locale;
