@@ -21,7 +21,6 @@ exports = module.exports = (req, res) => {
       }
 
       locals.director = director;
-      locals.title = `${director.name} ${director.name_chn || ''} | YiMovi director profile`;
 
       getMoviesBy('director', director, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);

@@ -6,7 +6,15 @@ include ../mixins/social.pug
 
 block content
   
-  - const sections = [ "context", "synopsis", "cinematography", "pointsForDiscussion", "externalLinks", ]
+  //- Helper
+  - const firstKey = (obj) => Object.keys(obj)[0]
+  
+  //- Additional sections possible
+  - const sections = [ "context", "synopsis", "cinematography", "pointsForDiscussion", "externalLinks" ]
+  
+  //- Query checks
+  - const hasVideo = movie.video
+  - const hasImages = movie.gallery.length
   - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
   
   //- title and main details
@@ -24,7 +32,7 @@ block content
       if movie.director && (movie.year || movie.duration)
         span.mh2 |
       if movie.director
-        span.mh2=`Director ${director.name}`
+        span.mh2=`${__.movie_profile.director} ${director.name}`
       if movie.director.name_chn
         span.ma0.sans-serif=`${director.name_chn}`
     
@@ -33,18 +41,18 @@ block content
     h1.light-gray.ttu.f2.f1-ns.fw7.lh-title.ma0=movie.name
 
   #menu.pa2.pa3-ns.shadow-5.z-1.sticky.top-0.light-gray.o-90(class=`bg-${primaryColor}`)
-    - let menuPoints = [ "summary", ]
-    - if (movie.video) menuPoints.push("video")
-    - if (movie.gallery.length) menuPoints.push("images")
-    - if (hasNotesSection) menuPoints.push("screening notes")
     #menu-mobile.flex.flex-row.justify-between.pointer.dn-ns
       p.ma0.f5.fw7.ttu=movie.name
       img.h1.mr3(src="/arrow_drop_down_black.svg")
     ul#drop-down.list.flex-ns.flex-column.flex-row-ns.pa0.pv2.justify-start.ma0.dn
       li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
-      each point in menuPoints
-        li.ttu.mr4.f6.f5-ns.fw6.pv2.pv0-ns
-          a(href=`#anchor-${point.split(' ')[0]}` class="hover-white").menuPoint.light-gray.no-underline.bw2.pointer=point
+        +profileMenuItem("summary", __.movie_profile.summary)
+      if hasVideo
+        +profileMenuItem("video",  __.movie_profile.video)
+      if hasImages
+        +profileMenuItem("images",  __.movie_profile.images)
+      if hasNotesSection
+        +profileMenuItem("screening",  __.movie_profile.screening_notes)
   
   a#anchor-summary(tabindex="-1")  
         
@@ -58,27 +66,33 @@ block content
     //- summary section
     section#summary.flex.justify-start
       
-      if themes.length
+      if themes
         #themes
-          +listCollection("theme", themes)
+          +subHeading(`${__.movie_profile.themes}`)
+          ul.list.pa0.ma0
+            for item in themes
+              +profileLink(item.name, `${__.movie_profile.themes}/${item.key}`)
         
-      if genres.length
-        #genres.ml5
-          +listCollection("genre", genres)
+      if genres
+        #genres.ml5 
+          +subHeading(`${__.movie_profile.genres}`)
+          ul.list.pa0.ma0
+            for item in genres
+              +profileLink(item.name, `${__.movie_profile.themes}/${item.key}`)
           
-    +section(movie, "summary", "intro")
+    +section(movie, "summary", `${__.movie_profile.intro}`)
       
     //- video section
     if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
       a#anchor-video(tabindex="-1")
       hr.mt3.mb3
       section#video.flex.flex-column
-        +sectionHeading("Video")
+        +sectionHeading(`${__.movie_profile.video}`)
 
         div.relative.pb-video.h0.bg-black
           iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=movie.video frameborder="0" scrolling="no")
         if movie.videoLinks.html
-          +subHeading("More video links")
+          +subHeading(`${__.movie_profile.more_video_links}`)
           #video-links.f6.f5-ns
             !=movie.videoLinks.html
     
@@ -91,7 +105,7 @@ block content
       - const imgHolderStyle = `width:${100 * imgArray.length}%`
       
       section#gallery.pv3.flex.flex-column
-        +sectionHeading("Image gallery")
+        +sectionHeading(`${__.movie_profile.image_gallery}`)
         // - image slider
         div.slider-holder.w-100.h4.h6-ns.center.mt0.overflow-hidden.tc
           each _, spanIndex in imgArray  
@@ -107,26 +121,26 @@ block content
       a#anchor-screening(tabindex="-1")
         
     //- context section
-    +section(movie, 'context')
+    +section(movie, 'context', `${__.movie_profile.context}`)
     
     //- synopsis
-    +section(movie, 'synopsis')
+    +section(movie, 'synopsis', `${__.movie_profile.synposis}`)
         
     //- cinematography
-    +section(movie, 'cinematography')
+    +section(movie, 'cinematography', `${__.movie_profile.cinematography}`)
         
     //- points for discussion
-    +section(movie, 'pointsForDiscussion', 'points for discussion')
+    +section(movie, 'pointsForDiscussion', `${__.movie_profile.points_for_discussion}`)
         
     //- external links
     if movie.externalLinks.html.length
       hr.mh0.mv3
-      +sectionHeading("External links")
+      +sectionHeading(`${__.movie_profile.external_links}`)
       #external-links.f6.f5-ns
         !=movie.externalLinks.html
         
     //- teaching & learning
-    +section(movie, 'bibliography', 'teaching and learning')
+    +section(movie, 'bibliography', `${__.movie_profile.teaching_and_learning}`)
     
 block scripts
   script
