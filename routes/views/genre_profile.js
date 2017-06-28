@@ -14,7 +14,11 @@ exports = module.exports = (req, res) => {
 
     Genre.model.findOne({ key: req.params.name, }).exec((err, genre) => {
 
-      if (err) return next(err);
+      if (err || !genre) {
+        res.locals.title = '404 error | YiMovi';
+        res.status(404).render('errors/404');
+        return;
+      }
 
       locals.genre = require('../helpers/localize_results.js')
         .localizeResults(locals.locale, genre);

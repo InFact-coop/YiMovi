@@ -16,7 +16,11 @@ exports = module.exports = (req, res) => {
       .findOne({ key: req.params.name, })
       .exec((err, director) => {
 
-        if (err) return next(err);
+        if (err || !director) {
+          res.locals.title = '404 error | YiMovi';
+          res.status(404).render('errors/404');
+          return;
+        }
 
         locals.director = require('../helpers/localize_results.js')
         .localizeResults(locals.locale, director);
