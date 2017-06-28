@@ -13,8 +13,8 @@ block content
   - const sections = [ "context", "synopsis", "cinematography", "pointsForDiscussion", "externalLinks" ]
   
   //- Query checks
-  - const hasVideo = movie.video
-  - const hasImages = movie.gallery.length
+  - const hasVideo = movie.video !== undefined
+  - const hasImages = (movie.gallery !== undefined) && movie.gallery.length !== 0
   - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
   
   //- title and main details
@@ -46,7 +46,7 @@ block content
       img.h1.mr3(src="/arrow_drop_down_black.svg")
     ul#drop-down.list.flex-ns.flex-column.flex-row-ns.pa0.pv2.justify-start.ma0.dn
       li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
-        +profileMenuItem("video",  __.movie_profile.video)
+        +profileMenuItem("summary", __.movie_profile.summary)
       if hasVideo
         +profileMenuItem("video",  __.movie_profile.video)
       if hasImages
@@ -66,13 +66,19 @@ block content
     //- summary section
     section#summary.flex.justify-start
       
-      if themes.length
+      if themes
         #themes
-          +listCollection("theme", themes)
+          +subHeading(`${__.movie_profile.themes}`)
+          ul.list.pa0.ma0
+            for item in themes
+              +profileLink(item.name, `${__.movie_profile.themes}/${item.key}`)
         
-      if genres.length
-        #genres.ml5
-          +listCollection("genre", genres)
+      if genres
+        #genres.ml5 
+          +subHeading(`${__.movie_profile.genres}`)
+          ul.list.pa0.ma0
+            for item in genres
+              +profileLink(item.name, `${__.movie_profile.themes}/${item.key}`)
           
     +section(movie, "summary", `${__.movie_profile.intro}`)
       

@@ -24,7 +24,8 @@
 	"header": {
 		"strapline_1": "Chinese Film &",
 		"strapline_2": "Medical Humanities",
-		"logo_link_title": "YiMovi home"
+		"logo_link_title": "YiMovi home",
+		"switch_statement": "Switch to Chinese"
 	},
 	"footer": {
 		"link_contact": "Contact"
@@ -69,6 +70,8 @@
 		"director": "director",
 		"video": "video",
 		"images": "images",
+		"themes": "themes",
+		"genres": "genres",
 		"screening_notes": "screening notes",
 		"intro": "intro",
 		"more_video_links": "more video links",

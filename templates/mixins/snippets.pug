@@ -32,17 +32,6 @@ mixin linkTheme(theme)
 mixin linkGenre(genre)
     +link('genres', genre)
     
-mixin listCollection(type, list)
-    if type === 'genre'
-      +subHeading("Genres")
-    else 
-      +subHeading("Themes")
-    ul.list.pa0.ma0
-      for item in list
-        if type === 'genre'
-          +profileLink(item.name, `genres/${item.key}`)
-        else
-          +profileLink(item.name, `themes/${item.key}`)
           
 mixin section(movie, section, title)
     if movie[section].html && movie[section].html.length
