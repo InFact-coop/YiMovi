@@ -9,8 +9,9 @@ const Director = new keystone.List('Director', {
 
 Director.add({
   name: { type: String, required: true, },
-  name_chn: { type: String, label: 'Chinese name', },
+  name_chn: { type: String, label: 'Chinese name', }, // not a 'localized' value, as we need Chinese name in English views too
   description: { type: Types.Markdown, required: false, },
+  description___chn: { type: Types.Markdown, label: 'description CHN', collapse: true, },
   image: { type: Types.CloudinaryImage, publicID: 'slug', autoCleanup: true, },
 });
 
