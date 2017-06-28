@@ -1,3 +1,5 @@
+- const team_members = [ "Chris Berry", "Michael Clark", "GUO Liping", "Patrizia Liberati", "LAI Lili", "Daniel Vuillermin", "Vivienne LO" ]
+
 mixin para
   p.ph4.lh-copy
     block
@@ -18,5 +20,5 @@ mixin para
   h3.ma0.ph4.red
     | #{__.about.team_title}
   
-  each member in __.about.team_members
+  each member in team_members
     +para #{member}
