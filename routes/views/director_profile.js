@@ -14,7 +14,11 @@ exports = module.exports = (req, res) => {
 
     Director.model.findOne({ key: req.params.name, }).exec((err, director) => {
 
-      if (err) return next(err);
+      if (err || !director) {
+        res.locals.title = '404 error | YiMovi';
+        res.status(404).render('errors/404');
+        return;
+      }
 
       locals.director = director;
 
