@@ -1,9 +1,9 @@
 {
 	"app": {
-		"title": "漢漢漢",
-		"flash_messages": {
-			"mail_sent": "漢漢漢"
-		}
+		"title": "漢漢漢"
+	},
+	"flash_messages": {
+		"mail_sent": "漢漢漢"
 	},
 	"about": {
 		"title": "漢漢漢",
