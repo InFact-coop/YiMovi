@@ -8,14 +8,20 @@ exports.initLocals = (req, res, next) => {
 
   const locals = res.locals;
   locals.user = req.user;
+
+  // Add your own local variables here
   const viewColors = require('./setup/view-colors.js');
   const view = req.url.split('/')[2];
+
+  // Extract view key...
+  // Which is either 'themes', 'directors', 'genres', 'movies', 'default'
+  // Set primary color based on view
   locals.primaryColor = (viewColors[view] || viewColors.default);
+  // Prepend 'light-' to primaryColor to build secondary
+  locals.secondaryColor = `light-${locals.primaryColor}`;
   // Assert that views have access to full url
   // (not including host/port)
   locals._url = req.originalUrl;
-
-  // Add your own local variables here
   next();
 };
 
