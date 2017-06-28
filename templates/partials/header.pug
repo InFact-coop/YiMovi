@@ -5,11 +5,11 @@
 
 nav.bg-gray.shadow-3.h2.h3-ns.items-center.flex.flex-row.justify-between
   a(href=`/` title="Home").no-underline
-    #strapline.h-100.self-start.ttu.f7.f5-ns.fw6.light-gray.pa3-ns.pa1.pointer
+    #strapline.h-100.self-start.ttu.f7.f5-ns.fw6.light-gray.pa2-ns.pa1.pointer
       p.ma0 Chinese Film &
       p.ma0 Medical Humanities
   #actions.h-100.self-end.inline-flex.flex-row.items-center
-    a(href=`${new_locale_url}` title="Switch to English").no-underline.white.pointer.ph1 SWITCH TO #{locale_flipped_formatted}
-    a.h-100.w-100.fr(href=`/` title="YiMovi home")
-      .logo.h-100
-        include ../partials/logo.svg
+    a(href=`${new_locale_url}` title="Switch to English").f7.f5-ns.no-underline.white.pointer.ph1 SWITCH TO #{locale_flipped_formatted}
+    a.h-100.fr(href=`/` title="YiMovi home")
+      .logo(class=`svg-fill--${secondaryColor}`).h-100
+        include ../svg/logo.svg
