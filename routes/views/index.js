@@ -11,7 +11,7 @@ exports = module.exports = (req, res) => {
 
     // Check redirect query after sending mail
     if (req.query.mailsent) {
-      req.flash('success', "Thank you for contacting us. We'll be in touch soon");
+      req.flash('success', res.locals.__.app.flash_messages.mail_sent);
     }
 
     Theme.model.find().limit(8).sort('sortOrder').exec((err, themes) => {

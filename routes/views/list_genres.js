@@ -8,7 +8,6 @@ exports = module.exports = (req, res) => {
   view.on('init', next => {
     const locals = res.locals;
     locals.genres = [];
-    locals.title = 'Browse by genre | YiMovi';
 
     Genre.model.find().sort('sortOrder').exec((err, genres) => {
 
