@@ -1,6 +1,8 @@
 const keystone = require('keystone');
 const Theme = keystone.list('Theme');
 
+const { defaultLocale, } = require('../setup/locales.js');
+
 exports = module.exports = (req, res) => {
 
   const view = new keystone.View(req, res);
@@ -15,8 +17,10 @@ exports = module.exports = (req, res) => {
     }
 
     Theme.model.find()
-      .where('name' + locals.locale === 'en' ? '' : `___${locals.locale}`).ne(null)
-      .limit(8).sort('sortOrder').exec((err, themes) => {
+      // filter out untranslated results
+      .where('name' + (locals.locale === defaultLocale ? '' : `___${locals.locale}`)).ne(null)
+      .limit(8).sort('sortOrder')
+      .exec((err, themes) => {
 
         if (err) return next(err);
 

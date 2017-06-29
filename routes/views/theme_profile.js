@@ -16,18 +16,19 @@ exports = module.exports = (req, res) => {
     Theme.model.findOne({ key: req.params.name, }).exec((err, theme) => {
 
       if (err || !theme) {
-        {
-          res.status(404).render('errors/404');
-          return;
-        }
+        res.status(404).render('errors/404');
+        return;
       }
 
       locals.theme = require('../helpers/localize_results.js')
         .localizeResults(locals.locale, theme);
 
       getMoviesBy('themes', theme, (moviesErr, movies) => {
+
         if (moviesErr) return next(moviesErr);
+
         locals.movies = locals.movies.concat(movies || []);
+
         next();
       });
     });

@@ -9,13 +9,16 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.movies = [];
 
-    Movie.model.find().sort('sortOrder').populate('director').exec((err, movies) => {
+    Movie.model.find()
+      .sort('sortOrder')
+      .populate('director')
+      .exec((err, movies) => {
 
-      if (err) return next(err);
+        if (err) return next(err);
 
-      locals.movies = movies;
-      next();
-    });
+        locals.movies = movies;
+        next();
+      });
   });
 
   view.render('list_movies');

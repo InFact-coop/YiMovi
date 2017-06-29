@@ -11,24 +11,25 @@ exports = module.exports = (req, res) => {
     locals.genre = {};
     locals.movies = [];
 
-    Genre.model.findOne({ key: req.params.name, }).exec((err, genre) => {
+    Genre.model.findOne({ key: req.params.name, })
+      .exec((err, genre) => {
 
-      if (err || !genre) {
-        res.status(404).render('errors/404');
-        return;
-      }
+        if (err || !genre) {
+          res.status(404).render('errors/404');
+          return;
+        }
 
-      locals.genre = require('../helpers/localize_results.js')
+        locals.genre = require('../helpers/localize_results.js')
         .localizeResults(locals.locale, genre);
 
 
-      getMoviesBy('genre', genre, (moviesErr, movies) => {
-        if (moviesErr) return next(moviesErr);
-        locals.movies = locals.movies.concat(movies || []);
-        next();
-      });
+        getMoviesBy('genre', genre, (moviesErr, movies) => {
+          if (moviesErr) return next(moviesErr);
+          locals.movies = locals.movies.concat(movies || []);
+          next();
+        });
 
-    });
+      });
   });
 
   view.render('genre_profile');
