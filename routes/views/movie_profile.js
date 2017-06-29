@@ -22,7 +22,6 @@ exports = module.exports = (req, res) => {
       .exec((err, movie) => {
 
         if (err || !movie) {
-          res.locals.title = '404 error | YiMovi';
           res.status(404).render('errors/404');
           return;
         }

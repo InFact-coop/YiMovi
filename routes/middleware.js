@@ -1,4 +1,5 @@
 const _ = require('underscore');
+const viewColors = require('./setup/view-colors.js');
 
 /**
     Initialises the standard view locals.
@@ -9,13 +10,10 @@ exports.initLocals = (req, res, next) => {
   const locals = res.locals;
   locals.user = req.user;
 
-  // Add your own local variables here
-  const viewColors = require('./setup/view-colors.js');
-  const view = req.url.split('/')[2];
-
   // Extract view key...
   // Which is either 'themes', 'directors', 'genres', 'movies', 'default'
   // Set primary color based on view
+  const view = req.url.split('/')[2];
   locals.primaryColor = (viewColors[view] || viewColors.default);
   // Prepend 'light-' to primaryColor to build secondary
   locals.secondaryColor = `light-${locals.primaryColor}`;

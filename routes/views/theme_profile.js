@@ -11,14 +11,12 @@ exports = module.exports = (req, res) => {
   view.on('init', next => {
     const locals = res.locals;
     locals.theme = {};
-    locals.title = '';
     locals.movies = [];
 
     Theme.model.findOne({ key: req.params.name, }).exec((err, theme) => {
 
       if (err || !theme) {
         {
-          res.locals.title = '404 error | YiMovi';
           res.status(404).render('errors/404');
           return;
         }

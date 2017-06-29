@@ -10,12 +10,10 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.genre = {};
     locals.movies = [];
-    locals.title = '';
 
     Genre.model.findOne({ key: req.params.name, }).exec((err, genre) => {
 
       if (err || !genre) {
-        res.locals.title = '404 error | YiMovi';
         res.status(404).render('errors/404');
         return;
       }
@@ -23,7 +21,6 @@ exports = module.exports = (req, res) => {
       locals.genre = require('../helpers/localize_results.js')
         .localizeResults(locals.locale, genre);
 
-      locals.title = `${genre.name} films | YiMovi`;
 
       getMoviesBy('genre', genre, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);
