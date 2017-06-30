@@ -8,7 +8,8 @@ nav.bg-gray.shadow-3.h2.h3-ns.items-center.flex.flex-row.justify-between
       p.ma0 #{__.header.strapline_1}
       p.ma0 #{__.header.strapline_2}
   #actions.h-100.self-end.inline-flex.flex-row.items-center
-    a(href=`${new_locale_url}` title=`${__.header.switch_statement}`).f7.f5-ns.no-underline.white.pointer.ph1 #{__.header.switch_statement.toUpperCase()}
-    a(href=`/` title=`${__.header.logo_link_title}`).h-100
-      .logo(class=`svg-fill--${secondaryColor}`).h-100.w-100
+    //- Remove when production translations are ready
+    //- a(href=`${new_locale_url}` title="Switch to English").f7.f5-ns.no-underline.white.pointer.ph1 SWITCH TO #{locale_flipped_formatted}
+    a.h-100.fr(href=`/` title="YiMovi home")
+      .logo(class=`svg-fill--${secondaryColor}`).h-100
         include ../svg/logo.svg

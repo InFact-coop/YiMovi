@@ -13,8 +13,8 @@ block content
   - const sections = [ "context", "synopsis", "cinematography", "pointsForDiscussion", "externalLinks" ]
   
   //- Query checks
-  - const hasVideo = movie.video
-  - const hasImages = movie.gallery.length
+  - const hasVideo = movie.video !== undefined
+  - const hasImages = (movie.gallery !== undefined) && movie.gallery.length !== 0
   - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
   
   //- title and main details
