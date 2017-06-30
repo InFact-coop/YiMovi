@@ -26,7 +26,8 @@ exports = module.exports = (req, res) => {
           return;
         }
 
-        locals.movie = movie;
+        locals.movie = require('../helpers/localize_results.js')
+          .localizeResults(locals.locale, movie);
         locals.director = movie.director;
         locals.themes = movie.themes;
         locals.genres = movie.genre;
