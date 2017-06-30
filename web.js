@@ -25,14 +25,9 @@ keystone.init({
 
 require('./models');
 
-i18n.configure({
-  locales:[ 'en', 'chn', ],
-  directory: __dirname + '/locales',
-  autoReload: true,
-  cookie: 'locale',
-  syncFiles: true,
-  objectNotation: true,
-});
+const localeSetup = require('./routes/setup/locales.js');
+
+i18n.configure(localeSetup);
 
 keystone.set('routes', require('./routes'));
 
