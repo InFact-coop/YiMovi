@@ -7,6 +7,7 @@ exports = module.exports = (req, res) => {
 
   view.on('init', next => {
     const locals = res.locals;
+    locals.title = res.__('list_genres.page_title');
     locals.genres = [];
 
     const nameField = 'name' + (locals.locale === 'en' ? '' : `___${locals.locale}`);

@@ -27,6 +27,7 @@ exports = module.exports = (req, res) => {
         }
 
         locals.movie = movie;
+        locals.title = res.__('movie_profile.page_title', locals.movie.name, locals.movie.name_chn);
         locals.director = movie.director;
         locals.themes = movie.themes;
         locals.genres = movie.genre;

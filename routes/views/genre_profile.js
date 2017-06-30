@@ -20,7 +20,9 @@ exports = module.exports = (req, res) => {
         }
 
         locals.genre = require('../helpers/localize_results.js')
-        .localizeResults(locals.locale, genre);
+          .localizeResults(locals.locale, genre);
+
+        locals.title = res.__('genre_profile.page_title', locals.genre.name);
 
 
         getMoviesBy('genre', genre, (moviesErr, movies) => {

@@ -8,6 +8,7 @@ exports = module.exports = (req, res) => {
 
   view.on('init', next => {
     const locals = res.locals;
+
     locals.director = {};
     locals.movies = [];
 
@@ -21,7 +22,9 @@ exports = module.exports = (req, res) => {
         }
 
         locals.director = require('../helpers/localize_results.js')
-        .localizeResults(locals.locale, director);
+          .localizeResults(locals.locale, director);
+
+        locals.title = res.__('director_profile.page_title', locals.director.name, locals.director.name_chn);
 
         getMoviesBy('director', director, (moviesErr, movies) => {
           if (moviesErr) return next(moviesErr);

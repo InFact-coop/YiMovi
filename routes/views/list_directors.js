@@ -7,6 +7,7 @@ exports = module.exports = (req, res) => {
 
   view.on('init', next => {
     const locals = res.locals;
+    locals.title = res.__('list_directors.page_title');
     locals.directors = [];
 
     Director.model.find()

@@ -23,6 +23,8 @@ exports = module.exports = (req, res) => {
       locals.theme = require('../helpers/localize_results.js')
         .localizeResults(locals.locale, theme);
 
+      locals.title = res.__('theme_profile.page_title', locals.theme.name);
+
       getMoviesBy('themes', theme, (moviesErr, movies) => {
 
         if (moviesErr) return next(moviesErr);
