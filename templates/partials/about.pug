@@ -18,5 +18,16 @@ mixin para
   h3.ma0.ph4.red
     | #{__.about.team_title}
   
-  each member in __.about.team_members
-    +para #{member}
+  - 
+    const teamMembers = [ 
+      "Chris Berry", 
+      "Michael Clark", 
+      "GUO Liping", 
+      "Patrizia Liberati", 
+      "LAI Lili", 
+      "Daniel Vuillermin", 
+      "Vivienne LO", 
+    ]
+  
+  each member in teamMembers
+    p.ph4.lh-copy.ma0=member
