@@ -9,7 +9,7 @@ include ../mixins/listings
 mixin genreBox(genre)
   - const title = `${__.list_genres.title} ${genre.name}`
   - const img = genre.image && genre.image.secure_url ? genre.image.secure_url : null
-  +listing("genres", genre.name, title, primaryColor, img)
+  +listing("genres", genre.name, genre.key, title, primaryColor, img)
 
 block content
   

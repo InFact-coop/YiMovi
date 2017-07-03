@@ -7,15 +7,20 @@ exports = module.exports = (req, res) => {
 
   view.on('init', next => {
     const locals = res.locals;
+    locals.title = res.__('list_directors.page_title');
     locals.directors = [];
 
-    Director.model.find().sort('sortOrder').exec((err, directors) => {
+    Director.model.find()
+      .select('-description -image -description___chn')
+      .lean()
+      .sort('sortOrder').exec((err, directors) => {
 
-      if (err) return next(err);
+        if (err) return next(err);
 
-      locals.directors = directors;
-      next();
-    });
+        locals.directors = directors;
+
+        next();
+      });
   });
 
   view.render('list_directors');

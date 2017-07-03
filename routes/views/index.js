@@ -1,6 +1,10 @@
 const keystone = require('keystone');
 const Theme = keystone.list('Theme');
 
+const { defaultLocale, } = require('../setup/locales.js');
+const { localizeResults, } = require('../helpers/localize_results.js');
+
+
 exports = module.exports = (req, res) => {
 
   const view = new keystone.View(req, res);
@@ -14,13 +18,18 @@ exports = module.exports = (req, res) => {
       req.flash('success', res.locals.__.app.flash_messages.mail_sent);
     }
 
-    Theme.model.find().limit(8).sort('sortOrder').exec((err, themes) => {
+    Theme.model.find()
+      // filter out untranslated results
+      .where('name' + (locals.locale === defaultLocale ? '' : `___${locals.locale}`)).ne(null)
+      .limit(8).sort('sortOrder')
+      .exec((err, themes) => {
 
-      if (err) return next(err);
+        if (err) return next(err);
 
-      locals.themes = themes;
-      next();
-    });
+        locals.themes = localizeResults(locals.locale, themes);
+
+        next();
+      });
   });
 
   view.render('index');

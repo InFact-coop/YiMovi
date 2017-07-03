@@ -1,6 +1,6 @@
 {
 	"app": {
-		"title": "漢漢漢",
+		"page_title": "漢漢漢",
 		"flash_messages": {
 			"mail_sent": "漢漢漢"
 		}
@@ -42,29 +42,36 @@
 		"link_genres": "漢漢漢"
 	},
 	"list_directors": {
-    "title": "漢漢漢",
-		"link_title": "漢漢漢"
+		"title": "漢漢漢",
+		"link_title": "漢漢漢",
+		"page_title": "list_directors.page_title"
 	},
 	"list_genres": {
-    "title": "###",
-		"link_title": "漢漢漢"
+		"title": "###",
+		"link_title": "漢漢漢",
+		"page_title": "list_genres.page_title"
 	},
-  "list_movies": {
-    "title": "漢漢漢",
-		"sub_title": "漢漢漢"
+	"list_movies": {
+		"title": "漢漢漢",
+		"sub_title": "漢漢漢",
+		"page_title": "list_movies.page_title"
 	},
-  "list_themes": {
-    "title": "漢漢漢",
-		"link_title": "漢漢漢"
+	"list_themes": {
+		"title": "漢漢漢",
+		"link_title": "漢漢漢",
+		"page_title": "list_themes.page_title"
 	},
-  "theme_profile": {
-		"title": "漢"
+	"theme_profile": {
+		"title": "漢",
+		"page_title": "theme_profile.page_title"
 	},
-  "director_profile": {
-		"title": "漢漢漢"
+	"director_profile": {
+		"title": "漢漢漢",
+		"page_title": "director_profile.page_title"
 	},
 	"genre_profile": {
-		"title": "漢漢漢"
+		"title": "漢漢漢",
+		"page_title": "genre_profile.page_title"
 	},
 	"movie_profile": {
 		"director": "漢漢漢",
@@ -82,7 +89,8 @@
 		"cinematography": "漢漢漢",
 		"points_for_discussion": "漢漢漢",
 		"external_links": "漢漢漢",
-		"teaching_and_learning": "漢漢漢"
+		"teaching_and_learning": "漢漢漢",
+		"page_title": "movie_profile.page_title"
 	},
 	"contact": {
 		"title": "漢漢漢",
@@ -93,6 +101,7 @@
 		"placeholder_email": "漢漢漢",
 		"placeholder_message": "漢漢漢",
 		"action_cancel": "漢漢漢",
-		"action_send": "漢漢漢"
+		"action_send": "漢漢漢",
+		"page_title": "contact.page_title"
 	}
 }

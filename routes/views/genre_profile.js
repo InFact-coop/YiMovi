@@ -1,6 +1,8 @@
 const keystone = require('keystone');
 const Genre = keystone.list('Genre');
 const getMoviesBy = require('./../helpers/getMoviesBy.js');
+const { localizeResults, } = require('../helpers/localize_results.js');
+
 
 exports = module.exports = (req, res) => {
 
@@ -10,26 +12,27 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
     locals.genre = {};
     locals.movies = [];
-    locals.title = '';
 
-    Genre.model.findOne({ key: req.params.name, }).exec((err, genre) => {
+    Genre.model.findOne({ key: req.params.name, })
+      .exec((err, genre) => {
 
-      if (err || !genre) {
-        res.locals.title = '404 error | YiMovi';
-        res.status(404).render('errors/404');
-        return;
-      }
+        if (err || !genre) {
+          res.status(404).render('errors/404');
+          return;
+        }
 
-      locals.genre = genre;
-      locals.title = `${genre.name} films | YiMovi`;
+        locals.genre = localizeResults(locals.locale, genre);
 
-      getMoviesBy('genre', genre, (moviesErr, movies) => {
-        if (moviesErr) return next(moviesErr);
-        locals.movies = locals.movies.concat(movies || []);
-        next();
+        locals.title = res.__('genre_profile.page_title', locals.genre.name);
+
+
+        getMoviesBy('genre', genre, (moviesErr, movies) => {
+          if (moviesErr) return next(moviesErr);
+          locals.movies = locals.movies.concat(movies || []);
+          next();
+        });
+
       });
-
-    });
   });
 
   view.render('genre_profile');

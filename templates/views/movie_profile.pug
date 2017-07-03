@@ -133,7 +133,7 @@ block content
     +section(movie, 'pointsForDiscussion', `${__.movie_profile.points_for_discussion}`)
         
     //- external links
-    if movie.externalLinks.html.length
+    if movie.externalLinks.html && movie.externalLinks.html.length
       hr.mh0.mv3
       +sectionHeading(`${__.movie_profile.external_links}`)
       #external-links.f6.f5-ns

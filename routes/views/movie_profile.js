@@ -1,7 +1,11 @@
 const keystone = require('keystone');
 const Movie = keystone.list('Movie');
 
+const { localizeResults, } = require('../helpers/localize_results.js');
+
 exports = module.exports = (req, res) => {
+
+  const localizeForLocale = results => localizeResults(res.locals.locale, results);
 
   const view = new keystone.View(req, res);
 
@@ -22,15 +26,16 @@ exports = module.exports = (req, res) => {
       .exec((err, movie) => {
 
         if (err || !movie) {
-          res.locals.title = '404 error | YiMovi';
           res.status(404).render('errors/404');
           return;
         }
 
-        locals.movie = movie;
-        locals.director = movie.director;
-        locals.themes = movie.themes;
-        locals.genres = movie.genre;
+        locals.movie = localizeForLocale(movie);
+        locals.title = res.__('movie_profile.page_title', locals.movie.name, locals.movie.name_chn);
+
+        locals.director = localizeForLocale(movie.director);
+        locals.themes = localizeForLocale(movie.themes);
+        locals.genres = localizeForLocale(movie.genre);
 
         next();
       });
