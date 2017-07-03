@@ -8,6 +8,7 @@ exports = module.exports = (req, res) => {
     const locals = res.locals;
 
     locals.hide_footer = true;
+    locals.title = res.__('contact.page_title');
     locals.email = process.env.EMAIL || 'none@none.com';
 
     next();

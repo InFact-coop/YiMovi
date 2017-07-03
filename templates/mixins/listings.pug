@@ -1,6 +1,5 @@
-mixin listing(type, name, title, color, img)
-  - name = name.replace(/\s/g, "-").toLowerCase()
-  - const url = `/${type}/${name}`
+mixin listing(type, name, key, title, color, img)
+  - const url = `/${type}/${key}`
   li.w-100.w-50-l
     a.no-underline(href=url title=title)
       div.listing-box.h4.h5-ns.ba.bw1.b--light-gray.light-gray.flex.flex-row.pointer(class=`bg-light-${color}`)

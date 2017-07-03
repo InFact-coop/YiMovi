@@ -1,6 +1,7 @@
 const keystone = require('keystone');
 const Director = keystone.list('Director');
 const getMoviesBy = require('./../helpers/getMoviesBy.js');
+const { localizeResults, } = require('../helpers/localize_results.js');
 
 exports = module.exports = (req, res) => {
 
@@ -8,26 +9,29 @@ exports = module.exports = (req, res) => {
 
   view.on('init', next => {
     const locals = res.locals;
-    locals.title = '';
+
     locals.director = {};
     locals.movies = [];
 
-    Director.model.findOne({ key: req.params.name, }).exec((err, director) => {
+    Director.model
+      .findOne({ key: req.params.name, })
+      .exec((err, director) => {
 
-      if (err || !director) {
-        res.locals.title = '404 error | YiMovi';
-        res.status(404).render('errors/404');
-        return;
-      }
+        if (err || !director) {
+          res.status(404).render('errors/404');
+          return;
+        }
 
-      locals.director = director;
+        locals.director = localizeResults(locals.locale, director);
 
-      getMoviesBy('director', director, (moviesErr, movies) => {
-        if (moviesErr) return next(moviesErr);
-        locals.movies = locals.movies.concat(movies || []);
-        next();
+        locals.title = res.__('director_profile.page_title', locals.director.name, locals.director.name_chn);
+
+        getMoviesBy('director', director, (moviesErr, movies) => {
+          if (moviesErr) return next(moviesErr);
+          locals.movies = locals.movies.concat(movies || []);
+          next();
+        });
       });
-    });
   });
 
   view.render('director_profile');

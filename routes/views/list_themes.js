@@ -1,5 +1,7 @@
 const keystone = require('keystone');
 const Theme = keystone.list('Theme');
+const { localizeResults, } = require('../helpers/localize_results.js');
+
 
 exports = module.exports = (req, res) => {
 
@@ -7,15 +9,24 @@ exports = module.exports = (req, res) => {
 
   view.on('init', next => {
     const locals = res.locals;
+    locals.title = res.__('list_themes.page_title');
     locals.themes = [];
 
-    Theme.model.find().sort('sortOrder').exec((err, themes) => {
+    const nameField = 'name' + (locals.locale === 'en' ? '' : `___${locals.locale}`);
 
-      if (err) return next(err);
+    Theme.model.find()
+      .select('-description -description___chn')
+      .where(nameField).ne(null) // only if translation of theme name available
+      .sort('sortOrder')
+      .lean()
+      .exec((err, themes) => {
 
-      locals.themes = themes;
-      next();
-    });
+        if (err) return next(err);
+
+        locals.themes = localizeResults(locals.locale, themes);
+
+        next();
+      });
   });
 
   view.render('list_themes');

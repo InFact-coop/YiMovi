@@ -33,23 +33,23 @@ block content
         each theme in themes
           - const title =  + `${__.index.theme_link_title} ${theme.name}`
           - const img = theme.image && theme.image.secure_url ? theme.image.secure_url : null
-          +listing("themes", theme.name, title, "purple", img)
+          +listing("themes", theme.name, theme.key, title, "purple", img)
                     
-      a.no-underline(href=`/themes` title="Browse all themes")  
-        #browseThemesBox.ttu.bg-purple.ph4.pv3.light-gray.hover-bg-light-purple.pointer
-          h2.ma0.f4.f2-ns #{__.index.link_themes} >>
-  
-      a.no-underline(href=`/movies` title="Browse all movies")                
-        #browseMoviesBox.ttu.bg-blue.ph4.pv3.light-gray.hover-bg-light-blue.pointer
-          h2.ma0.f4.f2-ns #{__.index.link_movies} >>
-          
-      a.no-underline(href=`/directors` title="Browse all directors")                
-        #browseDirectorsBox.ttu.bg-green.ph4.pv3.light-gray.hover-bg-light-green.pointer
-          h2.ma0.f4.f2-ns #{__.index.link_directors} >>  
-          
-      a.no-underline(href=`/genres` title="Browse all genres")                
-        #browseGenresBox.ttu.bg-yellow.ph4.pv3.light-gray.hover-bg-light-yellow.pointer
-          h2.ma0.f4.f2-ns #{__.index.link_genres} >>  
+  a.no-underline(href=`/themes` title="Browse all themes")  
+    #browseThemesBox.ttu.bg-purple.ph4.pv3.light-gray.hover-bg-light-purple.pointer
+      h2.ma0.f4.f2-ns #{__.index.link_themes} >>
+
+  a.no-underline(href=`/movies` title="Browse all movies")                
+    #browseMoviesBox.ttu.bg-blue.ph4.pv3.light-gray.hover-bg-light-blue.pointer
+      h2.ma0.f4.f2-ns #{__.index.link_movies} >>
+      
+  a.no-underline(href=`/directors` title="Browse all directors")                
+    #browseDirectorsBox.ttu.bg-green.ph4.pv3.light-gray.hover-bg-light-green.pointer
+      h2.ma0.f4.f2-ns #{__.index.link_directors} >>  
+      
+  a.no-underline(href=`/genres` title="Browse all genres")                
+    #browseGenresBox.ttu.bg-yellow.ph4.pv3.light-gray.hover-bg-light-yellow.pointer
+      h2.ma0.f4.f2-ns #{__.index.link_genres} >>  
                         
   include ../partials/about
                         

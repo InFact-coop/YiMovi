@@ -1,17 +1,17 @@
 {
 	"app": {
-		"title": "Chinese Medical Humanities Film - YiMovi"
-	},
-	"flash_messages": {
-		"mail_sent": "Thank you for contacting us. We'll be in touch soon"
+		"page_title": "Chinese Medical Humanities Film - YiMovi",
+		"flash_messages": {
+			"mail_sent": "Thank you for contacting us. We'll be in touch soon"
+		}
 	},
 	"about": {
 		"title": "about us",
 		"part1": "For five years the team have been working with film in both teaching and research.",
 		"part2": "We have used traditional Euro-American medical humanities approaches to teaching with Chinese film, examining the doctor-patient relationships, the role of qualities like empathy and compassion (or their absence) in improving health care, patient experiences of serious and chronic illness, and medical ethics. Working mainly with Chinese students has brought up critical points of cultural difference, and highlighted the unique challenges that the Chinese speaking worlds face. It also brings a critical focus to what have beenconsidered universal rights in healthcare, in death and dying, and medical ethics in general.",
 		"part3": "The study of medicine in China through film can also offer new insights forthe Medical and Health Humanities, through a more intimate engagement with alternative health systems, but also conceptions of state, community and individual. How the body has been used as a site of personal cultivation, social conformity or political contestation is all made visible in film.",
-		"team_title": "the team"
-	},
+		"team_title": "The Team"
+		},
 	"header": {
 		"strapline_1": "Chinese Film &",
 		"strapline_2": "Medical Humanities",
@@ -19,7 +19,7 @@
 		"switch_statement": "Switch to Chinese"
 	},
 	"footer": {
-		"link_contact": "Contact"
+		"link_contact": "Contact YiMovi"
 	},
 	"index": {
 		"header": "Chinese film and the cross-cultural medical humanities",
@@ -33,31 +33,39 @@
 		"link_genres": "Browse all genres"
 	},
 	"list_directors": {
+		"page_title": "Browse movies by director - YiMovi",
 		"title": "Browse Directors",
 		"link_title": "Movies by"
 	},
 	"list_genres": {
+		"page_title": "Browse movies by genre - YiMovi",
 		"title": "Browse Genres",
 		"link_title": "Movies about"
 	},
 	"list_movies": {
+		"page_title": "Browse movies by title - YiMovi",
 		"title": "Films",
 		"sub_title": "By title"
 	},
 	"list_themes": {
+		"page_title": "Browse movies by theme - YiMovi",
 		"title": "Browse Themes",
 		"link_title": "Movies about"
 	},
 	"theme_profile": {
+		"page_title": "Movies about %s - YiMovi",
 		"title": "Movies about"
 	},
 	"director_profile": {
+		"page_title": "%s %s - Director profile on YiMovi",
 		"title": "Movies by"
 	},
 	"genre_profile": {
+		"page_title": "%s films - YiMovi",
 		"title": "Movies about"
 	},
 	"movie_profile": {
+		"page_title": "%s %s - YiMovi movie profile",
 		"director": "director",
 		"video": "video",
 		"images": "images",
@@ -76,6 +84,7 @@
 		"teaching_and_learning": "teaching and learning"
 	},
 	"contact": {
+		"page_title": "Contact YiMovi - Find contact details or send a message",
 		"title": "Contact us",
 		"address_title": "Address",
 		"address_body": "Gower Str, Bloomsbury, London, WC1E 6BT",
