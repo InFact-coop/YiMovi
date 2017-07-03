@@ -1,6 +1,7 @@
 const keystone = require('keystone');
 const Director = keystone.list('Director');
 const getMoviesBy = require('./../helpers/getMoviesBy.js');
+const { localizeResults, } = require('../helpers/localize_results.js');
 
 exports = module.exports = (req, res) => {
 
@@ -21,8 +22,7 @@ exports = module.exports = (req, res) => {
           return;
         }
 
-        locals.director = require('../helpers/localize_results.js')
-          .localizeResults(locals.locale, director);
+        locals.director = localizeResults(locals.locale, director);
 
         locals.title = res.__('director_profile.page_title', locals.director.name, locals.director.name_chn);
 

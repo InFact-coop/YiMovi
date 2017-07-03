@@ -3,6 +3,8 @@ const keystone = require('keystone');
 const Theme = keystone.list('Theme');
 
 const getMoviesBy = require('./../helpers/getMoviesBy.js');
+const { localizeResults, } = require('../helpers/localize_results.js');
+
 
 exports = module.exports = (req, res) => {
 
@@ -20,8 +22,7 @@ exports = module.exports = (req, res) => {
         return;
       }
 
-      locals.theme = require('../helpers/localize_results.js')
-        .localizeResults(locals.locale, theme);
+      locals.theme = localizeResults(locals.locale, theme);
 
       locals.title = res.__('theme_profile.page_title', locals.theme.name);
 

@@ -1,6 +1,7 @@
 const keystone = require('keystone');
 const Movie = keystone.list('Movie');
 
+
 exports = module.exports = (req, res) => {
 
   const view = new keystone.View(req, res);

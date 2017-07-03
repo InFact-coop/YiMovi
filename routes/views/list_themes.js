@@ -1,5 +1,7 @@
 const keystone = require('keystone');
 const Theme = keystone.list('Theme');
+const { localizeResults, } = require('../helpers/localize_results.js');
+
 
 exports = module.exports = (req, res) => {
 
@@ -21,8 +23,7 @@ exports = module.exports = (req, res) => {
 
         if (err) return next(err);
 
-        locals.themes = require('../helpers/localize_results.js')
-          .localizeResults(locals.locale, themes);
+        locals.themes = localizeResults(locals.locale, themes);
 
         next();
       });

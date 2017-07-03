@@ -1,5 +1,7 @@
 const keystone = require('keystone');
 const Genre = keystone.list('Genre');
+const { localizeResults, } = require('../helpers/localize_results.js');
+
 
 exports = module.exports = (req, res) => {
 
@@ -20,8 +22,7 @@ exports = module.exports = (req, res) => {
 
         if (err) return next(err);
 
-        locals.genres = require('../helpers/localize_results.js')
-          .localizeResults(locals.locale, genres);
+        locals.genres = localizeResults(locals.locale, genres);
 
         next();
       });
