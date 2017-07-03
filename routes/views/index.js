@@ -15,7 +15,7 @@ exports = module.exports = (req, res) => {
 
     // Check redirect query after sending mail
     if (req.query.mailsent) {
-      req.flash('success', res.locals.__.app.flash_messages.mail_sent);
+      req.flash('success', res.locals.__.flash_messages.mail_sent);
     }
 
     Theme.model.find()

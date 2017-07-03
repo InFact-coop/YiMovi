@@ -3,11 +3,10 @@
 - const new_locale_url = _url.replace(`/${locale}`, `/${locale_flipped}`)
 
 nav.bg-gray.shadow-3.h2.h3-ns.items-center.flex.flex-row.justify-between
-  a(href=`/` title="Home").no-underline
-    #strapline.h-100.self-start.ttu.f7.f5-ns.fw6.light-gray.pa3-ns.pa1.pointer
+  a(href=`/` title=`${__.header.logo_link_title}`).no-underline
+    #strapline.h-100.self-start.ttu.f7.f5-ns.fw6.light-gray.pa2-ns.pa1.pointer
       p.ma0 #{__.header.strapline_1}
       p.ma0 #{__.header.strapline_2}
-
   #actions.h-100.self-end.inline-flex.flex-row.items-center
     //- Remove when production translations are ready
     //- a(href=`${new_locale_url}` title="Switch to English").f7.f5-ns.no-underline.white.pointer.ph1 SWITCH TO #{locale_flipped_formatted}
