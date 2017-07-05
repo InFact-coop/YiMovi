@@ -7,11 +7,11 @@ mixin subHeading(text)
       
 mixin sectionParagraph(body, isDarkTheme)
     - const length = 200
-    - const cropped = utils.decodeHTMLEntities(utils.cropHTMLString(body, length, '...')).replace(/<br>/g, ' ')
-          
+    - const cropped = utils.cropHTMLString(body, length, '...')
+    
     .sectionParagraph
       .initial-text
-        p.f6.f5-ns.initial-text=cropped
+        p.f6.f5-ns.initial-text!=cropped
       .hidden-text.f6.f5-ns.dn!=body
       a.f6.f5-ns.underline.showMore.pointer.dim.blue(style = isDarkTheme ? `color: white` : '' id="show-more-link")
         ="Show more"
