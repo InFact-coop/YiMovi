@@ -1,5 +1,6 @@
 const keystone = require('keystone');
 const Theme = keystone.list('Theme');
+const AboutUs = keystone.list('About_us');
 
 const { defaultLocale, } = require('../setup/locales.js');
 const { localizeResults, } = require('../helpers/localize_results.js');
@@ -28,7 +29,17 @@ exports = module.exports = (req, res) => {
 
         locals.themes = localizeResults(locals.locale, themes);
 
-        next();
+        AboutUs.model.findOne()
+          .exec((err, aboutUs) => {
+
+            if (err) return next(err);
+
+            locals.about_us = aboutUs;
+
+            console.log(locals.about_us);
+
+            next();
+          });
       });
   });
 
