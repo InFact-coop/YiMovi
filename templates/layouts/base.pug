@@ -28,4 +28,12 @@ html.h-100
         
         block scripts
         
+        if process.env.NODE_ENV === 'production'
+          script
+            include ../js/analytics.js
+          
+        
+          
+
+        
         
