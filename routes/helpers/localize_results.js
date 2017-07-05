@@ -26,7 +26,7 @@ const localizeResults = (locale, dbResults) => {
     return dbResults.map(dbResult => localize(locale, dbResult));
   }
 
-  // if not array, pass in _doc object
+  // if not array, check for _doc object
   return localize(locale, dbResults._doc || dbResults);
 
 };

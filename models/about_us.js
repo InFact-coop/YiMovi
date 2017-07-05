@@ -12,7 +12,7 @@ const AboutUs = new keystone.List('About_us', {
 AboutUs.add({
   name: { type: String, },
   text: { type: Types.Markdown, label: 'About us text EN', },
-  text_CHN: { type: Types.Markdown, label: 'About us text CHN', },
+  text___chn: { type: Types.Markdown, label: 'About us text CHN', },
   team: { type: String, label: 'Team members', note: 'Add names of team members as a comma-separated list', },
 });
 

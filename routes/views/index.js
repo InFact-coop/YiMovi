@@ -34,9 +34,7 @@ exports = module.exports = (req, res) => {
 
             if (err) return next(err);
 
-            locals.about_us = aboutUs;
-
-            console.log(locals.about_us);
+            locals.about_us = localizeResults(locals.locale, aboutUs);
 
             next();
           });
