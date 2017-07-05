@@ -12,16 +12,7 @@ mixin para(content)
     h3.ma0.ph4.red
       | #{__.about.team_title}
   
-  - 
-    const teamMembers = [ 
-      "Chris Berry", 
-      "Michael Clark", 
-      "GUO Liping", 
-      "Patrizia Liberati", 
-      "LAI Lili", 
-      "Daniel Vuillermin", 
-      "Vivienne LO", 
-    ]
+  - const teamMembers = about_us.team.split(', ')
   
   each member in teamMembers
     p.ph4.lh-copy.ma0=member
