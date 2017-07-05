@@ -1,16 +1,11 @@
-mixin para(content)
-  p.ph4.lh-copy=content
-
 #aboutUsSection.f5.f4-ns.pb4
   #aboutUsTitle.ttu.bg-red.ph4.pv3.light-gray
     h2.ma0.f4.f2-ns #{__.about.title}
 
-  - const aboutUsSplit = about_us.text.split('<br>')
-  each paragraph in aboutUsSplit
-    +para(paragraph)
+  div.ph4.lh-copy!=about_us.text.html
     
-    h3.ma0.ph4.red
-      | #{__.about.team_title}
+  h3.ma0.ph4.red
+    | #{__.about.team_title}
   
   - const teamMembers = about_us.team.split(', ')
   
