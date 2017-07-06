@@ -55,15 +55,22 @@ const config = {
  */
 
 require('fs').stat(BINPATH + 'selenium.jar', function (err, stat) { // got it?
+  console.log('getting that sweet sweet java');
   if (err || !stat || stat.size < 1) {
     require('selenium-download').ensure(BINPATH, function(error) {
-      if (error) throw new Error(error); // no point continuing so exit!
+      console.log('in selium download cb');
+      if (error) {
+        console.error(error);
+        throw new Error(error); // no point continuing so exit!
+      }
       console.log('✔ Selenium & Chromedriver downloaded to:', BINPATH); // eslint-disable-line
     });
+  } else {
+    console.log('selenium.jar already exists');
   }
 });
 
-function padLeft (count) { // theregister.co.uk/2016/03/23/npm_left_pad_chaos/
+function padLeft (count) {
   return count < 10 ? '0' + count : count.toString();
 }
 
@@ -87,5 +94,5 @@ function imgpath (browser) {
 
 module.exports = config;
 module.exports.imgpath = imgpath;
-module.exports.url = process.env.URL || 'localhost:3000'; // Ensure  this is available in your .env file
+module.exports.url = process.env.URL || '0.0.0.0:3000'; // Ensure  this is available in your .env file
 module.exports.SCREENSHOT_PATH = SCREENSHOT_PATH;
