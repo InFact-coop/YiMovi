@@ -1,35 +1,13 @@
-- const team_members = [ "Chris Berry", "Michael Clark", "GUO Liping", "Patrizia Liberati", "LAI Lili", "Daniel Vuillermin", "Vivienne LO" ]
-
-mixin para
-  p.ph4.lh-copy
-    block
-
 #aboutUsSection.f5.f4-ns.pb4
   #aboutUsTitle.ttu.bg-red.ph4.pv3.light-gray
     h2.ma0.f4.f2-ns #{__.about.title}
 
-  +para
-    | #{__.about.part1}
-    
-  +para
-    | #{__.about.part2}
-    
-  +para
-    | #{__.about.part3}
+  div.ph4.lh-copy!=about_us.text.html
     
   h3.ma0.ph4.red
     | #{__.about.team_title}
   
-  - 
-    const teamMembers = [ 
-      "Chris Berry", 
-      "Michael Clark", 
-      "GUO Liping", 
-      "Patrizia Liberati", 
-      "LAI Lili", 
-      "Daniel Vuillermin", 
-      "Vivienne LO", 
-    ]
+  - const teamMembers = about_us.team.split(', ')
   
   each member in teamMembers
     p.ph4.lh-copy.ma0=member
