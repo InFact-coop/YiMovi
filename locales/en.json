@@ -78,7 +78,8 @@
 		"cinematography": "cinematography",
 		"points_for_discussion": "points for discussion",
 		"external_links": "external links",
-		"teaching_and_learning": "teaching and learning"
+		"teaching_and_learning": "teaching and learning",
+		"page_title": "movie_profile.page_title"
 	},
 	"contact": {
 		"title": "Contact us",
