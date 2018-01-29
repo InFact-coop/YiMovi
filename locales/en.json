@@ -34,11 +34,13 @@
 	},
 	"list_directors": {
 		"title": "Browse Directors",
-		"link_title": "Movies by"
+		"link_title": "Movies by",
+		"page_title": "list_directors.page_title"
 	},
 	"list_genres": {
 		"title": "Browse Genres",
-		"link_title": "Movies about"
+		"link_title": "Movies about",
+		"page_title": "list_genres.page_title"
 	},
 	"list_movies": {
 		"title": "Films",
@@ -88,7 +90,8 @@
 		"placeholder_email": "Your Email",
 		"placeholder_message": "Your Message",
 		"action_cancel": "Cancel",
-		"action_send": "Send"
+		"action_send": "Send",
+		"page_title": "contact.page_title"
 	},
 	"": {}
 }

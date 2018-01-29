@@ -34,11 +34,13 @@
 	},
 	"list_directors": {
 		"title": "浏览董事",
-		"link_title": "通过电影"
+		"link_title": "通过电影",
+		"page_title": "list_directors.page_title"
 	},
 	"list_genres": {
 		"title": "浏览流派",
-		"link_title": "关于电影"
+		"link_title": "关于电影",
+		"page_title": "list_genres.page_title"
 	},
 	"list_movies": {
 		"title": "电影",
@@ -88,7 +90,8 @@
 		"placeholder_email": "你的邮件",
 		"placeholder_message": "你的信息",
 		"action_cancel": "取消",
-		"action_send": "发送"
+		"action_send": "发送",
+		"page_title": "contact.page_title"
 	},
 	"": {}
 }
