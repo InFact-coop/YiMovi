@@ -2,14 +2,18 @@
 - const locale_flipped = locale === 'en' ? 'chn' : 'en'
 - const new_locale_url = _url.replace(`/${locale}`, `/${locale_flipped}`)
 
-nav.bg-gray.shadow-3.h2.h3-ns.items-center.flex.flex-row.justify-between
-  a(href=`/` title=`${__.header.logo_link_title}`).no-underline
-    #strapline.h-100.self-start.ttu.f7.f5-ns.fw6.light-gray.pa2-ns.pa1.pointer
-      p.ma0 #{__.header.strapline_1}
-      p.ma0 #{__.header.strapline_2}
-  #actions.h-100.self-end.inline-flex.flex-row.items-center
+nav.bg-gray.h2.h3-ns.w-100.items-center.fixed.z-1.flex.flex-row.items-center.justify-between
+  a.h-100(href=`/` title="YiMovi home")
+    .logo(class=`svg-fill--${secondaryColor}`).h-100
+      include ../svg/logo.svg
+  div
+    a.link.ph3.white(href=`/` alt="YiMovi home") Home
+    a.link.ph3.white(href=`/movies` alt="All Films") All Films
+    a.link.ph3.white(href=`/themes` alt="Themes") Themes
+    a.link.ph3.white(href=`/genres` alt="Genres") Genres
+    a.link.ph3.white(href=`/directors` alt="Directors") Directors
+    a.link.ph3.white(href=`/#aboutUsSection` alt="About") About
+    a.link.ph3.white(href=`/contact` alt="Contact") Contact
+  //- #actions.h-100.self-end.inline-flex.flex-row.items-center
     //- Remove when production translations are ready
     //- a(href=`${new_locale_url}` title="Switch to English").f7.f5-ns.no-underline.white.pointer.ph1 SWITCH TO #{locale_flipped_formatted}
-    a.h-100.fr(href=`/` title="YiMovi home")
-      .logo(class=`svg-fill--${secondaryColor}`).h-100
-        include ../svg/logo.svg
