@@ -23,8 +23,13 @@ block content
   #title-container.pa1.pl2.pa2-ns.pl3-ns.shadow-5.z-1(class=`bg-${primaryColor}`)
       
     +breadcrumbs("movies", movie.name)
+    
+    
+    if (movie.name_chn)
+      h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name
+    h2.light-gray.ttu.f3.f3-ns.fw7.lh-title.ma0=movie.name_chn
       
-    h2.light-gray.f5.f4-ns.fw5.lh-title
+    h2.light-gray.f5.f4-ns.fw2.lh-title
       if movie.year
         span.mr2=movie.year
       if movie.duration
@@ -36,9 +41,6 @@ block content
       if movie.director.name_chn
         span.ma0.sans-serif=`${director.name_chn}`
     
-    if (movie.name_chn)
-      h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name_chn
-    h1.light-gray.ttu.f2.f1-ns.fw7.lh-title.ma0=movie.name
 
   #menu.pa2.pa3-ns.shadow-5.z-1.sticky.top-0.light-gray.o-90(class=`bg-${primaryColor}`)
     #menu-mobile.flex.flex-row.justify-between.pointer.dn-ns

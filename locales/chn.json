@@ -42,14 +42,17 @@
 	},
 	"list_movies": {
 		"title": "电影",
-		"sub_title": "按标题"
+		"sub_title": "按标题",
+		"page_title": "list_movies.page_title"
 	},
 	"list_themes": {
 		"title": "浏览主题",
-		"link_title": "关于电影"
+		"link_title": "关于电影",
+		"page_title": "list_themes.page_title"
 	},
 	"theme_profile": {
-		"title": "关于电影"
+		"title": "关于电影",
+		"page_title": "theme_profile.page_title"
 	},
 	"director_profile": {
 		"title": "导演介绍"
@@ -73,7 +76,8 @@
 		"cinematography": "电影艺术",
 		"points_for_discussion": "讨论点",
 		"external_links": "外部链接",
-		"teaching_and_learning": "教与学"
+		"teaching_and_learning": "教与学",
+		"page_title": "movie_profile.page_title"
 	},
 	"contact": {
 		"title": "联系我们",
@@ -86,7 +90,5 @@
 		"action_cancel": "取消",
 		"action_send": "发送"
 	},
-	"": {
-		
-	}
+	"": {}
 }

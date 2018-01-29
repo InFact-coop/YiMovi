@@ -42,14 +42,17 @@
 	},
 	"list_movies": {
 		"title": "Films",
-		"sub_title": "By title"
+		"sub_title": "By title",
+		"page_title": "list_movies.page_title"
 	},
 	"list_themes": {
 		"title": "Browse Themes",
-		"link_title": "Movies about"
+		"link_title": "Movies about",
+		"page_title": "list_themes.page_title"
 	},
 	"theme_profile": {
-		"title": "Movies about"
+		"title": "Movies about",
+		"page_title": "theme_profile.page_title"
 	},
 	"director_profile": {
 		"title": "Movies by"
@@ -73,7 +76,8 @@
 		"cinematography": "cinematography",
 		"points_for_discussion": "points for discussion",
 		"external_links": "external links",
-		"teaching_and_learning": "teaching and learning"
+		"teaching_and_learning": "teaching and learning",
+		"page_title": "movie_profile.page_title"
 	},
 	"contact": {
 		"title": "Contact us",
@@ -86,7 +90,5 @@
 		"action_cancel": "Cancel",
 		"action_send": "Send"
 	},
-	"": {
-
-	}
+	"": {}
 }
