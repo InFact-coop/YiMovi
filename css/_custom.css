@@ -310,6 +310,19 @@
   transition: left 1s;
 }
 
+.anchor {
+  display: block;
+  height: 3rem; /*same height as header*/
+  margin-top: -3rem; /*same height as header*/
+  visibility: hidden;
+}
+@media (--breakpoint-not-small) {
+  .anchor-ns {
+    height: 6rem;
+    margin-top: -6rem;
+  }
+}
+
 /* SVG Fills */
 .svg-fill--light-red {
   fill: var(--light-red);
