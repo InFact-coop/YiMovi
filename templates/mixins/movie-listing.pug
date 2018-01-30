@@ -1,24 +1,25 @@
 mixin mainDetails(movie, director)
   .mainDetails
-    p.light-silver.f7.f4-ns.fw5.lh-title.ma0.mt1
+    p.dark-gray.f7.f4-ns.fw1.lh-title.ma0.mt1
+      if movie.director && movie.director.name
+        p.dark-gray.fw1.lh-title.ma0
+          div=`Director ${director.name} `
+          if movie.director.name_chn
+            div.ma0.sans-serif=director.name_chn
       if movie.year
-        span.mr1=movie.year
+        div.ma0.dib=movie.year
       if movie.duration
-        span.mh1=movie.duration + ' mins'
-    if movie.director && movie.director.name
-      p.light-silver.fw5.lh-title.ma0
-        span=`Director ${director.name} `
-        if movie.director.name_chn
-          span.ma0.sans-serif=director.name_chn
+        div.ma0.dib=movie.duration + ' mins'
+
       
 mixin titleEn(title)
   - const truncated = title.slice(0, 25) + (title.length > 25 ? '...' : '')
-  h2.ttu.ma0.f5.f3-ns.lh-title
+  h2.ttu.ma0.f5.f2-ns.lh-title
     =title
       
 mixin titleChn(movie)
   if movie.name_chn
-    h2.ttu.ma0.f5.f2-ns.pb2-ns.lh-copy.sans-serif=movie.name_chn
+    h2.ttu.ma0.f6.f3-ns.pb2-ns.lh-copy.sans-serif.fw4=movie.name_chn
     
 mixin imgContainer(movie)
   .listingImg.flex-1-0-0(class=`bg-${primaryColor}`)
@@ -26,14 +27,15 @@ mixin imgContainer(movie)
       +bgImage(movie._.image.limit(400,500))
               
 mixin detailsContainer(movie)
-  .listingDetails.ph1.ph3-ns.flex.flex-column.flex-1-0-0.flex-1-0-0-ns.flex-1-0-0-m.flex-2-0-0-l.justify-around
-    +mainDetails(movie, movie.director)
+  .listingDetails.ph2.ph5-ns.pv4-ns.flex.flex-column.flex-1-0-0.flex-1-0-0-ns.flex-1-0-0-m.flex-2-0-0-l.justify-around.hover-white
     .listingTitles.overflow-hidden
-      +titleChn(movie)
       +titleEn(movie.name)
+      +titleChn(movie)
+    +mainDetails(movie, movie.director)
+    
       
 mixin movieListingContainer(movie)
-  .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.white(class=`bg-light-${primaryColor} hover-bg-${primaryColor}`)
+  .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.bg-white.dark-gray.hover-white(class=`hover-bg-light-${primaryColor}`)
     block
 
 mixin movieListing(movie, page)
