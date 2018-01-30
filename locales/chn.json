@@ -57,7 +57,8 @@
 		"page_title": "theme_profile.page_title"
 	},
 	"director_profile": {
-		"title": "导演介绍"
+		"title": "导演介绍",
+		"page_title": "director_profile.page_title"
 	},
 	"genre_profile": {
 		"title": "电影介绍",

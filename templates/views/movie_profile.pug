@@ -41,12 +41,12 @@ block content
       if movie.director.name_chn
         span.ma0.sans-serif=`${director.name_chn}`
     
-
-  #menu.pa2.pa3-ns.shadow-5.z-1.sticky.top-0.light-gray.o-90(class=`bg-${primaryColor}`)
-    #menu-mobile.flex.flex-row.justify-between.pointer.dn-ns
+  //- pa2.pa3-ns 
+  #menu.shadow-5.pl2.z-1.sticky.top-1-9.top-4-ns.light-gray(class=`bg-${secondaryColor}`)
+    #menu-mobile.flex.flex-row.justify-between.items-center.pointer.dn-ns.pv1.pv0-m
       p.ma0.f5.fw7.ttu=movie.name
-      img.h1.mr3(src="/arrow_drop_down_black.svg")
-    ul#drop-down.list.flex-ns.flex-column.flex-row-ns.pa0.pv2.justify-start.ma0.dn
+      img.h2.mr3(src="/arrow_drop_down_black.svg")
+    ul#drop-down.list.flex-ns.flex-column.flex-row-ns.items-center.pa0.pv2.justify-start.ma0.dn
       li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
         +profileMenuItem("summary", __.movie_profile.summary)
       if hasVideo
@@ -56,43 +56,28 @@ block content
       if hasNotesSection
         +profileMenuItem("screening",  __.movie_profile.screening_notes)
   
-  a#anchor-summary(tabindex="-1")  
         
   if movie.image.secure_url
     #image-container.flex.flex-column.justify-center.h4.h6-ns.bg-near-white.relative.z--1
       span.h-100.contain.no-repeat.dib.relative.w-100.self-center.mw7(style=`background-image:url("${movie.image.secure_url}"); background-repeat: no-repeat; background-position: center`)
     
-  #content.pa3.pa5-ns.mw7
-    +socialIcons(full_url)
+  #content.pa3.pa5-ns.mw8.center
         
     //- summary section
+    a#anchor-summary.anchor-ns.anchor(tabindex="-1")  
     section#summary.flex.justify-start
       
-      if themes
-        #themes
-          +subHeading(`${__.movie_profile.themes}`)
-          ul.list.pa0.ma0
-            for item in themes
-              +profileLink(item.name, `themes/${item.key}`)
-        
-      if genres
-        #genres.ml5 
-          +subHeading(`${__.movie_profile.genres}`)
-          ul.list.pa0.ma0
-            for item in genres
-              +profileLink(item.name, `genres/${item.key}`)
-          
     +section(movie, "summary", `${__.movie_profile.intro}`)
       
     //- video section
     if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
-      a#anchor-video(tabindex="-1")
+      a#anchor-video.anchor-ns.anchor(tabindex="-1")
       hr.mt3.mb3
       section#video.flex.flex-column
         +sectionHeading(`${__.movie_profile.video}`)
 
         div.relative.pb-video.h0.bg-black
-          iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=movie.video frameborder="0" scrolling="no")
+          iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=movie.video frameborder="0" scrolling="no" autostart="no")
         if movie.videoLinks.html
           +subHeading(`${__.movie_profile.more_video_links}`)
           #video-links.f6.f5-ns
@@ -100,13 +85,12 @@ block content
     
     //- gallery section
     if movie.gallery.length
+      a#anchor-images.anchor-ns.anchor(tabindex="-1")    
       hr.mh0.mv3
-      a#anchor-images(tabindex="-1")    
-      section#gallery.pv1.flex.flex-column
       - const imgArray = movie.gallery
       - const imgHolderStyle = `width:${100 * imgArray.length}%`
       
-      section#gallery.pv3.flex.flex-column
+      section#gallery.flex.flex-column
         +sectionHeading(`${__.movie_profile.image_gallery}`)
         // - image slider
         div.slider-holder.w-100.h4.h6-ns.center.mt0.overflow-hidden.tc
@@ -120,7 +104,7 @@ block content
               +galleryLink(linkIndex)
 
     if hasNotesSection
-      a#anchor-screening(tabindex="-1")
+      a#anchor-screening.anchor-ns.anchor(tabindex="-1")
         
     //- context section
     +section(movie, 'context', `${__.movie_profile.context}`)
@@ -143,6 +127,7 @@ block content
         
     //- teaching & learning
     +section(movie, 'bibliography', `${__.movie_profile.teaching_and_learning}`)
+    +socialIcons(full_url)
     
 block scripts
   script
