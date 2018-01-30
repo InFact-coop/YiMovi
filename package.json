@@ -5,7 +5,7 @@
   "main": "web.js",
   "scripts": {
     "test": "node test/routes/test.js",
-    "test.e2e": "node nightwatch_setup.js && npm run start & nightwatch",
+    "test.e2e": "npm run start & nightwatch",
     "start": "node web.js",
     "startmon": "nodemon web.js",
     "startmon.watch": "nodemon web.js & npm run watch_tachyons",
@@ -14,7 +14,7 @@
     "pre-deploy": "npm run test.e2e",
     "deploy-staging": "npm run pre-deploy && git checkout -B staging && git push origin staging -f",
     "deploy-production": "npm run pre-deploy && git checkout -B production && git push origin production -f",
-    "postinstall": "npm run build_tachyons"
+    "postinstall": "npm run build_tachyons && [ \"$NODE_ENV\" == production ] && exit 0; node nightwatch_setup.js"
   },
   "repository": {
     "type": "git",
