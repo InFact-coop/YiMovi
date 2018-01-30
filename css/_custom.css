@@ -60,6 +60,12 @@
   }
 }
 
+@media (--breakpoint-small) {
+  .top-1-9 {
+    top: 1.9rem;
+  }
+}
+
 /* Display */
 @media (--breakpoint-not-small) {
   .dn-ns {
