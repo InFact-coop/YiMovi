@@ -1,13 +1,13 @@
 #aboutUsSection.f5.f4-ns.pb4
-  #aboutUsTitle.ttu.bg-red.ph4.pv3.light-gray
+  #aboutUsTitle.ttu.bg-blue.ph4.pv3.white
     h2.ma0.f4.f2-ns #{__.about.title}
 
   div.ph4.lh-copy!=about_us.text.html
 
-  h3.ma0.ph4.red
+  h3.ma0.ph4.blue
     | #{__.about.team_title}
 
-  - const teamMembers = about_us.team.split(', ')
-  
-  each member in teamMembers
-    p.ph4.lh-copy.ma0=member
+  //- - const teamMembers = about_us.team.split(', ')
+  //- 
+  //- each member in teamMembers
+  //-   p.ph4.lh-copy.ma0=member

@@ -60,7 +60,8 @@
 		"title": "导演介绍"
 	},
 	"genre_profile": {
-		"title": "电影介绍"
+		"title": "电影介绍",
+		"page_title": "genre_profile.page_title"
 	},
 	"movie_profile": {
 		"director": "导演",
