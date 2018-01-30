@@ -60,7 +60,8 @@
 		"title": "Movies by"
 	},
 	"genre_profile": {
-		"title": "Movies about"
+		"title": "Movies about",
+		"page_title": "genre_profile.page_title"
 	},
 	"movie_profile": {
 		"director": "director",
