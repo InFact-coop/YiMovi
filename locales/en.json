@@ -60,11 +60,11 @@
     "page_title": "theme_profile.page_title"
   },
   "director_profile": {
-    "title": "Movies by",
-    "page_title": "director_profile.page_title"
+    "title": "Movies by"
   },
   "genre_profile": {
-    "title": "Movies about"
+    "title": "Movies about",
+    "page_title": "genre_profile.page_title"
   },
   "movie_profile": {
     "director": "director",
@@ -77,7 +77,7 @@
     "more_video_links": "more video links",
     "image_gallery": "image gallery",
     "context": "context",
-    "summary": "intro",
+    "summary": "summary",
     "synposis": "synopsis",
     "cinematography": "cinematography",
     "points_for_discussion": "points for discussion",

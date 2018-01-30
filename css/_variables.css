@@ -17,9 +17,15 @@
   --font-size-5: 1rem;
   --font-size-6: 0.875rem;
 
+<<<<<<< HEAD
   --letter-spacing-tight: -0.05em;
   --letter-spacing-1: 0.1em;
   --letter-spacing-2: 0.25em;
+=======
+  --letter-spacing-tight:-.05em;
+  --letter-spacing-1:.05em;
+  --letter-spacing-2:.25em;
+>>>>>>> master
 
   --line-height-solid: 1;
   --line-height-title: 1.25;
@@ -65,9 +71,15 @@
   --border-radius-pill: 9999px;
 
   --border-width-none: 0;
+<<<<<<< HEAD
   --border-width-1: 0.125rem;
   --border-width-2: 0.25rem;
   --border-width-3: 0.5rem;
+=======
+  --border-width-1: .001rem;
+  --border-width-2: .25rem;
+  --border-width-3: .5rem;
+>>>>>>> master
   --border-width-4: 1rem;
   --border-width-5: 2rem;
 
