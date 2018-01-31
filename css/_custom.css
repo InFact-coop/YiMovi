@@ -329,6 +329,20 @@
   }
 }
 
+.contactAnchor {
+  display: block;
+  height: 3rem; /*same height as header*/
+  margin-top: -3rem; /*same height as header*/
+  visibility: hidden;
+}
+@media (--breakpoint-not-small) {
+.contactAnchor-ns{
+  display: block;
+  height: 4rem; /*same height as header*/
+  margin-top: -4rem; /*same height as header*/
+  visibility: hidden;
+}
+}
 /* SVG Fills */
 .svg-fill--light-red {
   fill: var(--light-red);
