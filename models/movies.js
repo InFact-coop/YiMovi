@@ -14,7 +14,7 @@ Movie.add({
   year: { type: Number, },
   duration: { type: Number, label: 'duration (mins)', },
   summary: { type: Types.Markdown, },
-  summary___chn: { type: Types.Markdown, label: 'summary chn', collapse: true, },
+  summary___chn: { type: Types.Markdown, label: 'summary chn', collapse: ture, },
   themes: { type: Types.Relationship, ref: 'Theme', many: true, },
   genre: { type: Types.Relationship, ref: 'Genre', many: true, },
   context: { type: Types.Markdown, label: 'Movie context', },
