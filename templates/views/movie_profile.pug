@@ -77,7 +77,7 @@ block content
         +sectionHeading(`${__.movie_profile.video}`)
 
         div.relative.pb-video.h0.bg-black
-          iframe.absolute.top0.left0.w-100.h-100(allowfullscreen src=movie.video frameborder="0" scrolling="no" autostart="no")
+          +video(videoId)
         if movie.videoLinks.html
           +subHeading(`${__.movie_profile.more_video_links}`)
           #video-links.f6.f5-ns
