@@ -22,7 +22,7 @@ mixin titleChn(movie)
     h2.ttu.ma0.f6.f3-ns.pb2-ns.lh-copy.sans-serif.fw4=movie.name_chn
     
 mixin imgContainer(movie)
-  .listingImg.flex-1-0-0(class=`bg-${primaryColor}`)
+  .listingImg.flex-1-0-0.bt.b--light-gray.bw1(class=`bg-${primaryColor}`)
     if movie.image.secure_url
       +bgImage(movie._.image.limit(400,500))
               
@@ -35,7 +35,7 @@ mixin detailsContainer(movie)
     
       
 mixin movieListingContainer(movie)
-  .movieListing.bt.bw2.h4.h5-ns.flex.b--light-silver.bg-white.dark-gray.hover-white(class=`hover-bg-light-${primaryColor}`)
+  .movieListing.bt.bw1.h4.h5-ns.flex.b--light-silver.bg-white.dark-gray.hover-white(class=`hover-bg-light-${primaryColor}`)
     block
 
 mixin movieListing(movie, page)

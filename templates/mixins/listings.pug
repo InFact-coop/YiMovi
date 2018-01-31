@@ -2,8 +2,8 @@ mixin listing(type, name, key, title, color, img)
   - const url = `/${type}/${key}`
   li.w-100.w-50-l
     a.no-underline(href=url title=title)
-      div.listing-box.h4.h5-ns.bb.br.bw1.b--light-gray.dark-gray.hover-white.flex.flex-row.pointer(class=`hover-bg-light-${color}`)
-        .img-container.w-50.h-100.ba.b--white.bw1(class=`bg-${color}`)
+      div.listing-box.h4.h5-ns.bt.bw1.b--light-gray.dark-gray.hover-white.flex.flex-row.pointer(class=`hover-bg-light-${color}`)
+        .img-container.w-50.h-100.bt.bw1.b--light-gray(class=`bg-${color}`)
           if img
             span.cover.dib.w-100.h-100(style=`background-image:url("${img}")`)
         .title-container.w-50.self-center
