@@ -8,4 +8,5 @@ mixin galleryImage(img, length)
 
 mixin galleryLink(index)
   - const href = `#slider-image-${index + 1}`
-  a.slider-change.h05.w05.ma05.bg-white.br-100.dib(href=href)
+  a.slider-change.h05.w05.ma1.grow.br-100.dib.bg-dark-gray.v-mid.ma2(href=href)(class=`hover-bg-${primaryColor}`)
+  
