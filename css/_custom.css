@@ -217,14 +217,16 @@
 }
 
 /* Height */
+
 .h05 {
-  height: 0.5rem;
+  height: 0.8rem;
 }
 
 /* Width */
 .w05 {
-  width: 0.5rem;
+  width: 0.8rem;
 }
+
 
 /*** Flex ***/
 .flex-1-0-0 {
