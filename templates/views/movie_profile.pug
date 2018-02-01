@@ -96,12 +96,13 @@ block content
         div.slider-holder.w-100.h4.h6-ns.center.mt0.overflow-hidden.tc
           each _, spanIndex in imgArray  
             +sliderHolder(spanIndex)
-          .image-holder.bg-gray.h4.h6-ns.relative.cb.trans-slide(style=imgHolderStyle)
+          .image-holder.bg-pink.h4.h6-ns.relative.cb.trans-slide(style=imgHolderStyle)
             each img in imgArray
               +galleryImage(img, imgArray.length)
-          .button-holder.relative.top--1
-            each _, linkIndex in imgArray
-              +galleryLink(linkIndex)
+      div
+      .button-holder.relative.tc
+        each _, linkIndex in imgArray
+          +galleryLink(linkIndex)
 
     if hasNotesSection
       a#anchor-screening.anchor-ns.anchor(tabindex="-1")
