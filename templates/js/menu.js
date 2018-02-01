@@ -1,7 +1,6 @@
 (function() {
-  function toggleDropDownVisibility(selector) {
-    if (selector === undefined) selector = '#drop-down';
-    var dropDown = document.querySelector(selector);
+  function toggleDropDownVisibility() {
+    var dropDown = document.querySelector('#drop-down');
     var dropDownClasses = dropDown.className.split(' ');
     if (dropDownClasses.indexOf('dn') < 0) {
       dropDownClasses = dropDownClasses.concat([ 'dn', ]);

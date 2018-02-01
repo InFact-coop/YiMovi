@@ -3,17 +3,23 @@ nav.bg-gray.h2.h3-ns.w-100.items-center.fixed.z-1.flex.flex-row.items-center.jus
     .logo(class=`svg-fill--${secondaryColor}`).h-100
       include ../svg/logo.svg
   include ./burger.pug
-  div.dn.db-l
-    a.link.ph3.white.fw1(href=`/` alt="YiMovi home") Home
+  div.dn.db-m
+    a.link.ph3.white.fw1.dn-m.dib-l(href=`/` alt="YiMovi home") Home
     a.link.ph3.white.fw1(href=`/movies` alt="All Films") All Films
     a.link.ph3.white.fw1(href=`/themes` alt="Themes") Themes
     a.link.ph3.white.fw1(href=`/genres` alt="Genres") Genres
     a.link.ph3.white.fw1(href=`/directors` alt="Directors") Directors
-    a.link.ph3.white.fw1(href=`/#aboutUsSection` alt="About") About
+    a.link.ph3.white.fw1.dn-m.dib-l(href=`/#aboutUsSection` alt="About") About
     a.link.ph3.white.fw1(href=`/#contactUsSection` alt="Contact") Contact
-    - var country= locale==='en' ? ["chn", "Chinese Site" ] : ["en", "English Site"]  
+    - var country= locale==='en' ? ["chn", "EN" ] : ["en", "CHN"]  
     a.link.ph3.white.fw3.tracked(href=`${country[0]}` alt="Country site") #{country[1]}
-
-block scripts
-  script
-    include ../js/burger.js
+#main-mobile-nav.dn-m.fixed.z-1.w-100.mt5-ns.mt4.dn.glow.bg-white.right-0
+  a.link.mobile-link.tr.db.ph3.pv2.dark-gray.fw3(href=`/` alt="YiMovi home") Home
+  a.link.mobile-link.tr.db.ph3.pv2.dark-gray.fw3(href=`/movies` alt="All Films") All Films
+  a.link.mobile-link.tr.db.ph3.pv2.dark-gray.fw3(href=`/themes` alt="Themes") Themes
+  a.link.mobile-link.tr.db.ph3.pv2.dark-gray.fw3(href=`/genres` alt="Genres") Genres
+  a.link.mobile-link.tr.db.ph3.pv2.dark-gray.fw3(href=`/directors` alt="Directors") Directors
+  a.link.mobile-link.tr.db.ph3.pv2.dark-gray.fw3(href=`/#aboutUsSection` alt="About") About
+  a.link.mobile-link.tr.db.ph3.pv2.dark-gray.fw3(href=`/#contactUsSection` alt="Contact") Contact
+  - var country= locale==='en' ? ["chn", "CHN" ] : ["en", "EN"]  
+  //- a.link.ph3.tc.white.fw3.tracked(href=`${country[0]}` alt="Country site") #{country[1]}
