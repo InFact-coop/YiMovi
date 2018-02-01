@@ -101,10 +101,10 @@ block content
               +galleryImage(img, imgArray.length)
       div
       .button-holder.relative.tc.mt1
-        img.h1.v-mid(src="/leftarrow.png")
+        img.h1.v-mid.pa2(src="/leftarrow.png")
         each _, linkIndex in imgArray
           +galleryLink(linkIndex)
-        img.h1.center.v-mid(src="/rightarrow.png")
+        img.h1.center.v-mid.pa2(src="/rightarrow.png")
 
     if hasNotesSection
       a#anchor-screening.anchor-ns.anchor(tabindex="-1")
