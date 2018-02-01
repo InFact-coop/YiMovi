@@ -31,6 +31,7 @@ exports = module.exports = (req, res) => {
           return;
         }
         locals.movie = localizeForLocale(movie);
+        // console.log('VIDEO', movie.video);
         locals.title = res.__(
           'movie_profile.page_title',
           locals.movie.name,
