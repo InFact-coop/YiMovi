@@ -213,13 +213,15 @@
 }
 
 /* Height */
+@media (--breakpoint-small){
 .h05 {
-  height: 0.5rem;
+  height: 0.8rem;
 }
 
 /* Width */
 .w05 {
-  width: 0.5rem;
+  width: 0.8rem;
+}
 }
 
 /*** Flex ***/
