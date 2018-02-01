@@ -1,3 +1,10 @@
+.listing-box:hover {
+  border: none;
+}
+
+.main-link:hover {
+  font-weight: 300;
+}
 /* Height */
 
 .h6 {
@@ -227,7 +234,6 @@
   width: 0.8rem;
 }
 
-
 /*** Flex ***/
 .flex-1-0-0 {
   flex: 1 0 0;
@@ -402,4 +408,8 @@
 .mobile-link:hover {
   background-color: gray;
   color: white;
+}
+
+.scale {
+  transform: scale(1.6);
 }
