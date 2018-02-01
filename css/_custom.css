@@ -404,6 +404,7 @@
   -webkit-transform: rotate(45deg) translate(-0.35rem, -0.35rem);
   transform: rotate(45deg) translate(-0.35rem, -0.35rem);
 }
+<<<<<<< HEAD
 
 .mobile-link:hover {
   background-color: gray;
@@ -413,3 +414,5 @@
 .scale {
   transform: scale(1.6);
 }
+=======
+>>>>>>> master
