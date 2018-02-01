@@ -1,15 +1,17 @@
 (function() {
-
-  function toggleDropDownVisibility() {
-    var dropDown = document.querySelector('#drop-down');
+  function toggleDropDownVisibility(selector) {
+    if (selector === undefined) selector = '#drop-down';
+    var dropDown = document.querySelector(selector);
     var dropDownClasses = dropDown.className.split(' ');
     if (dropDownClasses.indexOf('dn') < 0) {
       dropDownClasses = dropDownClasses.concat([ 'dn', ]);
       dropDown.className = dropDownClasses.join(' ');
     } else {
-      dropDown.className = dropDownClasses.filter(function(className) {
-        return className != 'dn';
-      }).join(' ');
+      dropDown.className = dropDownClasses
+        .filter(function(className) {
+          return className != 'dn';
+        })
+        .join(' ');
     }
   }
 
@@ -18,7 +20,7 @@
     var point = e.target;
     [].forEach.call(menuPoints, function(menuPoint) {
       if (menuPoint.textContent === point.textContent) {
-        return point.className = point.className + ' bb';
+        return (point.className = point.className + ' bb');
       }
       menuPoint.className = point.className.replace(/\sbb/g, '');
     });
