@@ -52,10 +52,10 @@ mixin breadcrumbs(type, page)
   - const url = `/${type}`
   - const linkText = `all ${type}`
   p#breadcrumbs.white.f5.lh-copy
-    a.white.mr2(href="/") home
+    a.white.mr2(href="/") Home
     |  |
     if page  
-      a.white.mh2(href=url)=linkText
+      a.white.mh2.ttc(href=url)=linkText
     else
       span.fw6.mh2.ttu=linkText 
     if page 
