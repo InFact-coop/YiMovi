@@ -1,6 +1,7 @@
 const keystone = require('keystone');
 const Movie = keystone.list('Movie');
 
+const directorPageLink = require('../helpers/directorLink.js');
 const extractId = require('../helpers/extract_movie_id.js');
 const { localizeResults, } = require('../helpers/localize_results.js');
 
@@ -37,11 +38,12 @@ exports = module.exports = (req, res) => {
           locals.movie.name_chn
         );
 
+
         locals.videoId = extractId(movie.video);
         locals.director = localizeForLocale(movie.director);
         locals.themes = localizeForLocale(movie.themes);
         locals.genres = localizeForLocale(movie.genre);
-
+        locals.directorPage = directorPageLink(locals.director.name);
         next();
       });
   });
