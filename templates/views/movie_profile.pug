@@ -37,10 +37,12 @@ block content
       if movie.director && (movie.year || movie.duration)
         span.mh2 |
       if movie.director
-        span.mh2=`${__.movie_profile.director} ${director.name}`
+        a.no-underline(href=`/directors/${directorPage}`)
+          span.mh2.white=`${__.movie_profile.director} ${director.name}`
       if movie.director.name_chn
-        span.ma0.sans-serif=`${director.name_chn}`
-    
+        a.no-underline(href=`/directors/${directorPage}`)
+          span.white.ma0.sans-serif=`${director.name_chn}`      
+
   //- pa2.pa3-ns 
   #menu.shadow-5.pl2.z-1.sticky.top-1-9.top-4-ns.light-gray(class=`bg-${secondaryColor}`)
     #menu-mobile.flex.flex-row.justify-between.items-center.pointer.dn-ns.pv1.pv0-m
