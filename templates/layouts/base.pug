@@ -27,10 +27,13 @@ html.h-100
             include ../partials/footer.pug
         
         block scripts
-        
+        script
+          include ../js/burger.js
+          
         if process.env.NODE_ENV === 'production'
           script
             include ../js/analytics.js
+
           
         
           
