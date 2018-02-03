@@ -30,8 +30,3 @@
 #slider-image-10:target ~ .image-holder {
   left: -900%;
 }
-
-/* .slider-change:active {
-  background-color: #ff6a5c;
-  transform: scale(1.2);
-} */
