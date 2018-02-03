@@ -37,7 +37,6 @@ exports = module.exports = (req, res) => {
           locals.movie.name_chn
         );
 
-
         locals.videoId = extractId(movie.video);
         locals.director = localizeForLocale(movie.director);
         locals.themes = localizeForLocale(movie.themes);

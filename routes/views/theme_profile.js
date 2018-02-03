@@ -23,11 +23,10 @@ exports = module.exports = (req, res) => {
 
       locals.title = res.__('theme_profile.page_title', locals.theme.name);
 
-      getMoviesBy('themes', theme, (moviesErr, movies) => {
+      getMoviesBy(locals.locale, 'themes', theme, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);
 
         locals.movies = locals.movies.concat(movies || []);
-
         next();
       });
     });
