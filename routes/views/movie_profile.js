@@ -30,7 +30,10 @@ exports = module.exports = (req, res) => {
           return;
         }
         locals.movie = localizeForLocale(movie);
-        locals.title = res.__('movie_profile.page_title');
+
+        locals.title = `${locals.locale === 'en'
+          ? locals.movie.name
+          : locals.movie.name_chn}${res.__('app.short_title')}`;
 
         locals.videoId = extractId(movie.video);
         locals.director = localizeForLocale(movie.director);

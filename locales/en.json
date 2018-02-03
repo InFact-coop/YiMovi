@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "YiMovi - Chinese Film & Medical Humanities"
+    "title": "YiMovi - Chinese Film & Medical Humanities",
+    "short_title": " - YiMovi"
   },
   "flash_messages": {
     "mail_sent": "Thank you for contacting us. We'll be in touch soon"
@@ -98,5 +99,8 @@
     "action_send": "Send",
     "page_title": "Contact Us - YiMovi"
   },
-  "": {}
+  "": {},
+  "Cui Wei": "Cui Wei",
+  "Blind Massage": "Blind Massage",
+  "推拿 (tui na)": "推拿 (tui na)"
 }
