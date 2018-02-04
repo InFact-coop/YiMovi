@@ -11,15 +11,13 @@ nav.bg-gray.h2.h3-ns.w-100.items-center.fixed.z-1.flex.flex-row.items-center.jus
     a.link.ph3.white.fw1(href=`/directors` alt="Directors") Directors
     a.link.ph3.white.fw1.dn-m.dib-l(href=`/#aboutUsSection` alt="About") About
     a.link.ph3.white.fw1(href=`/#contactUsSection` alt="Contact") Contact
-    - var country= locale==='en' ? ["chn", "EN" ] : ["en", "CHN"]  
-    a.link.ph3.white.fw3.tracked(href=`${country[0]}` alt="Country site") #{country[1]}
+    - var country = locale==='en' ? "EN" : "中文"
+    a.link.ph3.white.fw3.tracked(href=`${languageSwitchUrl}` alt='Switch language') #{country}
 #main-mobile-nav.dn-m.fixed.z-999.w-100.mt5-ns.mt4.dn.bg-white.right-0.shadow-3
-  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/` alt="YiMovi home")(class=`hover-bg-${primaryColor}`) Home
-  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/movies` alt="All Films")(class=`hover-bg-${primaryColor}`) All Films
-  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/themes` alt="Themes")(class=`hover-bg-${primaryColor}`) Themes
-  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/genres` alt="Genres")(class=`hover-bg-${primaryColor}`) Genres
-  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/directors` alt="Directors")(class=`hover-bg-${primaryColor}`) Directors
-  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/#aboutUsSection` alt="About")(class=`hover-bg-${primaryColor}`) About
-  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/#contactUsSection` alt="Contact")(class=`hover-bg-${primaryColor}`) Contact
-  - var country= locale==='en' ? ["chn", "CHN" ] : ["en", "EN"]  
-  //- a.link.ph3.tc.white.fw3.tracked(href=`${country[0]}` alt="Country site") #{country[1]}
+  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/` alt="YiMovi home" class=`hover-bg-${primaryColor}`) Home
+  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/movies` alt="All Films" class=`hover-bg-${primaryColor}`) All Films
+  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/themes` alt="Themes" class=`hover-bg-${primaryColor}`) Themes
+  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/genres` alt="Genres" class=`hover-bg-${primaryColor}`) Genres
+  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/directors` alt="Directors" class=`hover-bg-${primaryColor}`) Directors
+  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/#aboutUsSection` alt="About" class=`hover-bg-${primaryColor}`) About
+  a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/#contactUsSection` alt="Contact" class=`hover-bg-${primaryColor}`) Contact

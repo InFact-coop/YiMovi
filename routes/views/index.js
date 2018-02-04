@@ -10,10 +10,9 @@ exports = module.exports = (req, res) => {
 
   view.on('init', next => {
     const locals = res.locals;
-    console.log('locals', res.locals);
 
     locals.themes = [];
-    locals.email = process.env.EMAIL || "none@none.com"
+    locals.email = process.env.EMAIL || 'none@none.com';
 
     // Check redirect query after sending mail
     if (req.query.mailsent) {

@@ -1,5 +1,6 @@
 const keystone = require('keystone');
 const middleware = require('./middleware');
+const switchLocale = require('./helpers/switch_locale');
 const cookieParser = require('cookie-parser');
 const i18n = require('i18n');
 const importRoutes = keystone.importer(__dirname);
@@ -36,8 +37,7 @@ const routes = {
 };
 
 // Bind Routes
-exports = module.exports = (app) => {
-
+exports = module.exports = app => {
   // Use express's router as middleware
   // Base routes are accessible with /{locale}/ prepended
   const viewRouter = require('express').Router();
@@ -48,7 +48,6 @@ exports = module.exports = (app) => {
 
     // If /en/ or /chn/ not included in url
     if ([ 'en', 'chn', ].includes(locale) !== true) {
-
       // Use locale from cookie (if exists), then redirect
       // This ensures links throughout application do not need to
       // manually be prefixed with 'en' / 'chn'.
@@ -59,10 +58,14 @@ exports = module.exports = (app) => {
       res.locals.locale = locale;
 
       // Add locale to cookie
-      res.cookie('locale', locale, { maxAge: 900000, httpOnly: process.env.NODE_ENV === 'production', });
+      res.cookie('locale', locale, {
+        maxAge: 900000,
+        httpOnly: process.env.NODE_ENV === 'production',
+      });
 
       // Import matching JSON file as JS object and set to __ key
       res.locals.__ = require(`../locales/${locale}.json`);
+      res.locals.languageSwitchUrl = switchLocale(req.originalUrl);
       next();
     }
   });

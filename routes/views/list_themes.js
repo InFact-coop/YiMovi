@@ -27,7 +27,6 @@ exports = module.exports = (req, res) => {
         if (err) return next(err);
 
         locals.themes = localizeResults(locals.locale, themes);
-        console.log('locals.themes', locals.themes);
 
         next();
       });
