@@ -1,6 +1,8 @@
 const { localizeTernary, } = require('./localize_results');
 
-// returns original URL flipped from english > chinese, or vice versa
+// inputs a URL and returns a new URL flipped from:
+// English ('/en/...') to Chinese ('/chn/...'), or vice versa
+
 module.exports = url => {
   return url.split('/').reduce((previous, current, index) => {
     return index === 1
