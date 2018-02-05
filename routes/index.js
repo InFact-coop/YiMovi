@@ -36,8 +36,7 @@ const routes = {
 };
 
 // Bind Routes
-exports = module.exports = (app) => {
-
+exports = module.exports = app => {
   // Use express's router as middleware
   // Base routes are accessible with /{locale}/ prepended
   const viewRouter = require('express').Router();
@@ -48,7 +47,6 @@ exports = module.exports = (app) => {
 
     // If /en/ or /chn/ not included in url
     if ([ 'en', 'chn', ].includes(locale) !== true) {
-
       // Use locale from cookie (if exists), then redirect
       // This ensures links throughout application do not need to
       // manually be prefixed with 'en' / 'chn'.
@@ -59,7 +57,10 @@ exports = module.exports = (app) => {
       res.locals.locale = locale;
 
       // Add locale to cookie
-      res.cookie('locale', locale, { maxAge: 900000, httpOnly: process.env.NODE_ENV === 'production', });
+      res.cookie('locale', locale, {
+        maxAge: 900000,
+        httpOnly: process.env.NODE_ENV === 'production',
+      });
 
       // Import matching JSON file as JS object and set to __ key
       res.locals.__ = require(`../locales/${locale}.json`);
@@ -70,7 +71,6 @@ exports = module.exports = (app) => {
   // Standard routes
   viewRouter.get('/', routes.views.index);
   viewRouter.get('/directors', routes.views.list_directors);
-  viewRouter.get('/contact', routes.views.contact);
   viewRouter.get('/themes', routes.views.list_themes);
   viewRouter.get('/genres', routes.views.list_genres);
   viewRouter.get('/movies', routes.views.list_movies);
