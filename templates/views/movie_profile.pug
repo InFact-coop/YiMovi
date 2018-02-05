@@ -27,7 +27,10 @@ block content
     
     if (movie.name_chn)
       h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name
-    h2.light-gray.ttu.f3.f3-ns.fw7.lh-title.ma0=movie.name_chn
+    h2.light-gray.f3.f3-ns.fw7.lh-title.ma0
+      span=movie.name_chn
+      if (movie.name_pinyin)
+        span.f5.f5-ns.normal.i  (#{movie.name_pinyin})
       
     h2.light-gray.f5.f4-ns.fw2.lh-title
       if movie.year

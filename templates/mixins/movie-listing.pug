@@ -19,7 +19,10 @@ mixin titleEn(title)
       
 mixin titleChn(movie)
   if movie.name_chn
-    h2.ttu.ma0.f6.f3-ns.pb2-ns.lh-copy.sans-serif.fw4=movie.name_chn
+    h2.ma0.f6.f3-ns.pb2-ns.lh-copy.sans-serif.fw4=movie.name_chn
+      span.ttu=movie.name_chn
+      if (movie.name_pinyin)
+        span.f5.f5-ns.normal.i  (#{movie.name_pinyin})
     
 mixin imgContainer(movie)
   .listingImg.flex-1-0-0.bt.b--light-gray.bw1(class=`bg-${primaryColor}`)
