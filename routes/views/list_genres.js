@@ -22,7 +22,7 @@ exports = module.exports = (req, res) => {
       .select('-description -description___chn')
       .where(nameField)
       .ne(null) // only if translation of genre name available
-      .sort('sortOrder')
+      .sort(locals.sortOrder)
       .lean()
       .exec((err, genres) => {
         if (err) return next(err);

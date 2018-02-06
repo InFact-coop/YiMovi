@@ -10,7 +10,6 @@ exports = module.exports = (req, res) => {
     localizeResults(res.locals.locale, results);
 
   const view = new keystone.View(req, res);
-
   view.on('init', next => {
     const locals = res.locals;
 
@@ -31,11 +30,10 @@ exports = module.exports = (req, res) => {
           return;
         }
         locals.movie = localizeForLocale(movie);
-        locals.title = res.__(
-          'movie_profile.page_title',
-          locals.movie.name,
-          locals.movie.name_chn
-        );
+
+        locals.title = `${locals.locale === 'en'
+          ? locals.movie.name
+          : locals.movie.name_chn}${res.__('app.short_title')}`;
 
         locals.videoId = extractId(movie.video);
         locals.director = localizeForLocale(movie.director);
