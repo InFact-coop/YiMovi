@@ -73,7 +73,6 @@ exports = module.exports = app => {
   // Standard routes
   viewRouter.get('/', routes.views.index);
   viewRouter.get('/directors', routes.views.list_directors);
-  viewRouter.get('/contact', routes.views.contact);
   viewRouter.get('/themes', routes.views.list_themes);
   viewRouter.get('/genres', routes.views.list_genres);
   viewRouter.get('/movies', routes.views.list_movies);

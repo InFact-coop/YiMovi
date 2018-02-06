@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "YiMovi - Chinese Film & Medical Humanities",
+    "title": "Chinese Medical Humanities Film - YiMovi",
     "short_title": " - YiMovi"
   },
   "flash_messages": {
@@ -94,7 +94,8 @@
     "points_for_discussion": "points for discussion",
     "external_links": "external links",
     "teaching_and_learning": "teaching and learning",
-    "page_title": "movie_profile.page_title"
+    "page_title": "movie_profile.page_title",
+    "share": "share"
   },
   "contact": {
     "title": "Contact us",

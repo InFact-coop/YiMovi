@@ -26,29 +26,7 @@ block content
           
           
   include ../partials/about
-  
-  //- block content
-  //-   #titleContainer.pa3.ph4.mt3-ns.mt2.white(class=`bg-${primaryColor}`)
-  //-     h1.f3.f2-ns.fw7.ttu.lh-title.ma0.white Our Categories
-  //- 
-  //- a.no-underline(href=`/themes` title="Browse all themes")  
-  //-   #browseThemesBox.ttu.bg-white.ph3.pv3.mid-gray.hover-bg-light-purple.hover-white.pointer.bt.b--dark-gray
-  //-     h2.ma0.f4.f3-ns.fw5 #{__.index.link_themes} >>
-  //- 
-  //- a.no-underline(href=`/movies` title="Browse all movies")                
-  //-   #browseMoviesBox.ttu.bg-white.ph3.pv3.mid-gray.hover-bg-light-blue.hover-white.pointer.bt.b--dark-gray
-  //-     h2.ma0.f4.f3-ns.fw5 #{__.index.link_movies} >>
-  //- 
-  //- a.no-underline(href=`/directors` title="Browse all directors")                
-  //-   #browseDirectorsBox.ttu.bg-white.ph3.pv3.mid-gray.hover-bg-light-green.hover-white.pointer.bt.b--dark-gray
-  //-     h2.ma0.f4.f3-ns.fw5 #{__.index.link_directors} >>  
-  //- 
-  //- a.no-underline(href=`/genres` title="Browse all genres")                
-  //-   #browseGenresBox.ttu.bg-white.ph3.pv3.mid-gray.hover-bg-light-yellow.hover-white.pointer.bt.b--dark-gray
-  //-     h2.ma0.f4.f3-ns.fw5 #{__.index.link_genres} >>  
-                        
-
-                        
+                    
   script
     include ../js/home_images.js
           
@@ -64,8 +42,6 @@ block content
           +listing("themes", theme.name, theme.key, title, "purple", img)
   
   //- contact form
-  
-
   block content
     #contactUsSection.contactAnchor-ns.contactAnchor(tabindex="-1")
     #contact.w-100.tc
@@ -78,22 +54,15 @@ block content
           form(method='POST', action=`http://formspree.io/${email}`)
             h2.tl.fw5.mb0 Ask YiMovi a question
             h3.tl.fw2.mt0 Fill in the form below and YiMovi will get back to you as soon as possible. 
-            h4.tl.mb0.blue.fw3.pl1 Name
+            h4.tl.mb0.blue.fw3.pl1 #{__.contact.placeholder_name}
             input(type='text', name='name', placeholder=`${__.contact.placeholder_name}` title=`${__.contact.placeholder_name}`).dib.w-100.ba.b--black-20.bg-black-05.br2.ma1.f5.pa2.dark-gray.mb1
             br
-            h4.tl.mb0.blue.fw3.pl1 Email
+            h4.tl.mb0.blue.fw3.pl1 #{__.contact.email}
             input(type='email', name='_replyto', placeholder=`${__.contact.placeholder_email}` title=`${__.contact.placeholder_email}`).dib.w-100.bg-black-05.br2.ma1.f5.pa2.ba.b--black-20.dark-gray.mb1
             br
-            h4.tl.mb0.blue.fw3.pl1 Your message
+            h4.tl.mb0.blue.fw3.pl1 ${__.contact.placeholder_message}
             textarea(name='message', placeholder=`${__.contact.placeholder_message}` title=`${__.contact.placeholder_message}`).dib.w-100.bg-black-05.br2.ma1.f5.pa2.h4.ba.b--black-20.dark-gray
             br
             input(type="hidden" name="_next" value=`/?mailsent=true`)
             #actions.flex.flex-row.items-center
-              input(type="submit" value=`${__.contact.action_send}`).dib.pointer.br2.f5.no-underline.lh-solid.fw1.bn.bg-light-blue.hover-bg-blue.white.pa3.ph4.mv3                  
-  
-              //- #address 
-              //- h2.f4.red #{__.contact.address_title}
-              //- .silver #{__.contact.address_body}
-              
-              //- h1.f3.tc.light-gray #{__.contact.online_title}
-              
+              input(type="submit" value=`${__.contact.action_send}`).dib.pointer.br2.f5.no-underline.lh-solid.fw1.bn.bg-light-blue.hover-bg-blue.white.pa3.ph4.mv3
