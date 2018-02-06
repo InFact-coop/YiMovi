@@ -38,6 +38,7 @@ exports = module.exports = (req, res) => {
 
           locals.about_us = localizeResults(locals.locale, aboutUs);
 
+
           next();
         });
       });

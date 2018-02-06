@@ -1,113 +1,113 @@
 {
-  "app": {
-    "title": "Chinese Medical Humanities Film - YiMovi",
-    "short_title": " - YiMovi"
-  },
-  "flash_messages": {
-    "mail_sent": "Thank you for contacting us. We'll be in touch soon"
-  },
-  "about": {
-    "title": "about us",
-    "part1":
-      "For five years the team have been working with film in both teaching and research.",
-    "part2":
-      "We have used traditional Euro-American medical humanities approaches to teaching with Chinese film, examining the doctor-patient relationships, the role of qualities like empathy and compassion (or their absence) in improving health care, patient experiences of serious and chronic illness, and medical ethics. Working mainly with Chinese students has brought up critical points of cultural difference, and highlighted the unique challenges that the Chinese speaking worlds face. It also brings a critical focus to what have beenconsidered universal rights in healthcare, in death and dying, and medical ethics in general.",
-    "part3":
-      "The study of medicine in China through film can also offer new insights forthe Medical and Health Humanities, through a more intimate engagement with alternative health systems, but also conceptions of state, community and individual. How the body has been used as a site of personal cultivation, social conformity or political contestation is all made visible in film.",
-    "team_title": "the team"
-  },
-  "navbar": {
-    "home": "Home",
-    "films": "All Films",
-    "themes": "Themes",
-    "genres": "Genres",
-    "directors": "Directors",
-    "about": "About",
-    "contact": "Contact"
-  },
-  "header": {
-    "strapline_1": "Chinese Film &",
-    "strapline_2": "Medical Humanities",
-    "logo_link_title": "YiMovi home",
-    "switch_statement": "Switch to Chinese"
-  },
-  "footer": {
-    "link_contact": "Contact"
-  },
-  "index": {
-    "header": "Chinese film and the cross-cultural medical humanities",
-    "byline1": "What can the Sinophone world offer to the Medical Humanities?",
-    "byline2": "What can the Medical and Health Humanities offer to China?",
-    "top_themes_title": "top themes",
-    "theme_link_title": "Movies about",
-    "link_themes": "Browse all themes",
-    "link_movies": "Browse all movies",
-    "link_directors": "Browse all directors",
-    "link_genres": "Browse all genres"
-  },
-  "list_directors": {
-    "title": "Browse Directors",
-    "link_title": "Movies by",
-    "page_title": "Directors - YiMovi"
-  },
-  "list_genres": {
-    "title": "Browse Genres",
-    "link_title": "Movies about",
-    "page_title": "Genres - YiMovi"
-  },
-  "list_movies": {
-    "title": "Films",
-    "sub_title": "By title",
-    "page_title": "Movies - YiMovi"
-  },
-  "list_themes": {
-    "title": "Browse Themes",
-    "link_title": "Movies about",
-    "page_title": "Themes - YiMovi"
-  },
-  "theme_profile": {
-    "title": "Movies about",
-    "page_title": "theme_profile.page_title"
-  },
-  "director_profile": {
-    "title": "Movies by",
-    "page_title": "director_profile.page_title"
-  },
-  "genre_profile": {
-    "title": "Movies about",
-    "page_title": "genre_profile.page_title"
-  },
-  "movie_profile": {
-    "director": "director",
-    "video": "video",
-    "images": "images",
-    "themes": "themes",
-    "genres": "genres",
-    "screening_notes": "screening notes",
-    "intro": "intro",
-    "more_video_links": "more video links",
-    "image_gallery": "image gallery",
-    "context": "context",
-    "summary": "summary",
-    "synposis": "synopsis",
-    "cinematography": "cinematography",
-    "points_for_discussion": "points for discussion",
-    "external_links": "external links",
-    "teaching_and_learning": "teaching and learning",
-    "page_title": "movie_profile.page_title",
-    "share": "share"
-  },
-  "contact": {
-    "title": "Contact us",
-    "address_title": "Address",
-    "address_body": "Gower Str, Bloomsbury, London, WC1E 6BT",
-    "online_title": "Online",
-    "placeholder_name": "Your Name",
-    "placeholder_email": "Your Email",
-    "placeholder_message": "Your Message",
-    "action_cancel": "Cancel",
-    "action_send": "Send",
-    "page_title": "Contact Us - YiMovi"
-  },
-  "": {}
+	"app": {
+		"title": "Chinese Medical Humanities Film - YiMovi",
+		"short_title": " - YiMovi"
+	},
+	"flash_messages": {
+		"mail_sent": "Thank you for contacting us. We'll be in touch soon"
+	},
+	"about": {
+		"title": "about us",
+		"part1": "For five years the team have been working with film in both teaching and research.",
+		"part2": "We have used traditional Euro-American medical humanities approaches to teaching with Chinese film, examining the doctor-patient relationships, the role of qualities like empathy and compassion (or their absence) in improving health care, patient experiences of serious and chronic illness, and medical ethics. Working mainly with Chinese students has brought up critical points of cultural difference, and highlighted the unique challenges that the Chinese speaking worlds face. It also brings a critical focus to what have beenconsidered universal rights in healthcare, in death and dying, and medical ethics in general.",
+		"part3": "The study of medicine in China through film can also offer new insights forthe Medical and Health Humanities, through a more intimate engagement with alternative health systems, but also conceptions of state, community and individual. How the body has been used as a site of personal cultivation, social conformity or political contestation is all made visible in film.",
+		"team_title": "the team"
+	},
+	"navbar": {
+		"home": "Home",
+		"films": "All Films",
+		"themes": "Themes",
+		"genres": "Genres",
+		"directors": "Directors",
+		"about": "About",
+		"contact": "Contact"
+	},
+	"header": {
+		"strapline_1": "Chinese Film &",
+		"strapline_2": "Medical Humanities",
+		"logo_link_title": "YiMovi home",
+		"switch_statement": "Switch to Chinese"
+	},
+	"footer": {
+		"link_contact": "Contact"
+	},
+	"index": {
+		"header": "Chinese film and the cross-cultural medical humanities",
+		"byline1": "What can the Sinophone world offer to the Medical Humanities?",
+		"byline2": "What can the Medical and Health Humanities offer to China?",
+		"top_themes_title": "top themes",
+		"theme_link_title": "Movies about",
+		"link_themes": "Browse all themes",
+		"link_movies": "Browse all movies",
+		"link_directors": "Browse all directors",
+		"link_genres": "Browse all genres"
+	},
+	"list_directors": {
+		"title": "Browse Directors",
+		"link_title": "Movies by",
+		"page_title": "Directors - YiMovi"
+	},
+	"list_genres": {
+		"title": "Browse Genres",
+		"link_title": "Movies about",
+		"page_title": "Genres - YiMovi"
+	},
+	"list_movies": {
+		"title": "Films",
+		"sub_title": "By title",
+		"page_title": "Movies - YiMovi"
+	},
+	"list_themes": {
+		"title": "Browse Themes",
+		"link_title": "Movies about",
+		"page_title": "Themes - YiMovi"
+	},
+	"theme_profile": {
+		"title": "Movies about",
+		"page_title": "theme_profile.page_title"
+	},
+	"director_profile": {
+		"title": "Movies by",
+		"page_title": "director_profile.page_title"
+	},
+	"genre_profile": {
+		"title": "Movies about",
+		"page_title": "genre_profile.page_title"
+	},
+	"movie_profile": {
+		"director": "director",
+		"video": "video",
+		"images": "images",
+		"themes": "themes",
+		"genres": "genres",
+		"screening_notes": "screening notes",
+		"intro": "intro",
+		"more_video_links": "more video links",
+		"image_gallery": "image gallery",
+		"context": "context",
+		"summary": "summary",
+		"synposis": "synopsis",
+		"cinematography": "cinematography",
+		"points_for_discussion": "points for discussion",
+		"external_links": "external links",
+		"teaching_and_learning": "teaching and learning",
+		"page_title": "movie_profile.page_title",
+		"share": "share"
+	},
+	"contact": {
+		"title": "Contact us",
+		"address_title": "Address",
+		"address_body": "Gower Str, Bloomsbury, London, WC1E 6BT",
+		"online_title": "Online",
+		"placeholder_name": "Your Name",
+		"placeholder_email": "Your Email",
+		"placeholder_message": "Your Message",
+		"action_cancel": "Cancel",
+		"action_send": "Send",
+		"page_title": "Contact Us - YiMovi"
+	},
+	"": {},
+	"list_team": {
+		"page_title": "list_team.page_title"
+	}
 }

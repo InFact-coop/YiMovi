@@ -80,6 +80,7 @@ exports = module.exports = app => {
   viewRouter.get('/genres/:name', routes.views.genre_profile);
   viewRouter.get('/directors/:name', routes.views.director_profile);
   viewRouter.get('/movies/:name', routes.views.movie_profile);
+  viewRouter.get('/team', routes.views.list_team);
 
   // Use viewRouter as sub router aginst /en/ or /chn/ prepended paths
   app.use('/:lang', viewRouter);
