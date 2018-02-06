@@ -1,9 +1,7 @@
 const keystone = require('keystone');
 const Team = keystone.list('Team');
-const { localizeTernary, } = require('../helpers/localize_results');
 
 exports = module.exports = (req, res) => {
-  console.log("hello!!!!");
   const view = new keystone.View(req, res);
 
   view.on('init', next => {
@@ -13,12 +11,11 @@ exports = module.exports = (req, res) => {
     Team.model
       .find()
       .lean()
-      .sort('name')
+      .sort('sortOrder')
       .exec((err, team) => {
         if (err) return next(err);
 
         locals.team = team;
-        console.log("hello");
         next();
       });
   });

@@ -7,4 +7,4 @@ require('./themes.js');
 require('./genres.js');
 require('./movies.js');
 require('./about_us.js');
-require('./team.js')
+require('./team.js');
