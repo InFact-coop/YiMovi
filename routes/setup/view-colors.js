@@ -4,4 +4,5 @@ module.exports = {
   genres: 'yellow',
   movies: 'blue',
   default: 'red',
+  team: 'blue'
 };
