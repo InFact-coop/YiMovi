@@ -70,7 +70,7 @@ block content
     
     section#gallery.flex.flex-column.bg-near-white
       // - image slider
-      .slider-holder.w-60.center.mt0.overflow-hidden.tc.pv4-ns.pv2
+      .slider-holder.center.mt0.overflow-hidden.tc.pv4-ns.pv2.mw7-l.mw6-m.mw5
         each _, spanIndex in imgArray  
           +sliderHolder(spanIndex)
         .image-holder.h4.h6-ns.relative.cb.trans-slide(style=imgHolderStyle)
@@ -99,7 +99,7 @@ block content
     if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
       a#anchor-video.anchor-ns.anchor(tabindex="-1")
       hr.mt3.mb3
-      section#video.flex.flex-column
+      section#video.flex.flex-column.mw7.center
         +sectionHeading(`${__.movie_profile.video}`)
 
         div.relative.pb-video.h0.bg-black
