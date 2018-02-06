@@ -25,12 +25,17 @@ block content
     +breadcrumbs("movies", movie.name)
     
     
-    if (movie.name_chn)
+    if locale==="en"
       h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name
-    h2.light-gray.f3.f3-ns.fw7.lh-title.ma0
-      span=movie.name_chn
-      if (movie.name_pinyin)
-        span.f5.f5-ns.normal.i  (#{movie.name_pinyin})
+      h2.light-gray.f3.f3-ns.fw7.lh-title.ma0
+        span=movie.name_chn
+        if (movie.name_pinyin)
+          span.f5.f5-ns.normal.i  (#{movie.name_pinyin})
+    if locale==="chn"
+      h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name_chn
+      h2.light-gray.f3.f3-ns.fw7.lh-title.ma0
+        span=movie.name
+    
       
     h2.light-gray.f5.f4-ns.fw2.lh-title
       if movie.year
@@ -59,8 +64,9 @@ block content
         +profileMenuItem("images",  __.movie_profile.images)
       if hasNotesSection
         +profileMenuItem("screening",  __.movie_profile.screening_notes)
-  
-        
+      if hasNotesSection
+        +profileMenuItem("screening",  __.movie_profile.screening_notes)
+        +profileMenuItem ("share", __.movie_profile.share)  
   //- gallery section
   if movie.gallery.length
     a#anchor-images.anchor-ns.anchor(tabindex="-1")    
@@ -69,7 +75,7 @@ block content
     
     section#gallery.flex.flex-column.bg-near-white
       // - image slider
-      .slider-holder.w-60.center.mt0.overflow-hidden.tc.pv4-ns.pv2
+      .slider-holder.center.mt0.overflow-hidden.tc.pv4-ns.pv2.mw7-l.mw6-m.mw5
         each _, spanIndex in imgArray  
           +sliderHolder(spanIndex)
         .image-holder.h4.h6-ns.relative.cb.trans-slide(style=imgHolderStyle)
@@ -98,7 +104,7 @@ block content
     if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
       a#anchor-video.anchor-ns.anchor(tabindex="-1")
       hr.mt3.mb3
-      section#video.flex.flex-column
+      section#video.flex.flex-column.mw7.center
         +sectionHeading(`${__.movie_profile.video}`)
 
         div.relative.pb-video.h0.bg-black
@@ -134,6 +140,7 @@ block content
     +section(movie, 'bibliography', `${__.movie_profile.teaching_and_learning}`)
     //- share
     hr.mh0.mv3
+    a#anchor-share.anchor-ns.anchor(tabindex="-1")
     +sectionHeading(`${__.movie_profile.share}`)
     +socialIcons(full_url)
     

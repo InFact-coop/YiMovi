@@ -14,12 +14,22 @@ mixin mainDetails(movie, director)
       
 mixin titleEn(title)
   - const truncated = title.slice(0, 25) + (title.length > 25 ? '...' : '')
-  h2.ttu.ma0.f5.f2-ns.lh-title
-    =title
+  if locale==="en"
+    h2.ttu.ma0.f5.f2-ns.lh-title
+      =title
+  if locale==="chn"
+    h2.ma0.f6.f3-ns.pb2-ns.lh-copy.sans-serif.fw4
+      =title  
       
 mixin titleChn(movie)
   if movie.name_chn
+  if locale==="en"
     h2.ma0.f6.f3-ns.pb2-ns.lh-copy.sans-serif.fw4=movie.name_chn
+      span.ttu=movie.name_chn
+      if (movie.name_pinyin)
+        span.f5.f5-ns.normal.i  (#{movie.name_pinyin})
+  if locale==="chn"
+    h2.ma0.f5.f2-ns.lh-title=movie.name_chn
       span.ttu=movie.name_chn
       if (movie.name_pinyin)
         span.f5.f5-ns.normal.i  (#{movie.name_pinyin})
@@ -32,14 +42,19 @@ mixin imgContainer(movie)
 mixin detailsContainer(movie)
   .listingDetails.ph2.ph5-ns.pv4-ns.flex.flex-column.flex-1-0-0.flex-1-0-0-ns.flex-1-0-0-m.flex-2-0-0-l.justify-around.hover-white
     .listingTitles.overflow-hidden
-      +titleEn(movie.name)
-      +titleChn(movie)
-    +mainDetails(movie, movie.director)
-    
+      if locale==="en"
+        +titleEn(movie.name)
+        +titleChn(movie)
+        +mainDetails(movie, movie.director)
+      if locale==="chn"
+        +titleChn(movie)
+        +titleEn(movie.name)
+        +mainDetails(movie, movie.director)
       
 mixin movieListingContainer(movie)
   .movieListing.bt.bw1.h4.h5-ns.flex.b--light-silver.bg-white.dark-gray.hover-white(class=`hover-bg-light-${primaryColor}`)
     block
+
 
 mixin movieListing(movie, page)
   - const url = `/movies/${movie.key}`
@@ -47,3 +62,4 @@ mixin movieListing(movie, page)
     +movieListingContainer(movie)
       +imgContainer(movie)
       +detailsContainer(movie)
+  

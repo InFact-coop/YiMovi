@@ -57,10 +57,10 @@ block content
             h4.tl.mb0.blue.fw3.pl1 #{__.contact.placeholder_name}
             input(type='text', name='name', placeholder=`${__.contact.placeholder_name}` title=`${__.contact.placeholder_name}`).dib.w-100.ba.b--black-20.bg-black-05.br2.ma1.f5.pa2.dark-gray.mb1
             br
-            h4.tl.mb0.blue.fw3.pl1 #{__.contact.email}
+            h4.tl.mb0.blue.fw3.pl1 #{__.contact.placeholder_email}
             input(type='email', name='_replyto', placeholder=`${__.contact.placeholder_email}` title=`${__.contact.placeholder_email}`).dib.w-100.bg-black-05.br2.ma1.f5.pa2.ba.b--black-20.dark-gray.mb1
             br
-            h4.tl.mb0.blue.fw3.pl1 ${__.contact.placeholder_message}
+            h4.tl.mb0.blue.fw3.pl1 #{__.contact.placeholder_message}
             textarea(name='message', placeholder=`${__.contact.placeholder_message}` title=`${__.contact.placeholder_message}`).dib.w-100.bg-black-05.br2.ma1.f5.pa2.h4.ba.b--black-20.dark-gray
             br
             input(type="hidden" name="_next" value=`/?mailsent=true`)
