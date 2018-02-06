@@ -10,6 +10,7 @@ const Movie = new keystone.List('Movie', {
 Movie.add({
   name: { type: String, required: true, },
   name_chn: { type: String, label: 'Chinese title', }, // not a translatable field, because we need the name in English views
+  name_pinyin: { type: String, label: 'Chinese (Pinyin) title', }, // not a translatable field, because we need the name in English views
   director: { type: Types.Relationship, ref: 'Director', },
   year: { type: Number, },
   duration: { type: Number, label: 'duration (mins)', },
