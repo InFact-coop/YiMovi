@@ -15,6 +15,15 @@
       "在中国医药通过电影的研究也可以通过与其他保健系统更亲密的接触提供：l，医疗卫生人文，新的见解，也是国家，社会和个人的观念。如何身体已被用作个人修养，社会整合或政治争论的部位全部采用薄膜可见。",
     "team_title": "团队"
   },
+  "navbar": {
+    "home": "主页",
+    "films": "影片",
+    "themes": "主题",
+    "genres": "文学上的流派和体裁",
+    "directors": "导演",
+    "about": "关乎",
+    "contact": "接触"
+  },
   "header": {
     "strapline_1": "中国电影＆",
     "strapline_2": "医学人文",
@@ -98,8 +107,5 @@
     "action_send": "发送",
     "page_title": "contact.page_title"
   },
-  "": {},
-  "Cui Wei": "Cui Wei",
-  "Blind Massage": "Blind Massage",
-  "推拿 (tui na)": "推拿 (tui na)"
+  "": {}
 }

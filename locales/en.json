@@ -16,6 +16,15 @@
       "The study of medicine in China through film can also offer new insights forthe Medical and Health Humanities, through a more intimate engagement with alternative health systems, but also conceptions of state, community and individual. How the body has been used as a site of personal cultivation, social conformity or political contestation is all made visible in film.",
     "team_title": "the team"
   },
+  "navbar": {
+    "home": "Home",
+    "films": "All Films",
+    "themes": "Themes",
+    "genres": "Genres",
+    "directors": "Directors",
+    "about": "About",
+    "contact": "Contact"
+  },
   "header": {
     "strapline_1": "Chinese Film &",
     "strapline_2": "Medical Humanities",
@@ -99,8 +108,5 @@
     "action_send": "Send",
     "page_title": "Contact Us - YiMovi"
   },
-  "": {},
-  "Cui Wei": "Cui Wei",
-  "Blind Massage": "Blind Massage",
-  "推拿 (tui na)": "推拿 (tui na)"
+  "": {}
 }
