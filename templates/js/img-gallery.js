@@ -1,28 +1,21 @@
 (function() {
   var imgLinks = document.querySelectorAll('.slider-change');
-  var array = [];
+  var imgHolder = document.querySelector('.image-holder');
+
   var onSliderClick = function(e) {
     [].forEach.call(imgLinks, function(imgLink) {
       imgLink.classList.remove('bg-light-blue');
-      imgLink.classList.remove('scale');
       imgLink.classList.add('bg-gray');
     });
+
+    [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ].map(num => {
+      imgHolder.classList.remove(`image${num}`);
+    });
+    imgHolder.classList.toggle(e.target.id);
     e.target.classList.add('bg-light-blue');
-    e.target.classList.add('grow');
-    e.target.classList.add('scale');
   };
 
-  // var preventJump = function(e) {
-  //   var hash = window.location.hash;
-  //   if (hash) {
-  //     setTimeout(function() {
-  //       window.scrollTo(0, 0);
-  //     }, 1);
-  //   }
-  // };
-
-  array.forEach.call(imgLinks, function(imgLink) {
+  [].forEach.call(imgLinks, function(imgLink) {
     imgLink.addEventListener('click', onSliderClick);
-    // imgLink.addEventListener('click', preventJump);
   });
 })();
