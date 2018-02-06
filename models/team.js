@@ -4,8 +4,6 @@ const Types = keystone.Field.Types;
 const Team = new keystone.List('Team', {
   autokey: { from: 'name', path: 'key', unique: true, },
   label: 'Team',
-  nocreate: true,
-  nodelete: true,
 });
 
 Team.add({
@@ -17,7 +15,7 @@ Team.add({
     publicID: 'slug',
     autoCleanup: true,
     label: 'Team Member',
-  }
+  },
 });
 
 Team.track = true;

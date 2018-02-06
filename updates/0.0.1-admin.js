@@ -4,8 +4,7 @@ require('dotenv').config();
 
 const User = keystone.list('User');
 
-exports = module.exports = (done) => {
-
+exports = module.exports = done => {
   new User.model({
     name: { first: 'Admin', last: 'User', },
     email: process.env.ADMIN_EMAIL,
