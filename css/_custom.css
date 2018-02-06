@@ -417,3 +417,7 @@
 .scale {
   transform: scale(1.7);
 }
+
+.navbarlink:hover {
+  font-weight: bold;
+}

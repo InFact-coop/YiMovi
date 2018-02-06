@@ -5,15 +5,15 @@ nav.bg-gray.h2.h3-ns.w-100.items-center.fixed.z-1.flex.flex-row.items-center.jus
       include ../svg/logo.svg
   include ./burger.pug
   div.dn.db-m
-    a.link.ph3.white.fw1.dn-m.dib-l(href=`/` alt="YiMovi home") #{__.navbar.home}
-    a.link.ph3.white.fw1(href=`/movies` alt="All Films") #{__.navbar.films}
-    a.link.ph3.white.fw1(href=`/themes` alt="Themes") #{__.navbar.themes}
-    a.link.ph3.white.fw1(href=`/genres` alt="Genres") #{__.navbar.genres}
-    a.link.ph3.white.fw1(href=`/directors` alt="Directors") #{__.navbar.directors}
-    a.link.ph3.white.fw1.dn-m.dib-l(href=`/#aboutUsSection` alt="About") #{__.navbar.about}
-    a.link.ph3.white.fw1(href=`/#contactUsSection` alt="Contact") #{__.navbar.contact}
-    a.link.ph3.white.fw1(href=`/team` alt="Team") #{__.navbar.team} 
-    a.link.ph3.white.fw3.tracked(href=`${languageSwitchUrl}` alt='Switch language') #{country}
+      a.navbarlink.link.ph3.white.fw1.dn-m.dib-l.bold-hover(href=`/` alt="YiMovi home") #{__.navbar.home}
+      a.navbarlink.link.ph3.white.fw1(href=`/movies` alt="All Films") #{__.navbar.films}
+      a.navbarlink.link.ph3.white.fw1(href=`/themes` alt="Themes") #{__.navbar.themes}
+      a.navbarlink.link.ph3.white.fw1(href=`/genres` alt="Genres") #{__.navbar.genres}
+      a.navbarlink.link.ph3.white.fw1(href=`/directors` alt="Directors") #{__.navbar.directors}
+      a.navbarlink.link.ph3.white.fw1.dn-m.dib-l(href=`/#aboutUsSection` alt="About") #{__.navbar.about}
+      a.navbarlink.link.ph3.white.fw1(href=`/#contactUsSection` alt="Contact") #{__.navbar.contact}
+      a.navbarlink.link.ph3.white.fw1(href=`/team` alt="Team") #{__.navbar.team} 
+      a.navbarlink.link.ph3.white.fw3.tracked(href=`${languageSwitchUrl}` alt='Switch language') #{country}
 #main-mobile-nav.dn-m.fixed.z-999.w-100.mt5-ns.mt4.dn.bg-white.right-0.shadow-3
   a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/` alt="YiMovi home" class=`hover-bg-${primaryColor}`) Home
   a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/movies` alt="All Films" class=`hover-bg-${primaryColor}`) All Films
