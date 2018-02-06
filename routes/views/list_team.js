@@ -11,7 +11,7 @@ exports = module.exports = (req, res) => {
     Team.model
       .find()
       .lean()
-      .sort('name')
+      .sort('sortOrder')
       .exec((err, team) => {
         if (err) return next(err);
 
