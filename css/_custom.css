@@ -1,3 +1,10 @@
+.listing-box:hover {
+  border: none;
+}
+
+.main-link:hover {
+  font-weight: 300;
+}
 /* Height */
 
 .h6 {
@@ -227,7 +234,6 @@
   width: 0.8rem;
 }
 
-
 /*** Flex ***/
 .flex-1-0-0 {
   flex: 1 0 0;
@@ -397,4 +403,13 @@
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-0.35rem, -0.35rem);
   transform: rotate(45deg) translate(-0.35rem, -0.35rem);
+}
+
+.mobile-link:hover {
+  background-color: gray;
+  color: white;
+}
+
+.scale {
+  transform: scale(1.7);
 }

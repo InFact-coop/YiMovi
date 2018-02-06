@@ -2,7 +2,6 @@ const keystone = require('keystone');
 const Director = keystone.list('Director');
 
 exports = module.exports = (req, res) => {
-
   const view = new keystone.View(req, res);
 
   view.on('init', next => {
@@ -10,11 +9,12 @@ exports = module.exports = (req, res) => {
     locals.title = res.__('list_directors.page_title');
     locals.directors = [];
 
-    Director.model.find()
+    Director.model
+      .find()
       .select('-description -image -description___chn')
       .lean()
-      .sort('sortOrder').exec((err, directors) => {
-
+      .sort('sortOrder')
+      .exec((err, directors) => {
         if (err) return next(err);
 
         locals.directors = directors;
