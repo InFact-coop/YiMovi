@@ -1,5 +1,6 @@
 const keystone = require('keystone');
 const middleware = require('./middleware');
+const switchLocale = require('./helpers/switch_locale');
 const cookieParser = require('cookie-parser');
 const i18n = require('i18n');
 const importRoutes = keystone.importer(__dirname);
@@ -64,6 +65,7 @@ exports = module.exports = app => {
 
       // Import matching JSON file as JS object and set to __ key
       res.locals.__ = require(`../locales/${locale}.json`);
+      res.locals.languageSwitchUrl = switchLocale(req.originalUrl);
       next();
     }
   });

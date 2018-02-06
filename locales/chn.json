@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "中国医学人文电影 - YiMovi"
+    "title": "中国医学人文电影 - YiMovi",
+    "short_title": " - YiMovi"
   },
   "flash_messages": {
     "mail_sent": "感谢您与我们联系。我们会在不久的触摸"

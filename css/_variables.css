@@ -16,12 +16,11 @@
   --font-size-4: 1.25rem;
   --font-size-5: 1rem;
   --font-size-6: 0.875rem;
+  --font-size-7: 0.5rem;
 
-
-  --letter-spacing-tight:-.05em;
-  --letter-spacing-1:.05em;
-  --letter-spacing-2:.25em;
-
+  --letter-spacing-tight: -0.05em;
+  --letter-spacing-1: 0.05em;
+  --letter-spacing-2: 0.25em;
 
   --line-height-solid: 1;
   --line-height-title: 1.25;
@@ -68,9 +67,9 @@
 
   --border-width-none: 0;
 
-  --border-width-1: .001rem;
-  --border-width-2: .25rem;
-  --border-width-3: .5rem;
+  --border-width-1: 0.001rem;
+  --border-width-2: 0.25rem;
+  --border-width-3: 0.5rem;
 
   --border-width-4: 1rem;
   --border-width-5: 2rem;
