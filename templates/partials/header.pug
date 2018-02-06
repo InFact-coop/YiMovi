@@ -4,15 +4,15 @@ nav.bg-gray.h2.h3-ns.w-100.items-center.fixed.z-1.flex.flex-row.items-center.jus
       include ../svg/logo.svg
   include ./burger.pug
   div.dn.db-m
-    a.link.ph3.main-link.white.fw1.dn-m.dib-l(href=`/` alt="YiMovi home") Home
-    a.link.ph3.main-link.white.fw1(href=`/movies` alt="All Films") All Films
-    a.link.ph3.main-link.white.fw1(href=`/themes` alt="Themes") Themes
-    a.link.ph3.main-link.white.fw1(href=`/genres` alt="Genres") Genres
-    a.link.ph3.main-link.white.fw1(href=`/directors` alt="Directors") Directors
-    a.link.ph3.main-link.white.fw1.dn-m.dib-l(href=`/#aboutUsSection` alt="About") About
-    a.link.ph3.main-link.white.fw1(href=`/#contactUsSection` alt="Contact") Contact
-    - var country= locale==='en' ? ["chn", "EN" ] : ["en", "字"]  
-    a.link.ph3.white.fw3.tracked(href=`${country[0]}` alt="Country site") #{country[1]}
+    a.link.ph3.white.fw1.dn-m.dib-l(href=`/` alt="YiMovi home") Home
+    a.link.ph3.white.fw1(href=`/movies` alt="All Films") All Films
+    a.link.ph3.white.fw1(href=`/themes` alt="Themes") Themes
+    a.link.ph3.white.fw1(href=`/genres` alt="Genres") Genres
+    a.link.ph3.white.fw1(href=`/directors` alt="Directors") Directors
+    a.link.ph3.white.fw1.dn-m.dib-l(href=`/#aboutUsSection` alt="About") About
+    a.link.ph3.white.fw1(href=`/#contactUsSection` alt="Contact") Contact
+    - var country = locale==='en' ? "EN" : "中文"
+    a.link.ph3.white.fw3.tracked(href=`${languageSwitchUrl}` alt='Switch language') #{country}
 #main-mobile-nav.dn-m.fixed.z-999.w-100.mt5-ns.mt4.dn.bg-white.right-0.shadow-3
   a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/` alt="YiMovi home" class=`hover-bg-${primaryColor}`) Home
   a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/movies` alt="All Films" class=`hover-bg-${primaryColor}`) All Films
