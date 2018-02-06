@@ -1,5 +1,4 @@
 (function() {
-
   function includesClass(el, className) {
     if (!el.className) return false;
     return el.className.split(' ').indexOf(className) > -1;
@@ -7,7 +6,7 @@
 
   function toggleDisplay(el) {
     if (includesClass(el, 'dn')) {
-      return el.className = el.className.replace(' dn', '');
+      return (el.className = el.className.replace(' dn', ''));
     }
 
     el.className = (el.className + ' dn').trim();
@@ -15,7 +14,7 @@
 
   function toggleShowMore(el) {
     if (el.textContent === 'Show more') {
-      return el.textContent = 'Show less';
+      return (el.textContent = 'Show less');
     }
     el.textContent = 'Show more';
   }

@@ -1,6 +1,7 @@
 {
   "app": {
-    "title": "Chinese Medical Humanities Film - YiMovi"
+    "title": "YiMovi - Chinese Film & Medical Humanities",
+    "short_title": " - YiMovi"
   },
   "flash_messages": {
     "mail_sent": "Thank you for contacting us. We'll be in touch soon"
@@ -47,22 +48,22 @@
   "list_directors": {
     "title": "Browse Directors",
     "link_title": "Movies by",
-    "page_title": "list_directors.page_title"
+    "page_title": "Directors - YiMovi"
   },
   "list_genres": {
     "title": "Browse Genres",
     "link_title": "Movies about",
-    "page_title": "list_genres.page_title"
+    "page_title": "Genres - YiMovi"
   },
   "list_movies": {
     "title": "Films",
     "sub_title": "By title",
-    "page_title": "list_movies.page_title"
+    "page_title": "Movies - YiMovi"
   },
   "list_themes": {
     "title": "Browse Themes",
     "link_title": "Movies about",
-    "page_title": "list_themes.page_title"
+    "page_title": "Themes - YiMovi"
   },
   "theme_profile": {
     "title": "Movies about",
@@ -105,7 +106,7 @@
     "placeholder_message": "Your Message",
     "action_cancel": "Cancel",
     "action_send": "Send",
-    "page_title": "contact.page_title"
+    "page_title": "Contact Us - YiMovi"
   },
   "": {}
 }
