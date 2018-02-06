@@ -58,7 +58,9 @@ mixin breadcrumbs(type, page)
   p#breadcrumbs.white.f5.lh-copy
     a.white.mr2(href="/") Home
     |  |
-    if page  
+    if team  
+        a.white.mh2.ttu.no-underline.fw6(href="/team") The Team
+    else if page  
       a.white.mh2.ttc(href=url)=linkText
     else
       span.fw6.mh2.ttu=linkText 
