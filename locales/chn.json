@@ -109,6 +109,7 @@
 	},
 	"": {},
 	"list_team": {
-		"page_title": "list_team.page_title"
+		"page_title": "list_team.page_title",
+		"title": "团队"
 	}
 }
