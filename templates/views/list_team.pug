@@ -12,19 +12,5 @@ block content
   
   div.center.flex
     section.ma5.flex.flex-wrap.justify-around.center
-      article.ba.pa3.w-60-l.w-80-m.w-90.mv2.mh5-ns.mh2.b--light-gray.br2
-        div.center.tc.br3
-          img.h4.w-auto.h4(src="/team/vivienne.png")
-        div
-          a.no-underline.gray(href="https://www.ucl.ac.uk/history/people/academic-staff/vivienne-lo/vivienne-lo")
-            h2.tc.b(class=`${primaryColor}`) Vivienne Lo
-            p.fw2.tc.pv2.ph4 Vivienne Lo is a Senior Lecturer and convener of the China Centre for Health and Humanity at UCL. She is well published in the history of medicine in China with a particular interest in visual culture. She initiated the first ever postgraduate module on Chinese Film and the Body. 
-      article.ba.pa3.w-60-l.w-80-m.w-90.mv2.mh5-ns.mh2.b--light-gray.br2
-        div.center.tc.br3
-          img.h4.w-auto.h4(src="/team/derek.png")
-        div
-          a.no-underline.gray(href="https://www.westminster.ac.uk/about-us/our-people/directory/hird-derek")
-            h2.tc.b.gray(class=`${primaryColor}`) Derek Hird
-            p.fw2.tc.pv2.ph4 Derek is a senior lecturer in Chinese studies at the University of Westminster, UK. His research interests include Chinese migrant men’s experiences in London and Chinese white-collar masculinities. Recent publications include Men and Masculinities in Contemporary China (with Geng Song) (Brill, 2014), “Making class and gender: White-collar men in postsocialist China,” in Changing Chinese Masculinities: from Imperial Pillars of State to Global Real Men, ed. Kam Louie, 137-56 (Hong Kong: Hong Kong University Press, 2016), and “Moral Masculinities: Ethical Self-fashionings of Professional Chinese Men in London,” Nan Nü 18.1 (2016): 115-147.
-      
-  
+      each teamMember in team
+          +teamMember(teamMember)

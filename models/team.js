@@ -3,7 +3,7 @@ const Types = keystone.Field.Types;
 
 const Team = new keystone.List('Team', {
   autokey: { from: 'name', path: 'key', unique: true, },
-  label: 'Team',
+  label: 'Team Member',
 });
 
 Team.add({
