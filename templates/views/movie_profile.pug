@@ -81,12 +81,11 @@ block content
         .image-holder.h4.h6-ns.relative.cb.trans-slide(style=imgHolderStyle)
           each img in imgArray
             +galleryImage(img, imgArray.length)
-    div
-    .button-holder.relative.tc.mt1
-      //- img.h1.v-mid.pointer.pa2(src="/leftarrow.png")
-      each _, linkIndex in imgArray
-        +galleryLink(linkIndex)
-      //- img.h1.center.v-mid.pointer.pa2(src="/rightarrow.png")
+        div
+          .button-holder.relative.tc.mt3
+        each _, linkIndex in imgArray
+          +galleryLink(linkIndex)
+
       
   //- if movie.image.secure_url
   //-   #image-container.flex.flex-column.justify-center.h4.h6-ns..relative.z--1
@@ -97,7 +96,6 @@ block content
     //- summary section
     a#anchor-summary.anchor-ns.anchor(tabindex="-1")  
     section#summary.flex.justify-start
-      
     +section(movie, "summary", `${__.movie_profile.intro}`)
       
     //- video section
@@ -116,18 +114,20 @@ block content
 
     if hasNotesSection
       a#anchor-screening.anchor-ns.anchor(tabindex="-1")
-        
+      +sectionHeading (`${__.movie_profile.screening_notes}`)
+
     //- context section
-    +section(movie, 'context', `${__.movie_profile.context}`)
+    
+    +subSection(movie, 'context', `${__.movie_profile.context}`)
     
     //- synopsis
-    +section(movie, 'synopsis', `${__.movie_profile.synposis}`)
+    +subSection(movie, 'synopsis', `${__.movie_profile.synposis}`)
         
     //- cinematography
-    +section(movie, 'cinematography', `${__.movie_profile.cinematography}`)
+    +subSection(movie, 'cinematography', `${__.movie_profile.cinematography}`)
         
     //- points for discussion
-    +section(movie, 'pointsForDiscussion', `${__.movie_profile.points_for_discussion}`)
+    +subSection(movie, 'pointsForDiscussion', `${__.movie_profile.points_for_discussion}`)
         
     //- external links
     if movie.externalLinks.html && movie.externalLinks.html.length
