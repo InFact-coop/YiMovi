@@ -1,32 +1,36 @@
 /* Slider */
 
-#slider-image-1:target ~ .image-holder {
+.image1 {
   left: 0px;
 }
-#slider-image-2:target ~ .image-holder {
+.image2 {
   left: -100%;
 }
-#slider-image-3:target ~ .image-holder {
+.image3 {
   left: -200%;
 }
-#slider-image-4:target ~ .image-holder {
+.image4 {
   left: -300%;
 }
-#slider-image-5:target ~ .image-holder {
+.image5 {
   left: -400%;
 }
-#slider-image-6:target ~ .image-holder {
+.image6 {
   left: -500%;
 }
-#slider-image-7:target ~ .image-holder {
+.image7 {
   left: -600%;
 }
-#slider-image-8:target ~ .image-holder {
+.image8 {
   left: -700%;
 }
-#slider-image-9:target ~ .image-holder {
+.image9 {
   left: -800%;
 }
-#slider-image-10:target ~ .image-holder {
+.image10 {
   left: -900%;
+}
+
+.slider-change:hover {
+  transform: scale(1.4);
 }

@@ -7,6 +7,6 @@ mixin galleryImage(img, length)
     img.h-100.w-100(src=img.secure_url style=imgStyle)
 
 mixin galleryLink(index)
-  - const href = `#slider-image-${index + 1}`
+  - const imgId = `image${index + 1}`
   - const bg = index === 0 ? 'bg-light-blue' : 'bg-dark-gray'
-  a.slider-change.h1.w1.ma1.grow.br-100.dib.bg-dark-gray.v-mid.ma2(href=href class=`${bg} hover-bg-light-${primaryColor}`)
+  button.pointer.bn.slider-change.h1.w1.ma1.grow.br-100.dib.bg-dark-gray.v-mid.ma2(id=`${imgId}` class=`${bg} hover-bg-light-${primaryColor}`)

@@ -5,6 +5,11 @@
 .main-link:hover {
   font-weight: 300;
 }
+
+button:focus {
+  outline: 0;
+}
+
 /* Height */
 
 .h6 {
@@ -218,7 +223,7 @@
   margin: 0.125rem;
 }
 
-.m0-auto{
+.m0-auto {
   margin: 0 auto;
 }
 
@@ -412,10 +417,6 @@
 .mobile-link:hover {
   background-color: gray;
   color: white;
-}
-
-.scale {
-  transform: scale(1.7);
 }
 
 .navbarlink:hover {

@@ -73,7 +73,7 @@ block content
     - const imgHolderStyle = `width:${100 * imgArray.length}%`
     
     section#gallery.flex.flex-column.bg-near-white
-      // - image slider
+      //- image slider
       .slider-holder.center.mt0.overflow-hidden.tc.pv4-ns.pv2.mw7-l.mw6-m.mw5
         each _, spanIndex in imgArray  
           +sliderHolder(spanIndex)
@@ -86,10 +86,6 @@ block content
           +galleryLink(linkIndex)
 
       
-  //- if movie.image.secure_url
-  //-   #image-container.flex.flex-column.justify-center.h4.h6-ns..relative.z--1
-  //-     span.h-100.contain.no-repeat.dib.relative.w-100.self-center.mw7(style=`background-image:url("${movie.image.secure_url}"); background-repeat: no-repeat; background-position: center`)
-  //- 
   #content.pa3.pt1.mw8.center
     h1 RESOURCES!
     each resource in resources
