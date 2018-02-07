@@ -29,6 +29,7 @@ Movie.add({
   },
   gallery: { type: Types.CloudinaryImages, label: 'Image gallery', },
   video: { type: String, label: 'Video link', },
+  isFullMovie: { type: Boolean, label: 'Is the above video the entire movie?', },
   videoLinks: { type: Types.Markdown, label: 'More video links', },
   videoLinks___chn: {
     type: Types.Markdown,

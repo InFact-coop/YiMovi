@@ -81,6 +81,7 @@
   "movie_profile": {
     "director": "director",
     "video": "video",
+    "fullMovie": "full movie",
     "images": "images",
     "themes": "themes",
     "genres": "genres",
