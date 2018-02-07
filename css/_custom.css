@@ -420,5 +420,6 @@ button:focus {
 }
 
 .navbarlink:hover {
-  font-weight: bold;
+  text-decoration:underline;
+  text-underline-position: under;
 }
