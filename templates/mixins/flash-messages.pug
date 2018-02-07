@@ -2,7 +2,7 @@ mixin flash-messages(messages)
     if messages
         #flash-messages.container
             each message in messages.info
-                +flash-message(message, 'info', 'light-gray')
+                +flash-message(message, 'info', 'white')
             each message in messages.success
                 +flash-message(message, 'success', 'light-green')
             each message in messages.warning

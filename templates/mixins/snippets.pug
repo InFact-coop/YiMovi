@@ -56,11 +56,11 @@ mixin subSection(movie, section, title)
 
 mixin profileMenuItem(key, value)
   li.ttu.mr4.f6.f5-ns.fw5.tc.pv2.pv0-ns
-    a(href=`#anchor-${key}` class="hover-white").menuPoint.light-gray.no-underline.bw2.pointer=value
+    a(href=`#anchor-${key}` class="hover-white").menuPoint.white.no-underline.bw2.pointer=value
     
 mixin mainMenuItem(href, value)
   li.ttu.mr4.f6.f5-ns.fw5.tc.pv2.pv0-ns
-    a(href=`#anchor-${key}` class="hover-white").mainMenuPoint.light-gray.no-underline.bw2.pointer=value
+    a(href=`#anchor-${key}` class="hover-white").mainMenuPoint.white.no-underline.bw2.pointer=value
         
 mixin breadcrumbs(type, page)
   - const url = `/${type}`
@@ -82,7 +82,7 @@ mixin bgImage(url)
   span.cover.dib.w-100.h-100(style=`background-image:url("${url}")`)    
   
 mixin titleContainer(color)
-  #title-container.pa3.mt5-ns.mt4.shadow-5.z-1.light-gray(class=`bg-${color}`)
+  #title-container.pa3.mt5-ns.mt4.shadow-5.z-1.white(class=`bg-${color}`)
     block
   
 mixin video(id)
