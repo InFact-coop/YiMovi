@@ -90,12 +90,13 @@ mixin video(id)
   iframe.absolute.top0.left0.w-100.h-100(src=url)
 
 mixin teamMember(team)
+  - const url = team.url ? team.url : '#'
   - const img = team.image ? team.image.secure_url : null
   article.ba.pa3.w-60-l.w-80-m.w-90.mv2.mh5-ns.mh2.b--light-gray.br2
     div.center.tc.br3
         if img
           img.h4.w-auto.h4(src=`${img}`)
     div.pv2.ph4.tc
-      a.no-underline.gray(href='/')
+      a.no-underline.gray(href=`${url}`)
         h2.tc.b(class=`${primaryColor}`)=`${team.name}`
         p.fw2.tc!=team.text.html

@@ -11,6 +11,7 @@ Team.add({
   name: { type: String, },
   text: { type: Types.Markdown, label: 'About us text EN', },
   text___chn: { type: Types.Markdown, label: 'About us text CHN', },
+  url: { type: Types.Url, label: 'External URL', },
   image: {
     type: Types.CloudinaryImage,
     publicID: 'slug',
