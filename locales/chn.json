@@ -1,115 +1,116 @@
 {
-	"app": {
-		"title": "中国医学人文电影 - YiMovi",
-		"short_title": " - YiMovi"
-	},
-	"flash_messages": {
-		"mail_sent": "感谢您与我们联系。我们会在不久的触摸"
-	},
-	"about": {
-		"title": "关于我们",
-		"part1": "五年来的团队一直在教学和科研薄膜。",
-		"part2": "我们使用传统的欧美人文医学方法与中国电影教学，研究医患关系，在改善医疗保健，严重慢性疾病的患者经历，同情和怜悯（或缺席）质量的作用，并医德。主要与中国学生带来了文化差异的关键点，并强调，中国讲的世界所面临的独特挑战。它也带来了一个关键的重点，一般你有什么beenconsidered在医疗保健普遍权利，死亡和垂死的，和医德。",
-		"part3": "在中国医药通过电影的研究也可以通过与其他保健系统更亲密的接触提供：l，医疗卫生人文，新的见解，也是国家，社会和个人的观念。如何身体已被用作个人修养，社会整合或政治争论的部位全部采用薄膜可见。",
-		"team_title": "团队"
-	},
-	"navbar": {
-		"home": "主页",
-		"films": "影片",
-		"themes": "主题",
-		"genres": "文学上的流派和体裁",
-		"directors": "导演",
-		"about": "关乎",
-		"contact": "接触",
-		"team": "团队"
-	},
-	"header": {
-		"strapline_1": "中国电影＆",
-		"strapline_2": "医学人文",
-		"logo_link_title": "YiMovi家",
-		"switch_statement": "切换到中国"
-	},
-	"footer": {
-		"link_contact": "联系"
-	},
-	"index": {
-		"header": "中国电影与跨文化医学人文",
-		"byline1": "什么东西能用华语语系世界要约医学人文学科？",
-		"byline2": "可以在医疗卫生人文提供给中国什么？",
-		"top_themes_title": "顶级主题",
-		"theme_link_title": "关于电影",
-		"link_themes": "浏览所有主题",
-		"link_movies": "浏览所有电影",
-		"link_directors": "浏览所有董事",
-		"link_genres": "浏览所有流派"
-	},
-	"list_directors": {
-		"title": "浏览董事",
-		"link_title": "通过电影",
-		"page_title": "list_directors.page_title"
-	},
-	"list_genres": {
-		"title": "浏览流派",
-		"link_title": "关于电影",
-		"page_title": "list_genres.page_title"
-	},
-	"list_movies": {
-		"title": "电影",
-		"sub_title": "按标题",
-		"page_title": "list_movies.page_title"
-	},
-	"list_themes": {
-		"title": "浏览主题",
-		"link_title": "关于电影",
-		"page_title": "list_themes.page_title"
-	},
-	"theme_profile": {
-		"title": "关于电影",
-		"page_title": "theme_profile.page_title"
-	},
-	"director_profile": {
-		"title": "导演介绍",
-		"page_title": "director_profile.page_title"
-	},
-	"genre_profile": {
-		"title": "电影介绍",
-		"page_title": "genre_profile.page_title"
-	},
-	"movie_profile": {
-		"director": "导演",
-		"video": "视频",
-		"images": "图片",
-		"themes": "主题",
-		"genres": "流派",
-		"screening_notes": "观影笔记",
-		"intro": "导言",
-		"more_video_links": "更多的视频链接",
-		"image_gallery": "图片库",
-		"context": "上下文",
-		"summary": "总结",
-		"synposis": "概要",
-		"cinematography": "电影艺术",
-		"points_for_discussion": "讨论点",
-		"external_links": "外部链接",
-		"teaching_and_learning": "教与学",
-		"page_title": "movie_profile.page_title",
-		"share": "共享"
-	},
-	"contact": {
-		"title": "联系我们",
-		"address_title": "地址",
-		"address_body": "高尔海峡，布卢姆斯伯里，伦敦，WC1E 6BT",
-		"online_title": "在线",
-		"placeholder_name": "你的名字",
-		"placeholder_email": "你的邮件",
-		"placeholder_message": "你的信息",
-		"action_cancel": "取消",
-		"action_send": "发送",
-		"page_title": "contact.page_title"
-	},
-	"": {},
-	"list_team": {
-		"page_title": "list_team.page_title",
-		"title": "团队"
-	}
+  "app": {
+    "title": "中国医学人文电影 - YiMovi",
+    "short_title": " - YiMovi"
+  },
+  "flash_messages": {
+    "mail_sent": "感谢您与我们联系。我们会在不久的触摸"
+  },
+  "about": {
+    "title": "关于我们",
+    "part1": "五年来的团队一直在教学和科研薄膜。",
+    "part2":
+      "我们使用传统的欧美人文医学方法与中国电影教学，研究医患关系，在改善医疗保健，严重慢性疾病的患者经历，同情和怜悯（或缺席）质量的作用，并医德。主要与中国学生带来了文化差异的关键点，并强调，中国讲的世界所面临的独特挑战。它也带来了一个关键的重点，一般你有什么beenconsidered在医疗保健普遍权利，死亡和垂死的，和医德。",
+    "part3":
+      "在中国医药通过电影的研究也可以通过与其他保健系统更亲密的接触提供：l，医疗卫生人文，新的见解，也是国家，社会和个人的观念。如何身体已被用作个人修养，社会整合或政治争论的部位全部采用薄膜可见。",
+    "team_title": "团队"
+  },
+  "navbar": {
+    "home": "主页",
+    "films": "影片",
+    "themes": "主题",
+    "genres": "文学上的流派和体裁",
+    "directors": "导演",
+    "about": "关乎",
+    "contact": "接触",
+    "team": "团队"
+  },
+  "header": {
+    "strapline_1": "中国电影＆",
+    "strapline_2": "医学人文",
+    "logo_link_title": "YiMovi家",
+    "switch_statement": "切换到中国"
+  },
+  "footer": {
+    "link_contact": "联系"
+  },
+  "index": {
+    "header": "中国电影与跨文化医学人文",
+    "byline1": "什么东西能用华语语系世界要约医学人文学科？",
+    "byline2": "可以在医疗卫生人文提供给中国什么？",
+    "top_themes_title": "顶级主题",
+    "theme_link_title": "关于电影",
+    "link_themes": "浏览所有主题",
+    "link_movies": "浏览所有电影",
+    "link_directors": "浏览所有董事",
+    "link_genres": "浏览所有流派"
+  },
+  "list_directors": {
+    "title": "浏览董事",
+    "link_title": "通过电影",
+    "page_title": "list_directors.page_title"
+  },
+  "list_genres": {
+    "title": "浏览流派",
+    "link_title": "关于电影",
+    "page_title": "list_genres.page_title"
+  },
+  "list_movies": {
+    "title": "电影",
+    "sub_title": "按标题",
+    "page_title": "list_movies.page_title"
+  },
+  "list_themes": {
+    "title": "浏览主题",
+    "link_title": "关于电影",
+    "page_title": "list_themes.page_title"
+  },
+  "theme_profile": {
+    "title": "关于电影",
+    "page_title": "theme_profile.page_title"
+  },
+  "director_profile": {
+    "title": "导演介绍",
+    "page_title": "director_profile.page_title"
+  },
+  "genre_profile": {
+    "title": "电影介绍",
+    "page_title": "genre_profile.page_title"
+  },
+  "movie_profile": {
+    "director": "导演",
+    "video": "视频",
+    "images": "图片",
+    "themes": "主题",
+    "genres": "流派",
+    "screening_notes": "观影笔记",
+    "intro": "导言",
+    "more_video_links": "更多的视频链接",
+    "image_gallery": "图片库",
+    "context": "上下文",
+    "summary": "总结",
+    "synposis": "概要",
+    "cinematography": "电影艺术",
+    "points_for_discussion": "讨论点",
+    "external_links": "外部链接",
+    "teaching_and_learning": "教与学",
+    "page_title": "movie_profile.page_title",
+    "share": "共享"
+  },
+  "contact": {
+    "title": "联系我们",
+    "address_title": "地址",
+    "address_body": "高尔海峡，布卢姆斯伯里，伦敦，WC1E 6BT",
+    "online_title": "在线",
+    "placeholder_name": "你的名字",
+    "placeholder_email": "你的邮件",
+    "placeholder_message": "你的信息",
+    "action_cancel": "取消",
+    "action_send": "发送",
+    "page_title": "contact.page_title"
+  },
+  "list_team": {
+    "page_title": "团队",
+    "title": "团队"
+  }
 }
