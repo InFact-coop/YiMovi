@@ -27,18 +27,18 @@ block content
     if movie.resources.url 
       img(src=movie.resources.url)
     if locale==="en"
-      h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name
-      h2.light-gray.f3.f3-ns.fw7.lh-title.ma0
+      h1.white.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name
+      h2.white.f3.f3-ns.fw7.lh-title.ma0
         span=movie.name_chn
         if (movie.name_pinyin)
           span.f5.f5-ns.normal.i  (#{movie.name_pinyin})
     if locale==="chn"
-      h1.light-gray.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name_chn
-      h2.light-gray.f3.f3-ns.fw7.lh-title.ma0
+      h1.white.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name_chn
+      h2.white.f3.f3-ns.fw7.lh-title.ma0
         span=movie.name
-    
       
-    h2.light-gray.f5.f4-ns.fw2.lh-title
+      
+    h2.white.f5.f4-ns.fw2.lh-title
       if movie.year
         span.mr2=movie.year
       if movie.duration
@@ -52,13 +52,13 @@ block content
         a.no-underline(href=`/directors/${directorPage}`)
           span.white.ma0.sans-serif=`${director.name_chn}`      
 
-  #menu.shadow-5.pl2.z-1.sticky.top-1-9.top-4-ns.light-gray(class=`bg-${secondaryColor}`)
+  #menu.shadow-5.pl2.z-1.sticky.top-1-9.top-4-ns.white(class=`bg-${secondaryColor}`)
     #menu-mobile.flex.flex-row.justify-between.items-center.pointer.dn-ns.pv1.pv0-m
       p.ma0.f5.fw7.ttu=movie.name
       img.h2.mr3(src="/arrow_drop_down_black.svg")
     ul#drop-down.list.flex-ns.flex-column.flex-row-ns.items-center.pa0.pv2.justify-start.ma0.dn
       li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
-        +profileMenuItem("summary", __.movie_profile.summary)
+        +profileMenuItem("summary", __.movie_profile.intro)
       if hasVideo
         +profileMenuItem("video",  __.movie_profile.video)
       if hasImages
