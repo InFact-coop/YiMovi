@@ -80,6 +80,7 @@
   "movie_profile": {
     "director": "导演",
     "video": "视频",
+    "fullMovie": "电影",
     "images": "图片",
     "themes": "主题",
     "genres": "流派",

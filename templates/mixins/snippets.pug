@@ -49,7 +49,8 @@ mixin section(movie, section, title)
 
 mixin subSection(movie, section, title)
     if movie[section].html && movie[section].html.length
-      hr.mt3.mb3
+      if section !== "context"
+        hr.mt3.mb3
       section(id=`${section}`)
         +subSectionHeading(title || section)
         +sectionParagraph(movie[section].html)

@@ -100,18 +100,21 @@ block content
     if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
       a#anchor-video.anchor-ns.anchor(tabindex="-1")
       hr.mt3.mb3
-      section#video.flex.flex-column.mw7.center
+      section#video.flex.flex-column.mw7
         +sectionHeading(`${__.movie_profile.video}`)
+        if movie.isFullMovie
+          +subSectionHeading(`${__.movie_profile.fullMovie}`)
 
         div.relative.pb-video.h0.bg-black
           +video(videoId)
         if movie.videoLinks.html
-          +subHeading(`${__.movie_profile.more_video_links}`)
+          +subSectionHeading(`${__.movie_profile.more_video_links}`)
           #video-links.f6.f5-ns
             !=movie.videoLinks.html
 
     if hasNotesSection
       a#anchor-screening.anchor-ns.anchor(tabindex="-1")
+      hr.mt3.mb3
       +sectionHeading (`${__.movie_profile.screening_notes}`)
 
     //- context section
