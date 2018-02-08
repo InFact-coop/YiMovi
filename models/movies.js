@@ -18,7 +18,12 @@ Movie.add({
   summary___chn: { type: Types.Markdown, label: 'summary chn', collapse: true, },
   themes: { type: Types.Relationship, ref: 'Theme', many: true, },
   genre: { type: Types.Relationship, ref: 'Genre', many: true, },
-  resources: { type: Types.Relationship, ref: 'Resource', many: true, },
+  references: {
+    type: Types.Relationship,
+    ref: 'Resource',
+    label: 'References',
+    many: true,
+  },
   context: { type: Types.Markdown, label: 'Movie context', },
   context___chn: { type: Types.Markdown, label: 'context chn', collapse: true, },
   image: {

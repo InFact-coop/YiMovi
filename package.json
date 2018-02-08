@@ -31,6 +31,7 @@
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "env2": "^2.2.0",
+    "heroku-ssl-redirect": "0.0.4",
     "i18n": "^0.8.3",
     "json-format": "^1.0.1",
     "keystone": "^4.0.0-beta.5",
