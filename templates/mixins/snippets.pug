@@ -86,10 +86,11 @@ mixin titleContainer(color)
   #title-container.pa3.mt5-ns.mt4.shadow-5.z-1.white(class=`bg-${color}`)
     block
   
-mixin video(id)
-  - const url = `https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&videoId=${id}&quality=hi&captions=n&chapterId=0`
-  iframe.absolute.top0.left0.w-100.h-100(src=url)
-
+mixin video(isMain, id)
+  - const classes = isMain ? "absolute top0 left0 w-100 h-100" : "absolute top0 left0 w-100 h-100"
+  - const heightWidth = isMain ? "width=0&height=0" : "width=0&height=0"
+  - const url = `https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&${heightWidth}&videoId=${id}&quality=hi&captions=n&chapterId=0`
+  iframe(src=url frameborder="0" scrolling="no" allowfullscreen class=classes)
 mixin teamMember(team)
   - const url = team.url ? team.url : '#'
   - const img = team.image ? team.image.secure_url : null

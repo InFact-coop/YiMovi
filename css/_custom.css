@@ -420,6 +420,11 @@ button:focus {
 }
 
 .navbarlink:hover {
-  text-decoration:underline;
+  text-decoration: underline;
   text-underline-position: under;
+}
+
+.videoLink {
+  width: 500px;
+  height: 300px;
 }

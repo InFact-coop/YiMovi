@@ -41,6 +41,12 @@ Movie.add({
     label: 'Video links chn',
     collapse: true,
   },
+  videos: {
+    type: Types.Relationship,
+    ref: 'Video',
+    label: 'More video links',
+    many: true,
+  },
   synopsis: { type: Types.Markdown, },
   synopsis___chn: {
     type: Types.Markdown,

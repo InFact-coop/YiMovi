@@ -22,12 +22,14 @@ block content
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
   
   #title-container.pa1.pl2.mt5-ns.mt4.pa2-ns.pl3-ns.shadow-5.z-1(class=`bg-${primaryColor}`)
+
     if locale === "en"  
       +breadcrumbs(`${__.navbar.films}`, movie.name)
     else if locale ==="chn"
       +breadcrumbs(`${__.navbar.films}`, movie.name_chn)
     //- if movie.resources.url 
       img(src=movie.resources.url)
+
     if locale==="en"
       h1.white.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name
       h2.white.f3.f3-ns.fw7.lh-title.ma0
@@ -107,11 +109,15 @@ block content
           +subSectionHeading(`${__.movie_profile.fullMovie}`)
 
         div.relative.pb-video.h0.bg-black
-          +video(videoId)
-        if movie.videoLinks.html
+          +video(true, videoId)
           +subSectionHeading(`${__.movie_profile.more_video_links}`)
-          #video-links.f6.f5-ns
-            !=movie.videoLinks.html
+        #video-links.f6.f5-ns
+          each video in videos
+            +video(false, video.videoId)
+
+        //- if movie.videoLinks.html
+        //-   #video-links.f6.f5-ns
+        //-     !=movie.videoLinks.html
 
     if hasNotesSection
       a#anchor-screening.anchor-ns.anchor(tabindex="-1")
