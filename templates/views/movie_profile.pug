@@ -99,7 +99,7 @@ block content
     section#summary.flex.justify-start
     +section(movie, "summary", `${__.movie_profile.intro}`)
       
-    //- video section
+    //- first video section
     if movie.video && movie.video.includes("mediacentral.ucl.ac.uk")
       a#anchor-video.anchor-ns.anchor(tabindex="-1")
       hr.mt3.mb3
@@ -110,12 +110,14 @@ block content
 
         div.relative.pb-video.h0.bg-black
           +mainVideo(videoId)
-           
-        .video#video-links.f6.f5-ns
-          each video in videos
-            .videoContainer
-              +video(video.videoId)
-              .f6.f5-ns.dark-gray.pl2.initial-text.ma1!=video.caption.html
+          
+    //- more videos section
+    if movie.videos
+      .video#video-links.f6.f5-ns
+        each video in videos
+          .videoContainer
+            +video(video.videoId)
+            .f6.f5-ns.dark-gray.pl2.initial-text.ma1!=video.caption.html
 
     if hasNotesSection
       a#anchor-screening.anchor-ns.anchor(tabindex="-1")
