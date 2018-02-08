@@ -105,11 +105,14 @@ block content
 
         div.relative.pb-video.h0.bg-black
           +video(true, videoId)
-          
-        +subSectionHeading(`${__.movie_profile.more_video_links}`)
+          +subSectionHeading(`${__.movie_profile.more_video_links}`)
         #video-links.f6.f5-ns
           each video in videos
             +video(false, video.videoId)
+
+        //- if movie.videoLinks.html
+        //-   #video-links.f6.f5-ns
+        //-     !=movie.videoLinks.html
 
     if hasNotesSection
       a#anchor-screening.anchor-ns.anchor(tabindex="-1")
