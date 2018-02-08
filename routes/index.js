@@ -1,4 +1,5 @@
 const keystone = require('keystone');
+const sslRedirect = require('heroku-ssl-redirect');
 const middleware = require('./middleware');
 const switchLocale = require('./helpers/switch_locale');
 const cookieParser = require('cookie-parser');
@@ -84,6 +85,9 @@ exports = module.exports = app => {
 
   // Use viewRouter as sub router aginst /en/ or /chn/ prepended paths
   app.use('/:lang', viewRouter);
+
+  // Force redirect to HTTPS
+  app.use(sslRedirect());
 
   // Add cookie support
   app.use(cookieParser());
