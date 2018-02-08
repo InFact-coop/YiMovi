@@ -16,7 +16,7 @@ block content
   - const hasVideo = movie.video !== undefined
   - const hasImages = (movie.gallery !== undefined) && movie.gallery.length !== 0
   - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
-  - const hasReferencesSection = resources[0] !== undefined
+  - const hasReferencesSection = resources && resources[0] !== undefined
   - console.log("hasReferencesSection", hasReferencesSection);
   //- title and main details
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
@@ -25,7 +25,7 @@ block content
       
     +breadcrumbs("movies", movie.name)
     
-    if movie.resources.url 
+    //- if movie.resources.url 
       img(src=movie.resources.url)
     if locale==="en"
       h1.white.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name
@@ -48,10 +48,10 @@ block content
         span.mh2 |
       if movie.director
         a.no-underline(href=`/directors/${directorPage}`)
-          span.mh2.white=`${__.movie_profile.director} ${director.name}`
+          span.mh2.white.navbarlink=`${__.movie_profile.director} ${director.name}`
       if movie.director.name_chn
-        a.no-underline(href=`/directors/${directorPage}`)
-          span.white.ma0.sans-serif=`${director.name_chn}`      
+        a.no-underline.white.navbarlink(href=`/directors/${directorPage}`)
+          span.white.ma0.sans-serif.hover-underline=`${director.name_chn}`      
 
   #menu.shadow-5.pl2.z-1.sticky.top-1-9.top-4-ns.white(class=`bg-${secondaryColor}`)
     #menu-mobile.flex.flex-row.justify-between.items-center.pointer.dn-ns.pv1.pv0-m
