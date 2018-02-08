@@ -4,9 +4,8 @@ include ../mixins/movie-listing
 
 block content
   #title-container.pa3.mt5-ns.mt4.shadow-5.z-1.white(class=`bg-${primaryColor}`)
-    
-    +breadcrumbs("themes", theme.name)
-    
+    +breadcrumbs(`${__.navbar.themes}`, theme.name)
+
     h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns=theme.name
     
     if theme.description && theme.description.html
