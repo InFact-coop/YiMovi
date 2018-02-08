@@ -22,9 +22,14 @@ block content
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
   
   #title-container.pa1.pl2.mt5-ns.mt4.pa2-ns.pl3-ns.shadow-5.z-1(class=`bg-${primaryColor}`)
-      
-    +breadcrumbs("movies", movie.name)
-    
+
+    if locale === "en"  
+      +breadcrumbs(`${__.navbar.films}`, movie.name)
+    else if locale ==="chn"
+      +breadcrumbs(`${__.navbar.films}`, movie.name_chn)
+    //- if movie.resources.url 
+      img(src=movie.resources.url)
+
     if locale==="en"
       h1.white.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=movie.name
       h2.white.f3.f3-ns.fw7.lh-title.ma0
@@ -46,10 +51,10 @@ block content
         span.mh2 |
       if movie.director
         a.no-underline(href=`/directors/${directorPage}`)
-          span.mh2.white=`${__.movie_profile.director} ${director.name}`
+          span.mh2.white.navbarlink=`${__.movie_profile.director} ${director.name}`
       if movie.director.name_chn
-        a.no-underline(href=`/directors/${directorPage}`)
-          span.white.ma0.sans-serif=`${director.name_chn}`      
+        a.no-underline.white.navbarlink(href=`/directors/${directorPage}`)
+          span.white.ma0.sans-serif.hover-underline=`${director.name_chn}`      
 
   #menu.shadow-5.pl2.z-1.sticky.top-1-9.top-4-ns.white(class=`bg-${secondaryColor}`)
     #menu-mobile.flex.flex-row.justify-between.items-center.pointer.dn-ns.pv1.pv0-m

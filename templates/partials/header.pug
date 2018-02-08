@@ -4,7 +4,7 @@ nav.bg-gray.h2.h3-ns.w-100.items-center.fixed.z-1.flex.flex-row.items-center.jus
     .logo(class=`svg-fill--${secondaryColor}`).h-100
       include ../svg/logo.svg
   include ./burger.pug
-  div.dn.db-m
+  div.dn.db-l
       a.navbarlink.link.ph3.white.fw1(href=`/` alt="YiMovi home") #{__.navbar.home}
       a.navbarlink.link.ph3.white.fw1(href=`/movies` alt="All Films") #{__.navbar.films}
       a.navbarlink.link.ph3.white.fw1(href=`/themes` alt="Themes") #{__.navbar.themes}
@@ -14,7 +14,7 @@ nav.bg-gray.h2.h3-ns.w-100.items-center.fixed.z-1.flex.flex-row.items-center.jus
       a.navbarlink.link.ph3.white.fw1(href=`/#contactUsSection` alt="Contact") #{__.navbar.contact}
       a.navbarlink.link.ph3.white.fw1(href=`/team` alt="Team") #{__.navbar.team} 
       a.navbarlink.link.ph3.white.fw3.tracked(href=`${languageSwitchUrl}` alt='Switch language') #{country}
-#main-mobile-nav.dn-m.fixed.z-999.w-100.mt5-ns.mt4.dn.bg-white.right-0.shadow-3
+#main-mobile-nav.dn-l.fixed.z-999.w-100.mt5-l.mt4.dn.bg-white.right-0.shadow-3
   a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/` alt="YiMovi home" class=`hover-bg-${primaryColor}`) Home
   a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/movies` alt="All Films" class=`hover-bg-${primaryColor}`) All Films
   a.link.mobile-link.tc.db.ph3.pv2.dark-gray.fw3.f4.bb.bw1.b--light-gray.hover-white(href=`/themes` alt="Themes" class=`hover-bg-${primaryColor}`) Themes

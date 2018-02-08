@@ -65,12 +65,12 @@ mixin mainMenuItem(href, value)
         
 mixin breadcrumbs(type, page)
   - const url = `/${type}`
-  - const linkText = `all ${type}`
+  - const linkText = `${type}`
   p#breadcrumbs.white.f5.lh-copy
-    a.white.mr2(href="/") Home
+    a.white.mr2(href="/") #{__.navbar.home}
     |  |
     if team  
-        a.white.mh2.ttu.no-underline.fw6(href="/team") The Team
+        a.white.mh2.ttu.no-underline.fw6(href="/team") #{__.navbar.team}
     else if page  
       a.white.mh2.ttc(href=url)=linkText
     else
@@ -102,7 +102,7 @@ mixin teamMember(team)
     div.center.tc.br3
         if img
           img.h4.w-auto.h4(src=`${img}`)
-    div.pv2.ph4.tc
+    div.pv2.ph4-ns.ph1.tc
       a.no-underline.gray(href=`${url}`)
         h2.tc.b(class=`${primaryColor}`)=`${team.name}`
         p.fw2.tc!=team.text.html

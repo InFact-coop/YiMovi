@@ -15,7 +15,7 @@ mixin mainDetails(movie, director)
 mixin titleEn(title)
   - const truncated = title.slice(0, 25) + (title.length > 25 ? '...' : '')
   if locale==="en"
-    h2.ttu.ma0.f5.f2-ns.lh-title
+    h2.ttu.ma0.f5.f2-l.f3-m.lh-title
       =title
   if locale==="chn"
     h2.ma0.f6.f3-ns.pb2-ns.lh-copy.sans-serif.fw4
@@ -38,7 +38,7 @@ mixin imgContainer(movie)
       +bgImage(movie._.image.limit(400,500))
               
 mixin detailsContainer(movie)
-  .listingDetails.ph2.ph5-ns.pv4-ns.flex.flex-column.flex-1-0-0.flex-1-0-0-ns.flex-1-0-0-m.flex-2-0-0-l.justify-around.hover-white
+  .listingDetails.ph2.ph4-ns.pv3-ns.flex.flex-column.flex-1-0-0.flex-1-0-0-ns.flex-1-0-0-m.flex-2-0-0-l.justify-around.hover-white
     .listingTitles.overflow-hidden
       if locale==="en"
         +titleEn(movie.name)
