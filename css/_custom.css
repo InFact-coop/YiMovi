@@ -107,6 +107,9 @@ button:focus {
 .mxhi7 {
   max-height: 48rem;
 }
+.mxw7 {
+  max-width: 48.5rem;
+}
 .mxhi8 {
   max-height: 64rem;
 }
@@ -422,8 +425,4 @@ button:focus {
 .navbarlink:hover {
   text-decoration: underline;
   text-underline-position: under;
-}
-
-.videoHeight {
-  height: 26rem;
 }
