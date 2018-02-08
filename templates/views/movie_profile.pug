@@ -16,7 +16,8 @@ block content
   - const hasVideo = movie.video !== undefined
   - const hasImages = (movie.gallery !== undefined) && movie.gallery.length !== 0
   - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
-  
+  - const hasReferencesSection = resources[0] !== undefined
+  - console.log("hasReferencesSection", hasReferencesSection);
   //- title and main details
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
   
@@ -58,14 +59,16 @@ block content
       img.h2.mr3(src="/arrow_drop_down_black.svg")
     ul#drop-down.list.flex-ns.flex-column.flex-row-ns.items-center.pa0.pv2.justify-start.ma0.dn
       li.ttu.mr4.fw7.pv2.pv0-ns.dn.flex-ns=movie.name + ':'
-        +profileMenuItem("summary", __.movie_profile.intro)
-      if hasVideo
-        +profileMenuItem("video",  __.movie_profile.video)
       if hasImages
         +profileMenuItem("images",  __.movie_profile.images)
+      +profileMenuItem("summary", __.movie_profile.intro)
+      if hasVideo
+        +profileMenuItem("video",  __.movie_profile.video)
       if hasNotesSection
         +profileMenuItem("screening",  __.movie_profile.screening_notes)
-        +profileMenuItem ("share", __.movie_profile.share)  
+      if hasReferencesSection
+        +profileMenuItem("references", __.movie_profile.references)
+      +profileMenuItem ("share", __.movie_profile.share)  
   //- gallery section
   if movie.gallery.length
     a#anchor-images.anchor-ns.anchor(tabindex="-1")    
@@ -87,10 +90,7 @@ block content
 
       
   #content.pa3.pt1.mw8.center
-    h1 RESOURCES!
-    each resource in resources
-      - const url = resource.resources.url
-      a(href=`${url}`) RESOURCE
+  
     //- summary section
     a#anchor-summary.anchor-ns.anchor(tabindex="-1")  
     section#summary.flex.justify-start
@@ -129,7 +129,16 @@ block content
         
     //- points for discussion
     +subSection(movie, 'pointsForDiscussion', `${__.movie_profile.points_for_discussion}`)
-        
+    
+    
+    if hasReferencesSection
+      a#anchor-references.anchor-ns.anchor(tabindex="-1")  
+      hr.mt3.mb3
+      +sectionHeading (`${__.movie_profile.references}`)
+      each resource in resources
+        - const url = resource.resources.url
+        a(href=`${url}`) RESOURCE    
+      
     //- external links
     if movie.externalLinks.html && movie.externalLinks.html.length
       hr.mh0.mv3
@@ -146,6 +155,7 @@ block content
     +socialIcons(full_url)
     
 block scripts
+  
   script
     include ../js/main.js
     include ../js/menu.js
