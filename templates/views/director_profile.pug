@@ -5,8 +5,8 @@ include ../mixins/movie-listing
 block content
   #title-container.pa3.mt5-ns.mt4.shadow-5.z-1.white(class=`bg-${primaryColor}`)
     
-    +breadcrumbs("directors", director.name)
-    
+    +breadcrumbs(`${__.navbar.directors}`, `${director.name}`)
+    //- +breadcrumbs (`${__.navbar.directors}`)
     if (director.name_chn)
       h1.white.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=director.name_chn
     h1.white.ttu.f2.f1-ns.fw7.lh-title.ma0=director.name
