@@ -1,6 +1,5 @@
 const keystone = require('keystone');
 const Movie = keystone.list('Movie');
-// const Resource = keystone.list('Resource');
 
 const directorPageLink = require('../helpers/directorLink.js');
 const extractId = require('../helpers/extract_movie_id.js');
@@ -17,6 +16,7 @@ exports = module.exports = (req, res) => {
     locals.movie = {};
     locals.director = {};
     locals.resource = [];
+    locals.videos = [];
     locals.genres = [];
     locals.themes = [];
     locals.full_url = locals.site_url + req.url;
@@ -26,7 +26,7 @@ exports = module.exports = (req, res) => {
       .populate('director')
       .populate('resources')
       .populate('themes')
-      .populate('genre')
+      .populate('videos')
       .exec((err, movie) => {
         if (err || !movie) {
           res.status(404).render('errors/404');
@@ -43,6 +43,12 @@ exports = module.exports = (req, res) => {
         locals.genres = localizeForLocale(movie.genre);
         locals.directorPage = directorPageLink(locals.director.name);
         locals.resources = locals.movie.resources;
+        // locals.videos = locals.movie.videos;
+        // console.log('VIDEOS', locals.videos);
+        locals.videos = locals.movie.videos.map(video => {
+          video.videoId = extractId(video.videoUrl);
+          return video;
+        });
         next();
       });
   });
