@@ -43,8 +43,6 @@ exports = module.exports = (req, res) => {
         locals.genres = localizeForLocale(movie.genre);
         locals.directorPage = directorPageLink(locals.director.name);
         locals.resources = locals.movie.resources;
-        // locals.videos = locals.movie.videos;
-        // console.log('VIDEOS', locals.videos);
         locals.videos = locals.movie.videos.map(video => {
           video.videoId = extractId(video.videoUrl);
           return video;

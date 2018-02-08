@@ -424,7 +424,6 @@ button:focus {
   text-underline-position: under;
 }
 
-.videoLink {
-  width: 500px;
-  height: 300px;
+.videoHeight {
+  height: 26rem;
 }

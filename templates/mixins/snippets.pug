@@ -2,7 +2,7 @@ mixin sectionHeading(text)
     h2.f4.f3-ns.fw6.lh-title.ttu.blue=text
 
 mixin subSectionHeading(text)
-    h2.f4.f4-ns.fw3.lh-title.ttu.blue=text
+    h2.f4.f4-ns.mb0.fw3.lh-title.ttu.blue=text
 
 mixin subHeading(text)
     h3.f5.mt3.ttu.light-silver
@@ -85,12 +85,16 @@ mixin bgImage(url)
 mixin titleContainer(color)
   #title-container.pa3.mt5-ns.mt4.shadow-5.z-1.white(class=`bg-${color}`)
     block
-  
-mixin video(isMain, id)
-  - const classes = isMain ? "absolute top0 left0 w-100 h-100" : "absolute top0 left0 w-100 h-100"
-  - const heightWidth = isMain ? "width=0&height=0" : "width=0&height=0"
-  - const url = `https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&${heightWidth}&videoId=${id}&quality=hi&captions=n&chapterId=0`
-  iframe(src=url frameborder="0" scrolling="no" allowfullscreen class=classes)
+      
+mixin mainVideo(id)
+  - const url = `https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&videoId=${id}&quality=hi&captions=n&chapterId=0`
+    iframe.absolute.top0.left0.w-100.h-100(src=url frameborder="0" scrolling="no" allowfullscreen)      
+
+mixin video(id)
+  - const url = `https://mediacentral.ucl.ac.uk/player?autostart=n&fullscreen=y&width=0&height=0&videoId=${id}&quality=hi&captions=n&chapterId=0`
+  .pa0(style="position:relative;padding-bottom:56%;padding-top:20px;height:0;")
+    iframe.absolute.top0.left0.w-100.h-100(src=url frameborder="0" scrolling="no" allowfullscreen)
+
 mixin teamMember(team)
   - const url = team.url ? team.url : '#'
   - const img = team.image ? team.image.secure_url : null
