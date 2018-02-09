@@ -49,9 +49,6 @@ exports = module.exports = (req, res) => {
           video.videoId = extractId(video.videoUrl);
           return video;
         });
-        console.log("locals.resources: ", locals.resources);
-        // console.log("locals.references: ", locals.references);
-        console.log("locals.movie.references: ", locals.movie.references);
         next();
       });
   });

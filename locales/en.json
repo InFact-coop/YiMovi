@@ -79,7 +79,7 @@
     "page_title": "genre_profile.page_title"
   },
   "movie_profile": {
-    "director": "director",
+    "director": "Director",
     "video": "video",
     "fullMovie": "full movie",
     "images": "images",
@@ -91,7 +91,7 @@
     "image_gallery": "image gallery",
     "context": "context",
     "summary": "summary",
-    "synposis": "synopsis",
+    "synposis": "synopsis & relevance",
     "cinematography": "cinematography",
     "points_for_discussion": "points for discussion",
     "external_links": "external links",
