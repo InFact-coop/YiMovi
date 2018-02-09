@@ -40,7 +40,27 @@ block content
           - const title =  + `${__.index.theme_link_title} ${theme.name}`
           - const img = theme.image && theme.image.secure_url ? theme.image.secure_url : null
           +listing("themes", theme.name, theme.key, title, "purple", img)
-  
+          
+      
+          
+      #titleContainer.pv3.ph5-ns.white(class=`bg-${primaryColor}`)
+        h1.f3.f2-ns.fw7.ttu.lh-title.ma0.white Our Categories
+        
+      a.no-underline(href=`/themes` title="Browse all themes")  
+        #browseThemesBox.ttu.bg-white.ph3.ph5-ns.pv3.gray.hover-bg-light-purple.hover-white.pointer.bt.b--dark-gray
+          h2.ma0.f4.f3-ns.fw5 #{__.index.link_themes} >>
+        
+      a.no-underline(href=`/movies` title="Browse all movies")                
+        #browseMoviesBox.ttu.bg-white.ph3.ph5-ns.pv3.gray.hover-bg-light-blue.hover-white.pointer.bt.b--dark-gray
+          h2.ma0.f4.f3-ns.fw5 #{__.index.link_movies} >>
+        
+      a.no-underline(href=`/directors` title="Browse all directors")                
+        #browseDirectorsBox.ttu.bg-white.ph3.ph5-ns.pv3.gray.hover-bg-light-green.hover-white.pointer.bt.b--dark-gray
+          h2.ma0.f4.f3-ns.fw5 #{__.index.link_directors} >>  
+        
+      a.no-underline(href=`/genres` title="Browse all genres")                
+        #browseGenresBox.ttu.bg-white.ph3.ph5-ns.pv3.gray.hover-bg-light-yellow.hover-white.pointer.bt.b--dark-gray
+          h2.ma0.f4.f3-ns.fw5 #{__.index.link_genres} >>  
   //- contact form
   block content
     #contactUsSection.contactAnchor-ns.contactAnchor(tabindex="-1")
