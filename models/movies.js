@@ -65,6 +65,15 @@ Movie.add({
     label: 'Points for discussion chn',
     collapse: true,
   },
+  availability: {
+    type: Types.Markdown,
+    label: 'Where can you find the movie?',
+  },
+  availability___chn: {
+    type: Types.Markdown,
+    label: 'Where can you find the movie? (CHN)',
+    collapse: true,
+  },
   externalLinks: { type: Types.Markdown, label: 'External links', },
   externalLinks___chn: {
     type: Types.Markdown,

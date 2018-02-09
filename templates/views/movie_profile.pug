@@ -15,8 +15,13 @@ block content
   //- Query checks
   - const hasVideo = movie.video !== undefined
   - const hasImages = (movie.gallery !== undefined) && movie.gallery.length !== 0
+  - const hasAvailabilitySection = movie.availability.html !== undefined
   - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
-  - const hasReferencesSection = resources && resources[0] !== undefined
+
+  - const hasReferencesSection = references && references[0] !== undefined
+  
+
+
   //- title and main details
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
   
@@ -105,7 +110,7 @@ block content
       section#video.flex.flex-column.mw7
         +sectionHeading(`${__.movie_profile.video}`)
         if movie.isFullMovie
-          +subSectionHeading(`${__.movie_profile.fullMovie}`)
+          h2.f4.f4-ns.mb2.fw3.lh-title.ttu.blue=__.movie_profile.fullMovie
 
         div.relative.pb-video.h0.bg-black
           +mainVideo(videoId)
@@ -136,14 +141,23 @@ block content
     //- points for discussion
     +subSection(movie, 'pointsForDiscussion', `${__.movie_profile.points_for_discussion}`)
     
-    
+    //- availability 
+    if hasAvailabilitySection
+      - const availabilityBody = locale === 'en' ? movie.availability.html : movie.availability___chn
+      hr.mh0.mv3
+      +subSectionHeading(`${__.movie_profile.availability}`)
+      #availability.f6.f5-ns
+        !=availabilityBody
+      
+    //- references
     if hasReferencesSection
       a#anchor-references.anchor-ns.anchor(tabindex="-1")  
       hr.mt3.mb3
       +sectionHeading (`${__.movie_profile.references}`)
-      each resource in resources
-        - const url = resource.resources.url
-        a(href=`${url}`) RESOURCE    
+      each reference in references
+        - const url = reference.resources.url
+        p
+          a(href=`${url}`)=reference.name    
       
     //- external links
     if movie.externalLinks.html && movie.externalLinks.html.length
