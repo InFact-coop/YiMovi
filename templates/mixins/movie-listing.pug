@@ -7,9 +7,9 @@ mixin mainDetails(movie, director)
           if movie.director.name_chn
             div.ma0.sans-serif=director.name_chn
       if movie.year
-        div.ma0.dib=movie.year
+        div.ma0.mr2.dib=movie.year 
       if movie.duration
-        div.ma0.dib= '  ' + movie.duration + ' mins'
+        div.ma0.dib= movie.duration + ' mins'
 
       
 mixin titleEn(title)
