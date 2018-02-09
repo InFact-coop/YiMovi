@@ -25,9 +25,14 @@ exports = module.exports = (req, res) => {
       .lean()
       .exec((err, themes) => {
         if (err) return next(err);
-
-        locals.themes = localizeResults(locals.locale, themes);
-
+        locals.themes = localizeResults(
+          locals.locale,
+          themes
+        ).map((localisedTheme, index) => {
+          localisedTheme.name___en = themes[index].name;
+          localisedTheme.locale = locals.locale;
+          return localisedTheme;
+        });
         next();
       });
   });

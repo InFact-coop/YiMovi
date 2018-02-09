@@ -17,7 +17,6 @@ block content
   - const hasImages = (movie.gallery !== undefined) && movie.gallery.length !== 0
   - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
   - const hasReferencesSection = resources && resources[0] !== undefined
-  - console.log("hasReferencesSection", hasReferencesSection);
   //- title and main details
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
   

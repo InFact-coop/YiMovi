@@ -8,8 +8,11 @@ include ../mixins/listings
 
 mixin genreBox(genre)
   - const title = `${__.list_genres.title} ${genre.name}`
+  - const chineseGenreName = genre.name.length > 0 ? genre.name : genre.name___en
+  - const genreName = locale === 'en' ? genre.name : chineseGenreName
+
   - const img = genre.image && genre.image.secure_url ? genre.image.secure_url : null
-  +listing("genres", genre.name, genre.key, title, primaryColor, img)
+  +listing("genres", genreName, genre.key, title, primaryColor, img)
 
 block content
   
