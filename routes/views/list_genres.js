@@ -27,7 +27,14 @@ exports = module.exports = (req, res) => {
       .exec((err, genres) => {
         if (err) return next(err);
 
-        locals.genres = localizeResults(locals.locale, genres);
+        locals.genres = localizeResults(
+          locals.locale,
+          genres
+        ).map((localisedGenre, index) => {
+          localisedGenre.name___en = genres[index].name;
+          localisedGenre.locale = locals.locale;
+          return localisedGenre;
+        });
 
         next();
       });
