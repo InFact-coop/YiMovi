@@ -16,8 +16,10 @@ block content
   - const hasVideo = movie.video !== undefined
   - const hasImages = (movie.gallery !== undefined) && movie.gallery.length !== 0
   - const hasNotesSection = sections.some(s => movie[s].html && movie[s].html.length)
-  - const hasReferencesSection = resources && resources[0] !== undefined
+  - const hasReferencesSection = references && references[0] !== undefined
   - console.log("hasReferencesSection", hasReferencesSection);
+  
+
   //- title and main details
   - const movieTitle = movie.name + (movie.name_chn.length ? ` (${movie.name_chn})` : '')
   
@@ -142,9 +144,10 @@ block content
       a#anchor-references.anchor-ns.anchor(tabindex="-1")  
       hr.mt3.mb3
       +sectionHeading (`${__.movie_profile.references}`)
-      each resource in resources
-        - const url = resource.resources.url
-        a(href=`${url}`) RESOURCE    
+      each reference in references
+        - const url = reference.resources.url
+        p
+          a(href=`${url}`)=reference.name    
       
     //- external links
     if movie.externalLinks.html && movie.externalLinks.html.length

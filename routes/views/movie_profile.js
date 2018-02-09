@@ -15,7 +15,8 @@ exports = module.exports = (req, res) => {
 
     locals.movie = {};
     locals.director = {};
-    locals.resource = [];
+    locals.resources = [];
+    locals.references = [];
     locals.videos = [];
     locals.genres = [];
     locals.themes = [];
@@ -25,6 +26,7 @@ exports = module.exports = (req, res) => {
       .findOne({ key: req.params.name, })
       .populate('director')
       .populate('resources')
+      .populate('references')
       .populate('themes')
       .populate('videos')
       .exec((err, movie) => {
@@ -42,11 +44,14 @@ exports = module.exports = (req, res) => {
         locals.themes = localizeForLocale(movie.themes);
         locals.genres = localizeForLocale(movie.genre);
         locals.directorPage = directorPageLink(locals.director.name);
-        locals.resources = locals.movie.resources;
+        locals.references = locals.movie.references;
         locals.videos = locals.movie.videos.map(video => {
           video.videoId = extractId(video.videoUrl);
           return video;
         });
+        console.log("locals.resources: ", locals.resources);
+        // console.log("locals.references: ", locals.references);
+        console.log("locals.movie.references: ", locals.movie.references);
         next();
       });
   });
