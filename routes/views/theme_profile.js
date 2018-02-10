@@ -21,7 +21,7 @@ exports = module.exports = (req, res) => {
 
       locals.theme = localizeResults(locals.locale, theme);
 
-      locals.title = res.__('theme_profile.page_title', locals.theme.name);
+      locals.title = `${locals.theme.name}${res.__('app.short_title')}`;
 
       getMoviesBy(locals.locale, 'themes', theme, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);

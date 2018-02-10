@@ -8,7 +8,7 @@ mixin splashImage(imageNumber)
           
 block content
   #titleContainer.pa4.mt5-ns.mt4.white(class=`bg-${primaryColor}`)
-    h1.f2.f1-ns.fw7.ttu.lh-title.ma0
+    h1.f2.f1-ns.fw7.ttu.lh-title.ma0.tc
       | #{__.index.header}
       
   #homeImageContainer.bg-black
@@ -20,16 +20,17 @@ block content
         
     div.vh-75
           
-  #bylineContainer.ph4.pv2.pv4-ns.white.tc.f4.f3-ns.fw5.lh-title(class=`bg-${primaryColor}`)
-    p #{__.index.byline1}
-    p #{__.index.byline2}
+    #bylineContainer.ph4.pv2.pv4-ns.white.tc.f4.f3-ns.tracked.fw6.lh-title(class=`bg-${primaryColor}`)
+      p #{__.index.byline1}
+      p #{__.index.byline2}
           
           
-  include ../partials/about
-                    
+  
+  include ../partials/block-nav
+                           
   script
     include ../js/home_images.js
-          
+      
   if themes && themes.length
     #themesSection
       #themesTitle.ttu.bg-purple.ph5-ns.pv3.white
@@ -42,25 +43,10 @@ block content
           +listing("themes", theme.name, theme.key, title, "purple", img)
           
       
-          
-      #titleContainer.pv3.ph5-ns.white(class=`bg-${primaryColor}`)
-        h1.f3.f2-ns.fw7.ttu.lh-title.ma0.white Our Categories
-        
-      a.no-underline(href=`/themes` title="Browse all themes")  
-        #browseThemesBox.ttu.bg-white.ph3.ph5-ns.pv3.gray.hover-bg-light-purple.hover-white.pointer.bt.b--dark-gray
-          h2.ma0.f4.f3-ns.fw5 #{__.index.link_themes} >>
-        
-      a.no-underline(href=`/movies` title="Browse all movies")                
-        #browseMoviesBox.ttu.bg-white.ph3.ph5-ns.pv3.gray.hover-bg-light-blue.hover-white.pointer.bt.b--dark-gray
-          h2.ma0.f4.f3-ns.fw5 #{__.index.link_movies} >>
-        
-      a.no-underline(href=`/directors` title="Browse all directors")                
-        #browseDirectorsBox.ttu.bg-white.ph3.ph5-ns.pv3.gray.hover-bg-light-green.hover-white.pointer.bt.b--dark-gray
-          h2.ma0.f4.f3-ns.fw5 #{__.index.link_directors} >>  
-        
-      a.no-underline(href=`/genres` title="Browse all genres")                
-        #browseGenresBox.ttu.bg-white.ph3.ph5-ns.pv3.gray.hover-bg-light-yellow.hover-white.pointer.bt.b--dark-gray
-          h2.ma0.f4.f3-ns.fw5 #{__.index.link_genres} >>  
+
+  //- about section
+  include ../partials/about
+  
   //- contact form
   block content
     #contactUsSection.contactAnchor-ns.contactAnchor(tabindex="-1")

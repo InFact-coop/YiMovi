@@ -18,8 +18,7 @@ exports = module.exports = (req, res) => {
       }
 
       locals.genre = localizeResults(locals.locale, genre);
-
-      locals.title = res.__('genre_profile.page_title', locals.genre.name);
+      locals.title = `${locals.genre.name}${res.__('app.short_title')}`;
 
       getMoviesBy(locals.locale, 'genre', genre, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);
