@@ -20,11 +20,7 @@ exports = module.exports = (req, res) => {
 
       locals.director = localizeResults(locals.locale, director);
 
-      locals.title = res.__(
-        'director_profile.page_title',
-        locals.director.name,
-        locals.director.name_chn
-      );
+      locals.title = `${locals.director.name}${res.__('app.short_title')}`;
 
       getMoviesBy(locals.locale, 'director', director, (moviesErr, movies) => {
         if (moviesErr) return next(moviesErr);
