@@ -6,7 +6,7 @@ YiMovi is a CMS-based website with a catalogue of films from the Chinese medical
 
 Requirements for building locally: Node, MongoDB.
 
-You'll need a mongo database (can be a local one) and a [Cloudinary](http://cloudinary.com/) account.
+You'll need a mongo database (can be a local one), a [Microsoft Azure](https://www.google.co.uk/search?q=blob+storage&oq=blob+storage&aqs=chrome..69i57j0j69i60l3j0.4479j0j1&sourceid=chrome&ie=UTF-8) blob storage account ($), and a [Cloudinary](http://cloudinary.com/) account.
 
 Steps:
 - Clone this repo and run `npm install`
@@ -19,6 +19,10 @@ Steps:
     - SITE_URL: URL for your site, e.g. on Heroku (defaults to http://0.0.0.0:3000/)
     - EMAIL: email address to which FormSpree responses will be sent
     - `node web` to start the server
+    - AZURE_STORAGE_ACCESS_KEY: Your azure access key 
+    - AZURE_STORAGE_ACCOUNT= Your azure account name
+    - AZURE_STORAGE_CONTAINER= Your azure blob storage container name
+
     
 ## CSS
 
