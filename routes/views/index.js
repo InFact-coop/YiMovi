@@ -31,13 +31,12 @@ exports = module.exports = (req, res) => {
       .exec((err, themes) => {
         if (err) return next(err);
 
-        locals.themes = localizeResults(locals.locale, themes);
+        locals.themes = localizeResults(locals.locale, themes, true);
 
         AboutUs.model.findOne().exec((err, aboutUs) => {
           if (err) return next(err);
 
           locals.about_us = localizeResults(locals.locale, aboutUs);
-
 
           next();
         });

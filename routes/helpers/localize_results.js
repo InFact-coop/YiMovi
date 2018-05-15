@@ -1,12 +1,12 @@
 const { defaultLocale, } = require('../setup/locales.js');
 
-const localize = (locale, dbResultsObj) => {
+const localize = (locale, dbResultsObj, convertToJson) => {
   // keynames in DB that contain translatable content follow pattern 'name___locale'
   const separator = '___';
   const translatableKeyReg = /\_{3}.+$/;
 
   // create new results object with relevant data only
-  return Object.keys(dbResultsObj)
+  return Object.keys(convertToJson ? dbResultsObj.toJSON() : dbResultsObj)
     .filter(key => {
       const loc = key.split(separator)[1];
       return !loc || loc === locale;
@@ -20,13 +20,13 @@ const localize = (locale, dbResultsObj) => {
     );
 };
 
-const localizeResults = (locale, dbResults) => {
+const localizeResults = (locale, dbResults, convertToJson) => {
   // if currentLocale === defaultLocale, do nothing
   // english is default
   if (locale === defaultLocale) return dbResults;
 
   if (dbResults instanceof Array) {
-    return dbResults.map(dbResult => localize(locale, dbResult));
+    return dbResults.map(dbResult => localize(locale, dbResult, convertToJson));
   }
 
   // if not array, check for _doc object
