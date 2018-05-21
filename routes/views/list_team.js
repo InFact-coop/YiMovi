@@ -1,4 +1,5 @@
 const keystone = require('keystone');
+const { localizeResults, } = require('../helpers/localize_results.js');
 const Team = keystone.list('Team');
 
 exports = module.exports = (req, res) => {
@@ -15,7 +16,7 @@ exports = module.exports = (req, res) => {
       .exec((err, team) => {
         if (err) return next(err);
 
-        locals.team = team;
+        locals.team = localizeResults(locals.locale, team);
         next();
       });
   });

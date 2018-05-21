@@ -2,14 +2,14 @@ extends ../layouts/base
 include ../mixins/snippets
 
 block content
-  
+
   #title-container.pa3.mt5-ns.mt4.shadow-5.z-1.white(class=`bg-${primaryColor}`)
-    
+
     +breadcrumbs("The Team")
-    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns 
+    h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns
     h1.ttu.f2.f1-ns.fw7.lh-title.ma0.mb1.mb3-ns.white
       | #{__.list_team.title}
-  
+
   div.center.flex
     section.ma5.flex.flex-wrap.justify-around.center
       each teamMember in team
