@@ -32,7 +32,7 @@
     "switch_statement": "切换到中国"
   },
   "footer": {
-    "link_contact": "联系"
+    "link_contact": "联系我们"
   },
   "index": {
     "header": "中国电影与跨文化医学人文",
@@ -106,10 +106,14 @@
     "address_body": "高尔海峡，布卢姆斯伯里，伦敦，WC1E 6BT",
     "online_title": "在线",
     "placeholder_name": "你的名字",
-    "placeholder_email": "你的邮件",
-    "placeholder_message": "你的信息",
+    "placeholder_email": "邮箱",
+    "placeholder_message": "具体内容",
     "action_cancel": "取消",
     "action_send": "发送",
+    "suggest_film_title": "推荐一部影片",
+    "suggest_film_copy": "请根据下方链接，填写您的建议和影片说明。",
+    "ask_yimovi_title": "向我们提问",
+    "ask_yimovi_copy": "请在下列方框中填写信息。我们将尽快反馈。",
     "page_title": "contact.page_title"
   },
   "list_team": {
