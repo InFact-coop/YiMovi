@@ -1,0 +1,22 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.12.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:hoek:20180212':
+    - keystone-storage-adapter-azure > azure-storage > request > hawk > hoek:
+        patched: '2018-06-19T02:38:36.600Z'
+    - keystone-storage-adapter-azure > azure-storage > request > hawk > boom > hoek:
+        patched: '2018-06-19T02:38:36.600Z'
+    - keystone-storage-adapter-azure > azure-storage > request > hawk > sntp > hoek:
+        patched: '2018-06-19T02:38:36.600Z'
+    - keystone-storage-adapter-azure > azure-storage > request > hawk > cryptiles > boom > hoek:
+        patched: '2018-06-19T02:38:36.600Z'
+    - keystone > less-middleware > less > request > hawk > hoek:
+        patched: '2018-06-19T02:38:36.600Z'
+    - keystone > less-middleware > less > request > hawk > boom > hoek:
+        patched: '2018-06-19T02:38:36.600Z'
+    - keystone > less-middleware > less > request > hawk > sntp > hoek:
+        patched: '2018-06-19T02:38:36.600Z'
+    - keystone > less-middleware > less > request > hawk > cryptiles > boom > hoek:
+        patched: '2018-06-19T02:38:36.600Z'
