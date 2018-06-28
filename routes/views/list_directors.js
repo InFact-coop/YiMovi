@@ -12,14 +12,12 @@ exports = module.exports = (req, res) => {
     locals.sortOrder = localizeTernary(locals.locale, 'name', 'name_chn');
     Director.model
       .find()
-      .select('-description -image -description___chn')
+      .select('-description -description___chn')
       .lean()
       .sort(locals.sortOrder)
       .exec((err, directors) => {
         if (err) return next(err);
-
         locals.directors = directors;
-
         next();
       });
   });
