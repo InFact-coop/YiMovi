@@ -19,7 +19,6 @@ exports = module.exports = (req, res) => {
       }
 
       locals.director = localizeResults(locals.locale, director);
-      console.log('locals.director', locals.director);
       locals.title = `${locals.director.name}${res.__('app.short_title')}`;
 
       getMoviesBy(locals.locale, 'director', director, (moviesErr, movies) => {
