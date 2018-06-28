@@ -4,30 +4,30 @@ include ../mixins/movie-listing
 
 block content
   #title-container.pa3.mt5-ns.mt4.shadow-5.z-1.white(class=`bg-${primaryColor}`)
-    
+
     +breadcrumbs(`${__.navbar.directors}`, `${director.name}`)
     //- +breadcrumbs (`${__.navbar.directors}`)
     if (director.name_chn)
       h1.white.ttu.f2.f1-ns.fw7.lh-copy.ma0.sans-serif=director.name_chn
     h1.white.ttu.f2.f1-ns.fw7.lh-title.ma0=director.name
-    
+
     if director.image && director.image.secure_url
       #image-container.w-100.w-70-ns.w-50-l.h5
-        span.h-100.cover.no-repeat.dib.w-100.self-center(style=`background-image:url("${director._.image.limit(500,625)}")`)
-    
+        span.h-100.contain.bg-center.bg-black.dib.w-100.self-center(style=`background-image:url("${director._.image.limit(500,625)}")`)
+
     if director.description && director.description.html
       .description.w-100.w-70-ns.w-50-l
         +sectionParagraph(director.description.html, true)
-    
+
     hr.ma3
-    
+
     h2.ttu.f4.f3-ns.fw6.lh-title.ma0 #{__.director_profile.title} #{director.name}
-    
+
   ul.list.pl0.ma0
     each movie in movies
       li
         +movieListing(movie, "directors")
-        
+
 
 block scripts
   script

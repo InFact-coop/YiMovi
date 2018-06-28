@@ -19,6 +19,7 @@ exports = module.exports = (req, res) => {
         if (err) return next(err);
 
         locals.directors = directors;
+        console.log('locals.directors', locals.directors);
 
         next();
       });
