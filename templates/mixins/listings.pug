@@ -7,7 +7,7 @@ mixin listing(type, name, key, title, color, img)
           if img && !(type === "directors")
             span.cover.dib.w-100.h-100(style=`background-image:url("${img}")`)
           if img && (type === "directors")
-          span.contain.bg-center.dib.w-100.h-100.bg-black(style=`background-image:url("${img}")`)
+            span.contain.bg-center.dib.w-100.h-100.bg-black(style=`background-image:url("${img}")`)
         .title-container.w-50.self-center
           p.ml3.f4.f3-ns.fw3.tracked.ph2-ns.ttu=name
 mixin list()
