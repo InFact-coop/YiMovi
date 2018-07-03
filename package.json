@@ -12,11 +12,11 @@
     "watch_tachyons": "postcss --watch --config ./postcss.config.js",
     "build_tachyons": "postcss --config ./postcss.config.js",
     "pre-deploy": "npm run test.e2e",
-    "deploy-staging":
-      "npm run pre-deploy && git checkout -B staging && git push origin staging -f",
-    "deploy-production":
-      "npm run pre-deploy && git checkout -B production && git push origin production -f",
-    "postinstall": "npm run build_tachyons"
+    "deploy-staging": "npm run pre-deploy && git checkout -B staging && git push origin staging -f",
+    "deploy-production": "npm run pre-deploy && git checkout -B production && git push origin production -f",
+    "postinstall": "npm run build_tachyons",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -48,7 +48,8 @@
     "postcss-import": "^9.1.0",
     "pug": "^2.0.0-rc.1",
     "tachyons-custom": "^4.5.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
@@ -56,5 +57,6 @@
     "nodemon": "^1.11.0",
     "selenium-download": "^2.0.10",
     "tape": "^4.7.0"
-  }
+  },
+  "snyk": true
 }
