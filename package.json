@@ -12,10 +12,8 @@
     "watch_tachyons": "postcss --watch --config ./postcss.config.js",
     "build_tachyons": "postcss --config ./postcss.config.js",
     "pre-deploy": "npm run test.e2e",
-    "deploy-staging":
-      "npm run pre-deploy && git checkout -B staging && git push origin staging -f",
-    "deploy-production":
-      "npm run pre-deploy && git checkout -B production && git push origin production -f",
+    "deploy-staging": "npm run pre-deploy && git checkout -B staging && git push origin staging -f",
+    "deploy-production": "npm run pre-deploy && git checkout -B production && git push origin production -f",
     "postinstall": "npm run build_tachyons"
   },
   "repository": {
@@ -47,7 +45,7 @@
     "postcss-custom-properties": "^5.0.2",
     "postcss-import": "^9.1.0",
     "pug": "^2.0.0-rc.1",
-    "tachyons-custom": "^4.5.4",
+    "tachyons-custom": "4.5.4",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
